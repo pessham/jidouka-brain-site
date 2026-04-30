@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">第6章：諦めないためのマインド</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">詰まりを前提に、続けられる設計にする</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="100" y="220" width="420" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="100" y="220" width="12" height="230" rx="6" fill="#4d7188"/>
+  <text x="132" y="264" font-size="26" font-weight="900" fill="#2d241b">詰まりは普通</text>
+  <text x="132" y="308" font-size="22" font-weight="650" fill="#6f6254">向いていない証拠ではない</text>
+<text x="132" y="342" font-size="22" font-weight="650" fill="#6f6254">AIに渡す材料が出た</text>
+      
+  <rect x="590" y="220" width="420" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="590" y="220" width="12" height="230" rx="6" fill="#c39a54"/>
+  <text x="622" y="264" font-size="26" font-weight="900" fill="#2d241b">30分ルール</text>
+  <text x="622" y="308" font-size="22" font-weight="650" fill="#6f6254">視野が狭くなる前に離れる</text>
+<text x="622" y="342" font-size="22" font-weight="650" fill="#6f6254">翌日に見直す</text>
+      
+  <rect x="1080" y="220" width="420" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="1080" y="220" width="12" height="230" rx="6" fill="#5f7f56"/>
+  <text x="1112" y="264" font-size="26" font-weight="900" fill="#2d241b">80%でいい</text>
+  <text x="1112" y="308" font-size="22" font-weight="650" fill="#6f6254">最後だけ手動でもOK</text>
+<text x="1112" y="342" font-size="22" font-weight="650" fill="#6f6254">半自動化にも価値がある</text>
+      
+  <rect x="245" y="615" width="1110" height="56" rx="28" fill="#a94438"/>
+  <text x="800" y="652" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">完璧より、続けられることを優先する</text>
+    
+</svg>

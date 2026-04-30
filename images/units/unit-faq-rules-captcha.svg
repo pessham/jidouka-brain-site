@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">FAQ：規約とCAPTCHA</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">安全な線引きを先に決める</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="95" y="225" width="430" height="300" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="95" y="225" width="12" height="300" rx="6" fill="#a94438"/>
+  <text x="127" y="269" font-size="26" font-weight="900" fill="#2d241b">規約確認</text>
+  <text x="127" y="313" font-size="22" font-weight="650" fill="#6f6254">自動アクセス</text>
+<text x="127" y="347" font-size="22" font-weight="650" fill="#6f6254">bot禁止</text>
+<text x="127" y="381" font-size="22" font-weight="650" fill="#6f6254">大量送信禁止</text>
+<text x="127" y="415" font-size="22" font-weight="650" fill="#6f6254">API推奨</text>
+      
+  <rect x="585" y="225" width="430" height="300" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="585" y="225" width="12" height="300" rx="6" fill="#4d7188"/>
+  <text x="617" y="269" font-size="26" font-weight="900" fill="#2d241b">CAPTCHA</text>
+  <text x="617" y="313" font-size="22" font-weight="650" fill="#6f6254">自動突破しない</text>
+<text x="617" y="347" font-size="22" font-weight="650" fill="#6f6254">ログインは人間</text>
+<text x="617" y="381" font-size="22" font-weight="650" fill="#6f6254">突破ツールは使わない</text>
+      
+  <rect x="1075" y="225" width="430" height="300" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="1075" y="225" width="12" height="300" rx="6" fill="#5f7f56"/>
+  <text x="1107" y="269" font-size="26" font-weight="900" fill="#2d241b">現実的な分担</text>
+  <text x="1107" y="313" font-size="22" font-weight="650" fill="#6f6254">自分の少量作業</text>
+<text x="1107" y="347" font-size="22" font-weight="650" fill="#6f6254">公式API優先</text>
+<text x="1107" y="381" font-size="22" font-weight="650" fill="#6f6254">判断は人間確認</text>
+      
+  <rect x="250" y="650" width="1100" height="56" rx="28" fill="#c39a54"/>
+  <text x="800" y="687" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">ログインと認証は人間、ログイン後の定型作業は自動化</text>
+    
+</svg>

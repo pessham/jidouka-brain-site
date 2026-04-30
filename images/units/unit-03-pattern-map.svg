@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">第3章：パターン辞典</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">詰まりを種類で見分け、コピペで相談する</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="95" y="220" width="320" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="95" y="220" width="12" height="230" rx="6" fill="#a94438"/>
+  <text x="127" y="264" font-size="26" font-weight="900" fill="#2d241b">A 操作</text>
+  <text x="127" y="308" font-size="22" font-weight="650" fill="#6f6254">押せない</text>
+<text x="127" y="342" font-size="22" font-weight="650" fill="#6f6254">入力が反映されない</text>
+<text x="127" y="376" font-size="22" font-weight="650" fill="#6f6254">要素が見つからない</text>
+      
+  <rect x="455" y="220" width="320" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="455" y="220" width="12" height="230" rx="6" fill="#c39a54"/>
+  <text x="487" y="264" font-size="26" font-weight="900" fill="#2d241b">B 遷移</text>
+  <text x="487" y="308" font-size="22" font-weight="650" fill="#6f6254">ページ切替待ち</text>
+<text x="487" y="342" font-size="22" font-weight="650" fill="#6f6254">確認ダイアログ</text>
+<text x="487" y="376" font-size="22" font-weight="650" fill="#6f6254">ポップアップ</text>
+      
+  <rect x="815" y="220" width="320" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="815" y="220" width="12" height="230" rx="6" fill="#4d7188"/>
+  <text x="847" y="264" font-size="26" font-weight="900" fill="#2d241b">C 構造</text>
+  <text x="847" y="308" font-size="22" font-weight="650" fill="#6f6254">iframe</text>
+<text x="847" y="342" font-size="22" font-weight="650" fill="#6f6254">Shadow DOM</text>
+<text x="847" y="376" font-size="22" font-weight="650" fill="#6f6254">座標クリック</text>
+      
+  <rect x="1175" y="220" width="320" height="230" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="1175" y="220" width="12" height="230" rx="6" fill="#5f7f56"/>
+  <text x="1207" y="264" font-size="26" font-weight="900" fill="#2d241b">D 回復</text>
+  <text x="1207" y="308" font-size="22" font-weight="650" fill="#6f6254">ログイン保持</text>
+<text x="1207" y="342" font-size="22" font-weight="650" fill="#6f6254">ファイルアップロード</text>
+<text x="1207" y="376" font-size="22" font-weight="650" fill="#6f6254">途中再開</text>
+      
+  <rect x="230" y="610" width="1140" height="56" rx="28" fill="#5f7f56"/>
+  <text x="800" y="647" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">症状を分類できると、AIへの質問が一気に具体化する</text>
+    
+</svg>

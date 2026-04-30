@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">第2章：.envの安全ルール</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">秘密情報は便利だが、扱いを間違えると漏れる</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="100" y="235" width="390" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="100" y="235" width="12" height="280" rx="6" fill="#5f7f56"/>
+  <text x="132" y="279" font-size="26" font-weight="900" fill="#2d241b">.envに入れる</text>
+  <text x="132" y="323" font-size="22" font-weight="650" fill="#6f6254">メールアドレス</text>
+<text x="132" y="357" font-size="22" font-weight="650" fill="#6f6254">パスワード</text>
+<text x="132" y="391" font-size="22" font-weight="650" fill="#6f6254">APIキー</text>
+      
+  <rect x="605" y="235" width="390" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="605" y="235" width="12" height="280" rx="6" fill="#a94438"/>
+  <text x="637" y="279" font-size="26" font-weight="900" fill="#2d241b">やらない</text>
+  <text x="637" y="323" font-size="22" font-weight="650" fill="#6f6254">GitHubに上げない</text>
+<text x="637" y="357" font-size="22" font-weight="650" fill="#6f6254">チャットに貼らない</text>
+<text x="637" y="391" font-size="22" font-weight="650" fill="#6f6254">スクショに写さない</text>
+      
+  <rect x="1110" y="235" width="390" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="1110" y="235" width="12" height="280" rx="6" fill="#4d7188"/>
+  <text x="1142" y="279" font-size="26" font-weight="900" fill="#2d241b">守る方法</text>
+  <text x="1142" y="323" font-size="22" font-weight="650" fill="#6f6254">.gitignore に .env</text>
+<text x="1142" y="357" font-size="22" font-weight="650" fill="#6f6254">漏れたら変更</text>
+<text x="1142" y="391" font-size="22" font-weight="650" fill="#6f6254">APIキーは無効化</text>
+      
+  <rect x="250" y="640" width="1100" height="56" rx="28" fill="#c39a54"/>
+  <text x="800" y="677" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">秘密情報は、AIに見せずにコードだけ作ってもらう</text>
+    
+</svg>

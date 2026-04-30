@@ -121,6 +121,21 @@ h1 {
   color: white;
 }
 
+.step-primary {
+  border-color: #102033;
+  background: #102033;
+  color: #fff;
+}
+
+.step-primary span {
+  background: #fff;
+  color: #102033;
+}
+
+.step-primary small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .content {
   max-width: 1060px;
   margin-left: 328px;
@@ -558,6 +573,136 @@ figcaption {
   font-size: 14px;
 }
 
+.reading-entry {
+  border-color: #102033;
+}
+
+.text-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #102033;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.textbook-sidebar {
+  width: 360px;
+}
+
+.textbook-content {
+  max-width: 1120px;
+  margin-left: 360px;
+}
+
+.textbook-toc {
+  display: grid;
+  gap: 6px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.textbook-toc a {
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.textbook-toc a:hover {
+  background: #edf4ff;
+  color: #1d4ed8;
+}
+
+.textbook-toc .toc-level-1 {
+  margin-top: 8px;
+  font-weight: 800;
+}
+
+.textbook-toc .toc-level-2 {
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.textbook-article {
+  max-width: 850px;
+}
+
+.textbook-article h1,
+.textbook-article h2,
+.textbook-article h3,
+.textbook-article h4 {
+  scroll-margin-top: 24px;
+  letter-spacing: 0;
+}
+
+.textbook-article h1 {
+  margin: 10px 0 26px;
+  font-size: 34px;
+  line-height: 1.35;
+}
+
+.textbook-article h2 {
+  margin: 54px 0 18px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 27px;
+  line-height: 1.45;
+}
+
+.textbook-article h3 {
+  margin: 38px 0 14px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.textbook-article h4 {
+  margin: 28px 0 10px;
+  font-size: 18px;
+}
+
+.textbook-article p,
+.textbook-article li {
+  color: #273449;
+  font-size: 16px;
+}
+
+.textbook-article ul,
+.textbook-article ol {
+  padding-left: 1.4em;
+}
+
+.textbook-article figure {
+  margin: 28px 0;
+}
+
+.textbook-article img {
+  max-height: 720px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.textbook-article pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-box {
+  padding: 14px 16px;
+  border: 1px solid #f3d18b;
+  border-radius: 8px;
+  background: #fff8e6;
+  color: #6f4b00;
+  font-weight: 700;
+}
+
 @media (max-width: 900px) {
   .sidebar {
     position: static;
@@ -568,6 +713,19 @@ figcaption {
   .content {
     margin-left: 0;
     padding: 28px 18px 64px;
+  }
+
+  .textbook-content {
+    margin-left: 0;
+  }
+
+  .textbook-article {
+    max-width: none;
+  }
+
+  .textbook-toc {
+    max-height: 320px;
+    overflow-y: auto;
   }
 
   .audio-card {

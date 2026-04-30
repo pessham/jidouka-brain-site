@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">第2章：止まった時の渡し方</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">「動きません」ではなく、材料をそろえる</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="110" y="230" width="330" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="110" y="230" width="12" height="280" rx="6" fill="#a94438"/>
+  <text x="142" y="274" font-size="26" font-weight="900" fill="#2d241b">1. エラー文</text>
+  <text x="142" y="318" font-size="22" font-weight="650" fill="#6f6254">全文をそのまま</text>
+<text x="142" y="352" font-size="22" font-weight="650" fill="#6f6254">省略しない</text>
+      
+  <rect x="470" y="230" width="330" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="470" y="230" width="12" height="280" rx="6" fill="#4d7188"/>
+  <text x="502" y="274" font-size="26" font-weight="900" fill="#2d241b">2. スクショ</text>
+  <text x="502" y="318" font-size="22" font-weight="650" fill="#6f6254">止まった画面</text>
+<text x="502" y="352" font-size="22" font-weight="650" fill="#6f6254">URLやボタンも</text>
+      
+  <rect x="830" y="230" width="330" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="830" y="230" width="12" height="280" rx="6" fill="#5f7f56"/>
+  <text x="862" y="274" font-size="26" font-weight="900" fill="#2d241b">3. 期待結果</text>
+  <text x="862" y="318" font-size="22" font-weight="650" fill="#6f6254">本当は何が</text>
+<text x="862" y="352" font-size="22" font-weight="650" fill="#6f6254">起きてほしいか</text>
+      
+  <rect x="1190" y="230" width="300" height="280" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="1190" y="230" width="12" height="280" rx="6" fill="#c39a54"/>
+  <text x="1222" y="274" font-size="26" font-weight="900" fill="#2d241b">4. 環境</text>
+  <text x="1222" y="318" font-size="22" font-weight="650" fill="#6f6254">OS</text>
+<text x="1222" y="352" font-size="22" font-weight="650" fill="#6f6254">ツール</text>
+<text x="1222" y="386" font-size="22" font-weight="650" fill="#6f6254">どこまで成功</text>
+      
+  <rect x="260" y="630" width="1080" height="56" rx="28" fill="#5f7f56"/>
+  <text x="800" y="667" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">詰まりは失敗ではなく、AIに渡す次の材料</text>
+    
+</svg>

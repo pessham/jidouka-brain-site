@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#6b5840" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#d8c49f" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#fbf3e5"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.42"/>
+  <text x="92" y="92" font-size="48" font-weight="950" fill="#2d241b">第4章：詰まったときの抜け方</text>
+  <text x="96" y="136" font-size="24" font-weight="700" fill="#6f6254">質問精度を上げ、別角度で切り分ける</text>
+  <line x1="92" y1="164" x2="1508" y2="164" stroke="#d9c6a8" stroke-width="4"/>
+  
+      
+  <rect x="160" y="210" width="480" height="170" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="160" y="210" width="12" height="170" rx="6" fill="#4d7188"/>
+  <text x="192" y="254" font-size="26" font-weight="900" fill="#2d241b">第1階層</text>
+  <text x="192" y="298" font-size="22" font-weight="650" fill="#6f6254">症状テンプレートで報告</text>
+<text x="192" y="332" font-size="22" font-weight="650" fill="#6f6254">エラー文・スクショ・期待結果</text>
+      
+  <line x1="400" y1="405" x2="400" y2="475" stroke="#c39a54" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="400,475 382,464 382,486" fill="#c39a54"/>
+      
+  <rect x="160" y="500" width="480" height="170" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="160" y="500" width="12" height="170" rx="6" fill="#c39a54"/>
+  <text x="192" y="544" font-size="26" font-weight="900" fill="#2d241b">第2階層</text>
+  <text x="192" y="588" font-size="22" font-weight="650" fill="#6f6254">質問の精度を上げる</text>
+<text x="192" y="622" font-size="22" font-weight="650" fill="#6f6254">前提を整理し直す</text>
+      
+  <rect x="890" y="210" width="480" height="170" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="890" y="210" width="12" height="170" rx="6" fill="#5f7f56"/>
+  <text x="922" y="254" font-size="26" font-weight="900" fill="#2d241b">リセット技</text>
+  <text x="922" y="298" font-size="22" font-weight="650" fill="#6f6254">別アプローチ</text>
+<text x="922" y="332" font-size="22" font-weight="650" fill="#6f6254">一部を飛ばす</text>
+<text x="922" y="366" font-size="22" font-weight="650" fill="#6f6254">最小単位で試す</text>
+      
+  <line x1="1130" y1="405" x2="1130" y2="475" stroke="#c39a54" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="1130,475 1112,464 1112,486" fill="#c39a54"/>
+      
+  <rect x="890" y="500" width="480" height="170" rx="18" fill="#fffaf0" stroke="#d9c6a8" stroke-width="3"/>
+  <rect x="890" y="500" width="12" height="170" rx="6" fill="#a94438"/>
+  <text x="922" y="544" font-size="26" font-weight="900" fill="#2d241b">別AI・離れる</text>
+  <text x="922" y="588" font-size="22" font-weight="650" fill="#6f6254">引き継ぎ書を作る</text>
+<text x="922" y="622" font-size="22" font-weight="650" fill="#6f6254">30分離れて見直す</text>
+    
+</svg>
