@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ブラウザ操作自動化の教科書</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">自</span>
+        <div>
+          <p class="eyebrow">Brain購入者専用</p>
+          <h1>ブラウザ操作自動化の教科書</h1>
+        </div>
+      </div>
+
+      <nav class="steps" aria-label="学習ステップ">
+        <a class="step active" href="#intro">
+          <span>序</span>
+          <strong>はじめに</strong>
+          <small>コードが書けなくても始める</small>
+        </a>
+        <a class="step" href="#setup">
+          <span>0</span>
+          <strong>準備編</strong>
+          <small>Codex / Claude / Playwright</small>
+        </a>
+        <a class="step" href="#tools">
+          <span>1</span>
+          <strong>道具の使い分け</strong>
+          <small>MCP・コード・Computer Use</small>
+        </a>
+        <a class="step" href="#phase">
+          <span>2</span>
+          <strong>4フェーズの型</strong>
+          <small>録画・作成・修正・回復設計</small>
+        </a>
+        <a class="step" href="#dictionary">
+          <span>3</span>
+          <strong>パターン辞典</strong>
+          <small>詰まったときのコピペ集</small>
+        </a>
+        <a class="step" href="#trouble">
+          <span>4</span>
+          <strong>詰まったとき</strong>
+          <small>第4章に戻ればいい</small>
+        </a>
+        <a class="step" href="#cases">
+          <span>5</span>
+          <strong>実例編</strong>
+          <small>おてつたび・音声配信</small>
+        </a>
+        <a class="step" href="#faq">
+          <span>?</span>
+          <strong>FAQ</strong>
+          <small>よくある質問</small>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="hero hero-thumb" id="intro">
+        <div class="progress">
+          <div>
+            <span>学習進捗</span>
+            <strong>1 / 6</strong>
+          </div>
+          <div class="bar"><span style="width: 16%"></span></div>
+        </div>
+
+        <div class="thumb-stage">
+          <div class="character character-hayate" aria-hidden="true"></div>
+          <div class="character character-anne" aria-hidden="true"></div>
+
+          <div class="thumb-copy">
+            <p class="thumb-kicker">メール・フォーム入力・管理画面・SNS投稿も楽しく</p>
+            <h2>ブラウザ操作<br />自動化の教科書</h2>
+            <div class="usage-tags" aria-label="自動化できる作業例">
+              <span>問い合わせ転記</span>
+              <span>請求書保存</span>
+              <span>予約投稿</span>
+              <span>管理画面入力</span>
+            </div>
+            <p class="thumb-bottom"><strong>毎日30分</strong>を、<strong>ボタン1つ</strong>へ</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="audio-card" aria-label="音声プレイヤー">
+        <div>
+          <p class="eyebrow">耳で聞きたい人はこちら</p>
+          <h3>餡音とハヤテの解説音声</h3>
+        </div>
+        <button type="button" aria-label="再生">▶</button>
+        <div class="audio-line"><span></span></div>
+        <strong>0:00</strong>
+      </section>
+
+      <section class="article-section character-intro">
+        <p class="eyebrow">登場人物</p>
+        <h3>餡音とハヤテ師匠が、一緒に自動化を学びます</h3>
+        <div class="character-grid">
+          <div>
+            <h4>餡音（あんね）</h4>
+            <p>
+              忍びの里から現代にタイムスリップしてきて、今はOLとして働いています。
+              メール、管理画面、フォーム入力、ファイル保存。現代の仕事にも慣れてきたけど、
+              日々の細かい作業にはまだまだ振り回されています。
+            </p>
+          </div>
+          <div>
+            <h4>ハヤテ師匠とナルカミ</h4>
+            <p>
+              一緒にタイムスリップしてきたハヤテ師匠と、相棒のナルカミには、
+              今もいろいろ教えてもらっています。最近ハヤテ師匠がAIを使いこなしているらしいので、
+              餡音もブラウザ操作の自動化を教えてもらうことにしました。
+            </p>
+          </div>
+        </div>
+        <p>
+          元になっている世界観は、イケハヤさんのアニメ
+          <a href="https://youtu.be/-7GqBPlL9J8?si=QuezgpCx0HtLtki1" target="_blank" rel="noreferrer">『忍ばない！クリプトニンジャ咲耶』</a>です。
+          アニメを知らなくても読めるようにしていますが、雰囲気を見ておくと2人の関係性がイメージしやすいと思います。
+        </p>
+      </section>
+
+      <section class="article-section">
+        <p class="eyebrow">サムネイル案</p>
+        <h3>教材の世界観</h3>
+        <figure>
+          <img src="../images/thumbnail-beige-browser-automation.png" alt="ブラウザ操作自動化の教科書のベージュ版サムネイル" />
+          <figcaption>メール、フォーム入力、管理画面、SNS投稿を「毎日30分を、ボタン1つへ」に変えていく教材です。</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-section">
+        <h3>昨日もやった「あの作業」のチリツモ...</h3>
+        <p>
+          管理画面を開く。タイトルを入力する。説明文を貼る。日時を設定する。
+          投稿ボタンを押す。これ、昨日もやりましたよね？
+        </p>
+        <p>
+          問い合わせ転記、請求書保存、予約サイトの入力、SNS投稿。
+          1回だけなら大したことがない作業でも、毎日30分なら1年で約182時間です。
+        </p>
+        <figure>
+          <img src="../images/z-01-time-loss.png" alt="1日30分の作業が1年で182時間になる図解" />
+          <figcaption>小さい繰り返し作業も、年単位で見るとかなり大きい。</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-section">
+        <h3>でも、自動化なんて無理...</h3>
+        <p>
+          自動化、Python、ターミナル、黒い画面。こういう言葉が並ぶだけで、
+          「あ、自分の世界じゃないな」と思う人は多いと思います。
+          ペスハムもコードは書けません。
+        </p>
+        <p>
+          使うのはCodexかClaude Codeです。
+          Codexは、ざっくり言うとChatGPT側のClaude Codeみたいなものです。
+          ChatGPTかClaude、どちらかには月3,000円くらい課金する前提で考えてください。
+          ただし、APIキーやエージェント機能を使う場合は、月額とは別に従量課金が発生することがあります。
+          最初に料金画面と上限設定を確認してください。
+        </p>
+      </section>
+
+      <section class="article-section">
+        <h3>なぜ僕が、自動化に向かったのか</h3>
+        <p>
+          元々は東京ガスという大企業に勤めていました。
+          そこからNFTバブルの勢いで起業しましたが、バブルは弾けて、正直お先真っ暗でした。
+        </p>
+        <p>
+          今は車中泊をしながら、AI研修の講師と業務委託の飛び込み営業をしています。
+          車を運転していると、なかなかPC操作ができません。
+          だから、できるだけ作業をAIに任せて、自動化したいと思うようになりました。
+        </p>
+        <p>
+          この教材には、そのノウハウと試行錯誤の過程をできるだけ全部詰め込みます。
+        </p>
+      </section>
+
+      <section class="article-section">
+        <h3>非エンジニアの僕でもできたこと</h3>
+        <p>
+          毎朝30分かかっていた音声配信サービスA・Bのアップロード作業は、
+          iPhoneからMacにAirDropするだけで、かなりの部分が自動で進むようになりました。
+          コードは自分で書いていません。CodexかClaude Codeに書いてもらいました。
+        </p>
+      </section>
+
+      <section class="article-section" id="trouble">
+        <h3>ここで持って帰ってほしいもの</h3>
+        <p>
+          1つ目は、自分の業務を1個、自動化する手順。
+          2つ目は、次の自動化を作るための考え方。
+          3つ目は、詰まったときに戻れる地図です。
+        </p>
+        <p>
+          詰まるのは「失敗」じゃないです。AIに渡す材料が出てきただけです。
+          何をスクショすればいいか、何をAIに渡せばいいか、どこからやり直せばいいか。
+          そこまで含めて説明します。
+        </p>
+        <figure>
+          <img src="../images/z-05-back-to-chapter4.png" alt="詰まったら第4章へ戻る漫画図解" />
+          <figcaption>詳しい抜け方は第4章で扱います。</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-section" id="setup">
+        <h3>Playwrightとは</h3>
+        <p>
+          Playwrightは、Microsoftが2020年1月に公開したオープンソースのブラウザテスト自動化ツールです。
+          ページを開いた直後に急いで「次へ」を押して、「あれ？反応しない」となることがありますよね。
+          Playwrightは、ボタンや入力欄が操作可能になるまで自動で待ってくれるので、そういうタイミングのズレを減らしやすいです。
+        </p>
+        <p>
+          専門用語では、同じコードなのに成功したり失敗したりする不安定な状態をFlaky Testと言います。
+          この不安定さを減らせるので、ブラウザ操作の自動化に向いています。
+        </p>
+      </section>
+
+      <section class="article-section">
+        <p class="eyebrow">まず何ができるか</p>
+        <h3>自動化できる作業の見取り図</h3>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h4>メール・請求書</h4>
+            <p>メールの問い合わせを読んでスプレッドシートへ転記。請求書メールだけ拾ってPDFをDriveへ保存。</p>
+          </div>
+          <div class="mini-card">
+            <h4>予定・タスク</h4>
+            <p>カレンダー予定を見て前日にリマインド。商談メモから次回タスクをGoogleカレンダーへ登録。</p>
+          </div>
+          <div class="mini-card">
+            <h4>問い合わせ・営業管理</h4>
+            <p>届いた問い合わせを整理し、対応状況や商談メモを自社の管理シートへ記録。外部フォームへの営業自動送信は推奨しません。</p>
+          </div>
+          <div class="mini-card">
+            <h4>コンテンツ制作</h4>
+            <p>note下書き、X投稿案、YouTube概要欄、音声配信の原稿化などを半自動化。</p>
+          </div>
+          <div class="mini-card">
+            <h4>EC・予約サイト</h4>
+            <p>商品名、価格、在庫数、説明文、配送条件、公開ステータスを管理画面へ入力。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section" id="tools">
+        <p class="eyebrow">第1章</p>
+        <h3>3つの道具を使い分ける</h3>
+        <div class="card-grid three">
+          <div class="mini-card">
+            <h4>Playwright MCP</h4>
+            <p>AIに実際のブラウザを見せながら、画面確認や簡単な操作を手伝ってもらうための道具です。</p>
+          </div>
+          <div class="mini-card">
+            <h4>Playwrightコード</h4>
+            <p>毎日繰り返す作業を、ボタン1つで動くロボットにする本命です。.command化すればダブルクリックで動かせます。</p>
+          </div>
+          <div class="mini-card">
+            <h4>Computer Use</h4>
+            <p>人間のPC操作に近い形で動かす方法です。便利ですが、まずはMCPとコードから考えるのがおすすめです。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section" id="phase">
+        <p class="eyebrow">第2章</p>
+        <h3>4フェーズの型</h3>
+        <ol class="phase-list">
+          <li>
+            <strong>Phase 1　業務を録画する</strong>
+            <p>MacはShift + Command + 5、WindowsはWindowsキー + G。まず自分の作業をそのまま録ります。</p>
+          </li>
+          <li>
+            <strong>Phase 2　最小版を作る</strong>
+            <p>いきなり全部ではなく、ログインして投稿画面まで行く、タイトルだけ入れる、のように小さく作ります。</p>
+          </li>
+          <li>
+            <strong>Phase 3　動かして直す</strong>
+            <p>止まったら、エラー文、スクショ、URL、本来どうなってほしかったかをAIに渡します。</p>
+          </li>
+          <li>
+            <strong>Phase 4　戻れる設計にする</strong>
+            <p>ブラウザを閉じない、ログを残す、途中から再開できる。ここまで入ると毎日使える道具に近づきます。</p>
+          </li>
+          <li>
+            <strong>Phase 5　応用編</strong>
+            <p>固定、条件分岐、AI判断の3段階で融通を持たせます。最初の1個目では無理にやらなくて大丈夫です。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="article-section" id="dictionary">
+        <p class="eyebrow">第3章</p>
+        <h3>パターン辞典は、詰まったときに引く場所</h3>
+        <p>
+          第3章には、第2章で使ったプロンプトも改めてまとめています。
+          録画後の依頼、最小版コード作成、.env、止まった状態の報告、途中再開、ログ保存。
+          参照しに行ったときは、第3章だけ見ればだいたい拾えるようにします。
+        </p>
+        <div class="pattern-map">
+          <span>A-1 ボタンを押しても何も起きない</span>
+          <span>A-2 フォームに入力しても反映されない</span>
+          <span>A-3 要素が見つからない</span>
+          <span>B-1 ページ遷移を待てない</span>
+          <span>C-1 iframeで操作できない</span>
+          <span>D-3 途中から再開したい</span>
+        </div>
+        <div class="prompt-box">
+          <p class="eyebrow">dispatch問題</p>
+          <p>
+            フォームに文字が入っているように見えるのに、保存すると未入力扱いになることがあります。
+            これは「入力欄が変わったよ」という合図がサイト側に伝わっていない状態です。
+          </p>
+          <pre><code>フォームに入力したテキストが、保存時に反映されません。
+ReactのControlled Componentによる問題だと思います。
+dispatchEventを使った方式で入力するように修正してください。</code></pre>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <p class="eyebrow">第4章</p>
+        <h3>詰まったら、別のAIに聞いていい</h3>
+        <p>
+          Codexで詰まったらClaude Codeへ。Claude Codeで詰まったらCodexへ。
+          それでもよければ、ブラウザ版のChatGPTやClaude、Geminiに聞いても大丈夫です。
+          課金していなくても、原因の別視点をもらうだけなら十分役に立つことがあります。
+        </p>
+        <div class="prompt-box">
+          <p class="eyebrow">引き継ぎ書テンプレート</p>
+          <pre><code>これまでの作業を別のAIに引き継いで相談したいので、
+今までの経緯を整理した「引き継ぎ用の質問文」を作ってください。
+
+含めてほしい情報：
+1. 目的
+2. 環境
+3. ファイル構成
+4. どこまで動いているか
+5. 今詰まっているエラー
+6. 別のAIに聞きたい質問</code></pre>
+        </div>
+        <figure>
+          <img src="../images/z-04-patience-process.png" alt="詰まったときの回復手順の図解" />
+          <figcaption>詰まりは失敗ではなく、次にAIへ渡す材料です。</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-section" id="cases">
+        <p class="eyebrow">第5章</p>
+        <h3>実例：おてつたびと音声配信自動化</h3>
+        <div class="case-grid">
+          <div class="mini-card">
+            <h4>おてつたび管理画面</h4>
+            <p>
+              宿の募集ページ作成を自動化。フォーム入力、ドロップダウン、保存後の確認、途中再開まで作りました。
+              dispatch問題やSPAの遷移待ちもここで出てきます。
+            </p>
+          </div>
+          <div class="mini-card">
+            <h4>音声配信毎日アップロード</h4>
+            <p>
+              iPhoneからAirDropで音声を送ると、音声配信サービスA・Bのアップロード作業が進む形へ。
+              自動起動ではlaunchdで詰まり、fswatchで抜けました。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section" id="faq">
+        <p class="eyebrow">FAQ</p>
+        <h3>よくある質問</h3>
+        <details open>
+          <summary>CodexとClaude Code、どちらがいいですか?</summary>
+          <p>
+            基本的にはどちらでも始められます。ただし教材執筆時点、2026年5月時点では、
+            個人的にはCodexが一歩リードしていると感じています。今から始める非エンジニアの人には、まずCodexがおすすめです。
+          </p>
+        </details>
+        <details>
+          <summary>月3,000円の課金は必要ですか?</summary>
+          <p>
+            本気で自動化ツールを作るなら、有料プラン前提のほうが進めやすいです。
+            ただし、APIキー、外部サービス連携、エージェント機能を使う場合は月額とは別に従量課金が発生することがあります。
+            料金画面、利用上限、予算上限を確認し、小さな作業から試してください。
+          </p>
+        </details>
+        <details>
+          <summary>利用規約違反になりませんか?</summary>
+          <p>
+            サービスごとに規約が違います。自分のアカウント内の作業でも、
+            自動アクセス、bot、データ取得、大量送信、投稿やDM送信の自動化が禁止されていればNGになり得ます。
+            他社のお問い合わせフォームへ営業文面を自動送信する使い方は推奨しません。
+            まずは自分の少量の定型作業から始め、公式APIや公式連携がある場合はそちらを優先してください。
+          </p>
+        </details>
+        <details>
+          <summary>CAPTCHAが出るサイトも自動化できますか?</summary>
+          <p>
+            CAPTCHAは「私はロボットではありません」や画像選択の認証です。
+            自動突破しようとせず、ログインとCAPTCHAは人間が手動で対応してください。
+            その後のアップロード、入力、保存など、CAPTCHAが出ない範囲の定型作業を自動化する分担が現実的です。
+          </p>
+        </details>
+        <details>
+          <summary>Windowsでもできますか?</summary>
+          <p>
+            Windowsでも可能なケースはありますが、この教材はMacでの実例が中心です。
+            環境構築、録画方法、ターミナル操作、ファイルパス、ブラウザ起動方法が変わります。
+            Windowsユーザーは、まずCodexかClaude Codeに「Windows向けに手順を書き換えて」と頼んでください。
+          </p>
+        </details>
+        <details>
+          <summary>パスワードやAPIキーはどう扱いますか?</summary>
+          <p>
+            秘密情報は.envに入れ、Codex、Claude Code、ChatGPTのチャット欄には貼りません。
+            GitHubに上げないよう.gitignoreに.envを入れてください。
+            誤って公開した場合は、そのパスワードやAPIキーを変更してください。
+          </p>
+        </details>
+        <details>
+          <summary>サイトのデザインが変わったら壊れますか?</summary>
+          <p>
+            壊れることがあります。軽い修正なら短時間で済む場合もありますが、
+            初心者の場合は数時間から数日かかることもあります。
+            エラー文、スクショ、どこで止まったかをCodexかClaude Codeに渡すと、直すための材料になります。
+          </p>
+        </details>
+        <details>
+          <summary>どうしても詰まった場合は相談できますか?</summary>
+          <p>
+            購入者向け公式LINEで相談できます。
+            公式LINE: https://lin.ee/wzvCa0v
+            購入者が増えた場合はDiscordでのアフターサポートも検討しています。
+            ただし個別環境すべてを完全に代行・保証するものではありません。
+            エラー文、スクショ、OS、どこまでできたかを添えて相談してください。
+          </p>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>
