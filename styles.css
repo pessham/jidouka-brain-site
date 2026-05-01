@@ -753,6 +753,149 @@ figcaption {
   background: #fff;
 }
 
+.character-infographic {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr 128px;
+  gap: 22px;
+  align-items: end;
+  margin: 42px 0 48px;
+  padding: 26px 28px;
+  overflow: hidden;
+  border: 1px solid #d7e1ef;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.92)),
+    linear-gradient(90deg, rgba(95, 127, 86, 0.12), rgba(63, 125, 244, 0.10));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.character-infographic::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.character-infographic > * {
+  position: relative;
+  z-index: 1;
+}
+
+.character-infographic .character {
+  align-self: stretch;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  min-height: 240px;
+}
+
+.character-infographic .character img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.character-infographic .character.hayate img {
+  max-height: 260px;
+}
+
+.character-infographic .info-main {
+  display: grid;
+  gap: 18px;
+}
+
+.character-infographic .info-label {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #e8f0ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 720;
+  letter-spacing: 0;
+}
+
+.character-infographic h4 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #102033;
+  font-size: 25px;
+  font-weight: 740;
+  line-height: 1.4;
+}
+
+.character-infographic .info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.character-infographic .info-card {
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid #dbe4f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.character-infographic .info-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #102033;
+  font-size: 18px;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+.character-infographic .info-card span {
+  display: block;
+  color: #536173;
+  font-size: 15px;
+  font-weight: 520;
+  line-height: 1.65;
+}
+
+.character-infographic .dialogue {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.character-infographic .talk {
+  margin: 0;
+  padding: 13px 15px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #243044;
+  font-size: 15px;
+  font-weight: 560;
+  line-height: 1.7;
+}
+
+.character-infographic .talk b {
+  display: block;
+  margin-bottom: 3px;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.character-infographic .talk.anne {
+  border-left: 5px solid #5f7f56;
+}
+
+.character-infographic .talk.hayate {
+  border-left: 5px solid #31566d;
+}
+
 .textbook-article pre {
   margin: 28px 0;
   padding: 22px 24px;
@@ -823,6 +966,26 @@ figcaption {
   .textbook-article li {
     font-size: 17px;
     line-height: 1.95;
+  }
+
+  .character-infographic {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 32px 0 38px;
+    padding: 20px 18px;
+  }
+
+  .character-infographic .character {
+    display: none;
+  }
+
+  .character-infographic .info-grid,
+  .character-infographic .dialogue {
+    grid-template-columns: 1fr;
+  }
+
+  .character-infographic h4 {
+    font-size: 22px;
   }
 
   .textbook-toc {
