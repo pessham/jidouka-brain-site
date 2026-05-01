@@ -281,8 +281,11 @@
   </video>
   <figcaption style="text-align:center;font-size:0.85em;color:#888;margin-top:6px;">▲ AirDropするだけでポッドキャストが自動アップロードされるデモ（約40秒）</figcaption>
 </figure>
-<p>たとえばペスハムの場合、<br>毎朝30分くらいかかっていた音声配信サービスA・Bのアップロード作業がありました。</p>
+<p>たとえばペスハムの場合、<br>毎朝30分くらいかかっていたVoicyとStand.fmのアップロード作業がありました。</p>
 <p>これが今は、<br>iPhoneからMacに音声ファイルをAirDropするだけで、<br>かなりの部分が自動で進むようになっています。</p>
+<figure class="manga-figure">
+  <img src="./images/pessham.png" alt="ペスハムのプロフィール写真" class="manga-img" style="max-width:280px;" />
+</figure>
 <p>コードは自分で書いていません。</p>
 <p>普段の作業を録画して、<br>CodexかClaude Codeに見せて、<br>「この作業を自動化したい」と伝えたことです。</p>
 <p>でも、詰まるのは「失敗」じゃないです。<br>AIに渡す材料が出てきただけです。</p>
@@ -290,6 +293,9 @@
 <hr>
 <h2 id="ここで持って帰ってほしいもの">ここで持って帰ってほしいもの</h2>
 <p>ここで持って帰ってほしいものは、3つです。</p>
+<figure class="manga-figure">
+  <img src="./images/3point.png" alt="持って帰ってほしい3つのポイント" class="manga-img" />
+</figure>
 <p><strong>1つ目：自分の業務を1個、自動化する手順</strong></p>
 <p>あなた自身の「あの作業」を、ボタン1つに近づけるところまで持っていきます。</p>
 <p><strong>2つ目：次の自動化を作るための考え方</strong></p>
@@ -328,9 +334,6 @@
 <p>途中でわからなくなったら、<br>画面をスクショして、CodexかClaude Codeに聞いてください。</p>
 <p>ここで全部理解しようとしなくて大丈夫です。</p>
 <p>まずは、<br>「必要なものを入れる」<br>ところまで行ければOKです。</p>
-<figure class="manga-figure">
-  <img src="./images/units/unit-00-cost-safety.png" alt="APIコストの安全な使い方" class="manga-img" />
-</figure>
 <hr>
 <h2 id="必要な道具は2つだけ">必要な道具は2つだけ</h2>
 <figure class="manga-figure">
@@ -369,15 +372,15 @@
 <p>なお、この教材の後半では、<br>説明の都合上「Claudeに聞く」「Claudeに渡す」と書いている箇所が多く出てきます。</p>
 <p>これは、すべて「Claude Codeに聞く」「Codexに聞く」と読み替えてOKです。</p>
 <p>大事なのはツール名ではなく、<br><strong>AIに状況を渡して、コードを書いてもらい、エラーを一緒に直していくこと</strong><br>です。</p>
-<figure><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Claude_AI_logo.png" alt="Claude公式ロゴ" loading="lazy" /><figcaption>Claude公式ロゴ</figcaption></figure>
+<figure style="text-align:left;"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Claude_AI_logo.png" alt="Claude公式ロゴ" loading="lazy" style="width:60px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Claude</figcaption></figure>
 <p>2つ目は、Python + Playwrightです。</p>
 <p>いきなり知らない言葉が出てきましたが、ここでは名前だけ覚えれば大丈夫です。</p>
 <p>Pythonは、自動化コードを動かすための土台。<br>Playwrightは、ブラウザを実際に操作するための自動化ツールです。</p>
 <p>CodexかClaude Codeが考えて、<br>Pythonで書かれたコードを動かし、<br>Playwrightがブラウザを操作する。</p>
 <p>ざっくり言うと、こういう役割分担だと思ってください。</p>
 <p>PythonもPlaywrightも無料で使えます。</p>
-<figure><img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python公式ロゴ" loading="lazy" /><figcaption>Python公式ロゴ</figcaption></figure>
-<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Playwright_Logo.svg/960px-Playwright_Logo.svg.png" alt="Playwrightロゴ" loading="lazy" /><figcaption>Playwrightロゴ</figcaption></figure>
+<figure style="text-align:left;"><img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python公式ロゴ" loading="lazy" style="width:80px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Python</figcaption></figure>
+<figure style="text-align:left;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Playwright_Logo.svg/960px-Playwright_Logo.svg.png" alt="Playwrightロゴ" loading="lazy" style="width:80px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Playwright</figcaption></figure>
 <p>ここで少しだけ、Playwright自体の説明もしておきます。</p>
 <p>Playwright（プレイライト）は、<br>Microsoftが2020年1月に公開した、<br>オープンソースのブラウザテスト自動化ツールです。</p>
 <p>もともとは、<br>WebサイトやWebアプリがちゃんと動くかを自動で確認するための道具です。</p>
@@ -778,9 +781,9 @@ Homebrewは [入っている / 入っていない]
 <h3 id="コツ1いきなり作ってと言わない">コツ1：いきなり「作って」と言わない</h3>
 <p>最初にやりがちなミスです。</p>
 <p>＜悪い例＞</p>
-<p>「音声配信サービスBの自動アップロードツールを作って」</p>
+<p>「Stand.fmの自動アップロードツールを作って」</p>
 <p>＜良い例＞</p>
-<pre><code>音声配信サービスBの自動アップロードツールを作りたいです。
+<pre><code>Stand.fmの自動アップロードツールを作りたいです。
 まず設計だけ教えてください。
 コードはまだ書かなくていいです。</code></pre>
 <p>「作って」と一言で言うと、AIはいきなりコードを書き始めます。</p>
@@ -969,12 +972,12 @@ Homebrewは [入っている / 入っていない]
 <hr>
 <h2 id="mcpは最初の試運転に向いています">MCPは、最初の試運転に向いています</h2>
 <p>MCPが特に便利なのは、<br>「この作業、自動化できそうかな？」<br>と試す段階です。</p>
-<p>たとえば、あなたが毎日音声配信サービスBに音声をアップロードしているとします。</p>
+<p>たとえば、あなたが毎日Stand.fmに音声をアップロードしているとします。</p>
 <p>いきなり完成版のロボットを作ろうとすると、<br>ちょっと重いですよね。</p>
 <p>ログインはどうするのか。<br>ファイル選択はできるのか。<br>タイトル欄は入力できるのか。<br>予約日時は選べるのか。<br>サムネイルは設定できるのか。</p>
 <p>考えることが多いです。</p>
 <p>でもMCPなら、まずClaudeにこう頼めます。</p>
-<pre><code>音声配信サービスBの投稿画面を開いて、
+<pre><code>Stand.fmの投稿画面を開いて、
 新規投稿の画面まで進めるか確認してください。
 実際に投稿はしないでください。</code></pre>
 <p>または、こうです。</p>
@@ -1033,7 +1036,7 @@ Homebrewは [入っている / 入っていない]
 <p>MCPは、AIにその場で操作してもらう道具でした。</p>
 <p>Playwrightコードは、<br>その操作をロボット化する道具です。</p>
 <p>たとえば、毎朝こういう作業をしているとします。</p>
-<p>音声ファイルを選ぶ。<br>音声配信サービスAにアップロードする。<br>タイトルを入れる。<br>説明文を入れる。<br>予約日時を設定する。<br>音声配信サービスBにも同じようにアップロードする。</p>
+<p>音声ファイルを選ぶ。<br>Voicyにアップロードする。<br>タイトルを入れる。<br>説明文を入れる。<br>予約日時を設定する。<br>Stand.fmにも同じようにアップロードする。</p>
 <p>これを毎朝CodexやClaude Codeに頼むのは、まだ少し面倒だと思います。</p>
 <p>でも、コードになっていれば、<br>基本的には実行するだけです。</p>
 <pre><code>python3 upload.py</code></pre>
@@ -1449,10 +1452,10 @@ Phase 4　壊れても途中から再開できるようにする</code></pre>
 8. 最初に作るべき最小版</code></pre>
 <p>この「最小版」が大事です。</p>
 <p>最初から全部入りを作ろうとすると、かなり大変です。</p>
-<p>音声配信サービスA・Bも全部。<br>サムネイルもカテゴリも予約日時も全部。<br>エラー回復もログ保存も全部。</p>
+<p>VoicyとStand.fmも全部。<br>サムネイルもカテゴリも予約日時も全部。<br>エラー回復もログ保存も全部。</p>
 <p>気持ちはわかります。</p>
 <p>でも、最初は小さくていいです。</p>
-<p>まず音声配信サービスAの投稿画面まで開ける。<br>次に音声ファイルを選べる。<br>次にタイトルだけ入れられる。<br>次に予約日時を入れられる。<br>次に投稿直前まで進める。</p>
+<p>まずVoicyの投稿画面まで開ける。<br>次に音声ファイルを選べる。<br>次にタイトルだけ入れられる。<br>次に予約日時を入れられる。<br>次に投稿直前まで進める。</p>
 <p>このように分けたほうが、<br>結果的に早いです。</p>
 <hr>
 <h2 id="phase-1の完了ライン">Phase 1の完了ライン</h2>
@@ -2056,12 +2059,12 @@ error_publish_button.png</code></pre>
 </figure>
 <hr>
 <h2 id="最初から完璧にしなくていいでも戻れるようにはする">最初から完璧にしなくていい。でも、戻れるようにはする</h2>
-<p>たとえば、音声配信サービスAへのアップロードが終わったあとに、<br>音声配信サービスBで止まったとします。</p>
+<p>たとえば、Voicyへのアップロードが終わったあとに、<br>Stand.fmで止まったとします。</p>
 <p>このとき、<br>最初から全部やり直しだとつらいです。</p>
-<p>音声配信サービスAにはもうアップロード済み。<br>予約投稿も終わっている。<br>なのに、もう一度最初から実行すると、<br>二重投稿になるかもしれません。</p>
+<p>Voicyにはもうアップロード済み。<br>予約投稿も終わっている。<br>なのに、もう一度最初から実行すると、<br>二重投稿になるかもしれません。</p>
 <p>怖いですよね。</p>
 <p>だから、<br>途中から再開できるようにします。</p>
-<p>音声配信サービスAはスキップして、音声配信サービスBから再開する。</p>
+<p>Voicyはスキップして、Stand.fmから再開する。</p>
 <p>サムネイル設定だけもう一度やる。</p>
 <p>こういう戻り方ができると、<br>自動化はかなり使いやすくなります。</p>
 <hr>
@@ -2086,8 +2089,8 @@ Enterを押したら終了する形にしてください。</code></pre>
 <pre><code>python3 upload.py --skip-service-a
 python3 upload.py --skip-service-b</code></pre>
 <p>意味はざっくりこうです。</p>
-<p>音声配信サービスAが終わっているなら、音声配信サービスAを飛ばす。</p>
-<p>音声配信サービスBが終わっているなら、音声配信サービスBを飛ばす。</p>
+<p>Voicyが終わっているなら、Voicyを飛ばす。</p>
+<p>Stand.fmが終わっているなら、Stand.fmを飛ばす。</p>
 <p>こうしておくと、<br>途中で止まっても最初からやり直さなくて済みます。</p>
 <p>Claudeには、こう頼みます。</p>
 <pre><code>途中まで完了している場合に備えて、
@@ -2220,11 +2223,11 @@ python3 upload.py --skip-service-b</code></pre>
 <p>ここまでの話を、<br>音声アップロードでまとめるとこうです。</p>
 <p>Phase 1。</p>
 <p>毎朝やっているアップロード作業を録画します。</p>
-<p>音声配信サービスAを開く。<br>音声ファイルを選ぶ。<br>タイトルを入れる。<br>説明文を入れる。<br>予約日時を設定する。<br>音声配信サービスBにも同じように入れる。</p>
+<p>Voicyを開く。<br>音声ファイルを選ぶ。<br>タイトルを入れる。<br>説明文を入れる。<br>予約日時を設定する。<br>Stand.fmにも同じように入れる。</p>
 <p>この流れをClaudeに見せます。</p>
 <p>Phase 2。</p>
 <p>Claudeに最小版のコードを作ってもらいます。</p>
-<p>いきなり全部ではなく、<br>まず音声配信サービスAの投稿画面まで行く。<br>次にファイルを選ぶ。<br>次にタイトルを入れる。</p>
+<p>いきなり全部ではなく、<br>まずVoicyの投稿画面まで行く。<br>次にファイルを選ぶ。<br>次にタイトルを入れる。</p>
 <p>小さく作ります。</p>
 <p>Phase 3。</p>
 <p>実際に動かします。</p>
@@ -2233,7 +2236,7 @@ python3 upload.py --skip-service-b</code></pre>
 <p>直して、<br>また動かします。</p>
 <p>Phase 4。</p>
 <p>途中で止まっても戻れるようにします。</p>
-<p>音声配信サービスAが終わっているならスキップ。<br>音声配信サービスBだけ再開。</p>
+<p>Voicyが終わっているならスキップ。<br>Stand.fmだけ再開。</p>
 <p>スクショとログを残す。<br>ブラウザを閉じずに止める。</p>
 <p>こうして、毎日使える形に近づけます。</p>
 <hr>
@@ -2338,7 +2341,7 @@ python3 upload.py --skip-service-b</code></pre>
 エラーが起きたらスクリーンショットを保存してください。</code></pre>
 <p>○○のところには、<br>自分の作業名を入れてください。</p>
 <p>たとえば、</p>
-<p>「音声配信サービスAの投稿画面」<br>「予約サイトの管理画面」<br>「問い合わせフォーム」<br>「請求書作成画面」</p>
+<p>「Voicyの投稿画面」<br>「予約サイトの管理画面」<br>「問い合わせフォーム」<br>「請求書作成画面」</p>
 <p>みたいな感じです。</p>
 <hr>
 <h2 id="ログイン情報を.envで扱ってもらう">ログイン情報を.envで扱ってもらう</h2>
@@ -2898,10 +2901,10 @@ OSのファイル選択ダイアログが開いてしまい、
 別のAIにそのまま貼り付ければ即座に状況を把握できる、
 コピペ可能な形式で出してください。</code></pre>
 <p>すると、CodexやClaude Codeはこんな形のテキストを作ってくれます。</p>
-<pre><code>【相談】Playwrightで音声配信サービスBの投稿ボタンが押せない
+<pre><code>【相談】PlaywrightでStand.fmの投稿ボタンが押せない
 
 ▼ やりたいこと
-音声配信サービスBの音声アップロードを自動化中。タイトル・サムネイル・
+Stand.fmの音声アップロードを自動化中。タイトル・サムネイル・
 カテゴリの入力までは完了しているが、最後の「投稿」ボタンが
 クリックできない。
 
@@ -2909,7 +2912,7 @@ OSのファイル選択ダイアログが開いてしまい、
 ・macOS Sonoma 14.5
 ・Python 3.11
 ・Playwright 1.40
-・音声配信サービスBの新規投稿ページを開いている
+・Stand.fmの新規投稿ページを開いている
 
 ▼ 試したこと
 1. page.get_by_role(&quot;button&quot;, name=&quot;投稿&quot;) → 反応なし
@@ -2923,7 +2926,7 @@ OSのファイル選択ダイアログが開いてしまい、
 <h3 id="この技術がなぜ強いか">この技術がなぜ強いか</h3>
 <p>普通の人は別のAIに聞くとき、こう書きがちです。</p>
 <p>＜悪い例＞</p>
-<p>「音声配信サービスBの投稿ボタンが押せません。教えてください」</p>
+<p>「Stand.fmの投稿ボタンが押せません。教えてください」</p>
 <p>これだと別のAIは何も答えられません。<br>質問の精度が低すぎます。</p>
 <p>でも、いま一緒に作っているCodexやClaude Codeは、<br><strong>ここまで何をやったかをかなり知っています</strong>。</p>
 <p>だから、<br>自分でゼロから説明文を書くより、<br><strong>いま使っているAIに「引き継ぎ書」を書かせる</strong><br>のが強いです。</p>
@@ -3079,11 +3082,11 @@ selectのdispatchEventも明示的に発火させてください。</code></pre>
 <h3 id="🔴-自動化前の状態-2">🔴 自動化前の状態</h3>
 <p>毎朝iPhoneで音声を録音して、<br>PCで以下の作業を手動でやっていました。</p>
 <pre><code>1. iPhoneからAirDropでPCに音声を送る
-2. 音声配信サービスAの管理画面を開く
+2. Voicyの管理画面を開く
 3. 音声をアップロード
 4. タイトル・説明文・予約日時を入力
 5. 投稿
-6. 音声配信サービスBの管理画面を開く
+6. Stand.fmの管理画面を開く
 7. 音声を再アップロード
 8. タイトル・サムネイル・カテゴリ・説明・予約日時を入力
 9. 投稿
@@ -3102,18 +3105,18 @@ selectのdispatchEventも明示的に発火させてください。</code></pre>
 <hr>
 <h3 id="🛠️-作った手順">🛠️ 作った手順</h3>
 <h4 id="phase-1録画して分解">Phase 1：録画して分解</h4>
-<p>音声配信サービスA・Bを順番に操作する動画を録画しました。<br>CodexかClaude Codeに渡して、2サイト分の作業を分解してもらいました。</p>
+<p>VoicyとStand.fmを順番に操作する動画を録画しました。<br>CodexかClaude Codeに渡して、2サイト分の作業を分解してもらいました。</p>
 <h4 id="phase-2コード生成">Phase 2：コード生成</h4>
-<p>最初は<strong>音声配信サービスAの投稿画面まで開く</strong>ところだけ。</p>
+<p>最初は<strong>Voicyの投稿画面まで開く</strong>ところだけ。</p>
 <p>次に、音声ファイルを選ぶ。</p>
 <p>次に、タイトルと説明文を入れる。</p>
-<p>最後に、音声配信サービスB側も同じ流れで動かす。</p>
+<p>最後に、Stand.fm側も同じ流れで動かす。</p>
 <p>こうやって、小さく分けて作りました。</p>
 <p>CodexかClaude Codeが書いてくれたスクリプトで、最終的にこの2つを動かせるようにしました。</p>
 <pre><code>python upload_音声配信.py</code></pre>
 <p>これでターミナルから実行すれば、両方アップロードされる状態になりました。</p>
 <h4 id="phase-3詰まったポイント">Phase 3：詰まったポイント</h4>
-<p><strong>第1の壁：音声配信サービスBの「投稿」ボタンが見つからない</strong></p>
+<p><strong>第1の壁：Stand.fmの「投稿」ボタンが見つからない</strong></p>
 <p>第3章「A-1 ボタンを押しても何も起きない」のコピペ文。</p>
 <pre><code>最後の「投稿」ボタンが押せません。
 3つの方法を順に試して、最初に動いたもので進めてください。</code></pre>
@@ -3138,11 +3141,11 @@ selectのdispatchEventも明示的に発火させてください。</code></pre>
 <p>別のAIに聞いたから抜けられた典型例です。</p>
 <p>解決策：launchdではなく、Homebrewのfswatchを使ってTerminalから常駐監視。</p>
 <h4 id="phase-4エラー回復＋途中再開">Phase 4：エラー回復＋途中再開</h4>
-<p>「音声配信サービスAまでは終わってるから、音声配信サービスBから再開したい」みたいな状況があります。</p>
+<p>「Voicyまでは終わってるから、Stand.fmから再開したい」みたいな状況があります。</p>
 <p>第3章のコピペ文：</p>
 <pre><code>--skip-service-a というオプションを追加してください。
-このオプション付きで実行すると、音声配信サービスAをスキップして
-音声配信サービスBから実行されるようにしてください。</code></pre>
+このオプション付きで実行すると、Voicyをスキップして
+Stand.fmから実行されるようにしてください。</code></pre>
 <p>→ 完成。</p>
 <hr>
 <h3 id="💡-音声配信編で学んだこと">💡 音声配信編で学んだこと</h3>
@@ -3348,7 +3351,7 @@ Windowsで同じことをやる場合の手順を教えてください。
 <h3 id="q.-どんな業務が自動化できますか">Q. どんな業務が自動化できますか?</h3>
 <p>A. <strong>「ブラウザでやっている繰り返し作業」</strong>は、かなりの部分を自動化候補にできます。</p>
 <p>✅ できる例：</p>
-<ul><li>投稿サイトへのアップロード（音声配信サービスA、note、SNS等。ただし各サービスの規約内）</li><li>管理画面へのフォーム入力</li><li>データの転記作業</li><li>複数サイトをまたぐ同じ操作</li><li>自分のアカウント内のデータ取得</li><li>自分が管理しているデータの整理</li><li>公式APIで許可されている範囲の情報取得</li><li>利用規約で許されている範囲のデータ取得</li></ul>
+<ul><li>投稿サイトへのアップロード（Voicy、note、SNS等。ただし各サービスの規約内）</li><li>管理画面へのフォーム入力</li><li>データの転記作業</li><li>複数サイトをまたぐ同じ操作</li><li>自分のアカウント内のデータ取得</li><li>自分が管理しているデータの整理</li><li>公式APIで許可されている範囲の情報取得</li><li>利用規約で許されている範囲のデータ取得</li></ul>
 <p>他人の投稿、プロフィール、商品情報などを大量に集める目的では使わないでください。<br>この教材で扱うのは、まず自分の少量の定型作業を楽にするための自動化です。</p>
 <p>❌ できない例：</p>
 <ul><li>スマホアプリ専用の操作</li><li>物理的な作業（紙の書類）</li><li>ログイン時に毎回SMS認証が必要なサイト（一部対応可）</li></ul>
