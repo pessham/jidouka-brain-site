@@ -197,8 +197,14 @@
 <p>餡音は、<br>忍びの里から現代にタイムスリップしてきて、<br>今はOLとして働いている女の子です。</p>
 <p>現代の仕事にもだいぶ慣れてきたけど、<br>メール。<br>管理画面。<br>フォーム入力。<br>ファイル保存。<br>予定登録。</p>
 <p>こういう日々の細かい作業に、<br>まだまだ振り回されています。</p>
+<figure class="manga-figure">
+  <img src="./images/anne_intro.png" alt="餡音（あんね）のキャラクター紹介" class="manga-img" style="max-width:320px;" />
+</figure>
 <p>一緒にタイムスリップしてきたのが、<br>ハヤテ師匠です。</p>
 <p>冷静で、観察力があって、<br>餡音にいろいろ教えてくれる存在です。</p>
+<figure class="manga-figure">
+  <img src="./images/hayate_intro.png" alt="ハヤテ師匠のキャラクター紹介" class="manga-img" style="max-width:320px;" />
+</figure>
 <p>そして、<br>ハヤテ師匠の相棒が、<br>ペットのナルカミです。</p>
 <p>ナルカミも含めて、<br>餡音は今もいろいろ教えてもらいながら、<br>現代の仕事をなんとかこなしています。</p>
 <p>最近、そのハヤテ師匠が、<br>AIをかなり使いこなしているらしいんですよね。</p>
@@ -305,6 +311,9 @@
 <p>ただ、止まったときに何をスクショすればいいか。<br>AIに何を渡せばいいか。<br>どこからやり直せばいいかまで説明します。</p>
 <hr>
 <h2 id="こういう人に読んでほしい">こういう人に読んでほしい</h2>
+<figure class="manga-figure">
+  <img src="./images/kouiuhitoni.png" alt="こういう人に読んでほしい" class="manga-img" />
+</figure>
 <p>プログラミングを勉強したい人向けではありません。</p>
 <p>向いているのは、</p>
 <p>毎日または毎週、同じブラウザ作業をしている人。<br>メール、スプレッドシート、管理画面、予約サイト、投稿サイトをよく使う人。<br>「自分でやったほうが早い」と思いながら、ずっと同じ作業を続けている人。</p>
@@ -313,11 +322,17 @@
 <p>まずは月額のAIツールに課金して、<br>1つ小さな作業を選んで、<br>画面録画を見せながら頼んでみることです。</p>
 <hr>
 <h2 id="まずは1つだけでいい">まずは、1つだけでいい</h2>
+<figure class="manga-figure">
+  <img src="./images/mazuhahitotsudake.png" alt="まずは1つだけでいい" class="manga-img" />
+</figure>
 <p>あなたの仕事の中にある、<br>「毎回ちょっとめんどくさい、あの作業」<br>を1つだけ思い浮かべてください。</p>
 <p>大きな業務じゃなくていいです。</p>
 <p>請求書メールを探す。<br>フォームに同じ情報を入れる。<br>投稿画面にタイトルと説明文を入れる。</p>
 <p>そのくらいで十分です。</p>
 <p>それを、CodexかClaude Codeと一緒に、<br>小さな自動化に変えていきます。</p>
+<figure class="manga-figure">
+  <img src="./images/jidouka_3step.png" alt="自動化の3ステップ" class="manga-img" />
+</figure>
 <p>では、第0章で、まず道具を揃えていきましょう。</p>
 <hr>
 <h1 id="第0章-準備編-道具を揃える">第0章　準備編　道具を揃える</h1>
@@ -376,6 +391,9 @@
 <p>2つ目は、Python + Playwrightです。</p>
 <p>いきなり知らない言葉が出てきましたが、ここでは名前だけ覚えれば大丈夫です。</p>
 <p>Pythonは、自動化コードを動かすための土台。<br>Playwrightは、ブラウザを実際に操作するための自動化ツールです。</p>
+<figure class="manga-figure">
+  <img src="./images/pyhtonplaywright.png" alt="PythonとPlaywrightの役割図解" class="manga-img" />
+</figure>
 <p>CodexかClaude Codeが考えて、<br>Pythonで書かれたコードを動かし、<br>Playwrightがブラウザを操作する。</p>
 <p>ざっくり言うと、こういう役割分担だと思ってください。</p>
 <p>PythonもPlaywrightも無料で使えます。</p>
@@ -485,6 +503,7 @@
 <figure><img src="スクリーンショット%202026-04-28%2016.46.57.png" alt="アプリと拡張機能を入手" loading="lazy" /><figcaption>アプリと拡張機能を入手</figcaption></figure>
 <p>「<strong>macOS版をダウンロード</strong>」を押すとアプリがダウンロードされます。</p>
 <figure><img src="スクリーンショット%202026-04-28%2016.49.05.png" alt="macOS版ダウンロード" loading="lazy" /><figcaption>macOS版ダウンロード</figcaption></figure>
+<p class="callout" style="background:#f5f0e8;border-left:3px solid #b8a98a;padding:10px 14px;border-radius:4px;font-size:0.95em;">💻 <strong>Windowsをお使いの方へ</strong><br>Windowsの場合も同様のプロセスでダウンロードおよびインストールを行ってください。画面の表示はMacと多少異なりますが、手順の流れは同じです。</p>
 <p>ダウンロードしたファイルを開いて、Claudeアプリを「アプリケーション」フォルダにドラッグします。</p>
 <figure><img src="スクリーンショット%202026-04-28%2018.30.41.png" alt="ClaudeアプリをApplicationsへ移動" loading="lazy" /><figcaption>ClaudeアプリをApplicationsへ移動</figcaption></figure>
 <hr>
@@ -3494,5 +3513,53 @@ Windowsで同じことをやる場合の手順を教えてください。
 <p>それでは、いってらっしゃい。</p>
 <hr>
 <p><strong>著：ペスハム</strong></p></article></main>
+  <script>
+    // コードブロックにコピーボタンを追加
+    document.querySelectorAll('pre').forEach(function(pre) {
+      var wrapper = document.createElement('div');
+      wrapper.style.cssText = 'position:relative;';
+      pre.parentNode.insertBefore(wrapper, pre);
+      wrapper.appendChild(pre);
+
+      var btn = document.createElement('button');
+      btn.textContent = 'コピー';
+      btn.style.cssText = [
+        'position:absolute',
+        'top:8px',
+        'right:8px',
+        'padding:3px 10px',
+        'font-size:0.75em',
+        'background:#c8b99a',
+        'color:#fff',
+        'border:none',
+        'border-radius:4px',
+        'cursor:pointer',
+        'opacity:0.85',
+        'transition:opacity 0.15s',
+        'z-index:10'
+      ].join(';');
+
+      btn.addEventListener('mouseenter', function() { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function() { btn.style.opacity = '0.85'; });
+
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code');
+        var text = code ? code.innerText : pre.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+          btn.textContent = 'コピーしました ✓';
+          btn.style.background = '#7a9e7e';
+          setTimeout(function() {
+            btn.textContent = 'コピー';
+            btn.style.background = '#c8b99a';
+          }, 2000);
+        }).catch(function() {
+          btn.textContent = '失敗';
+          setTimeout(function() { btn.textContent = 'コピー'; }, 2000);
+        });
+      });
+
+      wrapper.appendChild(btn);
+    });
+  </script>
   </body>
 </html>
