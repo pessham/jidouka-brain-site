@@ -122,18 +122,18 @@ h1 {
 }
 
 .step-primary {
-  border-color: #102033;
-  background: #102033;
-  color: #fff;
-}
-
-.step-primary span {
-  background: #fff;
+  border-color: #bfd4f7;
+  background: #f4f8ff;
   color: #102033;
 }
 
+.step-primary span {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
 .step-primary small {
-  color: rgba(255, 255, 255, 0.72);
+  color: #64748b;
 }
 
 .content {
@@ -648,7 +648,7 @@ figcaption {
   margin: 10px 0 34px;
   color: #0f172a;
   font-size: 46px;
-  font-weight: 900;
+  font-weight: 760;
   line-height: 1.25;
 }
 
@@ -661,7 +661,7 @@ figcaption {
   background: #edf4ff;
   color: #102033;
   font-size: 34px;
-  font-weight: 900;
+  font-weight: 760;
   line-height: 1.35;
 }
 
@@ -671,7 +671,7 @@ figcaption {
   border-bottom: 3px solid #dbeafe;
   color: #12345b;
   font-size: 27px;
-  font-weight: 900;
+  font-weight: 740;
   line-height: 1.45;
 }
 
@@ -679,7 +679,7 @@ figcaption {
   margin: 34px 0 12px;
   color: #111827;
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 740;
 }
 
 .textbook-article p,
@@ -695,11 +695,25 @@ figcaption {
 }
 
 .textbook-article strong {
-  padding: 0 0.12em;
-  background: linear-gradient(transparent 56%, #fff0a8 56%);
   color: #0f172a;
-  font-size: 1.08em;
-  font-weight: 900;
+  font-size: 1.03em;
+  font-weight: 680;
+  letter-spacing: 0;
+}
+
+.textbook-article .marker {
+  padding: 0 0.08em 0.03em;
+  background: linear-gradient(transparent 64%, #fff0a8 64%);
+  color: #111827;
+  font-weight: 680;
+}
+
+.textbook-article .fine-print {
+  margin: 18px 0 30px;
+  color: #78828f;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 .textbook-article code {
