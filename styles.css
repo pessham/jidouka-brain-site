@@ -753,6 +753,19 @@ figcaption {
   background: #fff;
 }
 
+.textbook-article .premium-figure {
+  margin: 48px 0 56px;
+}
+
+.textbook-article .premium-figure img {
+  width: 100%;
+  max-height: none;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  background: #fffaf1;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
 .character-infographic {
   position: relative;
   display: grid;
