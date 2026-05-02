@@ -1733,8 +1733,11 @@ SERVICE_PASSWORD=&quot;abc123&quot;</code></pre>
 <h3 id="クリックの正しさは結果で判断する">クリックの正しさは「結果」で判断する</h3>
 <p>ここで、Playwright自動化のかなり大事な考え方を入れておきます。</p>
 <p>自動化では、<br>「クリック場所そのものが正しいか」だけを見ません。</p>
-<p>その操作のあと、<br>画面やデータが<strong>期待した状態</strong>になっているか。</p>
+<p>その操作のあと、<br><span class="marker">画面やデータが<strong>期待した状態</strong>になっているか。</span></p>
 <p>ここで判断します。</p>
+<figure class="manga-figure">
+  <img src="./images/jidoukakanngae.png" alt="自動化の考え方" class="manga-img" />
+</figure>
 <p>人間の作業だと、</p>
 <p>「この青いボタンを押す」</p>
 <p>と考えがちです。</p>
@@ -1771,6 +1774,9 @@ URL取得済み</code></pre>
 <hr>
 <h3 id="状態確認は4段階で考える">状態確認は4段階で考える</h3>
 <p>クリックが正しかったかを見るときは、<br>4段階で考えると整理しやすいです。</p>
+<figure class="manga-figure">
+  <img src="./images/joutai4.png" alt="状態確認の4段階" class="manga-img" />
+</figure>
 <h3 id="1.-操作前の状態">1. 操作前の状態</h3>
 <p>まず、<br>いま自分がどこにいるかを見ます。</p>
 <p>たとえば、</p>
