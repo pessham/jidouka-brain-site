@@ -350,6 +350,9 @@
 <li><strong>どういう風に作るか、「実装の地図」を描くこと</strong></li>
 <li><strong>実際に実装すること</strong></li>
 </ol>
+<figure class="manga-figure">
+  <img src="./images/daijini.png" alt="AI開発の3段階：目的・地図・実装" class="manga-img" />
+</figure>
 <p>最近では、CodexやClaude CodeのようなAIエージェントが、<br>3つ目の「実装」をかなりの精度でやってくれるようになりました。</p>
 <p>2つ目の「地図を描くこと」に関しても、非常に優秀になっています。<br>この「地図を描くこと」を、技術的な構造理解やストラクチャーの設計とも言います。</p>
 <p>たとえば、掃除をしたいと考えたとき。</p>
@@ -396,19 +399,16 @@
 <p>まずは、<br>「必要なものを入れる」<br>ところまで行ければOKです。</p>
 <hr>
 <h2 id="必要な道具は2つだけ">必要な道具は2つだけ</h2>
-<figure class="manga-figure">
-  <img src="./images/manga/m-03-tool-choice.png" alt="CodexとClaude Codeどちらを選ぶかについて" class="manga-img" />
-</figure>
 <p>まず大事な道具を紹介します。2つだけです。</p>
 <p>1つ目は、CodexかClaude Codeです。</p>
-<figure class="manga-figure">
-  <img src="./images/1month.png" alt="まず1ヶ月だけ課金してみよう" class="manga-img" />
-</figure>
 <p>これは、今回の自動化でいちばんよく使う相談相手です。</p>
 <p>CodexはChatGPT側のコード作業ツール。<br>Claude CodeはClaude側のコード作業ツール。</p>
 <p>まずはこのくらいの理解で大丈夫です。</p>
 <p>CodexかClaude Codeに相談する。<br>コードを書いてもらう。<br>ファイルを作ってもらう。<br>エラーが出たら直してもらう。<br>ブラウザ操作まで任せる。</p>
 <p>このあたりをやってもらう中心になるのが、CodexかClaude Codeです。</p>
+<figure class="manga-figure">
+  <img src="./images/1month.png" alt="まず1ヶ月だけ課金してみよう" class="manga-img" />
+</figure>
 <p>ここで大事なのは、<br>「どっちが絶対に上です」と決めつけないことです。</p>
 <p>AIツールの世界は、日々トレンドが入れ替わります。</p>
 <p>今月はClaude Codeが強く見える。<br>来月はCodexが一気に良くなる。<br>またその次は、別の機能でClaude Codeが便利になる。</p>
@@ -429,7 +429,6 @@
 <p>なお、この教材の後半では、<br>説明の都合上「Claudeに聞く」「Claudeに渡す」と書いている箇所が多く出てきます。</p>
 <p>これは、すべて「Claude Codeに聞く」「Codexに聞く」と読み替えてOKです。</p>
 <p>大事なのはツール名ではなく、<br><strong>AIに状況を渡して、コードを書いてもらい、エラーを一緒に直していくこと</strong><br>です。</p>
-<figure style="text-align:left;"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Claude_AI_logo.png" alt="Claude公式ロゴ" loading="lazy" style="width:60px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Claude</figcaption></figure>
 <p>2つ目は、Python + Playwrightです。</p>
 <p>いきなり知らない言葉が出てきましたが、ここでは名前だけ覚えれば大丈夫です。</p>
 <p>Pythonは、自動化コードを動かすための土台。<br>Playwrightは、ブラウザを実際に操作するための自動化ツールです。</p>
@@ -439,8 +438,6 @@
 <p>CodexかClaude Codeが考えて、<br>Pythonで書かれたコードを動かし、<br>Playwrightがブラウザを操作する。</p>
 <p>ざっくり言うと、こういう役割分担だと思ってください。</p>
 <p>PythonもPlaywrightも無料で使えます。</p>
-<figure style="text-align:left;"><img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python公式ロゴ" loading="lazy" style="width:80px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Python</figcaption></figure>
-<figure style="text-align:left;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Playwright_Logo.svg/960px-Playwright_Logo.svg.png" alt="Playwrightロゴ" loading="lazy" style="width:80px;height:auto;" /><figcaption style="font-size:0.75em;color:#999;">Playwright</figcaption></figure>
 <p>ここで少しだけ、Playwright自体の説明もしておきます。</p>
 <p>Playwright（プレイライト）は、<br>Microsoftが2020年1月に公開した、<br>オープンソースのブラウザテスト自動化ツールです。</p>
 <p>もともとは、<br>WebサイトやWebアプリがちゃんと動くかを自動で確認するための道具です。</p>
@@ -915,6 +912,9 @@ Homebrewは [入っている / 入っていない]
 <h2 id="最初に道具の名前で怖がらなくて大丈夫です">最初に、道具の名前で怖がらなくて大丈夫です</h2>
 <p>ここから少しだけ、道具の話をします。</p>
 <p>Playwright MCP。<br>Playwrightコード。<br>Computer Use。</p>
+<figure class="manga-figure">
+  <img src="./images/manga/m-03-tool-choice.png" alt="CodexとClaude Codeどちらを選ぶかについて" class="manga-img" />
+</figure>
 <p>いきなりこういう言葉が出てくると、</p>
 <p>「うわ、急に専門用語が来た」<br>「やっぱり難しいやつじゃん」<br>「ここから置いていかれる気がする」</p>
 <p>と思うかもしれません。</p>
