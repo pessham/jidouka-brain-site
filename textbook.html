@@ -30,7 +30,7 @@
 <a class="toc-level-2" href="#claudeアプリとは何か">Claudeアプリとは何か</a>
 <a class="toc-level-2" href="#手順①-claudeアプリをインストール">手順①　Claudeアプリをインストール</a>
 <a class="toc-level-2" href="#codexで進める人はこちら">Codexで進める人はこちら</a>
-<a class="toc-level-2" href="#手順①.5-個人設定（カスタマイズ）を入れる">手順①.5　個人設定（カスタマイズ）を入れる</a>
+<a class="toc-level-2" href="#手順1.5-個人設定（カスタマイズ）を入れる">手順1.5　個人設定（カスタマイズ）を入れる</a>
 <a class="toc-level-2" href="#手順②-playwright-mcpを繋ぐ">手順②　Playwright MCPを繋ぐ</a>
 <a class="toc-level-2" href="#手順③-自動化に必要な3つの道具を入れる">手順③　自動化に必要な3つの道具を入れる</a>
 <a class="toc-level-2" href="#codex-claude-codeを使いこなす3つのコツ">Codex / Claude Codeを使いこなす3つのコツ</a>
@@ -576,6 +576,7 @@ macOS [バージョン]
 解決方法を教えてください。
 
 [スクリーンショットを添付]</code></pre>
+<p>次は<a href="#手順1.5-個人設定（カスタマイズ）を入れる">「個人設定（カスタマイズ）」</a>を入れましょう。</p>
 <hr>
 <h2 id="codexで進める人はこちら">Codexで進める人はこちら</h2>
 <p class="callout" style="background:#f0f4f0;border-left:3px solid #7a9e7e;padding:10px 14px;border-radius:4px;font-size:0.95em;">💡 <strong>Claude Codeで進める人は、このパートを読み飛ばして大丈夫です。</strong><br>次の「個人設定」に進んでください。</p>
@@ -638,8 +639,8 @@ MCP：最初は読み取り中心
 [今の画面のスクリーンショットを貼る]</code></pre>
 <p>Claude Codeで進める人は、<br>このCodexパートは読み飛ばして大丈夫です。</p>
 <hr>
-<h2 id="手順①.5-個人設定（カスタマイズ）を入れる">手順①.5　個人設定（カスタマイズ）を入れる</h2>
-<p>「そんなに大事？」と思うかもしれません。</p>
+<h2 id="手順1.5-個人設定（カスタマイズ）を入れる">手順1.5　個人設定（カスタマイズ）を入れる</h2>
+<p>続いて、個人設定を入れます。「個人設定、そんなに大事？」と思うかもしれません。</p>
 <p>地味なんですけど、けっこう大事です。</p>
 <p>ここを飛ばすと、Claude CodeやCodexとのやり取りが毎回ゼロからになります。</p>
 <p>Claude CodeもCodexも、初期状態だと「あなたが誰なのか」を全く知りません。</p>
@@ -650,8 +651,6 @@ MCP：最初は読み取り中心
 <h3 id="claude-codeで進める人の個人設定">Claude Codeで進める人の個人設定</h3>
 <p>Claudeアプリの左下のアイコン → <strong>「Customize」</strong>をクリックします。</p>
 <p>「Personal preferences」または「カスタム指示」の入力欄に、自分の情報を貼り付けます。</p>
-<p>あわせて、プライバシー設定も一度見ておくと安心です。</p>
-<figure><img src="スクリーンショット%202026-04-28%2016.56.34.png" alt="Claudeプライバシー設定" loading="lazy" /><figcaption>Claudeプライバシー設定</figcaption></figure>
 <hr>
 <h3 id="自分の個人設定を作るプロンプト（コピペok）">自分の個人設定を作るプロンプト（コピペOK）</h3>
 <p>「何を書けばいいかわからない」という人がほとんどだと思います。</p>
@@ -718,19 +717,6 @@ MCP：最初は読み取り中心
 日常業務の自動化を安全に手伝えるカスタム指示文を、500〜1000文字程度で作ってください。
 コピペしてそのまま使える形でお願いします。</code></pre>
 <p>これで出てきた文章を、Codexのカスタム指示に貼ります。</p>
-<p>設定画面の場所がわからない場合は、<br>Codexにこう聞けばOKです。</p>
-<pre><code>Codexのカスタム指示を設定したいです。
-今の画面のスクリーンショットを貼るので、
-どこを開けばよいか教えてください。
-
-[スクリーンショットを貼る]</code></pre>
-<h3 id="🚨-詰まったとき-2">🚨 詰まったとき</h3>
-<p><strong>Claudeに以下をそのまま貼り付けて聞いてください。</strong><br>スクリーンショットを見てもらえば、どこを開けばいいか教えてくれます。</p>
-<pre><code>Claudeのカスタム指示の設定画面がどこにあるか分かりません。
-Claudeのデスクトップアプリを開いている状態のスクリーンショットを
-添付するので、設定画面までの行き方を教えてください。
-
-[スクリーンショットを添付]</code></pre>
 <hr>
 <h2 id="手順②-playwright-mcpを繋ぐ">手順②　Playwright MCPを繋ぐ</h2>
 <p>Playwright MCPを接続すると、<br><strong>CodexやClaude Codeが実際のブラウザを直接操作できる</strong>ようになります。</p>
