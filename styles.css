@@ -1069,3 +1069,22 @@ figcaption {
     right: -24px;
   }
 }
+
+/* ── Section audio player ── */
+.section-audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 18px;
+  padding: 6px 12px;
+  background: var(--nav);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 6px 6px 0;
+}
+
+.audio-char {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 500;
+}

@@ -5,6 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ブラウザ操作自動化の教科書</title>
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      /* ── index専用スタイル ── */
+      .lp-hero {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 32px;
+      }
+      .lp-hero img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+      }
+      .lp-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.62) 40%, transparent 80%);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 24px 28px;
+      }
+      .lp-hero-overlay h2 {
+        color: #fff;
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        margin: 0 0 6px;
+        line-height: 1.3;
+      }
+      .lp-hero-overlay p {
+        color: rgba(255,255,255,0.88);
+        font-size: 0.95rem;
+        margin: 0 0 16px;
+      }
+      .lp-hero-overlay a {
+        display: inline-block;
+        background: var(--blue, #2563eb);
+        color: #fff;
+        border-radius: 6px;
+        padding: 9px 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        width: fit-content;
+      }
+      .lp-hero-overlay a:hover { opacity: .88; }
+
+      /* 数字バッジ付きチャプターカード */
+      .chapter-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 32px;
+      }
+      .chapter-card {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 0 16px;
+        align-items: start;
+        background: var(--surface, #fff);
+        border: 1px solid var(--border, #e5e7eb);
+        border-left: 4px solid var(--blue, #2563eb);
+        border-radius: 0 10px 10px 0;
+        padding: 14px 16px 14px 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: box-shadow 0.15s;
+      }
+      .chapter-card:hover {
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      }
+      .chapter-card .ch-num {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--blue, #2563eb);
+        line-height: 1;
+        padding-top: 2px;
+      }
+      .chapter-card .ch-body {}
+      .chapter-card .ch-label {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: .04em;
+        color: var(--muted, #6b7280);
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .chapter-card h3 {
+        font-size: 0.98rem;
+        font-weight: 700;
+        margin: 0 0 5px;
+        color: var(--text, #111827);
+      }
+      .chapter-card p {
+        font-size: 0.84rem;
+        color: var(--muted, #6b7280);
+        margin: 0;
+        line-height: 1.55;
+      }
+      .chapter-card .ch-hook {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--blue, #2563eb);
+      }
+
+      /* 3つの訴求ポイント */
+      .three-points {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+      .point-card {
+        background: var(--nav, #f3f4f6);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .point-card .point-icon {
+        font-size: 1.8rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .point-card strong {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        color: var(--text, #111827);
+      }
+      .point-card p {
+        font-size: 0.78rem;
+        color: var(--muted, #6b7280);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* 序章バナー */
+      .shojo-banner {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+        border-radius: 10px;
+        padding: 20px 22px;
+        color: #fff;
+        margin-bottom: 28px;
+      }
+      .shojo-banner .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: .08em;
+        opacity: .8;
+        margin-bottom: 6px;
+      }
+      .shojo-banner h2 {
+        font-size: 1.1rem;
+        margin: 0 0 8px;
+        line-height: 1.4;
+      }
+      .shojo-banner p {
+        font-size: 0.85rem;
+        opacity: .9;
+        margin: 0 0 14px;
+        line-height: 1.6;
+      }
+      .shojo-banner a {
+        display: inline-block;
+        background: #fff;
+        color: #1e3a5f;
+        border-radius: 6px;
+        padding: 8px 18px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .shojo-banner a:hover { opacity: .9; }
+    </style>
   </head>
   <body>
     <aside class="sidebar">
@@ -19,38 +194,43 @@
       <nav class="steps" aria-label="学習ステップ">
         <a class="step active" href="#intro">
           <span>序</span>
-          <strong>はじめに</strong>
-          <small>コードが書けなくても始める</small>
+          <strong>序章</strong>
+          <small>182時間 → 自動化へ</small>
         </a>
-        <a class="step" href="#setup">
+        <a class="step" href="#ch0">
           <span>0</span>
           <strong>準備編</strong>
-          <small>Codex / Claude / Playwright</small>
+          <small>道具を揃える（1〜2時間）</small>
         </a>
-        <a class="step" href="#tools">
+        <a class="step" href="#ch1">
           <span>1</span>
-          <strong>道具の使い分け</strong>
-          <small>MCP・コード・Computer Use</small>
+          <strong>知識編</strong>
+          <small>3つの道具を使い分ける</small>
         </a>
-        <a class="step" href="#phase">
+        <a class="step" href="#ch2">
           <span>2</span>
-          <strong>4フェーズの型</strong>
-          <small>録画・作成・修正・回復設計</small>
+          <strong>方法編</strong>
+          <small>録画から自動化まで4フェーズ</small>
         </a>
-        <a class="step" href="#dictionary">
+        <a class="step" href="#ch3">
           <span>3</span>
-          <strong>パターン辞典</strong>
-          <small>詰まったときのコピペ集</small>
+          <strong>マインド編</strong>
+          <small>詰まっても折れない作業ルール</small>
         </a>
-        <a class="step" href="#trouble">
+        <a class="step" href="#ch4">
           <span>4</span>
-          <strong>詰まったとき</strong>
-          <small>第4章に戻ればいい</small>
+          <strong>解決編</strong>
+          <small>止まったら開く章</small>
         </a>
-        <a class="step" href="#cases">
+        <a class="step" href="#ch5">
           <span>5</span>
+          <strong>辞典編</strong>
+          <small>コピペで使えるプロンプト</small>
+        </a>
+        <a class="step" href="#ch6">
+          <span>6</span>
           <strong>実例編</strong>
-          <small>おてつたび・音声配信</small>
+          <small>詰まった場所ごと全公開</small>
         </a>
         <a class="step" href="#faq">
           <span>?</span>
@@ -59,404 +239,163 @@
         </a>
         <a class="step step-primary" href="./textbook.html">
           <span>全</span>
-          <strong>教材本文</strong>
-          <small>全文HTML版を読む</small>
+          <strong>教材本文を読む</strong>
+          <small>全文HTML版</small>
         </a>
       </nav>
     </aside>
 
-    <main class="content">
-      <header class="hero hero-thumb" id="intro">
-        <div class="progress">
-          <div>
-            <span>学習進捗</span>
-            <strong>1 / 6</strong>
-          </div>
-          <div class="bar"><span style="width: 16%"></span></div>
+    <main class="content" id="intro">
+
+      <!-- ── Hero ── -->
+      <div class="lp-hero">
+        <img src="./images/thumbnail-beige-browser-automation.png"
+             alt="ブラウザ操作自動化の教科書" />
+        <div class="lp-hero-overlay">
+          <h2>ブラウザ操作自動化の教科書</h2>
+          <p>メール・フォーム入力・管理画面・SNS投稿　── 毎日 30分を、ボタン1つへ</p>
+          <a href="./textbook.html">教材本文を読む →</a>
         </div>
+      </div>
 
-        <div class="thumb-stage">
-          <div class="character character-hayate" aria-hidden="true"></div>
-          <div class="character character-anne" aria-hidden="true"></div>
+      <!-- ── 3つの訴求 ── -->
+      <div class="three-points">
+        <div class="point-card">
+          <span class="point-icon">⌨️</span>
+          <strong>コードを書かずに自動化できる</strong>
+          <p>AIにコードを書いてもらう。自分でタイピングしなくていい。</p>
+        </div>
+        <div class="point-card">
+          <span class="point-icon">🔁</span>
+          <strong>詰まっても抜け方がある</strong>
+          <p>エラーはAIへ渡す材料。止まり方と再開の型がわかれば折れない。</p>
+        </div>
+        <div class="point-card">
+          <span class="point-icon">⏱️</span>
+          <strong>1つの作業が減る</strong>
+          <p>「毎日あの作業」を1個選んで、ボタン1つに近づけるところまで。</p>
+        </div>
+      </div>
 
-          <div class="thumb-copy">
-            <p class="thumb-kicker">メール・フォーム入力・管理画面・SNS投稿も楽しく</p>
-            <h2>ブラウザ操作<br />自動化の教科書</h2>
-            <div class="usage-tags" aria-label="自動化できる作業例">
-              <span>問い合わせ転記</span>
-              <span>請求書保存</span>
-              <span>予約投稿</span>
-              <span>管理画面入力</span>
+      <!-- ── 序章バナー ── -->
+      <div class="shojo-banner">
+        <p class="eyebrow">序章から読む</p>
+        <h2>毎日30分 × 365日 ＝ <strong>182時間</strong>。<br>この時間、AIに取り戻せます。</h2>
+        <p>繰り返し作業のチリツモを計算すると、年間で273,000円分になります。<br>
+           この教材は「コードが書けない自分でもできるのか」から始まります。</p>
+        <a href="./textbook.html#序章-昨日もやったあの作業を自動化する話">序章を読む →</a>
+      </div>
+
+      <!-- ── 章カード ── -->
+      <section>
+        <p class="eyebrow" style="margin-bottom:12px;">各章のポイント</p>
+        <div class="chapter-cards">
+
+          <a class="chapter-card" href="./textbook.html#第0章-準備編-道具を揃える" id="ch0">
+            <div class="ch-num">0</div>
+            <div class="ch-body">
+              <p class="ch-label">準備編</p>
+              <h3>道具を揃える ── やることは「2つだけ」</h3>
+              <p>CodexかClaude Code を選んで、Playwright をインストールする。それだけです。セットアップは目安1〜2時間。ここを終えれば、あとは動かしながら進めます。</p>
+              <span class="ch-hook">「環境構築、構えなくていい」→</span>
             </div>
-            <p class="thumb-bottom"><strong>毎日30分</strong>を、<strong>ボタン1つ</strong>へ</p>
-          </div>
-        </div>
-      </header>
+          </a>
 
-      <section class="audio-card" aria-label="音声プレイヤー">
-        <div>
-          <p class="eyebrow">耳で聞きたい人はこちら</p>
-          <h3>餡音とハヤテの解説音声</h3>
-        </div>
-        <button type="button" aria-label="再生">▶</button>
-        <div class="audio-line"><span></span></div>
-        <strong>0:00</strong>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第1章-知識編" id="ch1">
+            <div class="ch-num">1</div>
+            <div class="ch-body">
+              <p class="ch-label">知識編</p>
+              <h3>自動化できる作業を見つける ── 3つの道具の使い分け</h3>
+              <p>Playwright MCP・Playwright コード・Computer Use。「どれを使えばいいか」がわかると、自動化できる作業の幅が一気に広がります。最初から全部使う必要はありません。</p>
+              <span class="ch-hook">「迷わなくなる使い分けの地図」→</span>
+            </div>
+          </a>
 
-      <section class="article-section reading-entry">
-        <p class="eyebrow">教材本文</p>
-        <h3>まずは全文HTML版を入れました</h3>
-        <p>
-          Markdownの教材本文をHTML化して、章ごとの目次から読めるようにしています。
-          ここから本文の整形、画像差し込み、音声プレイヤーとの連携を順番に足していきます。
-        </p>
-        <a class="text-link-button" href="./textbook.html">教材本文を読む</a>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第2章-方法編" id="ch2">
+            <div class="ch-num">2</div>
+            <div class="ch-body">
+              <p class="ch-label">方法編</p>
+              <h3>録画から自動化までの4フェーズ ── 型を知れば迷わない</h3>
+              <p>「録画 → 最小版を作る → 動かして直す → 戻れる設計にする」。この4フェーズで進めると、どこで詰まっているかが一目でわかります。1周すれば次からは速くなります。</p>
+              <span class="ch-hook">「完成までの道筋が見える型」→</span>
+            </div>
+          </a>
 
-      <section class="article-section character-intro">
-        <p class="eyebrow">登場人物</p>
-        <h3>餡音とハヤテ師匠が、一緒に自動化を学びます</h3>
-        <div class="character-grid">
-          <div>
-            <h4>餡音（あんね）</h4>
-            <p>
-              忍びの里から現代にタイムスリップしてきて、今はOLとして働いています。
-              メール、管理画面、フォーム入力、ファイル保存。現代の仕事にも慣れてきたけど、
-              日々の細かい作業にはまだまだ振り回されています。
-            </p>
-          </div>
-          <div>
-            <h4>ハヤテ師匠とナルカミ</h4>
-            <p>
-              一緒にタイムスリップしてきたハヤテ師匠と、相棒のナルカミには、
-              今もいろいろ教えてもらっています。最近ハヤテ師匠がAIを使いこなしているらしいので、
-              餡音もブラウザ操作の自動化を教えてもらうことにしました。
-            </p>
-          </div>
-        </div>
-        <p>
-          元になっている世界観は、イケハヤさんのアニメ
-          <a href="https://youtu.be/-7GqBPlL9J8?si=QuezgpCx0HtLtki1" target="_blank" rel="noreferrer">『忍ばない！クリプトニンジャ咲耶』</a>です。
-          アニメを知らなくても読めるようにしていますが、雰囲気を見ておくと2人の関係性がイメージしやすいと思います。
-        </p>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第3章-マインド編" id="ch3">
+            <div class="ch-num">3</div>
+            <div class="ch-body">
+              <p class="ch-label">マインド編</p>
+              <h3>詰まっても折れない作業ルール ── 2つのルールだけでいい</h3>
+              <p>30分ルール（詰まったら一旦離れる）と80%ルール（完璧を目指さない）。この2つを守るだけで、諦めずに完成までたどり着ける人と、途中でやめてしまう人に分かれます。</p>
+              <span class="ch-hook">「続けられる人の習慣」→</span>
+            </div>
+          </a>
 
-      <section class="article-section">
-        <p class="eyebrow">サムネイル案</p>
-        <h3>教材の世界観</h3>
-        <figure>
-          <img src="./images/thumbnail-beige-browser-automation.png" alt="ブラウザ操作自動化の教科書のベージュ版サムネイル" />
-          <figcaption>メール、フォーム入力、管理画面、SNS投稿を「毎日30分を、ボタン1つへ」に変えていく教材です。</figcaption>
-        </figure>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第4章-詰まったときの抜け方" id="ch4">
+            <div class="ch-num">4</div>
+            <div class="ch-body">
+              <p class="ch-label">詰まったときの抜け方</p>
+              <h3>解決編：止まったときの抜け方 ── 「詰まった」が「材料が出た」に変わる</h3>
+              <p>エラーが出たとき、何をどの順番でAIに渡せばいいか。詰まりには2階層あって、それぞれ対処が違います。読んでおくと「また詰まった」ではなく「どう抜けるか」に切り替わります。</p>
+              <span class="ch-hook">「止まっても前に進める地図」→</span>
+            </div>
+          </a>
 
-      <section class="article-section">
-        <h3>昨日もやった「あの作業」のチリツモ...</h3>
-        <p>
-          管理画面を開く。タイトルを入力する。説明文を貼る。日時を設定する。
-          投稿ボタンを押す。これ、昨日もやりましたよね？
-        </p>
-        <p>
-          問い合わせ転記、請求書保存、予約サイトの入力、SNS投稿。
-          1回だけなら大したことがない作業でも、毎日30分なら1年で約182時間です。
-        </p>
-        <figure>
-          <img src="./images/z-01-time-loss.png" alt="1日30分の作業が1年で182時間になる図解" />
-          <figcaption>小さい繰り返し作業も、年単位で見るとかなり大きい。</figcaption>
-        </figure>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第5章-辞典編" id="ch5">
+            <div class="ch-num">5</div>
+            <div class="ch-body">
+              <p class="ch-label">辞典編</p>
+              <h3>そのまま貼れるプロンプト辞典 ── 詰まったときに引く場所</h3>
+              <p>ボタンが押せない・フォームが反映されない・ページが遷移しない。よくある詰まりパターンのプロンプトをコピペで使えるようにまとめました。専門用語がわからなくても、そのままAIに貼れます。</p>
+              <span class="ch-hook">「コピペするだけで伝わる辞典」→</span>
+            </div>
+          </a>
 
-      <section class="article-section">
-        <h3>でも、自動化なんて無理...</h3>
-        <p>
-          自動化、Python、ターミナル、黒い画面。こういう言葉が並ぶだけで、
-          「あ、自分の世界じゃないな」と思う人は多いと思います。
-          ペスハムもコードは書けません。
-        </p>
-        <p>
-          使うのはCodexかClaude Codeです。
-          Codexは、ざっくり言うとChatGPT側のClaude Codeみたいなものです。
-          ChatGPTかClaude、どちらかには月3,000円くらい課金する前提で考えてください。
-          ただし、APIキーやエージェント機能を使う場合は、月額とは別に従量課金が発生することがあります。
-          最初に料金画面と上限設定を確認してください。
-        </p>
-      </section>
+          <a class="chapter-card" href="./textbook.html#第6章-実例編-─-ペスハムの自動化全公開" id="ch6">
+            <div class="ch-num">6</div>
+            <div class="ch-body">
+              <p class="ch-label">実例編</p>
+              <h3>実例で見る自動化の完成プロセス ── 詰まった場所ごと全公開</h3>
+              <p>おてつたびの管理画面自動化・音声配信の毎日アップロード自動化。どこで詰まって、どう抜けたかを含めて全部書いています。「実際どう作るのか」がそのまま見えます。</p>
+              <span class="ch-hook">「制作過程を丸ごと見る」→</span>
+            </div>
+          </a>
 
-      <section class="article-section">
-        <h3>なぜ僕が、自動化に向かったのか</h3>
-        <p>
-          元々は東京ガスという大企業に勤めていました。
-          そこからNFTバブルの勢いで起業しましたが、バブルは弾けて、正直お先真っ暗でした。
-        </p>
-        <p>
-          今は車中泊をしながら、AI研修の講師と業務委託の飛び込み営業をしています。
-          車を運転していると、なかなかPC操作ができません。
-          だから、できるだけ作業をAIに任せて、自動化したいと思うようになりました。
-        </p>
-        <p>
-          この教材には、そのノウハウと試行錯誤の過程をできるだけ全部詰め込みます。
-        </p>
-      </section>
-
-      <section class="article-section">
-        <h3>非エンジニアの僕でもできたこと</h3>
-        <p>
-          毎朝30分かかっていた音声配信サービスA・Bのアップロード作業は、
-          iPhoneからMacにAirDropするだけで、かなりの部分が自動で進むようになりました。
-          コードは自分で書いていません。CodexかClaude Codeに書いてもらいました。
-        </p>
-      </section>
-
-      <section class="article-section" id="trouble">
-        <h3>ここで持って帰ってほしいもの</h3>
-        <p>
-          1つ目は、自分の業務を1個、自動化する手順。
-          2つ目は、次の自動化を作るための考え方。
-          3つ目は、詰まったときに戻れる地図です。
-        </p>
-        <p>
-          詰まるのは「失敗」じゃないです。AIに渡す材料が出てきただけです。
-          何をスクショすればいいか、何をAIに渡せばいいか、どこからやり直せばいいか。
-          そこまで含めて説明します。
-        </p>
-        <figure>
-          <img src="./images/z-05-back-to-chapter4.png" alt="詰まったら第4章へ戻る漫画図解" />
-          <figcaption>詳しい抜け方は第4章で扱います。</figcaption>
-        </figure>
-      </section>
-
-      <section class="article-section" id="setup">
-        <h3>Playwrightとは</h3>
-        <p>
-          Playwrightは、Microsoftが2020年1月に公開したオープンソースのブラウザテスト自動化ツールです。
-          ページを開いた直後に急いで「次へ」を押して、「あれ？反応しない」となることがありますよね。
-          Playwrightは、ボタンや入力欄が操作可能になるまで自動で待ってくれるので、そういうタイミングのズレを減らしやすいです。
-        </p>
-        <p>
-          専門用語では、同じコードなのに成功したり失敗したりする不安定な状態をFlaky Testと言います。
-          この不安定さを減らせるので、ブラウザ操作の自動化に向いています。
-        </p>
-      </section>
-
-      <section class="article-section">
-        <p class="eyebrow">まず何ができるか</p>
-        <h3>自動化できる作業の見取り図</h3>
-        <div class="card-grid">
-          <div class="mini-card">
-            <h4>メール・請求書</h4>
-            <p>メールの問い合わせを読んでスプレッドシートへ転記。請求書メールだけ拾ってPDFをDriveへ保存。</p>
-          </div>
-          <div class="mini-card">
-            <h4>予定・タスク</h4>
-            <p>カレンダー予定を見て前日にリマインド。商談メモから次回タスクをGoogleカレンダーへ登録。</p>
-          </div>
-          <div class="mini-card">
-            <h4>問い合わせ・営業管理</h4>
-            <p>届いた問い合わせを整理し、対応状況や商談メモを自社の管理シートへ記録。外部フォームへの営業自動送信は推奨しません。</p>
-          </div>
-          <div class="mini-card">
-            <h4>コンテンツ制作</h4>
-            <p>note下書き、X投稿案、YouTube概要欄、音声配信の原稿化などを半自動化。</p>
-          </div>
-          <div class="mini-card">
-            <h4>EC・予約サイト</h4>
-            <p>商品名、価格、在庫数、説明文、配送条件、公開ステータスを管理画面へ入力。</p>
-          </div>
         </div>
       </section>
 
-      <section class="article-section" id="tools">
-        <p class="eyebrow">第1章</p>
-        <h3>3つの道具を使い分ける</h3>
-        <div class="card-grid three">
-          <div class="mini-card">
-            <h4>Playwright MCP</h4>
-            <p>AIに実際のブラウザを見せながら、画面確認や簡単な操作を手伝ってもらうための道具です。</p>
-          </div>
-          <div class="mini-card">
-            <h4>Playwrightコード</h4>
-            <p>毎日繰り返す作業を、ボタン1つで動くロボットにする本命です。.command化すればダブルクリックで動かせます。</p>
-          </div>
-          <div class="mini-card">
-            <h4>Computer Use</h4>
-            <p>人間のPC操作に近い形で動かす方法です。便利ですが、まずはMCPとコードから考えるのがおすすめです。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="article-section" id="phase">
-        <p class="eyebrow">第2章</p>
-        <h3>4フェーズの型</h3>
-        <ol class="phase-list">
-          <li>
-            <strong>Phase 1　業務を録画する</strong>
-            <p>MacはShift + Command + 5、WindowsはWindowsキー + G。まず自分の作業をそのまま録ります。</p>
-          </li>
-          <li>
-            <strong>Phase 2　最小版を作る</strong>
-            <p>いきなり全部ではなく、ログインして投稿画面まで行く、タイトルだけ入れる、のように小さく作ります。</p>
-          </li>
-          <li>
-            <strong>Phase 3　動かして直す</strong>
-            <p>止まったら、エラー文、スクショ、URL、本来どうなってほしかったかをAIに渡します。</p>
-          </li>
-          <li>
-            <strong>Phase 4　戻れる設計にする</strong>
-            <p>ブラウザを閉じない、ログを残す、途中から再開できる。ここまで入ると毎日使える道具に近づきます。</p>
-          </li>
-          <li>
-            <strong>Phase 5　応用編</strong>
-            <p>固定、条件分岐、AI判断の3段階で融通を持たせます。最初の1個目では無理にやらなくて大丈夫です。</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="article-section" id="dictionary">
-        <p class="eyebrow">第3章</p>
-        <h3>パターン辞典は、詰まったときに引く場所</h3>
-        <p>
-          第3章には、第2章で使ったプロンプトも改めてまとめています。
-          録画後の依頼、最小版コード作成、.env、止まった状態の報告、途中再開、ログ保存。
-          参照しに行ったときは、第3章だけ見ればだいたい拾えるようにします。
-        </p>
-        <div class="pattern-map">
-          <span>A-1 ボタンを押しても何も起きない</span>
-          <span>A-2 フォームに入力しても反映されない</span>
-          <span>A-3 要素が見つからない</span>
-          <span>B-1 ページ遷移を待てない</span>
-          <span>C-1 iframeで操作できない</span>
-          <span>D-3 途中から再開したい</span>
-        </div>
-        <div class="prompt-box">
-          <p class="eyebrow">dispatch問題</p>
-          <p>
-            フォームに文字が入っているように見えるのに、保存すると未入力扱いになることがあります。
-            これは「入力欄が変わったよ」という合図がサイト側に伝わっていない状態です。
-          </p>
-          <pre><code>フォームに入力したテキストが、保存時に反映されません。
-ReactのControlled Componentによる問題だと思います。
-dispatchEventを使った方式で入力するように修正してください。</code></pre>
-        </div>
-      </section>
-
-      <section class="article-section">
-        <p class="eyebrow">第4章</p>
-        <h3>詰まったら、別のAIに聞いていい</h3>
-        <p>
-          Codexで詰まったらClaude Codeへ。Claude Codeで詰まったらCodexへ。
-          それでもよければ、ブラウザ版のChatGPTやClaude、Geminiに聞いても大丈夫です。
-          課金していなくても、原因の別視点をもらうだけなら十分役に立つことがあります。
-        </p>
-        <div class="prompt-box">
-          <p class="eyebrow">引き継ぎ書テンプレート</p>
-          <pre><code>これまでの作業を別のAIに引き継いで相談したいので、
-今までの経緯を整理した「引き継ぎ用の質問文」を作ってください。
-
-含めてほしい情報：
-1. 目的
-2. 環境
-3. ファイル構成
-4. どこまで動いているか
-5. 今詰まっているエラー
-6. 別のAIに聞きたい質問</code></pre>
-        </div>
-        <figure>
-          <img src="./images/z-04-patience-process.png" alt="詰まったときの回復手順の図解" />
-          <figcaption>詰まりは失敗ではなく、次にAIへ渡す材料です。</figcaption>
-        </figure>
-      </section>
-
-      <section class="article-section" id="cases">
-        <p class="eyebrow">第5章</p>
-        <h3>実例：おてつたびと音声配信自動化</h3>
-        <div class="case-grid">
-          <div class="mini-card">
-            <h4>おてつたび管理画面</h4>
-            <p>
-              宿の募集ページ作成を自動化。フォーム入力、ドロップダウン、保存後の確認、途中再開まで作りました。
-              dispatch問題やSPAの遷移待ちもここで出てきます。
-            </p>
-          </div>
-          <div class="mini-card">
-            <h4>音声配信毎日アップロード</h4>
-            <p>
-              iPhoneからAirDropで音声を送ると、音声配信サービスA・Bのアップロード作業が進む形へ。
-              自動起動ではlaunchdで詰まり、fswatchで抜けました。
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <!-- ── FAQ ── -->
       <section class="article-section" id="faq">
         <p class="eyebrow">FAQ</p>
         <h3>よくある質問</h3>
         <details open>
           <summary>CodexとClaude Code、どちらがいいですか?</summary>
-          <p>
-            基本的にはどちらでも始められます。ただし教材執筆時点、2026年5月時点では、
-            個人的にはCodexが一歩リードしていると感じています。今から始める非エンジニアの人には、まずCodexがおすすめです。
-          </p>
+          <p>基本的にはどちらでも始められます。教材執筆時点（2026年5月）では個人的にはCodexが一歩リードしていると感じています。迷うなら、まずChatGPTに課金してCodexで1個作ってみてください。すでにClaudeに課金している人はClaude Codeから始めてOKです。</p>
         </details>
         <details>
           <summary>月3,000円の課金は必要ですか?</summary>
-          <p>
-            本気で自動化ツールを作るなら、有料プラン前提のほうが進めやすいです。
-            ただし、APIキー、外部サービス連携、エージェント機能を使う場合は月額とは別に従量課金が発生することがあります。
-            料金画面、利用上限、予算上限を確認し、小さな作業から試してください。
-          </p>
-        </details>
-        <details>
-          <summary>利用規約違反になりませんか?</summary>
-          <p>
-            サービスごとに規約が違います。自分のアカウント内の作業でも、
-            自動アクセス、bot、データ取得、大量送信、投稿やDM送信の自動化が禁止されていればNGになり得ます。
-            他社のお問い合わせフォームへ営業文面を自動送信する使い方は推奨しません。
-            まずは自分の少量の定型作業から始め、公式APIや公式連携がある場合はそちらを優先してください。
-          </p>
+          <p>本気で自動化ツールを作るなら有料プラン前提のほうが進めやすいです。APIキー・エージェント機能を使う場合は月額とは別に従量課金が発生することがあります。料金画面と利用上限を確認し、小さな作業から試してください。</p>
         </details>
         <details>
           <summary>CAPTCHAが出るサイトも自動化できますか?</summary>
-          <p>
-            CAPTCHAは「私はロボットではありません」や画像選択の認証です。
-            自動突破しようとせず、ログインとCAPTCHAは人間が手動で対応してください。
-            その後のアップロード、入力、保存など、CAPTCHAが出ない範囲の定型作業を自動化する分担が現実的です。
-          </p>
+          <p>CAPTCHAは人間が手動で対応する前提にしてください。ログイン後のアップロード・入力・保存など、CAPTCHAが出ない範囲の定型作業を自動化する分担が現実的です。</p>
+        </details>
+        <details>
+          <summary>利用規約違反になりませんか?</summary>
+          <p>サービスごとに規約が違います。自動アクセス・bot・データ取得・大量送信が禁止されていればNGになり得ます。まずは自分のアカウント内の少量の定型作業から始め、公式APIがある場合はそちらを優先してください。</p>
         </details>
         <details>
           <summary>Windowsでもできますか?</summary>
-          <p>
-            Windowsでも可能なケースはありますが、この教材はMacでの実例が中心です。
-            環境構築、録画方法、ターミナル操作、ファイルパス、ブラウザ起動方法が変わります。
-            Windowsユーザーは、まずCodexかClaude Codeに「Windows向けに手順を書き換えて」と頼んでください。
-          </p>
-        </details>
-        <details>
-          <summary>パスワードやAPIキーはどう扱いますか?</summary>
-          <p>
-            秘密情報は.envに入れ、Codex、Claude Code、ChatGPTのチャット欄には貼りません。
-            GitHubに上げないよう.gitignoreに.envを入れてください。
-            誤って公開した場合は、そのパスワードやAPIキーを変更してください。
-          </p>
-        </details>
-        <details>
-          <summary>サイトのデザインが変わったら壊れますか?</summary>
-          <p>
-            壊れることがあります。軽い修正なら短時間で済む場合もありますが、
-            初心者の場合は数時間から数日かかることもあります。
-            エラー文、スクショ、どこで止まったかをCodexかClaude Codeに渡すと、直すための材料になります。
-          </p>
+          <p>Windowsでも可能なケースはありますが、この教材はMacでの実例が中心です。Windowsユーザーはまず「Windows向けに手順を書き換えて」とCodexかClaude Codeに頼んでください。</p>
         </details>
         <details>
           <summary>どうしても詰まった場合は相談できますか?</summary>
-          <p>
-            購入者向け公式LINEで相談できます。
-            公式LINE: https://lin.ee/wzvCa0v
-            購入者が増えた場合はDiscordでのアフターサポートも検討しています。
-            ただし個別環境すべてを完全に代行・保証するものではありません。
-            エラー文、スクショ、OS、どこまでできたかを添えて相談してください。
-          </p>
+          <p>購入者向け公式LINEで相談できます。<br>
+            <a href="https://lin.ee/wzvCa0v" target="_blank" rel="noreferrer">https://lin.ee/wzvCa0v</a><br>
+            エラー文・スクショ・OS・どこまで進んだかを添えてください。</p>
         </details>
       </section>
+
     </main>
   </body>
 </html>
