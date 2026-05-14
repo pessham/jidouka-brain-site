@@ -7,6 +7,7 @@
     <title>ブラウザ操作自動化の教科書</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./images/favicon-chibi.png" />
+    <link rel="shortcut icon" type="image/png" href="./images/favicon-chibi.png" />
     <link rel="apple-touch-icon" href="./images/favicon-chibi.png" />
     <!-- OGP -->
     <meta property="og:title" content="ブラウザ操作自動化の教科書" />
@@ -383,24 +384,32 @@
         <p class="eyebrow">FAQ</p>
         <h3>よくある質問</h3>
         <details open>
-          <summary>CodexとClaude Code、どちらがいいですか?</summary>
-          <p>基本的にはどちらでも始められます。教材執筆時点（2026年5月）では個人的にはCodexが一歩リードしていると感じています。迷うなら、まずChatGPTに課金してCodexで1個作ってみてください。すでにClaudeに課金している人はClaude Codeから始めてOKです。</p>
+          <summary>本当にプログラミング知識ゼロでも大丈夫ですか?</summary>
+          <p>大丈夫です。ペスハム自身、Pythonの文法は今も知りません。「コピペできる」「AIに状況を伝えられる」だけで完成します。ただし、Macでアプリをインストールしたことがある・Webサービスのアカウントを作ったことがある程度のITリテラシーは必要です。</p>
         </details>
         <details>
-          <summary>月3,000円の課金は必要ですか?</summary>
-          <p>本気で自動化ツールを作るなら有料プラン前提のほうが進めやすいです。APIキー・エージェント機能を使う場合は月額とは別に従量課金が発生することがあります。料金画面と利用上限を確認し、小さな作業から試してください。</p>
+          <summary>月額いくらかかりますか?</summary>
+          <p>ChatGPTかClaudeの有料プランが必要です。目安は月20ドル前後（約3,000円）。Python・Playwright・デスクトップアプリは無料です。APIキー利用時は別途従量課金が発生する場合があります。料金画面と利用上限を確認し、小さな作業から試してください。</p>
+        </details>
+        <details>
+          <summary>Windowsでもできますか?</summary>
+          <p>Windowsでも可能なケースはありますが、この教材はMacでの実例が中心です。Windowsユーザーはまず「Windows向けに手順を書き換えて」とCodexかClaude Codeに頼んでください。Windows編は今後補足予定です。</p>
+        </details>
+        <details>
+          <summary>どんな業務が自動化できますか?</summary>
+          <p>「ブラウザでやっている繰り返し作業」はかなりの部分が対象になります。管理画面へのフォーム入力、ファイルアップロード、データの転記、複数サイトをまたぐ同じ操作など。スマホアプリ専用の操作や、物理的な作業には対応できません。</p>
         </details>
         <details>
           <summary>CAPTCHAが出るサイトも自動化できますか?</summary>
-          <p>CAPTCHAは人間が手動で対応する前提にしてください。ログイン後のアップロード・入力・保存など、CAPTCHAが出ない範囲の定型作業を自動化する分担が現実的です。</p>
+          <p>ログインとCAPTCHAは人間が手動で対応する前提にしてください。ログイン後のアップロード・入力・保存など、CAPTCHAが出ない範囲の定型作業を自動化する分担が現実的です。</p>
         </details>
         <details>
           <summary>利用規約違反になりませんか?</summary>
           <p>サービスごとに規約が違います。自動アクセス・bot・データ取得・大量送信が禁止されていればNGになり得ます。まずは自分のアカウント内の少量の定型作業から始め、公式APIがある場合はそちらを優先してください。</p>
         </details>
         <details>
-          <summary>Windowsでもできますか?</summary>
-          <p>Windowsでも可能なケースはありますが、この教材はMacでの実例が中心です。Windowsユーザーはまず「Windows向けに手順を書き換えて」とCodexかClaude Codeに頼んでください。</p>
+          <summary>サイトのデザインが変わったら壊れますか?</summary>
+          <p>壊れます。これは自動化ツールの宿命です。ただし修正は最初の作成時より圧倒的に速いです。CodexかClaude Codeに「動かなくなった」と伝えるだけで、かなり早く直せます。</p>
         </details>
         <details>
           <summary>どうしても詰まった場合は相談できますか?</summary>
