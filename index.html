@@ -22,6 +22,26 @@
     <link rel="stylesheet" href="./styles.css" />
     <style>
       /* ── index専用スタイル ── */
+      /* ヒーロー画像をsidebar外に出してモバイルで最上部に表示 */
+      .hero-top-wrap {
+        margin-left: 328px;
+        padding: 48px 56px 0;
+        max-width: 1060px;
+      }
+      .hero-top-wrap .lp-hero {
+        margin-bottom: 0;
+      }
+      @media (max-width: 900px) {
+        .hero-top-wrap {
+          margin-left: 0;
+          padding: 0;
+        }
+        .hero-top-wrap .lp-hero {
+          border-radius: 0;
+          margin-bottom: 0;
+        }
+      }
+
       .lp-hero {
         position: relative;
         border-radius: 12px;
@@ -197,6 +217,19 @@
     </style>
   </head>
   <body>
+    <!-- モバイル時に最上部に来るヒーロー画像 -->
+    <div class="hero-top-wrap">
+      <div class="lp-hero">
+        <img src="./images/thumbnail-beige-browser-automation.png"
+             alt="ブラウザ操作自動化の教科書" />
+        <div class="lp-hero-overlay">
+          <h2>ブラウザ操作自動化の教科書</h2>
+          <p>メール・フォーム入力・管理画面・SNS投稿　── 毎日 30分を、ボタン1つへ</p>
+          <a href="./textbook.html">教材本文を読む →</a>
+        </div>
+      </div>
+    </div>
+
     <aside class="sidebar">
       <div class="brand">
         <span class="brand-mark">自</span>
@@ -261,17 +294,6 @@
     </aside>
 
     <main class="content" id="intro">
-
-      <!-- ── Hero ── -->
-      <div class="lp-hero">
-        <img src="./images/thumbnail-beige-browser-automation.png"
-             alt="ブラウザ操作自動化の教科書" />
-        <div class="lp-hero-overlay">
-          <h2>ブラウザ操作自動化の教科書</h2>
-          <p>メール・フォーム入力・管理画面・SNS投稿　── 毎日 30分を、ボタン1つへ</p>
-          <a href="./textbook.html">教材本文を読む →</a>
-        </div>
-      </div>
 
       <!-- ── 3つの訴求 ── -->
       <div class="three-points">
