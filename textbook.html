@@ -39,9 +39,13 @@
 <a class="toc-level-2" href="#必要な道具は2つだけ">必要な道具は2つだけ</a>
 <a class="toc-level-2" href="#claudeアプリとは何か">Claudeアプリとは何か</a>
 <a class="toc-level-2" href="#手順①-claudeアプリをインストール">手順①　Claudeアプリをインストール</a>
+<a class="toc-level-3" href="#claude-code-初心者向け推奨設定">Claude Code 初心者向けポイント</a>
+<a class="toc-level-3" href="#claude-code-setup-checklist">Claude Code 確認リスト</a>
+<a class="toc-level-3" href="#claude-code-setup-tsumattara">詰まったときプロンプト</a>
 <a class="toc-level-2" href="#codexで進める人はこちら">Codexで進める人はこちら</a>
 <a class="toc-level-2" href="#手順1.5-個人設定（カスタマイズ）を入れる">手順1.5　個人設定（カスタマイズ）を入れる</a>
 <a class="toc-level-2" href="#手順②-playwright-mcpを繋ぐ">手順②　Playwright MCPを繋ぐ</a>
+<a class="toc-level-2" href="#手順2.5-ターミナル作業を提案されたとき">手順2.5　ターミナル作業を提案されたとき</a>
 <a class="toc-level-2" href="#手順③-自動化に必要な3つの道具を入れる">手順③　自動化に必要な3つの道具を入れる</a>
 <a class="toc-level-2" href="#codex-claude-codeを使いこなす3つのコツ">Codex / Claude Codeを使いこなす3つのコツ</a>
 <a class="toc-level-2" href="#第0章-チェックリスト">第0章　チェックリスト</a>
@@ -735,6 +739,41 @@ macOS [バージョン]
 [スクリーンショットを添付]</code></pre>
 <p>次は<a href="#手順1.5-個人設定（カスタマイズ）を入れる">「個人設定（カスタマイズ）」</a>を入れましょう。</p>
 <hr>
+<h3 id="claude-code-初心者向け推奨設定">Claude Code　初心者向けのおすすめポイント</h3>
+<p>Code モードに入ったら、最初にこの2点を意識しておくと安心です。</p>
+<p><strong>① 作業前に「何をするか先に教えて」と言う</strong><br>
+Claude Codeは賢いですが、確認なしに複数のファイルを変えたり、意図と違う方向に進むことがあります。<br>
+最初のうちは、「やる前に何をするか教えて」と一言添えておくと安全です。</p>
+<p><strong>② 一度に頼む量を小さくする</strong><br>
+「全部やって」より「まずこのステップだけやって」のほうが、<br>
+間違えたときに戻しやすく、何が起きているかわかりやすいです。</p>
+<hr>
+<h3 id="claude-code-setup-checklist">Claude Code　はじめる前の確認リスト</h3>
+<ul>
+<li>Claude デスクトップアプリが起動している</li>
+<li>左上のアイコンから「Code モード」に切り替えられる</li>
+<li>メッセージを送ると返答が返ってくる</li>
+<li>個人設定（カスタム指示）が完成している</li>
+<li>Playwright MCPが繋がっている（次の手順で設定します）</li>
+</ul>
+<hr>
+<h3 id="claude-code-setup-tsumattara">詰まったときのプロンプト（Claude Code全般）</h3>
+<p>Claude Codeの操作で詰まったら、<strong>Claude Codeのチャットにそのまま貼ってください。</strong></p>
+<pre><code>Claude Codeを使っていますが、うまくいきません。
+
+▼ やろうとしていること
+[例：Playwright MCPをインストールしようとした、個人設定を入れようとした、など]
+
+▼ 何が起きているか
+[例：エラーが出た、反応しない、変なことを言い出した、など]
+
+▼ 環境
+macOS [バージョン] / Windows [バージョン]
+
+[スクリーンショットを添付]
+
+解決策をステップごとに、日本語で教えてください。</code></pre>
+<hr>
 <h2 id="codexで進める人はこちら">Codexで進める人はこちら</h2>
 <div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/codexで進める人はこちら.wav" type="audio/wav"></audio></div><p class="callout" style="background:#f0f4f0;border-left:3px solid #7a9e7e;padding:10px 14px;border-radius:4px;font-size:0.95em;">💡 <strong>Claude Codeで進める人は、このパートを読み飛ばして大丈夫です。</strong><br>次の「個人設定」に進んでください。</p>
 <p>ここまでClaudeアプリの説明をしました。</p>
@@ -930,6 +969,19 @@ macOS [バージョン]
 [ここに症状を記入]
 
 [スクリーンショットを添付]</code></pre>
+<hr>
+<h2 id="手順2.5-ターミナル作業を提案されたとき">手順2.5　ClaudeCode（Codex）がターミナルでの作業を進めてきた場合</h2>
+<p>Claude Code（Codex）を使っていると、</p>
+<blockquote><p>「ターミナルで次のコマンドを実行してください」</p></blockquote>
+<p>と言われることがあります。</p>
+<p>ターミナルを開くのが怖い、よくわからない、という人は多いと思います。</p>
+<p>でも実は、<strong>多くの場合、そのままClaude Code（Codex）にやってもらえます。</strong></p>
+<p>ターミナルを開く前に、まずこう聞いてみてください：</p>
+<p class="callout" style="background:#e8f4f8;border-left:4px solid #5b9dbc;padding:12px 16px;border-radius:6px;font-size:1em;margin:16px 0;">💬 <strong>「これ、ClaudeCode（Codex）の中でやってもらえる？」</strong></p>
+<p>これだけで、「わかりました、やります」とそのまま進めてくれることが多いです。</p>
+<p>パッケージのインストール、ファイルの移動、スクリプトの実行など、<br>実際にやってみると「あ、ターミナルなしでいけた」ということは多いです。</p>
+<p>もちろん、本当にターミナルが必要な場面もあります。<br>その場合はClaude Codeが「これはターミナルが必要です」と教えてくれたり、<br>コピペするだけのコマンドを1つずつ出してくれます。</p>
+<p><strong>まずは一度「中でやってもらえる？」と聞く</strong>、これが非エンジニアの正解です。</p>
 <hr>
 <h2 id="手順③-自動化に必要な3つの道具を入れる">手順③　自動化に必要な3つの道具を入れる</h2>
 <div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/手順③-自動化に必要な3つの道具を入れる.wav" type="audio/wav"></audio></div><p>毎日繰り返す作業を「ボタン1つで動かせるロボット」にするために必要です。</p>
