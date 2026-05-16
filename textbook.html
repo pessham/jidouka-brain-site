@@ -835,9 +835,18 @@ macOS [バージョン]
 ・コミュニケーションの好み：[例：丁寧に説明してほしい / 短く要点だけ など]
 ・避けてほしい表現：[例：専門用語の連発 / 過度に堅い文章 など]
 
+▼ Claude Codeに守ってほしいこと
+・私は非エンジニアなので、説明は日本語でお願いします
+・専門用語を使う場合は、短く意味も補足してください
+・勝手にファイル削除、送信、公開、購入、確定、外部サービスへの反映をしないでください
+・作業前に、何をするかを短く説明してください
+・作業後に、どこを変更したか、何を確認したかを教えてください
+・ブラウザ自動化では、座標クリックよりも、画面上の文言、ラベル、ボタンの役割、URL変化、完了メッセージを優先してください
+・エラーが出たら、スクリーンショット、ログ、URL、今いる画面の状態を残す方針にしてください
+
 ▼ お願い
-上記をベースに、Claudeが「ユーザーをよく理解している前提」で
-動けるカスタム指示文を、500〜1000文字程度で作ってください。
+上記をベースに、Claude Codeが「ユーザーをよく理解している前提」で
+日常業務の自動化を安全に手伝えるカスタム指示文を、500〜1000文字程度で作ってください。
 コピペしてそのまま使える形でお願いします。</code></pre>
 <p>これを使うと、Claudeが「あなた専用の自己紹介文」っぽいものを作ってくれます。<br>それをCustomize欄にコピペするだけです。</p>
 <p>それ以降、Claudeは：</p>
@@ -881,7 +890,7 @@ macOS [バージョン]
 <p>これで出てきた文章を、Codexのカスタム指示に貼ります。</p>
 <hr>
 <h2 id="手順②-playwright-mcpを繋ぐ">手順②　Playwright MCPを繋ぐ</h2>
-<div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/手順②-playwright-mcpを繋ぐ.wav" type="audio/wav"></audio></div><p>Playwright MCPを接続すると、<br><strong>CodexやClaude Codeが実際のブラウザを直接操作できる</strong>ようになります。</p>
+<div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/手順②-playwright-mcpを繋ぐ.wav" type="audio/wav"></audio></div><p>続いてPlaywright MCPを接続します。詳しい説明は第1章で行いますが、</p><p>Playwright MCPを接続すると、<br><strong>CodexやClaude Codeが実際のブラウザを直接操作できる</strong>ようになります。</p>
 <p>「え、AIがブラウザを操作するの？」</p>
 <p>そうです。ここ、最初ちょっと不思議な感じがすると思います。</p>
 <p>AIアプリから、ブラウザ操作を手伝ってもらえるようになります。</p>
