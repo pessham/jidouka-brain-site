@@ -4177,6 +4177,14 @@ Phase 4：途中再開・回復設計を入れる</code></pre>
 <p>「いつもログインしてるあのChrome」が、そのまま拡張機能の動作環境です。</p>
 <p>2FAも、Bot検知も、Cookieも、悩む必要がありません。<br><strong>もう自分がそこにログイン済みだからです。</strong></p>
 <p>第0章で苦戦した「ログイン環境を別に作る」話、<br>第3章のD-1「ログインを毎回求められる」問題、<br>これらが、そもそも発生しません。</p>
+<div class="callout" style="background:rgba(91,141,238,0.08);border-left:4px solid #5b8dee;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;">
+💡 <strong>AmazonやShopifyなど「自動ログインが厳しいサイト」は、Chrome拡張がおすすめです</strong><br><br>
+Amazonや楽天など、2要素認証・Bot検知が強いサイトをPlaywrightで操作しようとすると、<br>
+「ログインできない」「CAPTCHA が出て止まる」「突然セッションが切れる」という壁にぶつかりやすいです。<br><br>
+Chrome拡張なら、<strong>あなたがすでにブラウザでログインしている状態をそのまま使う</strong>ので、<br>
+こうした問題がそもそも起きません。<br><br>
+注文履歴の取得、購入金額の集計、商品ページの情報整理など、<br>「見てる画面の情報をまとめるだけ」の作業なら、Chrome拡張が圧倒的に楽です。
+</div>
 <h3 id="chrome拡張-1クリック起動が気持ちいい">2つ目：1クリック起動が気持ちいい</h3>
 <p>Playwrightコードは、<code>.command</code>ファイルをダブルクリックして起動します。<br>これでも十分速いです。</p>
 <p>でもChrome拡張は、もっと近いです。</p>
