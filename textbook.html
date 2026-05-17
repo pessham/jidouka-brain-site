@@ -37,8 +37,10 @@
 <a class="toc-level-1" href="#第0章-準備編-道具を揃える">第0章　準備編：道具を揃える</a>
 <a class="toc-level-2" href="#まず最初に言っておきます">環境構築、構えなくていい</a>
 <a class="toc-level-2" href="#必要な道具は2つだけ">必要な道具は2つだけ</a>
+<a class="toc-level-3" href="#他のaiツールとの違い">他のAIツールとの比較・なぜCodex/Claude Codeか</a>
 <a class="toc-level-2" href="#claudeアプリとは何か">Claudeアプリとは何か</a>
 <a class="toc-level-2" href="#手順①-claudeアプリをインストール">手順①　Claudeアプリをインストール</a>
+<a class="toc-level-3" href="#作業フォルダを作っておこう">作業フォルダを作っておこう</a>
 <a class="toc-level-3" href="#claude-code-初心者向け推奨設定">Claude Code 初心者向けポイント</a>
 <a class="toc-level-3" href="#claude-code-setup-checklist">Claude Code 確認リスト</a>
 <a class="toc-level-3" href="#claude-code-setup-tsumattara">詰まったときプロンプト</a>
@@ -581,6 +583,20 @@
 <p>それくらいの軽さで始めて大丈夫です。</p>
 <p class="fine-print">※ この教材の後半では、説明の都合上「Claudeに聞く」「Claudeに渡す」と書いている箇所があります。Codexで進めている人は「Codexに聞く」「Codexに渡す」と読み替えて大丈夫です。</p>
 <p>大事なのはツール名ではなく、<br><strong>AIに状況を渡して、コードを書いてもらい、エラーを一緒に直していくこと</strong><br>です。</p>
+<h3 id="他のaiツールとの違い">他のAIツールとの比較と、この教材がCodex・Claude Codeをすすめる理由</h3>
+<p>「CursorやWindsurfはどうなの？」と聞かれることがあります。同じ種類のツールはいくつかあります。</p>
+<ul>
+<li><strong>Cursor / Windsurf</strong>：エディタ（コードを書くソフト）一体型。本格的でかなり優秀だが、別途月額課金が必要。コードを自分でも読み書きする人向け。</li>
+<li><strong>Antigravity</strong>：Google製。Googleアカウントだけで無料から試せる。デザイン系のモデルが使えたりと個性的。</li>
+<li><strong>Gemini CLI</strong>：Google製のターミナルツール。無料枠が大きいが、ターミナルに慣れていないと入りにくい。</li>
+</ul>
+<p>この教材でCodexとClaude Codeを選んでいる理由は3つです。</p>
+<ol>
+<li><strong>追加課金なしで使える</strong>：ChatGPT PlusかClaude Proに課金していれば、そのまま使える。別ツールに別途課金しなくていい。</li>
+<li><strong>チャット感覚で使える</strong>：エディタやターミナルに慣れていなくても、自然な日本語で指示できる。非エンジニアに向いている。</li>
+<li><strong>情報が多い</strong>：日本語での情報・事例が多く、詰まったときに調べやすい。</li>
+</ol>
+<p>「すでにCursorを使っている」という人も、この教材の考え方はそのまま使えます。ツールの画面が違うだけで、「AIに状況を渡してコードを書いてもらう」という基本は同じです。</p>
 <p><span class="marker">2つ目は、Python + Playwrightです。</span></p>
 <p>いきなり知らない言葉が出てきましたが、ここでは名前だけ覚えれば大丈夫です。</p>
 <p>Pythonは、自動化コードを動かすための土台。<br>Playwrightは、ブラウザを実際に操作するための自動化ツールです。</p>
@@ -725,6 +741,19 @@
 <figure><img src="スクリーンショット%202026-04-28%2016.51.09.png" alt="Codeモード" loading="lazy" /><figcaption>Codeモード</figcaption></figure>
 <p>これが本命です。<strong>Claude Codeのモード</strong>。<br>コードを書く・実行する・修正するをすべてやってくれます。</p>
 <p><strong>自動化ツール作りは、このCodeモードで進めます。</strong></p>
+<hr>
+<h3 id="作業フォルダを作っておこう">作業フォルダを作っておこう</h3>
+<p>Claude Codeを使うとき、最初に「このフォルダで作業してね」という場所を指定します。<br>
+Claude Codeの行動範囲は、<strong>そのフォルダの中だけ</strong>に限られます。</p>
+<p>ここで注意してほしいのが、<strong>Macの「ユーザーフォルダ」全体を作業場所にしない</strong>ことです。<br>
+デスクトップ・書類・ダウンロード・写真フォルダすべてにアクセスできてしまい、<br>
+「不要なファイルを整理して」という指示をAIが予想外の解釈をして大事なファイルを消す、という事故が実際に起こります。</p>
+<p><strong>おすすめの準備：</strong></p>
+<ol>
+<li>デスクトップかDocumentsの中に、<code>jidouka</code> や <code>automation</code> などのフォルダを1つ作る</li>
+<li>Claude Codeのプロジェクトはその中に、さらに1案件1フォルダで作っていく</li>
+</ol>
+<p class="callout" style="background:#f5f0e8;border-left:3px solid #b8a98a;padding:10px 14px;border-radius:4px;font-size:0.93em;">フォルダを「鍵のかかった作業部屋」と思ってください。作業部屋の鍵だけ渡せばOK。家全体のマスターキーを渡す必要はありません。</p>
 <hr>
 <h3 id="✅-チェックポイント">✅ チェックポイント</h3>
 <ul><li>Claudeアプリがインストールされている</li><li>Proプランに加入している</li><li>Codeモードが表示される</li></ul>
