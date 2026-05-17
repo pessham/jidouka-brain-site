@@ -708,7 +708,7 @@
 <p>自動化ツール作りでは、ここがかなり大事なんですよね。</p>
 <hr>
 <h2 id="手順①-claudeアプリをインストール">手順①　Claudeアプリをインストール</h2>
-<div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/手順①-claudeアプリをインストール.wav" type="audio/wav"></audio></div><p>ここが第一関門です。</p>
+<div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/手順①-claudeアプリをインストール.wav" type="audio/wav"></audio></div><p>ここが第一関門です。<span class="aside" style="color:#888;font-size:0.9em;">（自分もここで一回くじけそうになりました）</span></p>
 <p>とはいえ、やること自体は普通のアプリインストールとほぼ同じです。</p>
 <p>画面が少し違っても焦らなくて大丈夫なので、<br>近いボタンを探しながら進めてください。</p>
 <hr>
@@ -1002,12 +1002,13 @@ macOS [バージョン] / Windows [バージョン]
 <pre><code>Playwright MCPを繋いでください。
 ブラウザを操作できる状態にして、
 最後にGoogleを開けるか確認してください。</code></pre>
+<p class="fine-print">※ 「Playwright MCP」という言葉、最初は意味不明に聞こえます。それで正常です。名前は覚えなくていいです。</p>
 <p>これで設定してくれるなら、それでOKです。</p>
 <p>もしうまくいかない場合だけ、ターミナル（PowerShell）にコマンドを入力します。</p>
 <p>（Windowsの場合はコマンドプロンプトかPowerShellと言います。だいたいPowerShellを使っておけば問題ありません）</p>
 <p>ターミナル（PowerShell）は、<br>パソコンに文章で命令を出すためのアプリです。</p>
 <p>黒い画面に英語を打つ、あれです。</p>
-<p>怖く見えると思いますが、<br>ここでやることは「指定された文字を貼り付けてEnterを押す」だけです。</p>
+<p>怖く見えると思いますが、<br>ここでやることは「指定された文字を貼り付けてEnterを押す」だけです。<span class="aside" style="color:#888;font-size:0.9em;">（ハッカーっぽくてちょっとかっこいい）</span></p>
 <p>Claude Codeで進める場合はこちらです。</p>
 <pre><code>claude mcp add playwright npx @playwright/mcp@latest</code></pre>
 <p>Codexで進める場合はこちらです。</p>
@@ -1065,7 +1066,7 @@ macOS [バージョン] / Windows [バージョン]
 <h3 id="3つ目chromium">3つ目：Chromium</h3>
 <p>Chromium（クロミウム）は、<br>Playwrightが操作するためのブラウザです。</p>
 <p>普段使っているGoogle Chromeとは少し別物です。</p>
-<p>「Chromeをもう入れてるのに、なんでまたブラウザを入れるの？」<br>と思うかもしれませんが、<br>これは自動化用のブラウザを別で準備しているだけです。</p>
+<p>「Chromeをもう入れてるのに、なんでまたブラウザを入れるの？」<br>と思うかもしれませんが、<span class="aside" style="color:#888;font-size:0.9em;">（わかります、自分も最初そう思いました）</span><br>これは自動化用のブラウザを別で準備しているだけです。</p>
 <p>あなたがいつも使っているChromeを勝手にぐちゃぐちゃ触るのではなく、<br>自動化用のブラウザを用意して、<br>そこでログインやクリック、入力のテストをします。</p>
 <hr>
 <h3 id="まずはaiに入れてもらう">まずはAIに入れてもらう</h3>
@@ -1416,7 +1417,7 @@ Homebrewは [入っている / 入っていない]
 <li>「結局プログラミングできないと無理では？」</li>
 <li>「Pythonとか覚えないといけないの？」</li>
 </ul>
-<p>そう思うかもしれません。</p>
+<p>そう思うかもしれません。<span class="aside" style="color:#888;font-size:0.9em;">（あ、これ自分だ、という人が多いと思います）</span></p>
 <p>でも、この教材での立ち位置は少し違います。</p>
 <p>あなたがコードをスラスラ書く必要はありません。</p>
 <p>コードを書くのは、基本的にCodexやClaude Codeです。</p>
@@ -1431,7 +1432,7 @@ Homebrewは [入っている / 入っていない]
 <hr>
 <h3 id="コードは魔法の呪文ではなく手順書です">コードは「魔法の呪文」ではなく、手順書です</h3>
 <p>コードというと、<br>何かすごく難しいものに見えますよね。</p>
-<p>黒い画面に英語が並んでいて、<br>1文字でも間違えたら終わり、みたいなイメージがあるかもしれません。</p>
+<p>黒い画面に英語が並んでいて、<br>1文字でも間違えたら終わり、みたいなイメージがあるかもしれません。<span class="aside" style="color:#888;font-size:0.9em;">（映画の見過ぎです。大丈夫です）</span></p>
 <p>でも、ここで使うPlaywrightコードは、<br>かなりざっくり言えば「ブラウザ操作の手順書」です。</p>
 <ul>
 <li>このURLを開く。</li>
@@ -1465,7 +1466,7 @@ Homebrewは [入っている / 入っていない]
 <p>これで、<br>同じ操作を毎回同じ順番で進めてくれます。</p>
 <p>もちろん、最初から完璧には動きません。</p>
 <p>ここは何度でも言います。</p>
-<p>最初から完璧には動きません。</p>
+<p>最初から完璧には動きません。<span class="aside" style="color:#888;font-size:0.9em;">（3回目以降も言います）</span></p>
 <p>でも、一度動く形まで育てるとかなり強いです。</p>
 <ul>
 <li>毎日同じことを頼める。</li>
@@ -1638,7 +1639,7 @@ Macでダブルクリックするだけで実行できる `.command` ファイ�
 <div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/pythonは覚えなくていいのか.wav" type="audio/wav"></audio></div><p>ここも気になると思います。</p>
 <p>Playwrightコードでは、<br>Pythonというプログラミング言語を使うことが多いです。</p>
 <p>では、Pythonを勉強しないといけないのか。</p>
-<p>結論、<br>最初から本格的に勉強しなくて大丈夫です。</p>
+<p>結論、<br>最初から本格的に勉強しなくて大丈夫です。<span class="aside" style="color:#888;font-size:0.9em;">（安心してください）</span></p>
 <p>もちろん、わかるに越したことはありません。</p>
 <p>でも、この教材の目的は、<br>Pythonを学ぶことではありません。</p>
 <p>自分の業務を1個ラクにすることです。</p>
@@ -2011,7 +2012,7 @@ SERVICE_PASSWORD=your_password</code></pre>
 すでにGit管理に入っていないかも確認してください。</code></pre>
 <hr>
 <h3 id=".env-ファイルの作り方"><code>.env</code> ファイルの作り方</h3>
-<p>ここ、意外と詰まる人が多いです。</p>
+<p>ここ、意外と詰まる人が多いです。<span class="aside" style="color:#888;font-size:0.9em;">（自分も最初はここで20分溶かしました）</span></p>
 <p>「<code>.env</code> に書いてください」<br>と言われても、</p>
 <ul>
 <li>「どこにあるの？」</li>
@@ -2148,7 +2149,7 @@ SERVICE_PASSWORD=&quot;abc123&quot;</code></pre>
 <h2 id="phase-3-動かして直す">Phase 3　動かして直す — エラーをAIに渡して修正する</h2>
 <div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/phase-3-動かして直す.wav" type="audio/wav"></audio></div><p class="callout" style="background:#fdf6f0;border-left:4px solid #c0392b;padding:12px 16px;border-radius:4px;">⚠️ <strong>自動化は、一発で完成させようとしないでください。</strong></p>
 <p class="callout" style="background:#fdf6f0;border-left:4px solid #c0392b;padding:12px 16px;border-radius:4px;">🛑 <strong>最初のコードは止まります。</strong>ログインで止まる。ボタンが見つからなくて止まる。ファイルの場所が違って止まる。ページの読み込みを待てなくて止まる。</p>
-<p>これは失敗ではありません。</p>
+<p>これは失敗ではありません。<span class="aside" style="color:#888;font-size:0.9em;">（うわー、全部自分のことだ、と思っても大丈夫です）</span></p>
 <p>ここで焦らないでください。</p>
 <p>最初の実行は、<br>完成チェックではありません。</p>
 <p><strong>材料集めです。</strong></p>
@@ -2489,7 +2490,7 @@ error_publish_button.png</code></pre>
 </ul>
 <p>こういうときは、</p>
 <p>「dispatch問題かも」</p>
-<p>と思ってください。</p>
+<p>と思ってください。<span class="aside" style="color:#888;font-size:0.9em;">（あなたのせいじゃないです。本当に。サイトの仕様がそうなんです）</span></p>
 <p>自分で仕組みを理解しきらなくても大丈夫です。</p>
 <ul>
 <li>第5章の</li>
@@ -2501,7 +2502,7 @@ error_publish_button.png</code></pre>
 <h3 id="claudeの返事がズレたとき">Claudeの返事がズレたとき</h3>
 <p>Claudeに聞いても、<br>たまにズレた答えが返ってくることがあります。</p>
 <p>あります。</p>
-<p>普通にあります。</p>
+<p>普通にあります。<span class="aside" style="color:#888;font-size:0.9em;">（AIも人間も、たまにズレます）</span></p>
 <ul>
 <li>「いや、そこじゃない」</li>
 <li>「もうその設定はやった」</li>
@@ -2871,6 +2872,7 @@ python3 upload.py --skip-service-b</code></pre>
 <li>画面とにらめっこする時間も長いです。</li>
 <li>動かないときは本当にイライラします。</li>
 </ul>
+<p class="fine-print">※ 夜中に一人でエラーを眺めている時間、それも含めて自動化の道です。</p>
 <p>でも、<strong>1個完成させた瞬間に世界が変わります。</strong></p>
 <p>毎日30分やっていた作業が、ボタン1つで終わるようになる。<br>その時間が一生ぶん積み上がっていきます。</p>
 <p>その「越えた先」のために、ここから先のマインドの話を読んでください。</p>
@@ -2901,7 +2903,7 @@ python3 upload.py --skip-service-b</code></pre>
   <img src="./images/manga/m-09-thirty-minute-rule.png" alt="30分ルール（詰まったら30分で離れる）について" class="manga-img" />
 </figure>
 <p>詰まったら、30分で一旦離れます。</p>
-<p>これは精神論ではなく、<strong>脳科学的な事実</strong>です。</p>
+<p>これは精神論ではなく、<strong>脳科学的な事実</strong>です。<span class="aside" style="color:#888;font-size:0.9em;">（「もう少しやれば解ける気がする」は大体ウソです）</span></p>
 <ul>
 <li>人間の脳は、悩み続けると視野が狭くなります。</li>
 <li>同じ思考をループします。</li>
@@ -2947,7 +2949,7 @@ python3 upload.py --skip-service-b</code></pre>
 <hr>
 <h2 id="ここで必要なのはコード力よりも粘る力です">ここで必要なのは、コード力よりも粘る力です</h2>
 <div class="section-audio"><audio controls preload="none" style="height:32px;width:280px;"><source src="./audio/ここで必要なのはコード力よりも粘る力です.wav" type="audio/wav"></audio></div><p>序章ではあえて軽く触れましたが、<br>自動化づくりで本当に差が出るのはここです。</p>
-<p>ペスハムはコードが書けません。</p>
+<p>ペスハムはコードが書けません。<span class="aside" style="color:#888;font-size:0.9em;">（これは本当です）</span></p>
 <p>でも、必要だったのは<br>Pythonをスラスラ書く力ではなくて、<br>エラーが出たあとに、もう一回だけ状況を整理してAIに渡す力でした。</p>
 <p>「またダメだった」で閉じるんじゃなくて、</p>
 <ul>
@@ -4131,7 +4133,7 @@ Phase 4：途中再開・回復設計を入れる</code></pre>
 <p>それが、<strong>Chrome拡張</strong>です。</p>
 <p>聞いたことはあると思います。<br>広告ブロッカー、パスワード管理、画面キャプチャ、翻訳。<br>普段、Chromeのツールバー右上にちょこちょこ並んでいる、あの小さなアイコンたちです。</p>
 <p>あれは、誰かが作って配ったものです。</p>
-<p>実は、あれも自分で作れます。<br>しかも、CodexかClaude Codeに作ってもらえます。</p>
+<p>実は、あれも自分で作れます。<br>しかも、CodexかClaude Codeに作ってもらえます。<span class="aside" style="color:#888;font-size:0.9em;">（もう驚かなくなってきましたよね）</span></p>
 <p>ここまで読めた人なら、もう新しい道具を1つ覚えるだけの体力は残っているはずです。</p>
 <hr>
 <h2 id="なぜもう一つの選択肢なのか">なぜ「もう一つの選択肢」なのか</h2>
