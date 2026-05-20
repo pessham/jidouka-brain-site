@@ -619,6 +619,10 @@
   </tbody>
 </table>
 <p>迷ったら、Antigravityから始めてください。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-00-tool-choice-flow.png" alt="AIコーディングツール選択フロー：課金状況に応じてAntigravity・Codex・Claude Codeを選ぶ" class="manga-img" loading="lazy" />
+</figure>
+<p>入口は違っても、やることは同じです。</p>
 <p>この教材では、3つのツールすべてで同じことができる前提で進めます。</p>
 <p class="fine-print">※ 説明の都合上「Antigravityに聞く」「Antigravityに渡す」と書いている箇所が多く出てきますが、CodexやClaude Codeを使っている人は「Codexに聞く」「Claude Codeに渡す」と読み替えてOKです。</p>
 <p>大事なのはツールの名前ではなく、<br><strong>AIに状況を渡して、コードを書いてもらい、エラーを一緒に直していくこと</strong><br>です。</p>
@@ -674,7 +678,11 @@
 <h2 id="antigravityで進める人はこちら">Antigravityで進める人はこちら</h2>
 <p class="callout" style="background:#f0f4ff;border-left:4px solid #4a6cf7;padding:12px 16px;border-radius:4px;">ℹ️ ここからは <strong>Antigravityを使う人向け</strong> の解説です。<strong>Claude Codeを使う人</strong>は<a href="#claudeアプリとは何か">こちら</a>へ。<strong>Codexを使う人</strong>は<a href="#codexで進める人はこちら">こちら</a>へ。</p>
 <p>Antigravityは無料で始められます。Googleアカウントがあればすぐ使えます。</p>
-<p>詳しいセットアップ手順は別マニュアル（Antigravity導入・設定マニュアル）に分けています。ここでは流れだけ見ておいてください。</p>
+<p>まず、Antigravityを使うと何が変わるか、見ておきましょう。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-01-before-after-flow.png" alt="今まで：AIとターミナルとブラウザを行ったり来たり。Antigravityだと：全部1画面で完結" class="manga-img" loading="lazy" />
+</figure>
+<p>今まで「AIにコードを書いてもらう→ターミナルで実行→ブラウザで確認→エラーが出たらまたAIへ」と行き来していた作業が、Antigravityなら全部1つの画面の中で終わります。</p>
 <h3>やること、4ステップ</h3>
 <ol>
 <li><strong>STEP 1</strong>　Antigravityのデスクトップアプリをインストールする</li>
@@ -682,15 +690,48 @@
 <li><strong>STEP 3</strong>　作業フォルダ（プロジェクト）を作る</li>
 <li><strong>STEP 4</strong>　Browser Sub-Agentを起動して、動作を確認する</li>
 </ol>
-<p>詳しい画面の説明は <strong>Antigravity導入・設定マニュアル</strong> を見ながら進めてください。</p>
-<h3>Antigravityを使うときに覚えておくこと</h3>
-<p>Antigravityには、<strong>AGENTS.md</strong> というファイルを最初に置く設定があります。</p>
+<h3>STEP 1　インストール</h3>
+<p>公式サイトにアクセスして、デスクトップアプリをダウンロードします。Mac・Windows 両方に対応しています。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-03-download-step.png" alt="Antigravityのダウンロード：公式サイトを開く→Downloadをクリック→インストーラーを保存、の3ステップ" class="manga-img" loading="lazy" />
+</figure>
+<p>Macの場合は <code>.dmg</code> ファイルを開いて、アプリをApplicationsフォルダにドラッグします。普通のアプリと同じ手順です。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-04-mac-install.png" alt="Mac版Antigravityのインストール：.dmgを開く→Applicationsへドラッグ→完了" class="manga-img" loading="lazy" />
+</figure>
+<h3>STEP 2　Googleアカウントでログイン</h3>
+<p>アプリを開いたら「Sign in with Google」でログインします。新しいアカウントを作る必要はありません。普段使っているGoogleアカウントでOKです。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-05-google-login.png" alt="ログインはいつものGoogleアカウントでOK：アプリを開く→Sign in with Google→アカウントを選ぶ→開始" class="manga-img" loading="lazy" />
+</figure>
+<h3>STEP 3　作業フォルダ（プロジェクト）を作る</h3>
+<p>ログインしたら、作業フォルダを指定します。デスクトップに <code>automation</code> というフォルダを作って、それを指定するのが一番シンプルです。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-06-project-folder.png" alt="作業フォルダの設定：デスクトップにautomationフォルダを作る→フォルダを開く→automationを選ぶ→作業画面が開く" class="manga-img" loading="lazy" />
+</figure>
+<h3>Antigravityを使うときに覚えておくこと：AGENTS.md</h3>
+<p>作業フォルダの中に、<strong>AGENTS.md</strong> というファイルを最初に置きます。これは1回だけやる初期設定です。</p>
 <p>「このプロジェクトで何をするか」「どう動いてほしいか」をエージェントに伝えるファイルです。これを置いておくと、余計な確認をしてこなくなり、作業がスムーズになります。</p>
-<p>テンプレートはマニュアルに入れてあるので、コピペして使ってください。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-07-agents-md.png" alt="AGENTS.mdはエージェントへの指示書：automationフォルダの中に置く、何をするか・どう動くかを書く、最初に1回だけ" class="manga-img" loading="lazy" />
+</figure>
+<p>テンプレートは <strong>Antigravity導入・設定マニュアル</strong> に入れてあるので、コピペして使ってください。</p>
 <h3>Pythonは？Playwrightは？</h3>
 <p>Antigravityで進める人は、Python と Playwright のインストールは後回しで大丈夫です。</p>
 <p>Antigravityのブラウザ操作は、内蔵のChromiumで動きます。外からPythonを動かす必要がありません。</p>
 <p>ひと通りAntigravityで自動化を体験してから、「もっと細かくコントロールしたい」「Antigravityの外でもスクリプトを動かしたい」と思ったタイミングで入れればOKです。</p>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-02-free-to-pro-timing.png" alt="Antigravity無料とProの切り替えタイミング：まず無料→1日数回なら無料で十分→毎日たくさん使うならProを検討" class="manga-img" loading="lazy" />
+</figure>
+<p class="fine-print">※ 無料プランから始めて大丈夫です。毎日大量に使う段階になったらProを検討しましょう。2026年5月時点では、無料プランのクォータリセットが不安定なことがあります。「突然動かなくなった」ときはしばらく時間をおいてから試してください。</p>
+<h3>STEP 4　Browser Sub-Agentで動作確認</h3>
+<p>セットアップが完了したら、Browser Sub-Agentを起動して動作を確認します。チャット欄にこう入れてみてください。</p>
+<div style="background:#1e1e2e;color:#cdd6f4;border-radius:8px;padding:16px 20px;margin:12px 0;font-family:monospace;font-size:0.92em;line-height:1.7;white-space:pre-wrap;">ブラウザを起動して、https://example.com を開いて、
+画面のスクリーンショットを撮ってください</div>
+<figure class="manga-figure">
+  <img src="./images/antigravity-ca-08-browser-sub-agent.png" alt="Browser Sub-Agentの動作：チャットで指示→内蔵ブラウザが開く→スクリーンショットが返ってくる" class="manga-img" loading="lazy" />
+</figure>
+<p>スクリーンショットが返ってきたら成功です。ターミナルもPythonも不要。これだけでブラウザ自動化が動いている状態です。</p>
 <div style="background:#f6fff6;border:1px solid #b2dfb2;border-radius:6px;padding:14px 18px;margin:1.2em 0;">
 <p style="margin:0 0 8px;font-weight:bold;">✅ 確認ポイント</p>
 <ul style="margin:0;">
