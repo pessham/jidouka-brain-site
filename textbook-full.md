@@ -2,7 +2,7 @@
 
 ステータス：✅ 実証済み
 
-![序章：自動化で変わること](images/joshou/chapter-hero-joshou.png)
+![序章：自動化で変わること](https://jidouka.pessham.com/images/joshou/chapter-hero-joshou.png)
 
 ---
 
@@ -16,7 +16,7 @@
 
 これ、昨日もやりましたよね？
 
-![](images/joshou/m-01.jpg)
+![](https://jidouka.pessham.com/images/joshou/m-01.jpg)
 
 問い合わせメールを読んで、
 スプレッドシートに転記する。
@@ -49,7 +49,7 @@ noteやX投稿用に整える。
 この182時間、時給1500円で考えると、
 **約273,000円分になります**。
 
-![](images/joshou/ookinaloss.png)
+![](https://jidouka.pessham.com/images/joshou/ookinaloss.png)
 
 せっかくなので、少し聞かせてください。
 
@@ -95,7 +95,7 @@ Python。
 「**あ、自分の世界じゃないな**」
 と思う人は多いと思います。
 
-![](images/joshou/m-11.jpg)
+![](https://jidouka.pessham.com/images/joshou/m-11.jpg)
 
 僕も、コードは書けません。
 
@@ -159,7 +159,7 @@ Chrome拡張。
 ## なぜ僕が、自動化に向かったのか
 
 少しだけ自己紹介をさせてください。
-![](images/joshou/pessham.png)
+![](https://jidouka.pessham.com/images/joshou/pessham.png)
 
 僕は、もともと東京ガスという大企業に勤めていました。
 
@@ -168,7 +168,7 @@ Chrome拡張。
 その流れで、大企業の安定の道を捨てて、
 起業しちゃいました。
 
-![](images/joshou/metabatch.png)
+![](https://jidouka.pessham.com/images/joshou/metabatch.png)
 
 ただ、NFTバブルは弾けました。
 
@@ -270,7 +270,7 @@ Claude Code等に見せて、
 ---
 
 ## 「全部自動化」しなくていい
-![](images/joshou/hanjidouka.png)
+![](https://jidouka.pessham.com/images/joshou/hanjidouka.png)
 ここで少し、視点を変えさせてください。
 
 「自動化したいけど、
@@ -319,7 +319,7 @@ Claude Code等に見せて、
 
 ## この教材は、走りながら育てます
 
-![](images/joshou/hashirinagara.png)
+![](https://jidouka.pessham.com/images/joshou/hashirinagara.png)
 
 
 正直に書いておきます。
@@ -373,7 +373,7 @@ Claude Code等に見せて、
 
 ## ここで持って帰ってほしいもの
 
-![](images/joshou/daijini.png)
+![](https://jidouka.pessham.com/images/joshou/daijini.png)
 
 **ここで持って帰ってほしいもの**は、3つです。
 
@@ -402,7 +402,7 @@ AIに何を渡せばいいか。
 ---
 
 ## こういう人にはオススメしません
-![](images/joshou/not_osusume.png)
+![](https://jidouka.pessham.com/images/joshou/not_osusume.png)
 
 正直に書きます。
 この教材を買っても、合わない人がいます。
@@ -448,7 +448,7 @@ AIに何を渡せばいいか。
 ---
 
 ## こういう人にこそオススメです
-![](images/joshou/osusume.png)
+![](https://jidouka.pessham.com/images/joshou/osusume.png)
 
 逆に、**こういう人にはぴったりだと思います**。
 
@@ -493,7 +493,7 @@ AIに何を渡せばいいか。
 ---
 
 ## まずは、1つだけでいい
-![](images/joshou/1tsudake.png)
+![](https://jidouka.pessham.com/images/joshou/1tsudake.png)
 
 あなたの仕事の中にある、
 「毎回ちょっとめんどくさい、あの作業」
@@ -538,13 +538,13 @@ AIに何を渡せばいいか。
 以下の5つの特典を、
 上から順番に受け取ってください。
 
-![購入特典：5つの特典を受け取る](images/joshou/chapter-hero-tokuten.png)
+![購入特典：5つの特典を受け取る](https://jidouka.pessham.com/images/joshou/chapter-hero-tokuten.png)
 
 ---
 
 ## 特典①　業務自動化ネタ出しアシスタント（GPTs）
 
-[![特典①：業務自動化ネタ出しアシスタントGPTs](images/joshou/tokuten1.png)](https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto)
+[![特典①：業務自動化ネタ出しアシスタントGPTs](https://jidouka.pessham.com/images/joshou/tokuten1.png)](https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto)
 
 「何を自動化すればいいかわからない」
 状態から始められる相談用GPTsです。
@@ -559,7 +559,7 @@ AIに何を渡せばいいか。
 
 ## 特典②　ブラウザ自動化スターターキット
 
-[![特典②：ブラウザ自動化スターターキット](images/joshou/tokuten2.png)](https://browser-automation-starter-kit.vercel.app/)
+[![特典②：ブラウザ自動化スターターキット](https://jidouka.pessham.com/images/joshou/tokuten2.png)](https://browser-automation-starter-kit.vercel.app/)
 
 特典①で見つけた候補を、
 目的・手順・成功条件・安全ラインに分けて整理する書き込み式キットです。
@@ -571,7 +571,7 @@ AIに何を渡せばいいか。
 
 ## 特典③　購入者専用 LINEオープンチャット
 
-[![特典③：購入者専用LINEオープンチャット](images/joshou/tokuten3.png)](https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA)
+[![特典③：購入者専用LINEオープンチャット](https://jidouka.pessham.com/images/joshou/tokuten3.png)](https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA)
 
 教材購入者だけが入れる、
 質問・共有用のチャットです。
@@ -584,7 +584,7 @@ AIに何を渡せばいいか。
 
 ## 特典④　14日間ステップメール講座
 
-[![特典④：14日間ステップメール講座](images/joshou/tokuten4.png)](https://metamake0601.systeme.io/aa3f000b-1d9e5946)
+[![特典④：14日間ステップメール講座](https://jidouka.pessham.com/images/joshou/tokuten4.png)](https://metamake0601.systeme.io/aa3f000b-1d9e5946)
 
 購入後、毎日1通。教材の進め方に沿って、
 行動が止まらないよう14日間伴走します。
@@ -596,7 +596,7 @@ Day1〜Day14で実装まで進める実践課題つきです。
 
 ## 特典⑤　「AIに食わせてOK」権利＋教材フルテキストダウンロード
 
-[![特典⑤：AIに食わせてOK権利](images/joshou/tokuten5.png)](textbook-full.md)
+[![特典⑤：AIに食わせてOK権利](https://jidouka.pessham.com/images/joshou/tokuten5.png)](textbook-full.md)
 
 購入者は、この教材の内容を**自分専用のAIに読み込ませて使えます**。
 
@@ -636,7 +636,7 @@ Agent Skillsなどに入れて、
 
 # 第0章　準備編：道具を揃える
 
-![第0章：道具の準備](images/ch0/ch00-tools-hero.png)
+![第0章：道具の準備](https://jidouka.pessham.com/images/ch0/ch00-tools-hero.png)
 
 ---
 
@@ -668,7 +668,7 @@ Agent Skillsなどに入れて、
 **AI開発ツール（つまり、
 AIにコードを書かせて動かしてもらうための道具）
 を1つ、使える状態にすることだけ**です。
-![道具選びフロー](images/ch0/ai_tools.png)
+![道具選びフロー](https://jidouka.pessham.com/images/ch0/ai_tools.png)
 
 
 今後、Python や Playwright、
@@ -677,7 +677,7 @@ Chromium といった「自動化ツール」
 これらは **AI 開発ツールに頼めば自動で揃えてくれます。**
 だから最初から自分でインストール作業を覚える必要はありません。
 
-![AI開発ツールと自動化ツールの違い](images/ch0/ai_jidouka_tools.png)
+![AI開発ツールと自動化ツールの違い](https://jidouka.pessham.com/images/ch0/ai_jidouka_tools.png)
 
 以上です。
 
@@ -741,7 +741,7 @@ ChatGPT Plus も Claude Pro も、
 ただ、これは娯楽のサブスクというより、
 **自分の時間を増やすための道具代に近いです**。
 
-![1ヶ月の時間コスト](images/ch0/1month.png)
+![1ヶ月の時間コスト](https://jidouka.pessham.com/images/ch0/1month.png)
 
 毎日30分の作業が1つ減ったら、
 1ヶ月で約15時間です。
@@ -784,7 +784,7 @@ APIキーの利用や、エージェント機能、
 読みながら「**自分はこれかな**」
 と思ったやつで進めてください。
 
-![3つのツールの特徴](images/ch0/ai_tools.png)
+![3つのツールの特徴](https://jidouka.pessham.com/images/ch0/ai_tools.png)
 
 | ツール | 提供元 | 料金の入り口 | 強み | こんな人向け |
 |---|---|---|---|---|
@@ -807,7 +807,7 @@ APIキーの利用や、エージェント機能、
 もう少し深く触ってみたい**」と思ったタイミングで、
 Claude Code のページも読み返してもらえれば大丈夫です。
 
-![道具選びフロー](images/ch0/antigravity-ca-00-tool-choice-flow.png)
+![道具選びフロー](https://jidouka.pessham.com/images/ch0/antigravity-ca-00-tool-choice-flow.png)
 
 ここで大事にしてほしいのは、「**どっちが絶対に上です**」
 と決めつけないことです。
@@ -877,7 +877,7 @@ Antigravity 2.0 では、
 
 ブラウザで [https://antigravity.google/](ht**tps://antigravity.google/) を開きます。
 
-![Antigravity トップページ](images/ch0/antigravity-v2-01-top.png)
+![Antigravity トップページ](https://jidouka.pessham.com/images/ch0/antigravity-v2-01-top.png)
 
 「**Download for MacOS**」
 （または Windows の場合は別ボタン）
@@ -888,7 +888,7 @@ Antigravity 2.0 では、
 ダウンロードページに飛ぶと、
 **OS別の選択肢が並んでいます**。
 
-![ダウンロードページ](images/ch0/antigravity-v2-02-download.png)
+![ダウンロードページ](https://jidouka.pessham.com/images/ch0/antigravity-v2-02-download.png)
 
 | OS | 選ぶボタン |
 |---|---|
@@ -920,7 +920,7 @@ Antigravity を起動すると、
 「**Welcome to Antigravity**」
 と書かれた黒い画面が出ます。
 
-![Welcome 画面](images/ch0/antigravity-v2-03-welcome.png)
+![Welcome 画面](https://jidouka.pessham.com/images/ch0/antigravity-v2-03-welcome.png)
 
 「**Continue with Google**」
 をクリックします。
@@ -938,7 +938,7 @@ Antigravity を起動すると、
 ログイン後、「**Security Notice & Data Use**」
 という画面が出ます。
 
-![Security Notice](images/ch0/antigravity-v2-04-security.png)
+![Security Notice](https://jidouka.pessham.com/images/ch0/antigravity-v2-04-security.png)
 
 **AIエージェント**は、
 データの取り扱いに注意が必要であることを説明している画面です。
@@ -958,7 +958,7 @@ data」のチェックを入れて「**Next**」を押します。
 次にエディタ（つまり、**作業画面）
 のテーマを選びます**。
 
-![テーマ選択](images/ch0/antigravity-v2-05-theme.png)
+![テーマ選択](https://jidouka.pessham.com/images/ch0/antigravity-v2-05-theme.png)
 
 3つから選べます。
 
@@ -978,7 +978,7 @@ data」のチェックを入れて「**Next**」を押します。
 「**Build with Google**」
 という画面で、最初に使うプラグインを選びます。
 
-![プラグイン選択](images/ch0/antigravity-v2-06-plugins.png)
+![プラグイン選択](https://jidouka.pessham.com/images/ch0/antigravity-v2-06-plugins.png)
 
 プラグインとは、**Antigravity** の中で AI
 が使える追加の機能セットです。
@@ -1003,7 +1003,7 @@ data」のチェックを入れて「**Next**」を押します。
 「**Finish**」を押すと、
 Antigravity のメイン画面に入ります。
 
-![メイン画面](images/ch0/antigravity-v2-07-main.png)
+![メイン画面](https://jidouka.pessham.com/images/ch0/antigravity-v2-07-main.png)
 
 ここがあなたの作業場所です。
 
@@ -1027,7 +1027,7 @@ Security Preset が **Default**
 になっていることだけ確認してください。
 これだけで、ターミナルコマンドを実行するたびに確認が入る「**安全な状態**」で動かせます。
 
-![Security Preset の確認](images/ch0/antigravity-v2-09-security-preset.png)
+![Security Preset の確認](https://jidouka.pessham.com/images/ch0/antigravity-v2-09-security-preset.png)
 
 File Permissions や Network
 Permissions の細かい設定は、
@@ -1044,7 +1044,7 @@ AI開発ツールでは、ローカルファイルの中から「**作業フォ�
 
 最初は、**新しいフォルダを作るのがオススメです**。
 
-![作業フォルダの作り方](images/ch0/antigravity-v2-08-folder.png)
+![作業フォルダの作り方](https://jidouka.pessham.com/images/ch0/antigravity-v2-08-folder.png)
 
 
 具体的には、**ホーム直下に `code/automation/`
@@ -1059,7 +1059,7 @@ AI開発ツールでは、ローカルファイルの中から「**作業フォ�
 の右にあるフォルダアイコン（＋）から、
 作業フォルダを追加します。
 
-![Projectsに作業フォルダを追加](images/ch0/antigravity-v2-08-add-project.png)
+![Projectsに作業フォルダを追加](https://jidouka.pessham.com/images/ch0/antigravity-v2-08-add-project.png)
 
 **具体的な作り方**は、Finder から手で作ってもOKですし、
 ターミナルで以下のコマンドを実行してもOKです。
@@ -1110,7 +1110,7 @@ AI が周辺のファイルにアクセスしてしまい、
 
 入力したら、**右の矢印ボタン（→）を押します**。
 
-![プロンプト入力した状態](images/ch0/antigravity-v2-11-test-01.png)
+![プロンプト入力した状態](https://jidouka.pessham.com/images/ch0/antigravity-v2-11-test-01.png)
 
 すると、Antigravity が動き始めます。
 途中で「**Allow running this command?**」
@@ -1119,11 +1119,11 @@ AI が周辺のファイルにアクセスしてしまい、
 」という確認です。「**1 Yes, allow this time**」
 を選んで進めてください。
 
-![権限確認ダイアログ](images/ch0/antigravity-v2-11-test-02.png)
+![権限確認ダイアログ](https://jidouka.pessham.com/images/ch0/antigravity-v2-11-test-02.png)
 
 しばらく待つと、**スクリーンショットが右側に表示されます**。
 
-![動作確認完了](images/ch0/antigravity-v2-11-test-03.png)
+![動作確認完了](https://jidouka.pessham.com/images/ch0/antigravity-v2-11-test-03.png)
 
 確認するのは3つだけです。
 
@@ -1167,7 +1167,7 @@ Claude Code みたいなもの**」です。
 この教材でオススメする入口です。**日常業務の自動化なら、
 まずこれで十分**です。
 
-![Codex Installer](images/ch0/16_codex_installer.png)
+![Codex Installer](https://jidouka.pessham.com/images/ch0/16_codex_installer.png)
 
 2つ目は、**Codex CLI**です。
 ターミナルから使う **Codex** です。
@@ -1186,17 +1186,17 @@ GitHub とつないで使う用途に向いています。
 ChatGPT のサイドバーに、
 **Codex** の項目があります。
 
-![ChatGPT サイドバー](images/ch0/17_codex_sidebar.png)
+![ChatGPT サイドバー](https://jidouka.pessham.com/images/ch0/17_codex_sidebar.png)
 
 ここから Codex のページに入って、
 **デスクトップアプリ**をダウンロードします。
 
-![Codex ダウンロード](images/ch0/18_codex_download.png)
+![Codex ダウンロード](https://jidouka.pessham.com/images/ch0/18_codex_download.png)
 
 ダウンロードしたアプリを開くと、
 **メイン画面が表示されます**。
 
-![Codex メイン画面](images/ch0/19_codex_main.png)
+![Codex メイン画面](https://jidouka.pessham.com/images/ch0/19_codex_main.png)
 
 最初にこの順番で設定してください。
 
@@ -1207,7 +1207,7 @@ ChatGPT のサイドバーに、
 5. 書き込み範囲を作業フォルダだけにする
 6. 必要になってから MCP やブラウザ機能を追加する
 
-![Codex 設定](images/ch0/20_codex_settings.png)
+![Codex 設定](https://jidouka.pessham.com/images/ch0/20_codex_settings.png)
 
 最初から、メール、Drive、Notion、
 ブラウザ操作、コンピュータ使用を全部つなぐ必要はありません。
@@ -1265,31 +1265,31 @@ Codex を使う人は「**手順②　Codexで進める人はこちら**」
 
 Googleで「**claude**」と検索します。
 
-![Google検索でclaude](images/ch0/01_claude_search.png)
+![Google検索でclaude](https://jidouka.pessham.com/images/ch0/01_claude_search.png)
 
 一番上に出てくる「**Claude（claude.ai）
 **」をクリックします。
 トップページが表示されます。
 
-![Claude.aiのトップページ](images/ch0/02_claude_top.png)
+![Claude.aiのトップページ](https://jidouka.pessham.com/images/ch0/02_claude_top.png)
 
 ### Step 2　アカウントを作成する
 
 「**メールで続ける**」を押すと、
 登録したアドレスにメールが届きます。
 
-![認証メール](images/ch0/03_auth_email.png)
+![認証メール](https://jidouka.pessham.com/images/ch0/03_auth_email.png)
 
 届いたメールの「**Claude.aiにサインイン**」
 を押すと、PCの画面で次に進みます。
 名前を入れて、規約に同意してください。
 
-![アカウント作成](images/ch0/04_account_create.png)
+![アカウント作成](https://jidouka.pessham.com/images/ch0/04_account_create.png)
 
 その後、プロフィールを聞かれますが、
 飛ばしてOKです。
 
-![はじめまして画面](images/ch0/05_hello_screen.png)
+![はじめまして画面](https://jidouka.pessham.com/images/ch0/05_hello_screen.png)
 
 ### Step 3　有料プランに加入する
 
@@ -1307,40 +1307,40 @@ Googleで「**claude**」と検索します。
 まず1ヶ月だけ試して、合わなければ解約する。
 このくらいの軽さで大丈夫です。
 
-![プラン選択](images/ch0/06_plan_select.png)
+![プラン選択](https://jidouka.pessham.com/images/ch0/06_plan_select.png)
 
 「**Claudeを体験する**」
 から Pro プランを選択します。
 
-![プロプラン購入](images/ch0/07_pro_purchase.png)
+![プロプラン購入](https://jidouka.pessham.com/images/ch0/07_pro_purchase.png)
 
 **クレジットカード情報を入力して購入します**。
 
-![支払い情報](images/ch0/08_payment_info.png)
+![支払い情報](https://jidouka.pessham.com/images/ch0/08_payment_info.png)
 
 ### Step 4　デスクトップアプリをダウンロードする
 
 加入が終わったら、左下のアイコンから「**アプリと拡張機能を入手**」
 をクリックします。
 
-![アプリと拡張機能を入手](images/ch0/09_apps_extensions.png)
+![アプリと拡張機能を入手](https://jidouka.pessham.com/images/ch0/09_apps_extensions.png)
 
 「**macOS版をダウンロード**」
 を押すとアプリがダウンロードされます。
 
-![macOS版ダウンロード](images/ch0/10_macos_download.png)
+![macOS版ダウンロード](https://jidouka.pessham.com/images/ch0/10_macos_download.png)
 
 ダウンロードしたファイルを開いて、
 Claudeアプリを「**アプリケーション**」
 フォルダにドラッグします。
 
-![ClaudeアプリをApplicationsへ移動](images/ch0/11_claude_to_apps.png)
+![ClaudeアプリをApplicationsへ移動](https://jidouka.pessham.com/images/ch0/11_claude_to_apps.png)
 
 ### Step 5　Claudeアプリを起動する
 
 起動すると、こんな画面になります。
 
-![Claudeアプリ起動後](images/ch0/12_claude_launched.png)
+![Claudeアプリ起動後](https://jidouka.pessham.com/images/ch0/12_claude_launched.png)
 
 これでインストール完了です。
 
@@ -1354,7 +1354,7 @@ Claudeアプリを「**アプリケーション**」
 
 2つ目は、**Cowork（コワーク）モードです**。
 
-![Coworkモード](images/ch0/13_cowork_mode.png)
+![Coworkモード](https://jidouka.pessham.com/images/ch0/13_cowork_mode.png)
 
 メール処理・スケジュール管理など、
 **自律的にタスクをこなしてもらうモードです**。
@@ -1362,7 +1362,7 @@ Claudeアプリを「**アプリケーション**」
 
 3つ目は、**Code（コード）モードです**。
 
-![Codeモード](images/ch0/14_code_mode.png)
+![Codeモード](https://jidouka.pessham.com/images/ch0/14_code_mode.png)
 
 これが本命です。**Claude Code のモード**です。
 コードを書く・実行する・修正するを、
@@ -1429,7 +1429,7 @@ Antigravity も Claude Code も Codex
 Claude Code を使っている人は、
 あわせて**プライバシー設定も一度見ておくと安心です**。
 
-![Claude プライバシー設定](images/ch0/15_claude_privacy.png)
+![Claude プライバシー設定](https://jidouka.pessham.com/images/ch0/15_claude_privacy.png)
 
 ### 自分の個人設定を作るプロンプト（コピペ OK）
 
@@ -1682,9 +1682,9 @@ AI 開発ツールに「**Playwright
 
 [**毎朝6時のAIニュース便**](https://site-teal-iota.vercel.app/)は、設定1回で翌朝から毎日 Gmail に最新 AI ニュースのまとめが届く自動化です。
 
-[![AIニュース便のトップ画面](images/ch0/ainews-site-01.png)](https://site-teal-iota.vercel.app/)
+[![AIニュース便のトップ画面](https://jidouka.pessham.com/images/ch0/ainews-site-01.png)](https://site-teal-iota.vercel.app/)
 
-![届くメールのイメージ](images/ch0/ainews-site-02.png)
+![届くメールのイメージ](https://jidouka.pessham.com/images/ch0/ainews-site-02.png)
 
 **Playwright** も不要、
 ブラウザを操作しません。
@@ -1724,7 +1724,7 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 
 AIニュース便が動いたら、同じ仕組みの応用として「[**Substack 購読ニュースレターまとめ**](https://substack-digest-lovat.vercel.app/)」も作れます。
 
-[![Substack 購読ニュースレターまとめのトップ画面](images/ch0/substack-digest-site.png)](https://substack-digest-lovat.vercel.app/)
+[![Substack 購読ニュースレターまとめのトップ画面](https://jidouka.pessham.com/images/ch0/substack-digest-site.png)](https://substack-digest-lovat.vercel.app/)
 
 「**購読しているSubstackのメールを毎朝まとめて1通にして送って**」という指示をAI開発ツールに渡すだけで、AIニュース便と同じ .env ファイルを使いながら動きます。
 
@@ -1758,7 +1758,7 @@ Make、Chrome 拡張、
 左下の「**Settings**」
 アイコンから設定画面を開きます。
 
-![設定画面](images/ch0/antigravity-v2-08-settings.png)
+![設定画面](https://jidouka.pessham.com/images/ch0/antigravity-v2-08-settings.png)
 
 左サイドバーの一番下にある **「Conversations」
 ** をクリックします。
@@ -1780,7 +1780,7 @@ Make、Chrome 拡張、
 
 **オススメ：Default**
 
-![Security Preset の選択肢](images/ch0/antigravity-v2-09-security-preset.png)
+![Security Preset の選択肢](https://jidouka.pessham.com/images/ch0/antigravity-v2-09-security-preset.png)
 
 ---
 
@@ -1819,7 +1819,7 @@ playwright.dev
 make.com
 ```
 
-![File Permissions 設定完了例](images/ch0/antigravity-v2-13-file-permissions-configured.png)
+![File Permissions 設定完了例](https://jidouka.pessham.com/images/ch0/antigravity-v2-13-file-permissions-configured.png)
 
 ---
 
@@ -1867,13 +1867,13 @@ AI がそれを「次の指示」
 
 ステータス：✅ 実証済み（実体験ベース）
 
-![第1章：どんな作業が自動化できるか](images/ch01/ch01-automation-tools-hero.png)
+![第1章：どんな作業が自動化できるか](https://jidouka.pessham.com/images/ch01/ch01-automation-tools-hero.png)
 
 ---
 
 ## 先に、どんな作業を自動化できるのか見ておきます
 
-![](images/ch01/naniwojidouka.png)
+![](https://jidouka.pessham.com/images/ch01/naniwojidouka.png)
 
 道具の話の前に、まず上の図から「**自分のあの作業、
 これに近いかも**」を探してみてください。
@@ -2056,7 +2056,7 @@ AI がそれを「次の指示」
 
 ### 🔔気をつけよう🔔：具体例 — 他社フォームへの自動送信
 
-![他社フォームへの自動送信のリスク](images/ch01/m-04-sales-form-risk.png)
+![他社フォームへの自動送信のリスク](https://jidouka.pessham.com/images/ch01/m-04-sales-form-risk.png)
 
 たとえば、他社のお問い合わせフォームへ営業文面を自動送信する使い方は、
 この教材では推奨しません。
@@ -2103,7 +2103,7 @@ Code等**（AIにコードを書かせるツール）
 **業務自動化で押さえる道具**は、この5つです。
 そして優先順位がはっきりあります。
 
-![自動化ツールの優先順位](images/ch01/tool-priority-5-steps.png)
+![自動化ツールの優先順位](https://jidouka.pessham.com/images/ch01/tool-priority-5-steps.png)
 
 ```
 1. Playwright
@@ -2196,7 +2196,7 @@ Gmail からデータを読む（MCP）
 
 ### 軸1：対象サイトは Playwright で行けるか
 
-![軸1：Playwrightで行けるサイトか考える](images/ch01/axis1-playwright-site-check.png)
+![軸1：Playwrightで行けるサイトか考える](https://jidouka.pessham.com/images/ch01/axis1-playwright-site-check.png)
 
 これがすべての出発点です。
 具体的には、こういうサイトは **Playwright** で詰まります。
@@ -2209,7 +2209,7 @@ Gmail からデータを読む（MCP）
 ただし、これらのサイトでも**CDP方式**という抜け道があることがあります。抜け道といっても違法ではなく、PlaywrightがゼロからChromeを開くのではなく、すでにあなたがログインしているChromeに接続して操作する方法です。詳しくは[第2章「ログインで詰まったら：CDP方式を試す」](#第2章-ログインで詰まったら：cdp方式を試す)で説明します。まずは「**詰まっても抜け道がある**」くらいで読み進めてください。
 
 
-![Playwrightが苦手なサイトたち 全体図](images/ch01/playwright-hard-sites-01-overview.png)
+![Playwrightが苦手なサイトたち 全体図](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-01-overview.png)
 
 
 Playwright でいけそうなら、
@@ -2246,7 +2246,7 @@ MCPでも公式APIでも目的の操作が見つからない場合は、
 
 ### 軸2：繰り返し頻度はどれくらいか
 
-![軸2：繰り返し頻度を考える](images/ch01/axis2-repeat-frequency.png)
+![軸2：繰り返し頻度を考える](https://jidouka.pessham.com/images/ch01/axis2-repeat-frequency.png)
 
 - 毎日繰り返す → Playwright or Make（MCP 対応タスクなら MCP も可。ただし定時自動起動には別ツールとの組み合わせが必要）
 - 週1〜月1 → どれでもOK
@@ -2259,7 +2259,7 @@ MCPでも公式APIでも目的の操作が見つからない場合は、
 
 ### 軸3：PCがオフでも動かしたい？/ Webhook を受け取りたい？
 
-![軸3：PCがオフでも動かしたい？](images/ch01/make_tokucho.png)
+![軸3：PCがオフでも動かしたい？](https://jidouka.pessham.com/images/ch01/make_tokucho.png)
 
 最後に「実行環境」の問題を確認します。
 
@@ -2292,7 +2292,7 @@ Make は不要です。
 
 ### 軸4：今使っているブラウザの右上に「自分専用ボタン」を置きたいか
 
-![ブラウザのツールバーに並ぶ拡張機能アイコン](images/ch01/chrome-extension-toolbar.png)
+![ブラウザのツールバーに並ぶ拡張機能アイコン](https://jidouka.pessham.com/images/ch01/chrome-extension-toolbar.png)
 
 「このサイトを開いているときだけ、
 ワンクリックで Notion に送りたい」
@@ -2307,7 +2307,7 @@ Make は不要です。
 
 ### 軸5：人の最終確認が必要か
 
-![軸5：人の最終確認](images/ch01/axis5-human-final-check.png)
+![軸5：人の最終確認](https://jidouka.pessham.com/images/ch01/axis5-human-final-check.png)
 
 ここは「**どの道具を使うか**」ではなく、
 「**そもそも全自動にしていい作業か、
@@ -2555,15 +2555,15 @@ Playwright も Make も不要）**
 Claude in Chrome / Make / 公式API
 に切り替えてください。
 
-![Playwrightが苦手なサイトたち 全体図](images/ch01/playwright-hard-sites-01-overview.png)
+![Playwrightが苦手なサイトたち 全体図](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-01-overview.png)
 
-![Google・Microsoft・Apple系](images/ch01/playwright-hard-sites-02-google-ms-apple.png)
+![Google・Microsoft・Apple系](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-02-google-ms-apple.png)
 
-![金融・決済・CAPTCHA・Cloudflare](images/ch01/playwright-hard-sites-03-finance-auth.png)
+![金融・決済・CAPTCHA・Cloudflare](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-03-finance-auth.png)
 
-![SNS・EC・口コミ系](images/ch01/playwright-hard-sites-04-sns-ec-review.png)
+![SNS・EC・口コミ系](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-04-sns-ec-review.png)
 
-![SaaS管理画面](images/ch01/playwright-hard-sites-05-saas.png)
+![SaaS管理画面](https://jidouka.pessham.com/images/ch01/playwright-hard-sites-05-saas.png)
 
 
 #### 詰まったときの対応
@@ -2659,7 +2659,7 @@ API の方が確実です。
 
 #### 主な MCP 対応サービス（代表例）
 
-![MCPで直接つながるツール例](images/ch01/mcp-supported-tools-examples.png)
+![MCPで直接つながるツール例](https://jidouka.pessham.com/images/ch01/mcp-supported-tools-examples.png)
 
 - Gmail / Google Calendar / Google Drive
 - Notion
@@ -2674,7 +2674,7 @@ MCP**」で検索すると最新情報が見つかります。
 
 ### 6-3. Claude in Chrome / Codex in Chrome / Antigravity in Chrome — AI親和拡張
 
-![Claude in Chrome でNotebookLMを操作している様子](images/ch01/claude-in-chrome-notebooklm.png)
+![Claude in Chrome でNotebookLMを操作している様子](https://jidouka.pessham.com/images/ch01/claude-in-chrome-notebooklm.png)
 
 ステータス：✅ 実証済み
 
@@ -2700,7 +2700,7 @@ Anthropic公式の拡張です。
 - **Max**（月100ドル / 200ドル）：全モデル選択可
 - **Team / Enterprise**：使える
 
-![Claude プラン料金](images/ch01/credit.png)
+![Claude プラン料金](https://jidouka.pessham.com/images/ch01/credit.png)
 
 #### Codex in Chrome
 
@@ -2750,7 +2750,7 @@ Playwrightのように「**新たにブラウザを立ち上げる**」
 
 ### 6-4. 自作 Chrome 拡張 — 作業中の「いま1ステップ省きたい」に使う
 
-![Chrome拡張機能の管理画面](images/ch01/chrome-extensions-page.png)
+![Chrome拡張機能の管理画面](https://jidouka.pessham.com/images/ch01/chrome-extensions-page.png)
 
 ステータス：✅ 実証済み
 
@@ -2807,7 +2807,7 @@ Manifest V3、service worker の制約も踏まえて書いて」
 
 ### 6-5. Make — SaaS同士を線でつなぐ
 
-![Makeのシナリオ画面イメージ](images/ch01/make-scenario-overview.png)
+![Makeのシナリオ画面イメージ](https://jidouka.pessham.com/images/ch01/make-scenario-overview.png)
 
 ステータス：🟡 実験中（追記版で深掘り予定）
 
@@ -2865,7 +2865,7 @@ Googleカレンダーに予定登録するシナリオを作りたい。
 
 #### Make の料金プラン（2026年5月時点）
 
-![Make料金プラン](images/ch01/make-pricing-plan.png)
+![Make料金プラン](https://jidouka.pessham.com/images/ch01/make-pricing-plan.png)
 
 ざっくり整理するとこうなります。
 
@@ -3173,7 +3173,7 @@ Claude in Chrome、Make、
 
 ステータス：✅ 実証済み（実体験ベース）
 
-![第2章：録る・作る・直す・育てる](images/ch02/ch02-playwright-4phase-hero.png)
+![第2章：録る・作る・直す・育てる](https://jidouka.pessham.com/images/ch02/ch02-playwright-4phase-hero.png)
 
 ---
 
@@ -3210,7 +3210,7 @@ Claude in Chrome、Make、
 
 特典の [**「ネタ出しアシスタント GPTs」**](https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff) を使ってください。
 
-![](images/ch02/gyoumujidoukaneta.png)
+![](https://jidouka.pessham.com/images/ch02/gyoumujidoukaneta.png)
 
 毎日・毎週やっている作業を話すと、
 MCP / **Playwright** / Claude in
@@ -3269,7 +3269,7 @@ AIに頼んだコードが本当に動くのを、
 「**AIがブラウザを動かしてる**」
 が目で見えます。
 
-![](images/ch02/jidouka.png)
+![](https://jidouka.pessham.com/images/ch02/jidouka.png)
 
 これが「**ロボットが代わりに作業してる**」状態の、
 いちばん分かりやすい姿です。
@@ -3437,9 +3437,9 @@ Finder でファイルを選んで **Option +
 Command + C** を押すと、
 ファイルのパスをコピーできます。
 
-![FinderでOption + Command + Cを押してパスをコピーする](images/ch02/optioncommandc.png)
+![FinderでOption + Command + Cを押してパスをコピーする](https://jidouka.pessham.com/images/ch02/optioncommandc.png)
 
-![コピーしたファイルパスをチャットに貼り付ける](images/ch02/haritsuke.png)
+![コピーしたファイルパスをチャットに貼り付ける](https://jidouka.pessham.com/images/ch02/haritsuke.png)
 
 または、Finder の下にパスバーを表示して、
 場所を確認してもOKです。
@@ -3449,7 +3449,7 @@ Windows の場合は、
 **「パスのコピー（Copy as path）」
 ** を選びます。
 
-![Windowsでパスのコピーを選ぶ](images/ch02/windowspasscopy.png)
+![Windowsでパスのコピーを選ぶ](https://jidouka.pessham.com/images/ch02/windowspasscopy.png)
 
 Windows 10 などで表示されない場合は、
 **Shift を押しながら右クリック**すると出ることがあります。
@@ -3595,7 +3595,7 @@ Claude Code等 が「これを先にインストールして」
 ファイルについて説明します。
 [第0章の課題「**AIニュース便**」](#第0章-10-準備運動：aiニュース便を1個動かしてみよう)でも出てきました。
 
-![](images/ch02/m-05-env-secret.png)
+![](https://jidouka.pessham.com/images/ch02/m-05-env-secret.png)
 
 `.env` は、プログラムを動かすときの**設定や秘密情報をまとめておく専用ファイル**です。
 ファイル名そのものが「**ドットから始まって、
@@ -4294,7 +4294,7 @@ Chrome拡張はChromeを開いている間しか動きません。
 
 **自動化は、一発にしてならず。**
 
-![第3章：詰まった時にはここ](images/ch03/automation-not-one-shot.png)
+![第3章：詰まった時にはここ](https://jidouka.pessham.com/images/ch03/automation-not-one-shot.png)
 
 これは脅しでも何でもなくて、ただの事実です。
 いくらAIが頭良くなっても、
@@ -4353,7 +4353,7 @@ Chrome 拡張）を覚えて、
 ---
 
 ## 詰まりは2階層ある
-![](images/ch03/error-material.png)
+![](https://jidouka.pessham.com/images/ch03/error-material.png)
 詰まりには、種類があります。
 
 ぜんぶ同じ「止まった」に見えるんですけど、
@@ -4427,7 +4427,7 @@ AIに渡しても、提案を試しても、
 でも、読めなくていいです。
 読まずに、**まるごとコピペしてAIに渡してください**。
 
-![](images/ch03/marugotokopipe.png)
+![](https://jidouka.pessham.com/images/ch03/marugotokopipe.png)
 
 AIは英語のエラー文を「**自分のためのヒント**」
 として読んでくれます。
@@ -4762,7 +4762,7 @@ Grok は、SNS
 
 ## 第2階層を抜けられないときの判断
 
-![](images/ch03/dai2_nukerarenai.png)
+![](https://jidouka.pessham.com/images/ch03/dai2_nukerarenai.png)
 
 ここまで全部やった。
 それでも抜けない。
@@ -4776,7 +4776,7 @@ Grok は、SNS
 
 ### いったん引く
 
-![](images/ch03/30minutes.png)
+![](https://jidouka.pessham.com/images/ch03/30minutes.png)
 
 30分以上同じ場所で詰まったら、
 **いったんパソコンから離れます**。
@@ -4888,11 +4888,11 @@ Cloudflare がきつい、
 これができるようになると、
 もう途中でやめません。
 
-![](images/ch03/z-04-patience-process.png)
+![](https://jidouka.pessham.com/images/ch03/z-04-patience-process.png)
 
 ### 30分ルール
 
-![](images/ch03/30minute.png)
+![](https://jidouka.pessham.com/images/ch03/30minute.png)
 
 **詰まったら 30分でいったん区切ってください**。
 
@@ -4910,7 +4910,7 @@ Cloudflare がきつい、
 
 ### 80%でいい
 
-![](images/ch03/80%.png)
+![](https://jidouka.pessham.com/images/ch03/80%.png)
 
 完璧主義は捨ててください。
 
@@ -4923,7 +4923,7 @@ Cloudflare がきつい、
 
 ### 諦めなければゼロにはならない
 
-![](images/ch03/akiramenai.png)
+![](https://jidouka.pessham.com/images/ch03/akiramenai.png)
 
 最後に。
 
@@ -4971,7 +4971,7 @@ Cloudflare がきつい、
 
 # 第4章　実例集：4フェーズの型を、実際の仕事で動かす
 
-![第4章：実例集](images/ch04/ch04-examples-hero.png)
+![第4章：実例集](https://jidouka.pessham.com/images/ch04/ch04-examples-hero.png)
 
 ---
 
@@ -5321,7 +5321,7 @@ Whisper や Opal は精度が高い文字起こしツールです。
 **iPhone のボイスメモアプリに標準で入っている「文字起こし」機能**です。
 
 
-![](images/ch04/voicememo_mojiokosi.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi.png)
 
 録音が終わると自動でテキスト化されていて、
 「文字起こしをコピー」
@@ -5341,13 +5341,13 @@ Whisper や Opal は精度が高い文字起こしツールです。
 ファイルをダブルクリックすると、
 ターミナルが開きます。
 
-![](images/ch04/voicememo_mojiokosi2.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi2.png)
 
 クリップボードの内容（文字起こしテキスト）
 が画面に表示されて、
 Enter を押すだけで処理が始まります。
 
-![](images/ch04/voicememo_mojiokosi3.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi3.png)
 
 ```
 [ボイスメモを録音]
@@ -5371,7 +5371,7 @@ Mac 上での文字起こし処理も不要になりました。
 記事化の中身は CDP（ブラウザを外部プログラムから操作する仕組み）
 を使って作りました。
 
-![](images/ch04/voicememo_mojiokosi4.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi4.png)
 
 ChatGPT の画面を開いて文章を整え、
 タイトル案を出してもらいます。
@@ -5379,7 +5379,7 @@ ChatGPT の画面を開いて文章を整え、
 さらに、タイトルをもとに**サムネイル画像を自動生成し、
 ダウンロード**します。
 
-![](images/ch04/voicememo_mojiokosi5.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi5.png)
 
 note と Substack
 はすでにログイン済みのブラウザを使うため、
@@ -5387,7 +5387,7 @@ note と Substack
 新規作成画面を開いてタイトルと本文をそのまま貼り付け、
 **下書き保存まで自動で完了**します。
 
-![](images/ch04/voicememo_mojiokosi6.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi6.png)
 
 サムネイル画像のアップロードだけ、自動化が難しく、
 最後の編集時に合わせてアップロードを行なっています。
@@ -5404,7 +5404,7 @@ note と Substack
 ならば、記事を作るついでに「今日1日の振り返り日記も作ってください」
 と ChatGPT に頼めばいいと気づきました。
 
-![](images/ch04/voicememo_mojiokosi7.png)
+![](https://jidouka.pessham.com/images/ch04/voicememo_mojiokosi7.png)
 
 日記を書くための時間を新たに用意しなくていい。
 すでにやっている音声配信の流れの中に、
@@ -5449,7 +5449,7 @@ note・Substack の下書きを作る
 毎月 Substack の登録者データを手動でエクスポートして、
 Proton のスプレッドシートに移していました。
 
-![](images/ch04/backup.png)
+![](https://jidouka.pessham.com/images/ch04/backup.png)
 
 「**月1回だから手動でいいか**」と思いながら、
 毎月やるたびに「またか」と思う作業でした。
@@ -5463,7 +5463,7 @@ Proton への貼り付けだけ、
 手動で残しました。
 
 
-![](images/ch04/backup_muzui.png)
+![](https://jidouka.pessham.com/images/ch04/backup_muzui.png)
 
 全部を自動化することはできませんでした。
 でも、「またか」の時間は7割減りました。
@@ -5566,7 +5566,7 @@ E2E 暗号化サービスや、
 PDF が `~/Downloads/請求書/YYYYMM/`
 に自動で保存されます。
 
-![Gmailの請求書PDF収集がコマンド1つになった画面](images/ch04/gmail-invoice-command.png)
+![Gmailの請求書PDF収集がコマンド1つになった画面](https://jidouka.pessham.com/images/ch04/gmail-invoice-command.png)
 
 月末の30分が、コマンド1つになりました。
 
@@ -5702,7 +5702,7 @@ Make が本当に必要なのは「**PC がオフのときでも、
 **TOBIRA**（トビラ）
 という名前でプロトタイプを作りました。
 
-![](images/ch04/smartcheckin.png)
+![](https://jidouka.pessham.com/images/ch04/smartcheckin.png)
 
 ```
 ・宿泊者名簿の電子化（法令対応フォーム）
@@ -5813,7 +5813,7 @@ BrainはランキングをCSVでダウンロードする手段がなく、
 
 約30秒で上位20件がスプシに書き込まれます。
 
-![](images/ch04/brain_scraper.png)
+![](https://jidouka.pessham.com/images/ch04/brain_scraper.png)
 
 ---
 
@@ -5999,7 +5999,7 @@ Phase 4：壊れても続きから再開できる形にする
 
 # 第5章　プロンプト辞典：状況別コピペ集
 
-![第5章：辞典＆プロンプト集](images/ch05/ch05-prompt-dictionary-hero.png)
+![第5章：辞典＆プロンプト集](https://jidouka.pessham.com/images/ch05/ch05-prompt-dictionary-hero.png)
 
 ---
 
@@ -7170,7 +7170,7 @@ Claude Code等に呼び出し用のスキルを作ってもらうプロンプト
 コピペ用プロンプトをそのままAIに貼る。
 これだけで、**ほとんどの問題は前に進みます**。
 
-![](images/ch03/pattern-dictionary-compass.png)
+![](https://jidouka.pessham.com/images/ch03/pattern-dictionary-compass.png)
 
 ### 全体マップ
 
@@ -7552,7 +7552,7 @@ OS のファイル選択ダイアログが開いてしまい、
 最初から入れておくと、
 **あとあと一番ラクになります**。
 
-![](images/ch03/recovery-design.png)
+![](https://jidouka.pessham.com/images/ch03/recovery-design.png)
 
 ---
 
@@ -7584,13 +7584,13 @@ OS のファイル選択ダイアログが開いてしまい、
 
 # 終章　これからの話
 
-![終章：これからの話](images/shusho/chapter-hero-shusho.png)
+![終章：これからの話](https://jidouka.pessham.com/images/shusho/chapter-hero-shusho.png)
 
 ---
 
 ## ここまで来た
 
-![](images/shusho/kokomade.png)
+![](https://jidouka.pessham.com/images/shusho/kokomade.png)
 
 序章から第5章まで通しました。
 
@@ -7603,7 +7603,7 @@ OS のファイル選択ダイアログが開いてしまい、
 
 ## 正直に言うと、道具は変わる
 
-![](images/shusho/douguhakawaru.png)
+![](https://jidouka.pessham.com/images/shusho/douguhakawaru.png)
 
 ここで正直に言っておきます。
 
@@ -7621,7 +7621,7 @@ Playwright の細かい使い方も、
 
 ## でも、型は変わらない
 
-![](images/shusho/katahakawaranai.png)
+![](https://jidouka.pessham.com/images/shusho/katahakawaranai.png)
 
 僕がこの教材で渡したかったのは、
 道具そのものではありません。
@@ -7652,7 +7652,7 @@ Chrome 拡張でも変わりません。
 
 ## まだ語れていないことがある
 
-![](images/shusho/madakataretenai.png)
+![](https://jidouka.pessham.com/images/shusho/madakataretenai.png)
 
 Chrome 拡張も、新しい MCP も、
 「同じ型でいける」と思っています。
@@ -7676,7 +7676,7 @@ Chrome 拡張も、新しい MCP も、
 
 だから購入者みなさんと **LINEオープンチャット** を作りました。
 
-![](images/shusho/tokuten3.png)
+![](https://jidouka.pessham.com/images/shusho/tokuten3.png)
 
 👉 [オープンチャット「ブラウザ操作自動化の教科書」](https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA)
 
