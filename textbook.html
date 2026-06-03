@@ -64,13 +64,49 @@
   }
   .copy-btn:hover { background-color: rgba(255,255,255,0.22); color: #e2e8f0; }
   .copy-btn.copied { background-color: #22c55e !important; border-color: #22c55e !important; color: #fff !important; }
+  .toc-toggle,
+  .toc-backdrop { display: none; }
+  .toc-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 220;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255,255,255,0.42);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #fff;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.22);
+  }
   @media (max-width: 780px) {
     html, body { width: 100%; overflow-x: hidden; }
     body { font-size: 16px; line-height: 1.85; background: #fff; }
-    nav#sidebar { display: none; }
+    .toc-toggle { display: inline-flex; }
+    .toc-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 180;
+      background: rgba(15,23,42,0.42);
+    }
+    body.toc-open .toc-backdrop { display: block; }
+    nav#sidebar {
+      display: block;
+      width: min(86vw, 320px);
+      min-width: 0;
+      transform: translateX(-104%);
+      transition: transform 0.18s ease;
+      box-shadow: 16px 0 40px rgba(15,23,42,0.26);
+    }
+    body.toc-open nav#sidebar { transform: translateX(0); }
     header {
       margin-left: 0;
-      padding: 28px 20px 24px;
+      padding: 56px 20px 24px;
     }
     header h1 {
       font-size: 1.75rem;
@@ -170,6 +206,7 @@
 </style>
 </head>
 <body>
+<button class="toc-toggle" type="button" aria-controls="sidebar" aria-expanded="false">☰ 目次</button>
 <nav id="sidebar">
   <div class="sidebar-title">目次</div>
   <ul class="toc-list">
@@ -303,6 +340,7 @@
 </li>
 </ul>
 </nav>
+<div class="toc-backdrop" aria-hidden="true"></div>
 <header>
   <h1>ブラウザ操作自動化の教科書</h1>
   <div class="subtitle">AIと Playwright で、くり返し作業をなくす</div>
@@ -310,8 +348,8 @@
 <main>
 <section class="chapter" id="序章"><div class="chapter-label">序章</div><h1 class="chapter-title">自動化で変わること</h1><h1 id="序章-序章-昨日もやった「あの作業」を、自動化する話">序章　昨日もやった「あの作業」を、自動化する話</h1>
 <p>ステータス：✅ 実証済み</p>
-<p><img alt="序章：自動化で変わること" src="images/joshou/chapter-hero-joshou.png" /></p>
-<p><img alt="" src="images/joshou/m-01.jpg" /></p>
+<p><img alt="序章：自動化で変わること" src="images/joshou/chapter-hero-joshou.png" loading="lazy" decoding="async" /></p>
+<p><img alt="" src="images/joshou/m-01.jpg" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="序章-昨日もやった「あの作業」のチリツモ">昨日もやった「あの作業」のチリツモ...</h2>
 <p>管理画面を開く。<br />
@@ -337,7 +375,7 @@ Googleドキュメントの文章を、noteやX投稿用に整える。</p>
 同じ保存ボタンを押している。</p>
 <p>これ、冷静に考えるとけっこう大きいですよね。</p>
 <p>この182時間、時給1500円で考えると、<strong>約273,000円分になります</strong>。</p>
-<p><img alt="" src="images/joshou/ookinaloss.png" /></p>
+<p><img alt="" src="images/joshou/ookinaloss.png" loading="lazy" decoding="async" /></p>
 <p>せっかくなので、少し聞かせてください。</p>
 <p><strong>その182時間、何に使いたいですか。</strong></p>
 <p>新しい仕事を取りにいく、でも。</p>
@@ -359,7 +397,7 @@ Python。<br />
 英語のエラー。</p>
 <p>このへんの言葉が並ぶだけで、<br />
 「<strong>あ、自分の世界じゃないな</strong>」と思う人は多いと思います。</p>
-<p><img alt="" src="images/joshou/m-11.jpg" /></p>
+<p><img alt="" src="images/joshou/m-11.jpg" loading="lazy" decoding="async" /></p>
 <p>僕も、コードは書けません。</p>
 <p>なので、この教材は<br />
 「<strong>コードを書ける人が、すごい自動化を作る話</strong>」<br />
@@ -392,12 +430,12 @@ Python。<br />
 <hr />
 <h2 id="序章-なぜ僕が、自動化に向かったのか">なぜ僕が、自動化に向かったのか</h2>
 <p>少しだけ自己紹介をさせてください。<br />
-<img alt="" src="images/joshou/pessham.png" /></p>
+<img alt="" src="images/joshou/pessham.png" loading="lazy" decoding="async" /></p>
 <p>僕は、もともと東京ガスという大企業に勤めていました。</p>
 <p>そこからNFTバブルの勢いに乗って、<br />
 4,000万円ほどのお金が動くプロジェクトを経験し、<br />
 その流れで、大企業の安定の道を捨てて、起業しちゃいました。</p>
-<p><img alt="" src="images/joshou/metabatch.png" /></p>
+<p><img alt="" src="images/joshou/metabatch.png" loading="lazy" decoding="async" /></p>
 <p>ただ、NFTバブルは弾けました。</p>
 <p>正直、かなりお先真っ暗でした。</p>
 <p>「<strong>どうしよう...</strong>」と思っていた中、一つやりたいことが見つかりました。</p>
@@ -434,7 +472,7 @@ AI研修の講師と、<br />
 毎朝30分くらいかかっていた音声配信サービスA・Bのアップロード作業がありました。</p>
 <p>これが今は、<br />
 iPhoneからMacに音声ファイルをAirDropして、タイトルを設定するだけで、あとは自動でAIが作業してくれます。</p>
-<video controls style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/podcast-upload-demo.mp4" type="video/mp4"></video>
+<video controls preload="none" style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/podcast-upload-demo.mp4" type="video/mp4"></video>
 
 <p>・複数音声サービスへのログイン<br />
 ・音声アップロード<br />
@@ -457,7 +495,7 @@ Claude Code等に見せて、<br />
 「<strong>この作業を自動化したい</strong>」と伝えただけです。</p>
 <hr />
 <h2 id="序章-「全部自動化」しなくていい">「全部自動化」しなくていい</h2>
-<p><img alt="" src="images/joshou/hanjidouka.png" /><br />
+<p><img alt="" src="images/joshou/hanjidouka.png" loading="lazy" decoding="async" /><br />
 ここで少し、視点を変えさせてください。</p>
 <p>「自動化したいけど、毎回ちょっと作業が違うんだよな」</p>
 <p>こう思って、<strong>自動化を諦めかけている人が多い</strong>と感じています。</p>
@@ -485,7 +523,7 @@ Claude Code等に見せて、<br />
 <p>この教材は、<strong>「完全自動化」ではなく「半自動化」を積み上げていく教材です</strong>。</p>
 <hr />
 <h2 id="序章-この教材は、走りながら育てます">この教材は、走りながら育てます</h2>
-<p><img alt="" src="images/joshou/hashirinagara.png" /></p>
+<p><img alt="" src="images/joshou/hashirinagara.png" loading="lazy" decoding="async" /></p>
 <p>正直に書いておきます。</p>
 <p><strong>この教材</strong>は、リリース時点で全部が完璧に揃っているわけではありません。</p>
 <p>「自動化」で毎日30分を削減するために必要なツールを、すべて自分で実践して、ありとあらゆるケースにおいて、<strong>実体験をもとに語れるのが理想です</strong>。</p>
@@ -505,7 +543,7 @@ Claude Code等に見せて、<br />
 <p>だから、方法論だけではなく、<strong>伴走できる教材にしたいんです</strong>。</p>
 <hr />
 <h2 id="序章-ここで持って帰ってほしいもの">ここで持って帰ってほしいもの</h2>
-<p><img alt="" src="images/joshou/daijini.png" /></p>
+<p><img alt="" src="images/joshou/daijini.png" loading="lazy" decoding="async" /></p>
 <p><strong>ここで持って帰ってほしいもの</strong>は、3つです。</p>
 <p><strong>1つ目：自分の業務を1個、自動化する手順</strong></p>
 <p>あなた自身の「あの作業」を、<strong>ボタン1つに近づけるところまで持っていきます</strong>。</p>
@@ -521,7 +559,7 @@ AIに何を渡せばいいか。<br />
 <strong>どこからやり直せばいいかまで説明します</strong>。</p>
 <hr />
 <h2 id="序章-こういう人にはオススメしません">こういう人にはオススメしません</h2>
-<p><img alt="" src="images/joshou/not_osusume.png" /></p>
+<p><img alt="" src="images/joshou/not_osusume.png" loading="lazy" decoding="async" /></p>
 <p>正直に書きます。<br />
 この教材を買っても、合わない人がいます。<br />
 先に、合わない方を並べておきます。</p>
@@ -540,7 +578,7 @@ AIに何を渡せばいいか。<br />
 <strong>止まった瞬間にPCを閉じてしまう方に</strong>は、つらいかもしれません。</p>
 <hr />
 <h2 id="序章-こういう人にこそオススメです">こういう人にこそオススメです</h2>
-<p><img alt="" src="images/joshou/osusume.png" /></p>
+<p><img alt="" src="images/joshou/osusume.png" loading="lazy" decoding="async" /></p>
 <p>逆に、<strong>こういう人にはぴったりだと思います</strong>。</p>
 <p>・<strong>毎日・毎週、同じブラウザ作業をしている人</strong></p>
 <p>メール、スプレッドシート、管理画面、予約サイト、投稿サイト。<br />
@@ -560,7 +598,7 @@ AIに何を渡せばいいか。<br />
 1つ小さな作業を選んで、<strong>画面録画を見せながら頼んでみることです</strong>。</p>
 <hr />
 <h2 id="序章-まずは、1つだけでいい">まずは、1つだけでいい</h2>
-<p><img alt="" src="images/joshou/1tsudake.png" /></p>
+<p><img alt="" src="images/joshou/1tsudake.png" loading="lazy" decoding="async" /></p>
 <p>あなたの仕事の中にある、<br />
 「毎回ちょっとめんどくさい、あの作業」<br />
 を1つだけ思い浮かべてください。</p>
@@ -581,35 +619,35 @@ AIに何を渡せばいいか。<br />
 <section class="chapter" id="特典"><div class="chapter-label">購入特典</div><h1 class="chapter-title">5つの特典を受け取る</h1><h1 id="特典-購入特典">購入特典</h1>
 <p>ご購入ありがとうございます。</p>
 <p>以下の5つの特典を、上から順番に受け取ってください。</p>
-<p><img alt="購入特典：5つの特典を受け取る" src="images/joshou/chapter-hero-tokuten.png" /></p>
+<p><img alt="購入特典：5つの特典を受け取る" src="images/joshou/chapter-hero-tokuten.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="特典-特典①-業務自動化ネタ出しアシスタント（gpts）">特典①　業務自動化ネタ出しアシスタント（GPTs）</h2>
-<p><a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto" target="_blank" rel="noopener noreferrer"><img alt="特典①：業務自動化ネタ出しアシスタントGPTs" src="images/joshou/tokuten1.png" /></a></p>
+<p><a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto" target="_blank" rel="noopener noreferrer"><img alt="特典①：業務自動化ネタ出しアシスタントGPTs" src="images/joshou/tokuten1.png" loading="lazy" decoding="async" /></a></p>
 <p>「何を自動化すればいいかわからない」状態から始められる相談用GPTsです。<br />
 仕事の話を少し聞かせるだけで、あなたの業務の中から自動化候補を一緒に探してくれます。<br />
 コードの話は出ません。まずここで「最初の1本」を決めましょう。</p>
 <p>👉 <strong><a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto" target="_blank" rel="noopener noreferrer">ネタ出しアシスタントを開く</a></strong></p>
 <hr />
 <h2 id="特典-特典②-ブラウザ自動化スターターキット">特典②　ブラウザ自動化スターターキット</h2>
-<p><a href="https://browser-automation-starter-kit.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="特典②：ブラウザ自動化スターターキット" src="images/joshou/tokuten2.png" /></a></p>
+<p><a href="https://browser-automation-starter-kit.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="特典②：ブラウザ自動化スターターキット" src="images/joshou/tokuten2.png" loading="lazy" decoding="async" /></a></p>
 <p>特典①で見つけた候補を、目的・手順・成功条件・安全ラインに分けて整理する書き込み式キットです。<br />
 「やりたいこと」を実装の地図に落とし込めます。</p>
 <p>👉 <strong><a href="https://browser-automation-starter-kit.vercel.app/" target="_blank" rel="noopener noreferrer">スターターキットを開く</a></strong></p>
 <hr />
 <h2 id="特典-特典③-購入者専用-lineオープンチャット">特典③　購入者専用 LINEオープンチャット</h2>
-<p><a href="https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA" target="_blank" rel="noopener noreferrer"><img alt="特典③：購入者専用LINEオープンチャット" src="images/joshou/tokuten3.png" /></a></p>
+<p><a href="https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA" target="_blank" rel="noopener noreferrer"><img alt="特典③：購入者専用LINEオープンチャット" src="images/joshou/tokuten3.png" loading="lazy" decoding="async" /></a></p>
 <p>教材購入者だけが入れる、質問・共有用のチャットです。<br />
 詰まったところを相談したり、他の人の事例を見たりできます。</p>
 <p>👉 <strong><a href="https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA" target="_blank" rel="noopener noreferrer">オープンチャット「ブラウザ操作自動化の教科書」に参加する</a></strong></p>
 <hr />
 <h2 id="特典-特典④-14日間ステップメール講座">特典④　14日間ステップメール講座</h2>
-<p><a href="https://metamake0601.systeme.io/aa3f000b-1d9e5946" target="_blank" rel="noopener noreferrer"><img alt="特典④：14日間ステップメール講座" src="images/joshou/tokuten4.png" /></a></p>
+<p><a href="https://metamake0601.systeme.io/aa3f000b-1d9e5946" target="_blank" rel="noopener noreferrer"><img alt="特典④：14日間ステップメール講座" src="images/joshou/tokuten4.png" loading="lazy" decoding="async" /></a></p>
 <p>購入後、毎日1通。教材の進め方に沿って、行動が止まらないよう14日間伴走します。<br />
 Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p>👉 <strong><a href="https://metamake0601.systeme.io/aa3f000b-1d9e5946" target="_blank" rel="noopener noreferrer">メール講座に登録する</a></strong></p>
 <hr />
 <h2 id="特典-特典⑤-「aiに食わせてok」権利＋教材フルテキストダウンロード">特典⑤　「AIに食わせてOK」権利＋教材フルテキストダウンロード</h2>
-<p><a href="textbook-full.md" target="_blank" rel="noopener noreferrer"><img alt="特典⑤：AIに食わせてOK権利" src="images/joshou/tokuten5.png" /></a></p>
+<p><a href="textbook-full.md" target="_blank" rel="noopener noreferrer"><img alt="特典⑤：AIに食わせてOK権利" src="images/joshou/tokuten5.png" loading="lazy" decoding="async" /></a></p>
 <p>購入者は、この教材の内容を<strong>自分専用のAIに読み込ませて使えます</strong>。</p>
 <p>Custom GPT、NotebookLM、Obsidian、Claude Projects、Agent Skillsなどに入れて、<br />
 実務中の相談相手として活用してください。</p>
@@ -631,7 +669,7 @@ Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p>👉 <strong><a href="textbook-full.md" target="_blank" rel="noopener noreferrer">教材フルテキスト（md）をダウンロードする</a></strong></p>
 <p class="fine-print">※ダウンロードしたファイルは個人利用の範囲でご使用ください。再配布・転売はご遠慮ください。</p></section>
 <section class="chapter" id="第0章"><div class="chapter-label">第0章</div><h1 class="chapter-title">道具の準備</h1><h1 id="第0章-第0章-準備編：道具を揃える">第0章　準備編：道具を揃える</h1>
-<p><img alt="第0章：道具の準備" src="images/ch0/ch00-tools-hero.png" /></p>
+<p><img alt="第0章：道具の準備" src="images/ch0/ch00-tools-hero.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第0章-1-まず最初に言っておきます">1. まず最初に言っておきます</h2>
 <p><strong>まずは、とりあえず1つ、アプリをインストールするだけ。</strong></p>
@@ -645,10 +683,10 @@ Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p>この流れで挫折した経験、ある人もいると思います。気持ちはわかります。</p>
 <p><strong>ただ、この章でやること</strong>は、整理するとこれだけです。</p>
 <p><strong>AI開発ツール（つまり、AIにコードを書かせて動かしてもらうための道具）を1つ、使える状態にすることだけ</strong>です。<br />
-<img alt="道具選びフロー" src="images/ch0/ai_tools.png" /></p>
+<img alt="道具選びフロー" src="images/ch0/ai_tools.png" loading="lazy" decoding="async" /></p>
 <p>今後、Python や Playwright、Chromium といった「自動化ツール」も後で必要になりますが、これらは <strong>AI 開発ツールに頼めば自動で揃えてくれます。</strong><br />
 だから最初から自分でインストール作業を覚える必要はありません。</p>
-<p><img alt="AI開発ツールと自動化ツールの違い" src="images/ch0/ai_jidouka_tools.png" /></p>
+<p><img alt="AI開発ツールと自動化ツールの違い" src="images/ch0/ai_jidouka_tools.png" loading="lazy" decoding="async" /></p>
 <p>以上です。</p>
 <p>「え、それだけ？」</p>
 <p>そうです。いったん、それだけです。</p>
@@ -698,7 +736,7 @@ Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p>ChatGPT Plus も Claude Pro も、月3,000円前後です。<strong>Antigravity</strong> は、無料プランから始められます。</p>
 <p>最初は、<strong>ちょっと引っかかると思います</strong>。サブスクが増えるのは、僕も普通に嫌です。</p>
 <p>ただ、これは娯楽のサブスクというより、<strong>自分の時間を増やすための道具代に近いです</strong>。</p>
-<p><img alt="1ヶ月の時間コスト" src="images/ch0/1month.png" /></p>
+<p><img alt="1ヶ月の時間コスト" src="images/ch0/1month.png" loading="lazy" decoding="async" /></p>
 <p>毎日30分の作業が1つ減ったら、1ヶ月で約15時間です。<br />
 15時間を3,000円で買えるなら、<strong>悪い投資ではないと思っています</strong>。</p>
 <p>合わなければ1ヶ月でやめればOKです。</p>
@@ -714,7 +752,7 @@ Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p><strong>ただ、簡単な自動化をやる上で</strong>は、どれを選んでも「正解」とも言えます。</p>
 <p>ツールは日進月歩で進化しているので、<strong>どんどん性能良くなっていっています</strong>。</p>
 <p>なので、ここでは3つ並べて、特徴だけ整理します。読みながら「<strong>自分はこれかな</strong>」と思ったやつで進めてください。</p>
-<p><img alt="3つのツールの特徴" src="images/ch0/ai_tools.png" /></p>
+<p><img alt="3つのツールの特徴" src="images/ch0/ai_tools.png" loading="lazy" decoding="async" /></p>
 <table>
 <thead>
 <tr>
@@ -758,7 +796,7 @@ Day1〜Day14で実装まで進める実践課題つきです。</p>
 <p>ちなみに、<strong>僕（ペスハム）自身は Claude Code をメインで使っています</strong>。<br />
 なので、この教材では <strong>Claude Code</strong> の解説も厚めに用意してあります。<br />
 「<strong>Antigravity で始めたけど、もう少し深く触ってみたい</strong>」と思ったタイミングで、Claude Code のページも読み返してもらえれば大丈夫です。</p>
-<p><img alt="道具選びフロー" src="images/ch0/antigravity-ca-00-tool-choice-flow.png" /></p>
+<p><img alt="道具選びフロー" src="images/ch0/antigravity-ca-00-tool-choice-flow.png" loading="lazy" decoding="async" /></p>
 <p>ここで大事にしてほしいのは、「<strong>どっちが絶対に上です</strong>」と決めつけないことです。</p>
 <p>この教材の後半では、説明の都合上「<strong>Claude等に聞く</strong>」「Codex に聞く」と書いている箇所があります。これは、すべて「自分が使っている AI 開発ツールに聞く」と読み替えてOKです。</p>
 <p>大事なのはツール名ではなく、<strong>AIに状況を渡して、コードを書いてもらい、エラーを一緒に直していくこと</strong>です。</p>
@@ -808,11 +846,11 @@ Antigravity 2.0 では、これがすべて1つのデスクトップアプリの
 「<strong>突然動かなくなった</strong>」ときは、少し時間をおいてから試してみてください。</p>
 <h3 id="第0章-step-1-公式サイトにアクセス">Step 1　公式サイトにアクセス</h3>
 <p>ブラウザで <a href="ht**tps://antigravity.google/" target="_blank" rel="noopener noreferrer">https://antigravity.google/</a> を開きます。</p>
-<p><img alt="Antigravity トップページ" src="images/ch0/antigravity-v2-01-top.png" /></p>
+<p><img alt="Antigravity トップページ" src="images/ch0/antigravity-v2-01-top.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>Download for MacOS</strong>」（または Windows の場合は別ボタン）をクリックします。</p>
 <h3 id="第0章-step-2-osに合わせてダウンロード">Step 2　OSに合わせてダウンロード</h3>
 <p>ダウンロードページに飛ぶと、<strong>OS別の選択肢が並んでいます</strong>。</p>
-<p><img alt="ダウンロードページ" src="images/ch0/antigravity-v2-02-download.png" /></p>
+<p><img alt="ダウンロードページ" src="images/ch0/antigravity-v2-02-download.png" loading="lazy" decoding="async" /></p>
 <table>
 <thead>
 <tr>
@@ -852,20 +890,20 @@ Windows の場合は <code>.exe</code> を実行して、<strong>画面の指示
 <p>通常のアプリと同じ手順なので、難しいことはありません。</p>
 <h3 id="第0章-step-4-起動してgoogleアカウントでログイン">Step 4　起動してGoogleアカウントでログイン</h3>
 <p>Antigravity を起動すると、「<strong>Welcome to Antigravity</strong>」と書かれた黒い画面が出ます。</p>
-<p><img alt="Welcome 画面" src="images/ch0/antigravity-v2-03-welcome.png" /></p>
+<p><img alt="Welcome 画面" src="images/ch0/antigravity-v2-03-welcome.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>Continue with Google</strong>」をクリックします。<br />
 <strong>普段使っている Google アカウントでログインしてください</strong>。新しいアカウントを作る必要はありません。</p>
 <p>「<strong>Use Google Cloud project instead</strong>」というリンクもありますが、これは Google Cloud のプロジェクトを別途用意している人向けです。普通は触らなくて大丈夫です。</p>
 <h3 id="第0章-step-5-security-notice-に同意する">Step 5　Security Notice に同意する</h3>
 <p>ログイン後、「<strong>Security Notice &amp; Data Use</strong>」という画面が出ます。</p>
-<p><img alt="Security Notice" src="images/ch0/antigravity-v2-04-security.png" /></p>
+<p><img alt="Security Notice" src="images/ch0/antigravity-v2-04-security.png" loading="lazy" decoding="async" /></p>
 <p><strong>AIエージェント</strong>は、データの取り扱いに注意が必要であることを説明している画面です。</p>
 <p>「Yes, I agree to help improve Antigravity by allowing Google to collect and use my Interactions data」のチェックを入れて「<strong>Next</strong>」を押します。</p>
 <p>これは、自分の使い方を Google に共有して、<strong>Antigravity</strong> の改善に協力するかどうかの同意です。<br />
 あとから設定画面でいつでもオフにできるので、<strong>最初はオンのままで大丈夫です</strong>。</p>
 <h3 id="第0章-step-6-テーマを選ぶ">Step 6　テーマを選ぶ</h3>
 <p>次にエディタ（つまり、<strong>作業画面）のテーマを選びます</strong>。</p>
-<p><img alt="テーマ選択" src="images/ch0/antigravity-v2-05-theme.png" /></p>
+<p><img alt="テーマ選択" src="images/ch0/antigravity-v2-05-theme.png" loading="lazy" decoding="async" /></p>
 <p>3つから選べます。</p>
 <table>
 <thead>
@@ -893,7 +931,7 @@ Windows の場合は <code>.exe</code> を実行して、<strong>画面の指示
 <p>選んだら「<strong>Next</strong>」を押します。</p>
 <h3 id="第0章-step-7-プラグイン選択（build-with-google）">Step 7　プラグイン選択（Build with Google）</h3>
 <p>「<strong>Build with Google</strong>」という画面で、最初に使うプラグインを選びます。</p>
-<p><img alt="プラグイン選択" src="images/ch0/antigravity-v2-06-plugins.png" /></p>
+<p><img alt="プラグイン選択" src="images/ch0/antigravity-v2-06-plugins.png" loading="lazy" decoding="async" /></p>
 <p>プラグインとは、<strong>Antigravity</strong> の中で AI が使える追加の機能セットです。<br />
 たとえば「<strong>Chrome DevTools</strong>」を選ぶと、ブラウザの開発者ツールを AI が触れるようになります。</p>
 <p>選択肢は以下の6つです。</p>
@@ -909,7 +947,7 @@ Windows の場合は <code>.exe</code> を実行して、<strong>画面の指示
 あとから設定画面で追加できます。</p>
 <h3 id="第0章-step-8-メイン画面到達">Step 8　メイン画面到達</h3>
 <p>「<strong>Finish</strong>」を押すと、Antigravity のメイン画面に入ります。</p>
-<p><img alt="メイン画面" src="images/ch0/antigravity-v2-07-main.png" /></p>
+<p><img alt="メイン画面" src="images/ch0/antigravity-v2-07-main.png" loading="lazy" decoding="async" /></p>
 <p>ここがあなたの作業場所です。</p>
 <p>画面の見方を簡単に。</p>
 <ul>
@@ -924,19 +962,19 @@ Windows の場合は <code>.exe</code> を実行して、<strong>画面の指示
 <p><strong>今すぐ設定しなくても動くので安心してください。</strong></p>
 <p>Security Preset が <strong>Default</strong> になっていることだけ確認してください。<br />
 これだけで、ターミナルコマンドを実行するたびに確認が入る「<strong>安全な状態</strong>」で動かせます。</p>
-<p><img alt="Security Preset の確認" src="images/ch0/antigravity-v2-09-security-preset.png" /></p>
+<p><img alt="Security Preset の確認" src="images/ch0/antigravity-v2-09-security-preset.png" loading="lazy" decoding="async" /></p>
 <p>File Permissions や Network Permissions の細かい設定は、<strong>慣れてきたタイミングで設定してください</strong>。<br />
 全手順はこの章の末尾「<strong>付録：Antigravity の権限設定</strong>」にまとめています。</p>
 <h3 id="第0章-step-10-作業フォルダ（プロジェクト）を作る">Step 10　作業フォルダ（プロジェクト）を作る</h3>
 <p>AI開発ツールでは、ローカルファイルの中から「<strong>作業フォルダ</strong>」を指定して、その作業フォルダを直接編集、上書き、保存してくれます。</p>
 <p>最初は、<strong>新しいフォルダを作るのがオススメです</strong>。</p>
-<p><img alt="作業フォルダの作り方" src="images/ch0/antigravity-v2-08-folder.png" /></p>
+<p><img alt="作業フォルダの作り方" src="images/ch0/antigravity-v2-08-folder.png" loading="lazy" decoding="async" /></p>
 <p>具体的には、<strong>ホーム直下に <code>code/automation/</code> という階層を作るのがオススメです。</strong></p>
 <pre><code>~/code/             ← まず親フォルダを作る
   automation/       ← その中に作業フォルダ。ここを Antigravity に指定する
 </code></pre>
 <p>メイン画面の左サイドバー「<strong>Projects</strong>」の右にあるフォルダアイコン（＋）から、作業フォルダを追加します。</p>
-<p><img alt="Projectsに作業フォルダを追加" src="images/ch0/antigravity-v2-08-add-project.png" /></p>
+<p><img alt="Projectsに作業フォルダを追加" src="images/ch0/antigravity-v2-08-add-project.png" loading="lazy" decoding="async" /></p>
 <p><strong>具体的な作り方</strong>は、Finder から手で作ってもOKですし、ターミナルで以下のコマンドを実行してもOKです。</p>
 <p><strong>ターミナルとは</strong>、「文字を入力してパソコンを操作する画面」のことです。今後もときどき使いますが、基本はコピペするだけです。</p>
 <ul>
@@ -961,12 +999,12 @@ AI 開発ツールに「デスクトップ」をそのまま指定すると、AI
 画面のスクリーンショットを撮ってください
 </code></pre>
 <p>入力したら、<strong>右の矢印ボタン（→）を押します</strong>。</p>
-<p><img alt="プロンプト入力した状態" src="images/ch0/antigravity-v2-11-test-01.png" /></p>
+<p><img alt="プロンプト入力した状態" src="images/ch0/antigravity-v2-11-test-01.png" loading="lazy" decoding="async" /></p>
 <p>すると、Antigravity が動き始めます。途中で「<strong>Allow running this command?</strong>」という確認画面が出ます。<br />
 これは「このコマンドを実行してもいいですか？」という確認です。「<strong>1 Yes, allow this time</strong>」を選んで進めてください。</p>
-<p><img alt="権限確認ダイアログ" src="images/ch0/antigravity-v2-11-test-02.png" /></p>
+<p><img alt="権限確認ダイアログ" src="images/ch0/antigravity-v2-11-test-02.png" loading="lazy" decoding="async" /></p>
 <p>しばらく待つと、<strong>スクリーンショットが右側に表示されます</strong>。</p>
-<p><img alt="動作確認完了" src="images/ch0/antigravity-v2-11-test-03.png" /></p>
+<p><img alt="動作確認完了" src="images/ch0/antigravity-v2-11-test-03.png" loading="lazy" decoding="async" /></p>
 <p>確認するのは3つだけです。</p>
 <ul>
 <li>ブラウザが開いているか</li>
@@ -987,7 +1025,7 @@ Claude Code を使う人は「<strong>手順③　Claudeアプリをインスト
 <h3 id="第0章-codex-の入口は3つあります">Codex の入口は3つあります</h3>
 <p>1つ目は、<strong>Codexアプリ</strong>です。<br />
 この教材でオススメする入口です。<strong>日常業務の自動化なら、まずこれで十分</strong>です。</p>
-<p><img alt="Codex Installer" src="images/ch0/16_codex_installer.png" /></p>
+<p><img alt="Codex Installer" src="images/ch0/16_codex_installer.png" loading="lazy" decoding="async" /></p>
 <p>2つ目は、<strong>Codex CLI</strong>です。<br />
 ターミナルから使う <strong>Codex</strong> です。これは開発者向けです。最初から無理に使わなくて大丈夫です。</p>
 <p>3つ目は、<strong>Codex Cloud</strong>です。<br />
@@ -995,11 +1033,11 @@ Claude Code を使う人は「<strong>手順③　Claudeアプリをインスト
 <p>日常業務のブラウザ操作を自動化したい場合は、まずは手元の <strong>Codexアプリ</strong>で考えれば OK です。</p>
 <h3 id="第0章-codex-アプリで最初にやること">Codex アプリで最初にやること</h3>
 <p>ChatGPT のサイドバーに、<strong>Codex</strong> の項目があります。</p>
-<p><img alt="ChatGPT サイドバー" src="images/ch0/17_codex_sidebar.png" /></p>
+<p><img alt="ChatGPT サイドバー" src="images/ch0/17_codex_sidebar.png" loading="lazy" decoding="async" /></p>
 <p>ここから Codex のページに入って、<strong>デスクトップアプリ</strong>をダウンロードします。</p>
-<p><img alt="Codex ダウンロード" src="images/ch0/18_codex_download.png" /></p>
+<p><img alt="Codex ダウンロード" src="images/ch0/18_codex_download.png" loading="lazy" decoding="async" /></p>
 <p>ダウンロードしたアプリを開くと、<strong>メイン画面が表示されます</strong>。</p>
-<p><img alt="Codex メイン画面" src="images/ch0/19_codex_main.png" /></p>
+<p><img alt="Codex メイン画面" src="images/ch0/19_codex_main.png" loading="lazy" decoding="async" /></p>
 <p>最初にこの順番で設定してください。</p>
 <ol>
 <li>ChatGPT / OpenAI アカウントでログイン</li>
@@ -1009,7 +1047,7 @@ Claude Code を使う人は「<strong>手順③　Claudeアプリをインスト
 <li>書き込み範囲を作業フォルダだけにする</li>
 <li>必要になってから MCP やブラウザ機能を追加する</li>
 </ol>
-<p><img alt="Codex 設定" src="images/ch0/20_codex_settings.png" /></p>
+<p><img alt="Codex 設定" src="images/ch0/20_codex_settings.png" loading="lazy" decoding="async" /></p>
 <p>最初から、メール、Drive、Notion、ブラウザ操作、コンピュータ使用を全部つなぐ必要はありません。<br />
 まずは、テスト用フォルダや、<strong>自動化プロジェクト専用フォルダだけで試してください</strong>。</p>
 <h3 id="第0章-初心者にオススメの-codex-設定">初心者にオススメの Codex 設定</h3>
@@ -1039,18 +1077,18 @@ Codex を使う人は「<strong>手順②　Codexで進める人はこちら</st
 画面が少し違っても焦らなくて大丈夫なので、<strong>近いボタンを探しながら進めてください</strong>。</p>
 <h3 id="第0章-step-1-claude-ai-にアクセスする">Step 1　Claude.ai にアクセスする</h3>
 <p>Googleで「<strong>claude</strong>」と検索します。</p>
-<p><img alt="Google検索でclaude" src="images/ch0/01_claude_search.png" /></p>
+<p><img alt="Google検索でclaude" src="images/ch0/01_claude_search.png" loading="lazy" decoding="async" /></p>
 <p>一番上に出てくる「<strong>Claude（claude.ai）</strong>」をクリックします。<br />
 トップページが表示されます。</p>
-<p><img alt="Claude.aiのトップページ" src="images/ch0/02_claude_top.png" /></p>
+<p><img alt="Claude.aiのトップページ" src="images/ch0/02_claude_top.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-2-アカウントを作成する">Step 2　アカウントを作成する</h3>
 <p>「<strong>メールで続ける</strong>」を押すと、登録したアドレスにメールが届きます。</p>
-<p><img alt="認証メール" src="images/ch0/03_auth_email.png" /></p>
+<p><img alt="認証メール" src="images/ch0/03_auth_email.png" loading="lazy" decoding="async" /></p>
 <p>届いたメールの「<strong>Claude.aiにサインイン</strong>」を押すと、PCの画面で次に進みます。<br />
 名前を入れて、規約に同意してください。</p>
-<p><img alt="アカウント作成" src="images/ch0/04_account_create.png" /></p>
+<p><img alt="アカウント作成" src="images/ch0/04_account_create.png" loading="lazy" decoding="async" /></p>
 <p>その後、プロフィールを聞かれますが、飛ばしてOKです。</p>
-<p><img alt="はじめまして画面" src="images/ch0/05_hello_screen.png" /></p>
+<p><img alt="はじめまして画面" src="images/ch0/05_hello_screen.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-3-有料プランに加入する">Step 3　有料プランに加入する</h3>
 <p>「<strong>月20ドル、高くない？</strong>」と思いましたか？</p>
 <p>正直、<strong>最初はちょっと高く感じると思います</strong>。<br />
@@ -1059,32 +1097,32 @@ Codex を使う人は「<strong>手順②　Codexで進める人はこちら</st
 無料プランだと、コードを作って、エラーを直して、また作って、<strong>という途中で制限に引っかかりやすいからです</strong>。</p>
 <p>まず1ヶ月だけ試して、合わなければ解約する。<br />
 このくらいの軽さで大丈夫です。</p>
-<p><img alt="プラン選択" src="images/ch0/06_plan_select.png" /></p>
+<p><img alt="プラン選択" src="images/ch0/06_plan_select.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>Claudeを体験する</strong>」から Pro プランを選択します。</p>
-<p><img alt="プロプラン購入" src="images/ch0/07_pro_purchase.png" /></p>
+<p><img alt="プロプラン購入" src="images/ch0/07_pro_purchase.png" loading="lazy" decoding="async" /></p>
 <p><strong>クレジットカード情報を入力して購入します</strong>。</p>
-<p><img alt="支払い情報" src="images/ch0/08_payment_info.png" /></p>
+<p><img alt="支払い情報" src="images/ch0/08_payment_info.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-4-デスクトップアプリをダウンロードする">Step 4　デスクトップアプリをダウンロードする</h3>
 <p>加入が終わったら、左下のアイコンから「<strong>アプリと拡張機能を入手</strong>」をクリックします。</p>
-<p><img alt="アプリと拡張機能を入手" src="images/ch0/09_apps_extensions.png" /></p>
+<p><img alt="アプリと拡張機能を入手" src="images/ch0/09_apps_extensions.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>macOS版をダウンロード</strong>」を押すとアプリがダウンロードされます。</p>
-<p><img alt="macOS版ダウンロード" src="images/ch0/10_macos_download.png" /></p>
+<p><img alt="macOS版ダウンロード" src="images/ch0/10_macos_download.png" loading="lazy" decoding="async" /></p>
 <p>ダウンロードしたファイルを開いて、Claudeアプリを「<strong>アプリケーション</strong>」フォルダにドラッグします。</p>
-<p><img alt="ClaudeアプリをApplicationsへ移動" src="images/ch0/11_claude_to_apps.png" /></p>
+<p><img alt="ClaudeアプリをApplicationsへ移動" src="images/ch0/11_claude_to_apps.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-5-claudeアプリを起動する">Step 5　Claudeアプリを起動する</h3>
 <p>起動すると、こんな画面になります。</p>
-<p><img alt="Claudeアプリ起動後" src="images/ch0/12_claude_launched.png" /></p>
+<p><img alt="Claudeアプリ起動後" src="images/ch0/12_claude_launched.png" loading="lazy" decoding="async" /></p>
 <p>これでインストール完了です。</p>
 <h3 id="第0章-補足：claudeアプリの3つのモード">補足：Claudeアプリの3つのモード</h3>
 <p><strong>左上に3つのアイコンがあります</strong>。覚えておくと便利です。</p>
 <p>1つ目は、<strong>Chat（チャット）モードです</strong>。<br />
 普通の会話モード。<strong>文章生成や相談はここです</strong>。</p>
 <p>2つ目は、<strong>Cowork（コワーク）モードです</strong>。</p>
-<p><img alt="Coworkモード" src="images/ch0/13_cowork_mode.png" /></p>
+<p><img alt="Coworkモード" src="images/ch0/13_cowork_mode.png" loading="lazy" decoding="async" /></p>
 <p>メール処理・スケジュール管理など、<strong>自律的にタスクをこなしてもらうモードです</strong>。<br />
 今回の自動化ツール作りでは使いません。</p>
 <p>3つ目は、<strong>Code（コード）モードです</strong>。</p>
-<p><img alt="Codeモード" src="images/ch0/14_code_mode.png" /></p>
+<p><img alt="Codeモード" src="images/ch0/14_code_mode.png" loading="lazy" decoding="async" /></p>
 <p>これが本命です。<strong>Claude Code のモード</strong>です。<br />
 コードを書く・実行する・修正するを、すべてやってくれます。</p>
 <p><strong>自動化ツール作り</strong>は、このCodeモードで進めます。</p>
@@ -1140,7 +1178,7 @@ AIに覚え込ませます。</p>
 </tbody>
 </table>
 <p>Claude Code を使っている人は、あわせて<strong>プライバシー設定も一度見ておくと安心です</strong>。</p>
-<p><img alt="Claude プライバシー設定" src="images/ch0/15_claude_privacy.png" /></p>
+<p><img alt="Claude プライバシー設定" src="images/ch0/15_claude_privacy.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-自分の個人設定を作るプロンプト（コピペ-ok）">自分の個人設定を作るプロンプト（コピペ OK）</h3>
 <p>「<strong>何を書けばいいかわからない</strong>」という人がほとんどだと思います。</p>
 <p>なので、AI に自分の個人設定を作らせるプロンプトを用意しました。<br />
@@ -1284,8 +1322,8 @@ AIに覚え込ませます。</p>
 <p>道具が揃ったところで、1個だけ自動化を体験しておきましょう。</p>
 <p>第2章から始まるブラウザ自動化の前に、「<strong>自動化が動いた</strong>」という感覚を持っておくと、気持ちが全然違います。</p>
 <p><a href="https://site-teal-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>毎朝6時のAIニュース便</strong></a>は、設定1回で翌朝から毎日 Gmail に最新 AI ニュースのまとめが届く自動化です。</p>
-<p><a href="https://site-teal-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="AIニュース便のトップ画面" src="images/ch0/ainews-site-01.png" /></a></p>
-<p><img alt="届くメールのイメージ" src="images/ch0/ainews-site-02.png" /></p>
+<p><a href="https://site-teal-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="AIニュース便のトップ画面" src="images/ch0/ainews-site-01.png" loading="lazy" decoding="async" /></a></p>
+<p><img alt="届くメールのイメージ" src="images/ch0/ainews-site-02.png" loading="lazy" decoding="async" /></p>
 <p><strong>Playwright</strong> も不要、ブラウザを操作しません。<br />
 <strong>必要なのは Gmail のアプリパスワードを1個取得するだけです</strong>。</p>
 <hr />
@@ -1312,7 +1350,7 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 <hr />
 <h3 id="第0章-substack-購読ニュースレターまとめ（応用）">Substack 購読ニュースレターまとめ（応用）</h3>
 <p>AIニュース便が動いたら、同じ仕組みの応用として「<a href="https://substack-digest-lovat.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>Substack 購読ニュースレターまとめ</strong></a>」も作れます。</p>
-<p><a href="https://substack-digest-lovat.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="Substack 購読ニュースレターまとめのトップ画面" src="images/ch0/substack-digest-site.png" /></a></p>
+<p><a href="https://substack-digest-lovat.vercel.app/" target="_blank" rel="noopener noreferrer"><img alt="Substack 購読ニュースレターまとめのトップ画面" src="images/ch0/substack-digest-site.png" loading="lazy" decoding="async" /></a></p>
 <p>「<strong>購読しているSubstackのメールを毎朝まとめて1通にして送って</strong>」という指示をAI開発ツールに渡すだけで、AIニュース便と同じ .env ファイルを使いながら動きます。</p>
 <p>「<strong>まず1個動かす → 同じ仕組みで別のものも作れた</strong>」という体験を、ここで積んでおいてください。</p>
 <hr />
@@ -1326,7 +1364,7 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 <p><strong>慣れてきたタイミングで設定してください</strong>。最初は Default のまま進んで大丈夫です。</p>
 <h3 id="第0章-settings-の開き方">Settings の開き方</h3>
 <p>左下の「<strong>Settings</strong>」アイコンから設定画面を開きます。</p>
-<p><img alt="設定画面" src="images/ch0/antigravity-v2-08-settings.png" /></p>
+<p><img alt="設定画面" src="images/ch0/antigravity-v2-08-settings.png" loading="lazy" decoding="async" /></p>
 <p>左サイドバーの一番下にある <strong>「Conversations」</strong> をクリックします。</p>
 <p>設定する項目は4つです。</p>
 <hr />
@@ -1359,13 +1397,13 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 </tbody>
 </table>
 <p><strong>オススメ：Default</strong></p>
-<p><img alt="Security Preset の選択肢" src="images/ch0/antigravity-v2-09-security-preset.png" /></p>
+<p><img alt="Security Preset の選択肢" src="images/ch0/antigravity-v2-09-security-preset.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h3 id="第0章-2-artifact-review-policy">2. Artifact Review Policy</h3>
 <p><strong>オススメ：Always Ask</strong></p>
 <p>AI がファイルを作るたびに「<strong>これでいいですか？</strong>」と聞いてきます。<br />
 これを切ると、<strong>AI が勝手にファイルを大量生成することがあります</strong>。</p>
-<p><img alt="Artifact Review Policy の選択肢" src="images/ch0/antigravity-v2-12-Artifact Review Policy.png" /></p>
+<p><img alt="Artifact Review Policy の選択肢" src="images/ch0/antigravity-v2-12-Artifact Review Policy.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h3 id="第0章-3-file-permissions">3. File Permissions</h3>
 <p>「File Reads」と「File Writes」の両方に、以下を <strong>Deny（拒否）</strong> で追加します。</p>
@@ -1380,7 +1418,7 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 playwright.dev
 make.com
 </code></pre>
-<p><img alt="File Permissions 設定完了例" src="images/ch0/antigravity-v2-13-file-permissions-configured.png" /></p>
+<p><img alt="File Permissions 設定完了例" src="images/ch0/antigravity-v2-13-file-permissions-configured.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h3 id="第0章-4-network-permissions">4. Network Permissions</h3>
 <p>以下を <strong>Deny（拒否）</strong> で追加します。</p>
@@ -1426,10 +1464,10 @@ pastebin.com
 </table></section>
 <section class="chapter" id="第1章"><div class="chapter-label">第1章</div><h1 class="chapter-title">どんな作業が自動化できるか</h1><h1 id="第1章-第1章-自動化の5つの道具と5つの判定軸">第1章　自動化の5つの道具と5つの判定軸</h1>
 <p>ステータス：✅ 実証済み（実体験ベース）</p>
-<p><img alt="第1章：どんな作業が自動化できるか" src="images/ch01/ch01-automation-tools-hero.png" /></p>
+<p><img alt="第1章：どんな作業が自動化できるか" src="images/ch01/ch01-automation-tools-hero.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第1章-先に、どんな作業を自動化できるのか見ておきます">先に、どんな作業を自動化できるのか見ておきます</h2>
-<p><img alt="" src="images/ch01/naniwojidouka.png" /></p>
+<p><img alt="" src="images/ch01/naniwojidouka.png" loading="lazy" decoding="async" /></p>
 <p>道具の話の前に、まず上の図から「<strong>自分のあの作業、これに近いかも</strong>」を探してみてください。</p>
 <p>多分、いきなり「自動化」と言われて、具体的なやり方の説明をされても、<br />
 「<strong>で、それを何に使うの？</strong>」</p>
@@ -1533,7 +1571,7 @@ pastebin.com
 </code></pre>
 <p>この確認を一度やっておくだけで、<strong>かなり安心して進められます</strong>。</p>
 <h3 id="第1章-気をつけよう-：具体例-他社フォームへの自動送信">🔔気をつけよう🔔：具体例 — 他社フォームへの自動送信</h3>
-<p><img alt="他社フォームへの自動送信のリスク" src="images/ch01/m-04-sales-form-risk.png" /></p>
+<p><img alt="他社フォームへの自動送信のリスク" src="images/ch01/m-04-sales-form-risk.png" loading="lazy" decoding="async" /></p>
 <p>たとえば、他社のお問い合わせフォームへ営業文面を自動送信する使い方は、<br />
 この教材では推奨しません。</p>
 <p>特定電子メール法、各サイトの利用規約、迷惑行為としての受け止められ方など、<br />
@@ -1556,7 +1594,7 @@ pastebin.com
 <h2 id="第1章-自動化の5つの道具">自動化の5つの道具</h2>
 <p><strong>業務自動化で押さえる道具</strong>は、この5つです。<br />
 そして優先順位がはっきりあります。</p>
-<p><img alt="自動化ツールの優先順位" src="images/ch01/tool-priority-5-steps.png" /></p>
+<p><img alt="自動化ツールの優先順位" src="images/ch01/tool-priority-5-steps.png" loading="lazy" decoding="async" /></p>
 <pre><code>1. Playwright
    ブラウザを裏で動かすロボットを作る道具。
    繰り返し作業に圧倒的に強い。
@@ -1614,7 +1652,7 @@ pastebin.com
 <p>その業務に、<strong>これから5本の質問を順番に投げます</strong>。答えると、どの道具を使うかの見当がつきます。</p>
 <p>道具は1つに絞らなくて大丈夫です。Gmail からデータを読む（MCP）→ 別のサイトに入力する（<strong>Playwright</strong>）のように、役割を分担して組み合わせる使い方が普通です。</p>
 <h3 id="第1章-軸1：対象サイトは-playwright-で行けるか">軸1：対象サイトは Playwright で行けるか</h3>
-<p><img alt="軸1：Playwrightで行けるサイトか考える" src="images/ch01/axis1-playwright-site-check.png" /></p>
+<p><img alt="軸1：Playwrightで行けるサイトか考える" src="images/ch01/axis1-playwright-site-check.png" loading="lazy" decoding="async" /></p>
 <p>これがすべての出発点です。<br />
 具体的には、こういうサイトは <strong>Playwright</strong> で詰まります。</p>
 <ul>
@@ -1624,7 +1662,7 @@ pastebin.com
 <li>ログインのたびにメールやSMSで認証コードが送られるサイト</li>
 </ul>
 <p>ただし、これらのサイトでも<strong>CDP方式</strong>という抜け道があることがあります。抜け道といっても違法ではなく、PlaywrightがゼロからChromeを開くのではなく、すでにあなたがログインしているChromeに接続して操作する方法です。詳しくは<a href="#第2章-ログインで詰まったら：cdp方式を試す">第2章「ログインで詰まったら：CDP方式を試す」</a>で説明します。まずは「<strong>詰まっても抜け道がある</strong>」くらいで読み進めてください。</p>
-<p><img alt="Playwrightが苦手なサイトたち 全体図" src="images/ch01/playwright-hard-sites-01-overview.png" /></p>
+<p><img alt="Playwrightが苦手なサイトたち 全体図" src="images/ch01/playwright-hard-sites-01-overview.png" loading="lazy" decoding="async" /></p>
 <p>Playwright でいけそうなら、まずそれを検討してください。Gmail や Drive のデータが絡む場合は、その部分だけ MCP を使って取得し、Playwright と組み合わせると効率的です。</p>
 <p>MCP対応があるか確認するのは1つの手ですが、<strong>「MCPがある」＝「全部できる」ではない</strong>のがポイントです。</p>
 <p>Gmail・Drive・カレンダー・Notion などは主要な操作がMCPでカバーされていますが、サービスによっては「<strong>コンタクト管理はできるけどメール本文の編集はできない</strong>」など、必要な操作の一部しかMCPに含まれていないことがよくあります。</p>
@@ -1632,7 +1670,7 @@ pastebin.com
 <p>公式 API があるサービスなら、Python スクリプトから API を呼ぶ方法もあります（Google Sheets のセル操作、Notion のデータベース操作など）。これも同じで、「やりたい操作が公開されているか」を先に確認します。</p>
 <p>MCPでも公式APIでも目的の操作が見つからない場合は、<strong>Claude in Chrome</strong> や <strong>Chrome拡張</strong> が選択肢になります。また、ログインが原因で詰まっている場合は、前述の <strong>CDP方式</strong> を試してみてください。</p>
 <h3 id="第1章-軸2：繰り返し頻度はどれくらいか">軸2：繰り返し頻度はどれくらいか</h3>
-<p><img alt="軸2：繰り返し頻度を考える" src="images/ch01/axis2-repeat-frequency.png" /></p>
+<p><img alt="軸2：繰り返し頻度を考える" src="images/ch01/axis2-repeat-frequency.png" loading="lazy" decoding="async" /></p>
 <ul>
 <li>毎日繰り返す → Playwright or Make（MCP 対応タスクなら MCP も可。ただし定時自動起動には別ツールとの組み合わせが必要）</li>
 <li>週1〜月1 → どれでもOK</li>
@@ -1641,7 +1679,7 @@ pastebin.com
 <p>繰り返し回数が多いほど、コード化する <strong>Playwright</strong> の費用対効果が上がります。<br />
 1回の単発作業に <strong>Playwright</strong> を組むのは、たいてい割に合いません。</p>
 <h3 id="第1章-軸3：pcがオフでも動かしたい？-webhook-を受け取りたい？">軸3：PCがオフでも動かしたい？/ Webhook を受け取りたい？</h3>
-<p><img alt="軸3：PCがオフでも動かしたい？" src="images/ch01/make_tokucho.png" /></p>
+<p><img alt="軸3：PCがオフでも動かしたい？" src="images/ch01/make_tokucho.png" loading="lazy" decoding="async" /></p>
 <p>最後に「実行環境」の問題を確認します。</p>
 <p><strong>Make が候補になるのは次の2つのケースです</strong>。</p>
 <ul>
@@ -1659,7 +1697,7 @@ pastebin.com
 <p>Playwright は自分から動き出す必要がありますが、「来た瞬間に反応する」という用途には Make の方が向いています。</p>
 <p>それ以外のケースでは <strong>Playwright</strong> で十分です。Make は不要です。</p>
 <h3 id="第1章-軸4：今使っているブラウザの右上に「自分専用ボタン」を置きたいか">軸4：今使っているブラウザの右上に「自分専用ボタン」を置きたいか</h3>
-<p><img alt="ブラウザのツールバーに並ぶ拡張機能アイコン" src="images/ch01/chrome-extension-toolbar.png" /></p>
+<p><img alt="ブラウザのツールバーに並ぶ拡張機能アイコン" src="images/ch01/chrome-extension-toolbar.png" loading="lazy" decoding="async" /></p>
 <p>「このサイトを開いているときだけ、ワンクリックで Notion に送りたい」<br />
 「この管理画面の中に、自分専用の整形ボタンを足したい」</p>
 <p><strong>こういう用途は自作Chrome拡張の出番です</strong>。<br />
@@ -1669,7 +1707,7 @@ pastebin.com
 <li>NO → Chrome拡張は要らない</li>
 </ul>
 <h3 id="第1章-軸5：人の最終確認が必要か">軸5：人の最終確認が必要か</h3>
-<p><img alt="軸5：人の最終確認" src="images/ch01/axis5-human-final-check.png" /></p>
+<p><img alt="軸5：人の最終確認" src="images/ch01/axis5-human-final-check.png" loading="lazy" decoding="async" /></p>
 <p>ここは「<strong>どの道具を使うか</strong>」ではなく、<br />
 「<strong>そもそも全自動にしていい作業か、人の目を入れた方がいい作業か</strong>」を考える軸です。</p>
 <p>技術的には自動化できても、<strong>自動化しない方がいい作業</strong>があります。こういうものです。</p>
@@ -1787,7 +1825,7 @@ pastebin.com
 <h4 id="第1章-playwrightで作った実例">Playwrightで作った実例</h4>
 <p>「<strong>業務委託先の宿泊施設情報入力自動化</strong>」</p>
 <p>イメージはこちらの動画をどうぞ。（機密情報が多く、モザイク多めですみません）</p>
-<video controls style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/おてつたびデモ_完成_モザイク.mp4" type="video/mp4"></video>
+<video controls preload="none" style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/おてつたびデモ_完成_モザイク.mp4" type="video/mp4"></video>
 
 <p>1件あたり30〜50項目、手でやると1時間近く。宿が10件20件と増えると人間がやってられません。</p>
 <p>このように<strong>企業の内部サイトなど、MCPが設定されていないサイトで、人間が手動でやらなければならない作業は、Playwroghtが最も得意とする領域です。</strong></p>
@@ -1823,11 +1861,11 @@ pastebin.com
 - ログインのたびに認証コードが飛んでくるサイト</p>
 <p>これらのサイトを Playwright で触ろうとすると、たいてい「<strong>お前は人間か？</strong>」の判定で止まります。<br />
 ここに該当したら、Claude in Chrome / Make / 公式API に切り替えてください。</p>
-<p><img alt="Playwrightが苦手なサイトたち 全体図" src="images/ch01/playwright-hard-sites-01-overview.png" /></p>
-<p><img alt="Google・Microsoft・Apple系" src="images/ch01/playwright-hard-sites-02-google-ms-apple.png" /></p>
-<p><img alt="金融・決済・CAPTCHA・Cloudflare" src="images/ch01/playwright-hard-sites-03-finance-auth.png" /></p>
-<p><img alt="SNS・EC・口コミ系" src="images/ch01/playwright-hard-sites-04-sns-ec-review.png" /></p>
-<p><img alt="SaaS管理画面" src="images/ch01/playwright-hard-sites-05-saas.png" /></p>
+<p><img alt="Playwrightが苦手なサイトたち 全体図" src="images/ch01/playwright-hard-sites-01-overview.png" loading="lazy" decoding="async" /></p>
+<p><img alt="Google・Microsoft・Apple系" src="images/ch01/playwright-hard-sites-02-google-ms-apple.png" loading="lazy" decoding="async" /></p>
+<p><img alt="金融・決済・CAPTCHA・Cloudflare" src="images/ch01/playwright-hard-sites-03-finance-auth.png" loading="lazy" decoding="async" /></p>
+<p><img alt="SNS・EC・口コミ系" src="images/ch01/playwright-hard-sites-04-sns-ec-review.png" loading="lazy" decoding="async" /></p>
+<p><img alt="SaaS管理画面" src="images/ch01/playwright-hard-sites-05-saas.png" loading="lazy" decoding="async" /></p>
 <h4 id="第1章-詰まったときの対応">詰まったときの対応</h4>
 <p>「NGサイト一覧」と書きましたが、正確には「<strong>ふつうの Playwright では詰まる</strong>」です。</p>
 <p>詰まったら、すぐに諦める必要はありません。<br />
@@ -1904,7 +1942,7 @@ MCP より細かい操作ができます。Google Sheets の特定セルに書�
 <li>セル単位・行単位など細かい操作が必要なとき → <strong>MCP より API の方が向いている</strong>（Google Sheets・Notion DB 等）</li>
 </ul>
 <h4 id="第1章-主な-mcp-対応サービス（代表例）">主な MCP 対応サービス（代表例）</h4>
-<p><img alt="MCPで直接つながるツール例" src="images/ch01/mcp-supported-tools-examples.png" /></p>
+<p><img alt="MCPで直接つながるツール例" src="images/ch01/mcp-supported-tools-examples.png" loading="lazy" decoding="async" /></p>
 <ul>
 <li>Gmail / Google Calendar / Google Drive</li>
 <li>Notion</li>
@@ -1915,7 +1953,7 @@ MCP より細かい操作ができます。Google Sheets の特定セルに書�
 </ul>
 <p>対応サービスは増え続けています。「<strong>(サービス名) MCP</strong>」で検索すると最新情報が見つかります。</p>
 <h3 id="第1章-6-3-claude-in-chrome-codex-in-chrome-antigravity-in-chrome-ai親和拡張">6-3. Claude in Chrome / Codex in Chrome / Antigravity in Chrome — AI親和拡張</h3>
-<p><img alt="Claude in Chrome でNotebookLMを操作している様子" src="images/ch01/claude-in-chrome-notebooklm.png" /></p>
+<p><img alt="Claude in Chrome でNotebookLMを操作している様子" src="images/ch01/claude-in-chrome-notebooklm.png" loading="lazy" decoding="async" /></p>
 <p>ステータス：✅ 実証済み</p>
 <p><strong>ここで紹介する3つ</strong>は、通常のChrome拡張とは別カテゴリです。<br />
 AI が直接ブラウザを操作してくれる、<strong>より使いやすいツールです</strong>。</p>
@@ -1932,7 +1970,7 @@ AI が直接ブラウザを操作してくれる、<strong>より使いやすい
 <li><strong>Max</strong>（月100ドル / 200ドル）：全モデル選択可</li>
 <li><strong>Team / Enterprise</strong>：使える</li>
 </ul>
-<p><img alt="Claude プラン料金" src="images/ch01/credit.png" /></p>
+<p><img alt="Claude プラン料金" src="images/ch01/credit.png" loading="lazy" decoding="async" /></p>
 <h4 id="第1章-codex-in-chrome">Codex in Chrome</h4>
 <p>OpenAI公式の <strong>Codex</strong> Chrome拡張です。<br />
 ログイン済みのChrome状態を使って、Gmail、Salesforce、LinkedIn、<strong>社内ツールを読んだり操作したりできます</strong>。</p>
@@ -1964,7 +2002,7 @@ AI が直接ブラウザを操作してくれる、<strong>より使いやすい
 <p>「<strong>あなたの隣に座る助手</strong>」のイメージで使っていただけます！</p>
 <hr />
 <h3 id="第1章-6-4-自作-chrome-拡張-作業中の「いま1ステップ省きたい」に使う">6-4. 自作 Chrome 拡張 — 作業中の「いま1ステップ省きたい」に使う</h3>
-<p><img alt="Chrome拡張機能の管理画面" src="images/ch01/chrome-extensions-page.png" /></p>
+<p><img alt="Chrome拡張機能の管理画面" src="images/ch01/chrome-extensions-page.png" loading="lazy" decoding="async" /></p>
 <p>ステータス：✅ 実証済み</p>
 <p><strong>ここで言う Chrome拡張</strong>は、HTML と JavaScript で自分専用に作る拡張です。<br />
 Cla<strong>ude in Chrome のような AI 親和拡張とは別物です</strong>。</p>
@@ -1990,7 +2028,7 @@ Manifest V3、service worker の制約も踏まえて書いて」
 配布したい場合は Chrome ウェブストアの審査が必要ですが、自分用・社内用なら「<strong>開発者モードで読み込む</strong>」で運用できます。</p>
 <hr />
 <h3 id="第1章-6-5-make-saas同士を線でつなぐ">6-5. Make — SaaS同士を線でつなぐ</h3>
-<p><img alt="Makeのシナリオ画面イメージ" src="images/ch01/make-scenario-overview.png" /></p>
+<p><img alt="Makeのシナリオ画面イメージ" src="images/ch01/make-scenario-overview.png" loading="lazy" decoding="async" /></p>
 <p>ステータス：🟡 実験中（追記版で深掘り予定）</p>
 <p><strong>Make</strong>は、SaaS（Gmail、Notion、Sheets、Slack、ChatGPTなど）同士をAPIで直接つなぐノーコードツールです。<br />
 <strong>同じノーコードツールの Zapier より料金が安いのが特徴です</strong>。</p>
@@ -2018,7 +2056,7 @@ Googleカレンダーに予定登録するシナリオを作りたい。
 <p><strong>ただし Make の有料プラン加入が必要</strong>で、2026年5月時点では実用ラインに乗っているか確認中です。<br />
 検証できたら追記します。</p>
 <h4 id="第1章-make-の料金プラン（2026年5月時点）">Make の料金プラン（2026年5月時点）</h4>
-<p><img alt="Make料金プラン" src="images/ch01/make-pricing-plan.png" /></p>
+<p><img alt="Make料金プラン" src="images/ch01/make-pricing-plan.png" loading="lazy" decoding="async" /></p>
 <p>ざっくり整理するとこうなります。</p>
 <ul>
 <li><strong>Free プラン</strong>: 月1,000オペレーションまで</li>
@@ -2165,7 +2203,7 @@ Claude in Chrome は <strong>あなたがChromeを開いている時間</strong>
 道具の地図を持ったまま、次の章へ進んでください。</p></section>
 <section class="chapter" id="第2章"><div class="chapter-label">第2章</div><h1 class="chapter-title">AIに作らせる</h1><h1 id="第2章-第2章-playwright-で作る：録る・作る・直す・育てる">第2章　Playwright で作る：録る・作る・直す・育てる</h1>
 <p>ステータス：✅ 実証済み（実体験ベース）</p>
-<p><img alt="第2章：録る・作る・直す・育てる" src="images/ch02/ch02-playwright-4phase-hero.png" /></p>
+<p><img alt="第2章：録る・作る・直す・育てる" src="images/ch02/ch02-playwright-4phase-hero.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第2章-この章で渡すもの">この章で渡すもの</h2>
 <p>第1章で「<strong>5つの道具と判定軸</strong>」を整理しました。</p>
@@ -2184,7 +2222,7 @@ Claude in Chrome は <strong>あなたがChromeを開いている時間</strong>
 <hr />
 <h2 id="第2章-まず、自分の業務を診断しよう">まず、自分の業務を診断しよう</h2>
 <p>特典の <a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff" target="_blank" rel="noopener noreferrer"><strong>「ネタ出しアシスタント GPTs」</strong></a> を使ってください。</p>
-<p><img alt="" src="images/ch02/gyoumujidoukaneta.png" /></p>
+<p><img alt="" src="images/ch02/gyoumujidoukaneta.png" loading="lazy" decoding="async" /></p>
 <p>毎日・毎週やっている作業を話すと、MCP / <strong>Playwright</strong> / Claude in Chrome / Chrome拡張 / Make のどれ向きか判定が出ます。<br />
 <strong>「Playwright向き」と出た人だけ</strong>、この章を読み進めてください。</p>
 <hr />
@@ -2223,7 +2261,7 @@ Claude in Chrome は <strong>あなたがChromeを開いている時間</strong>
 <p>AIに頼んだコードが本当に動くのを、<strong>自分の目で見て体験してもらうことです</strong>。</p>
 <p>ブラウザが開いて、タイトルが黄色く光って、段落がひとつずつ水色に光ってスクロールしていく。</p>
 <p>「<strong>AIがブラウザを動かしてる</strong>」が目で見えます。</p>
-<p><img alt="" src="images/ch02/jidouka.png" /></p>
+<p><img alt="" src="images/ch02/jidouka.png" loading="lazy" decoding="async" /></p>
 <p>これが「<strong>ロボットが代わりに作業してる</strong>」状態の、いちばん分かりやすい姿です。</p>
 <h3 id="第2章-動いたら">動いたら</h3>
 <p>ブラウザが開いて、ハイライトが流れて、<strong><code>result.txt</code> ができていれば成功です</strong>。</p>
@@ -2302,11 +2340,11 @@ CapcutやClipchampなどであれば、無料で動画にマスクをかける�
 <p><strong>4. ファイルのパスを貼る</strong></p>
 <p>動画そのものを添付できない場合は、録画ファイルの場所を文字で渡します。</p>
 <p>Mac の場合は、Finder でファイルを選んで <strong>Option + Command + C</strong> を押すと、ファイルのパスをコピーできます。</p>
-<p><img alt="FinderでOption + Command + Cを押してパスをコピーする" src="images/ch02/optioncommandc.png" /></p>
-<p><img alt="コピーしたファイルパスをチャットに貼り付ける" src="images/ch02/haritsuke.png" /></p>
+<p><img alt="FinderでOption + Command + Cを押してパスをコピーする" src="images/ch02/optioncommandc.png" loading="lazy" decoding="async" /></p>
+<p><img alt="コピーしたファイルパスをチャットに貼り付ける" src="images/ch02/haritsuke.png" loading="lazy" decoding="async" /></p>
 <p>または、Finder の下にパスバーを表示して、場所を確認してもOKです。</p>
 <p>Windows の場合は、エクスプローラーでファイルを右クリックして <strong>「パスのコピー（Copy as path）」</strong> を選びます。</p>
-<p><img alt="Windowsでパスのコピーを選ぶ" src="images/ch02/windowspasscopy.png" /></p>
+<p><img alt="Windowsでパスのコピーを選ぶ" src="images/ch02/windowspasscopy.png" loading="lazy" decoding="async" /></p>
 <p>Windows 10 などで表示されない場合は、<strong>Shift を押しながら右クリック</strong>すると出ることがあります。<br />
 画面上部のアドレスバーをコピーすると、フォルダの場所だけになることがあるので、できれば<strong>動画ファイルそのものを右クリックしてパスをコピー</strong>してください。</p>
 <p>パスを貼る場合は、こう言います。</p>
@@ -2383,7 +2421,7 @@ requirements.txt ← 必要な道具の一覧
 <h3 id="第2章-env-ファイルって何ですか"><code>.env</code> ファイルって何ですか</h3>
 <p>ここで <code>.env</code>（ドット・エンブ）ファイルについて説明します。<br />
 <a href="#第0章-10-準備運動：aiニュース便を1個動かしてみよう">第0章の課題「<strong>AIニュース便</strong>」</a>でも出てきました。</p>
-<p><img alt="" src="images/ch02/m-05-env-secret.png" /></p>
+<p><img alt="" src="images/ch02/m-05-env-secret.png" loading="lazy" decoding="async" /></p>
 <p><code>.env</code> は、プログラムを動かすときの<strong>設定や秘密情報をまとめておく専用ファイル</strong>です。<br />
 ファイル名そのものが「<strong>ドットから始まって、env で終わる</strong>」だけ。拡張子(.pngとか.txtとかのこと)もありません。</p>
 <p>なぜ使うのか。<strong>パスワードやAPIキーをコードに直接書かないため</strong>です。</p>
@@ -2758,7 +2796,7 @@ Enterを押したら終了する形にしてください。
 <hr />
 <h2 id="第3章-この章で渡すもの">この章で渡すもの</h2>
 <p><strong>自動化は、一発にしてならず。</strong></p>
-<p><img alt="第3章：詰まった時にはここ" src="images/ch03/ch03-kowaretatoki.png" /></p>
+<p><img alt="第3章：詰まった時にはここ" src="images/ch03/ch03-kowaretatoki.png" loading="lazy" decoding="async" /></p>
 <p>これは脅しでも何でもなくて、ただの事実です。<br />
 いくらAIが頭良くなっても、まだそこまで万能ではない。</p>
 <p>作ってる過程で最後まで行かずに途中で止まることもあります。<br />
@@ -2789,7 +2827,7 @@ Enterを押したら終了する形にしてください。
 <strong>ここを最初にひっくり返しておいてください</strong>。</p>
 <hr />
 <h2 id="第3章-詰まりは2階層ある">詰まりは2階層ある</h2>
-<p><img alt="" src="images/ch03/error-material.png" /><br />
+<p><img alt="" src="images/ch03/error-material.png" loading="lazy" decoding="async" /><br />
 詰まりには、種類があります。</p>
 <p>ぜんぶ同じ「止まった」に見えるんですけど、<br />
 <strong>中身は2階層に分かれます。</strong><br />
@@ -2838,7 +2876,7 @@ AIに渡す。</p>
 英語アレルギーです。</p>
 <p>でも、読めなくていいです。<br />
 読まずに、<strong>まるごとコピペしてAIに渡してください</strong>。</p>
-<p><img alt="" src="images/ch03/marugotokopipe.png" /></p>
+<p><img alt="" src="images/ch03/marugotokopipe.png" loading="lazy" decoding="async" /></p>
 <p>AIは英語のエラー文を「<strong>自分のためのヒント</strong>」として読んでくれます。<br />
 人間にはチンプンカンプンでも、AIにとってはあればあるほどおいしい材料なんですね。<br />
 なので、あなたがエラー内容を理解する必要はありません。</p>
@@ -3071,7 +3109,7 @@ AIに渡す情報も「<strong>どのステップで詰まったか</strong>」�
 詰まったときは、<a href="#第5章-パターン辞典：よくあるエラー10選">第5章のパターン辞典</a>を開いてコピペ用プロンプトをそのままAIに貼ってください。</p>
 <hr />
 <h2 id="第3章-第2階層を抜けられないときの判断">第2階層を抜けられないときの判断</h2>
-<p><img alt="" src="images/ch03/dai2_nukerarenai.png" /></p>
+<p><img alt="" src="images/ch03/dai2_nukerarenai.png" loading="lazy" decoding="async" /></p>
 <p>ここまで全部やった。<br />
 それでも抜けない。</p>
 <p>こういう日があります。<br />
@@ -3079,7 +3117,7 @@ AIに渡す情報も「<strong>どのステップで詰まったか</strong>」�
 <p>そのときに大事なのは「諦め方」です。<br />
 ここで判断を間違えると、何日も溶かして、<strong>結局自動化そのものをやめます</strong>。</p>
 <h3 id="第3章-いったん引く">いったん引く</h3>
-<p><img alt="" src="images/ch03/30minutes.png" /></p>
+<p><img alt="" src="images/ch03/30minutes.png" loading="lazy" decoding="async" /></p>
 <p>30分以上同じ場所で詰まったら、<strong>いったんパソコンから離れます</strong>。<br />
 散歩でも、シャワーでも、寝るでもいいです。</p>
 <p>精神論で言っているわけではありません。<br />
@@ -3152,9 +3190,9 @@ AIに渡す情報も「<strong>どのステップで詰まったか</strong>」�
 詰まって、調べて、試して、抜けた経験だけが、自分のものになります。</p>
 <p>だから、詰まったときに「<strong>あ、いま学んでる時間だ</strong>」と思えるようになってください。<br />
 これができるようになると、もう途中でやめません。</p>
-<p><img alt="" src="images/ch03/z-04-patience-process.png" /></p>
+<p><img alt="" src="images/ch03/z-04-patience-process.png" loading="lazy" decoding="async" /></p>
 <h3 id="第3章-30分ルール">30分ルール</h3>
-<p><img alt="" src="images/ch03/30minute.png" /></p>
+<p><img alt="" src="images/ch03/30minute.png" loading="lazy" decoding="async" /></p>
 <p><strong>詰まったら 30分でいったん区切ってください</strong>。</p>
 <p>30分自分で考えて、<br />
 30分でAIと対話して、<br />
@@ -3164,14 +3202,14 @@ AIに渡す情報も「<strong>どのステップで詰まったか</strong>」�
 <p><strong>時間を区切るの</strong>は、根性がないからではありません。<br />
 続けるための仕組みです。</p>
 <h3 id="第3章-80-でいい">80%でいい</h3>
-<p><img alt="" src="images/ch03/80%.png" /></p>
+<p><img alt="" src="images/ch03/80%.png" loading="lazy" decoding="async" /></p>
 <p>完璧主義は捨ててください。</p>
 <p>100%自動化を目指して3日溶かすより、<br />
 80%動く半自動を今日から使ったほうが、<strong>ぜんぜん業務時間は減ります</strong>。</p>
 <p>残りの20%は手動でいいです。<br />
 最後のボタンは人間が押す、これでいいです。</p>
 <h3 id="第3章-諦めなければゼロにはならない">諦めなければゼロにはならない</h3>
-<p><img alt="" src="images/ch03/akiramenai.png" /></p>
+<p><img alt="" src="images/ch03/akiramenai.png" loading="lazy" decoding="async" /></p>
 <p>最後に。</p>
 <p>ここまでやって、<strong>どうしても抜けないことはあります</strong>。<br />
 僕も普通にあります。</p>
@@ -3198,7 +3236,7 @@ AIに渡す情報も「<strong>どのステップで詰まったか</strong>」�
 <p>肩の力を抜いて、次に進んでください。</p>
 <hr /></section>
 <section class="chapter" id="第4章"><div class="chapter-label">第4章</div><h1 class="chapter-title">実例集</h1><h1 id="第4章-第4章-実例集：4フェーズの型を、実際の仕事で動かす">第4章　実例集：4フェーズの型を、実際の仕事で動かす</h1>
-<p><img alt="第4章：実例集" src="images/ch04/ch04-examples-hero.png" /></p>
+<p><img alt="第4章：実例集" src="images/ch04/ch04-examples-hero.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第4章-この章で渡すもの">この章で渡すもの</h2>
 <p>第2章で「<strong>4フェーズの型</strong>」を渡しました。</p>
@@ -3229,7 +3267,7 @@ Phase 4：壊れても再開できる設計にする
 <p>それだけ頭に置いて、実例を見てください。</p>
 <hr />
 <h2 id="第4章-実例①-業務委託先の管理画面入力を自動化した話">実例①　業務委託先の管理画面入力を自動化した話</h2>
-<video controls style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/おてつたびデモ_完成_モザイク.mp4" type="video/mp4"></video>
+<video controls preload="none" style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/おてつたびデモ_完成_モザイク.mp4" type="video/mp4"></video>
 
 <h3 id="第4章-自動化前の状態">自動化前の状態</h3>
 <p>ペスハムはある時期、とある人材サービス（宿泊施設向けの人材サービス）のエリア営業をやっていました。</p>
@@ -3299,7 +3337,7 @@ Phase 4：壊れても再開できる設計にする
 詰まった回数が多いほど、「<strong>次に似た作業をするとき</strong>」が速くなります。</p>
 <hr />
 <h2 id="第4章-実例②-音声配信の毎日アップロードを自動化した話">実例②　音声配信の毎日アップロードを自動化した話</h2>
-<video controls style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/podcast-upload-demo.mp4" type="video/mp4"></video>
+<video controls preload="none" style="max-width:100%;margin:24px 0;border-radius:8px;"><source src="../demo_douga/podcast-upload-demo.mp4" type="video/mp4"></video>
 
 <h3 id="第4章-自動化前の状態_1">自動化前の状態</h3>
 <p>毎朝 iPhone で音声を録音して、PC で以下の作業を手動でやっていました。</p>
@@ -3381,7 +3419,7 @@ Phase 4：壊れても再開できる設計にする
 ただ、音声ファイルを処理するのに時間がかかります。</p>
 <p>この「数分待つ」が、毎日続くと地味に重くのしかかります。</p>
 <p>そこで気づいたのが、<strong>iPhone のボイスメモアプリに標準で入っている「文字起こし」機能</strong>です。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi.png" loading="lazy" decoding="async" /></p>
 <p>録音が終わると自動でテキスト化されていて、「文字起こしをコピー」をタップするだけでクリップボードに入ります。<br />
 処理時間はほぼゼロです。</p>
 <p>精度は Whisper ほど高くありません。<br />
@@ -3389,9 +3427,9 @@ Phase 4：壊れても再開できる設計にする
 実際、誤変換や言いよどみは ChatGPT がきれいに直してくれるので、記事の品質は問題ありませんでした。</p>
 <h3 id="第4章-phase-2：-command-ダブルクリック-enter-だけで動く形にした">Phase 2：.command ダブルクリック + Enter だけで動く形にした</h3>
 <p>文字起こしをコピーした状態で <code>.command</code> ファイルをダブルクリックすると、ターミナルが開きます。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi2.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi2.png" loading="lazy" decoding="async" /></p>
 <p>クリップボードの内容（文字起こしテキスト）が画面に表示されて、Enter を押すだけで処理が始まります。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi3.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi3.png" loading="lazy" decoding="async" /></p>
 <pre><code>[ボイスメモを録音]
     ↓
 [「文字起こしをコピー」をタップ] ← iPhone の機能、1タップ
@@ -3405,20 +3443,20 @@ Phase 4：壊れても再開できる設計にする
 ターミナルを開かなくてもいい、非エンジニア向けのランチャーです。</p>
 <h3 id="第4章-phase-3：chatgpt・note・substack-をまとめて自動操作した">Phase 3：ChatGPT・note・Substack をまとめて自動操作した</h3>
 <p>記事化の中身は CDP（ブラウザを外部プログラムから操作する仕組み）を使って作りました。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi4.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi4.png" loading="lazy" decoding="async" /></p>
 <p>ChatGPT の画面を開いて文章を整え、タイトル案を出してもらいます。</p>
 <p>さらに、タイトルをもとに<strong>サムネイル画像を自動生成し、ダウンロード</strong>します。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi5.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi5.png" loading="lazy" decoding="async" /></p>
 <p>note と Substack はすでにログイン済みのブラウザを使うため、ログイン作業は不要です。<br />
 新規作成画面を開いてタイトルと本文をそのまま貼り付け、<strong>下書き保存まで自動で完了</strong>します。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi6.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi6.png" loading="lazy" decoding="async" /></p>
 <p>サムネイル画像のアップロードだけ、自動化が難しく、最後の編集時に合わせてアップロードを行なっています。</p>
 <p>そして、<strong>最後の「公開ボタンを押す」は、もちろん人間がやります。</strong></p>
 <h3 id="第4章-phase-4：日記まで自動化にくっつけた">Phase 4：日記まで自動化にくっつけた</h3>
 <p>音声配信では、その日に考えていたことや動いていたことを話しています。<br />
 つまり文字起こしには、「その日の思考の断片」がそのまま入っています。</p>
 <p>ならば、記事を作るついでに「今日1日の振り返り日記も作ってください」と ChatGPT に頼めばいいと気づきました。</p>
-<p><img alt="" src="images/ch04/voicememo_mojiokosi7.png" /></p>
+<p><img alt="" src="images/ch04/voicememo_mojiokosi7.png" loading="lazy" decoding="async" /></p>
 <p>日記を書くための時間を新たに用意しなくていい。<br />
 すでにやっている音声配信の流れの中に、日記を組み込んでしまう。</p>
 <p>できあがった日記は <strong>Obsidian</strong>（高機能なメモツール）に自動保存されます。</p>
@@ -3439,13 +3477,13 @@ note・Substack の下書きを作る
 <h2 id="第4章-実例④-substack-登録者のバックアップを半自動化した話">実例④　Substack 登録者のバックアップを半自動化した話</h2>
 <h3 id="第4章-自動化前の状態_3">自動化前の状態</h3>
 <p>毎月 Substack の登録者データを手動でエクスポートして、Proton のスプレッドシートに移していました。</p>
-<p><img alt="" src="images/ch04/backup.png" /></p>
+<p><img alt="" src="images/ch04/backup.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>月1回だから手動でいいか</strong>」と思いながら、毎月やるたびに「またか」と思う作業でした。</p>
 <h3 id="第4章-自動化後の状態_3">自動化後の状態</h3>
 <p><code>run.command</code> をダブルクリックすると、<strong>Substack の登録者ページが自動で開きます</strong>。</p>
 <p><strong>エクスポートボタンを押すだけで CSV が出てきます</strong>。<br />
 Proton への貼り付けだけ、手動で残しました。</p>
-<p><img alt="" src="images/ch04/backup_muzui.png" /></p>
+<p><img alt="" src="images/ch04/backup_muzui.png" loading="lazy" decoding="async" /></p>
 <p>全部を自動化することはできませんでした。<br />
 でも、「またか」の時間は7割減りました。</p>
 <hr />
@@ -3486,7 +3524,7 @@ Substack 側から見ると「<strong>いつものブラウザがアクセスし
 月末にまとめてやると、毎回30分近くかかっていました。</p>
 <h3 id="第4章-自動化後の状態_4">自動化後の状態</h3>
 <p>スクリプトを1回実行するだけで、PDF が <code>~/Downloads/請求書/YYYYMM/</code> に自動で保存されます。</p>
-<p><img alt="Gmailの請求書PDF収集がコマンド1つになった画面" src="images/ch04/gmail-invoice-command.png" /></p>
+<p><img alt="Gmailの請求書PDF収集がコマンド1つになった画面" src="images/ch04/gmail-invoice-command.png" loading="lazy" decoding="async" /></p>
 <p>月末の30分が、コマンド1つになりました。</p>
 <hr />
 <h3 id="第4章-phase-1：gmail-mcp-から試した">Phase 1：Gmail MCP から試した</h3>
@@ -3545,7 +3583,7 @@ Make が本当に必要なのは「<strong>PC がオフのときでも、メー�
 <p>「<strong>無人でチェックインできる仕組みを、月額費用なしで作れないか</strong>」と考えました。</p>
 <h3 id="第4章-作ったもの">作ったもの</h3>
 <p><strong>TOBIRA</strong>（トビラ）という名前でプロトタイプを作りました。</p>
-<p><img alt="" src="images/ch04/smartcheckin.png" /></p>
+<p><img alt="" src="images/ch04/smartcheckin.png" loading="lazy" decoding="async" /></p>
 <pre><code>・宿泊者名簿の電子化（法令対応フォーム）
 ・外国人パスポート確認（日英中韓 4言語対応）
 ・事前チェックイン（QRコードをゲストに送るだけ）
@@ -3596,7 +3634,7 @@ Brain の利用規約を確認した上で、個人のリサーチ目的での�
 <h3 id="第4章-自動化後の状態_5">自動化後の状態</h3>
 <p><code>Brainランキング転記.command</code> をダブルクリックして、スプレッドシートの URL を貼り付けて Enter。</p>
 <p>約30秒で上位20件がスプシに書き込まれます。</p>
-<p><img alt="" src="images/ch04/brain_scraper.png" /></p>
+<p><img alt="" src="images/ch04/brain_scraper.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h3 id="第4章-phase-1：何を取得するか整理した">Phase 1：何を取得するか整理した</h3>
 <p>Brain の人気順ページ（<code>/search?order=fav</code>）を開いて、取得したい情報を整理しました。</p>
@@ -3679,7 +3717,7 @@ Phase 4：壊れても続きから再開できる形にする
 <p>第2章・第3章・第4章で出てきたプロンプトを整理したもので、<strong>別の業務に使うときにも引けるようにまとめています</strong>。</p>
 <hr /></section>
 <section class="chapter" id="第5章"><div class="chapter-label">第5章</div><h1 class="chapter-title">辞典＆プロンプト集</h1><h1 id="第5章-第5章-プロンプト辞典：状況別コピペ集">第5章　プロンプト辞典：状況別コピペ集</h1>
-<p><img alt="第5章：辞典＆プロンプト集" src="images/ch05/ch05-prompt-dictionary-hero.png" /></p>
+<p><img alt="第5章：辞典＆プロンプト集" src="images/ch05/ch05-prompt-dictionary-hero.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第5章-この章の使い方">この章の使い方</h2>
 <p>本文として読む必要はありません。</p>
@@ -4453,7 +4491,7 @@ CSV ファイル（1行が1件）/ JSON ファイル / リスト（変数）
 詰まったときに該当ページを開いて、<br />
 コピペ用プロンプトをそのままAIに貼る。<br />
 これだけで、<strong>ほとんどの問題は前に進みます</strong>。</p>
-<p><img alt="" src="images/ch03/pattern-dictionary-compass.png" /></p>
+<p><img alt="" src="images/ch03/pattern-dictionary-compass.png" loading="lazy" decoding="async" /></p>
 <h3 id="第5章-全体マップ">全体マップ</h3>
 <pre><code>A. 要素が操作できない
    A-1  ボタンを押しても何も起きない
@@ -4726,7 +4764,7 @@ OS のファイル選択ダイアログが開いてしまい、
 <p><strong>補足</strong><br />
 <strong>途中再開</strong>は、複数件処理する自動化ではほぼ必須です。<br />
 最初から入れておくと、<strong>あとあと一番ラクになります</strong>。</p>
-<p><img alt="" src="images/ch03/recovery-design.png" /></p>
+<p><img alt="" src="images/ch03/recovery-design.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第5章-終章へ">終章へ</h2>
 <p>ここまで来ました。</p>
@@ -4739,23 +4777,23 @@ OS のファイル選択ダイアログが開いてしまい、
 <p>それを最後に渡します。</p>
 <hr /></section>
 <section class="chapter" id="終章"><div class="chapter-label">終章</div><h1 class="chapter-title">これからの話</h1><h1 id="終章-終章-これからの話">終章　これからの話</h1>
-<p><img alt="終章：これからの話" src="images/shusho/chapter-hero-shusho.png" /></p>
+<p><img alt="終章：これからの話" src="images/shusho/chapter-hero-shusho.png" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="終章-ここまで来た">ここまで来た</h2>
-<p><img alt="" src="images/shusho/kokomade.png" /></p>
+<p><img alt="" src="images/shusho/kokomade.png" loading="lazy" decoding="async" /></p>
 <p>序章から第5章まで通しました。</p>
 <p>道具の選び方、型の作り方、詰まったときの直し方、実例、辞典。</p>
 <p>かなり濃かったと思います。</p>
 <hr />
 <h2 id="終章-正直に言うと、道具は変わる">正直に言うと、道具は変わる</h2>
-<p><img alt="" src="images/shusho/douguhakawaru.png" /></p>
+<p><img alt="" src="images/shusho/douguhakawaru.png" loading="lazy" decoding="async" /></p>
 <p>ここで正直に言っておきます。</p>
 <p>この教材で紹介した MCP も、Claude Code も、Playwright の細かい使い方も、来年には変わっているかもしれません。</p>
 <p>「じゃあせっかく学んだのに、意味ないじゃないか」</p>
 <p>その気持ちは正直わかります。</p>
 <hr />
 <h2 id="終章-でも、型は変わらない">でも、型は変わらない</h2>
-<p><img alt="" src="images/shusho/katahakawaranai.png" /></p>
+<p><img alt="" src="images/shusho/katahakawaranai.png" loading="lazy" decoding="async" /></p>
 <p>僕がこの教材で渡したかったのは、道具そのものではありません。</p>
 <pre><code>録画して棚卸しする
   → 最小版を作ってもらう
@@ -4770,7 +4808,7 @@ OS のファイル選択ダイアログが開いてしまい、
 <p>今日手に入れたのは、道具ではなくて<strong>型</strong>です。</p>
 <hr />
 <h2 id="終章-まだ語れていないことがある">まだ語れていないことがある</h2>
-<p><img alt="" src="images/shusho/madakataretenai.png" /></p>
+<p><img alt="" src="images/shusho/madakataretenai.png" loading="lazy" decoding="async" /></p>
 <p>Chrome 拡張も、新しい MCP も、「同じ型でいける」と思っています。</p>
 <p>でも正直、<strong>語れるほど触った</strong>とは言えない段階です。<br />
 まだ自分でもつまずいているところがあります。</p>
@@ -4782,7 +4820,7 @@ OS のファイル選択ダイアログが開いてしまい、
 <h2 id="終章-一緒に育てていく">一緒に育てていく</h2>
 <p>序章でも書きましたが、自分一人で全部のパターンを検証するのは無理です。</p>
 <p>だから購入者みなさんと <strong>LINEオープンチャット</strong> を作りました。</p>
-<p><img alt="" src="images/shusho/tokuten3.png" /></p>
+<p><img alt="" src="images/shusho/tokuten3.png" loading="lazy" decoding="async" /></p>
 <p>👉 <a href="https://line.me/ti/g2/Wh6jCBOvSIs9K_3EvSQa24tzNnO59BNtQERbkA" target="_blank" rel="noopener noreferrer">オープンチャット「ブラウザ操作自動化の教科書」</a></p>
 <p>あなたが実際に試したことを持ってきてほしいです。</p>
 <p>うまくいったこと。<br />
@@ -4809,6 +4847,23 @@ OS のファイル選択ダイアログが開いてしまい、
 <hr /></section>
 </main>
 <script>
+var tocToggle = document.querySelector('.toc-toggle');
+var tocBackdrop = document.querySelector('.toc-backdrop');
+function closeToc() {
+  document.body.classList.remove('toc-open');
+  if (tocToggle) tocToggle.setAttribute('aria-expanded', 'false');
+}
+if (tocToggle) {
+  tocToggle.addEventListener('click', function() {
+    var isOpen = document.body.classList.toggle('toc-open');
+    tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
+if (tocBackdrop) tocBackdrop.addEventListener('click', closeToc);
+document.querySelectorAll('#sidebar a').forEach(function(a) {
+  a.addEventListener('click', closeToc);
+});
+
 // すべての pre ブロックにコピーボタンを追加
 document.querySelectorAll('.chapter pre').forEach(function(pre) {
   var wrap = document.createElement('div');

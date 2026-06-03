@@ -12,13 +12,13 @@
     <!-- OGP -->
     <meta property="og:title" content="ブラウザ操作自動化の教科書" />
     <meta property="og:description" content="メール・フォーム入力・管理画面・SNS投稿。毎日30分をボタン1つへ。" />
-    <meta property="og:image" content="https://jidouka.pessham.com/images/thumbnail-beige-browser-automation.png" />
+    <meta property="og:image" content="https://jidouka.pessham.com/images/thumbs/top-hero.jpg" />
     <meta property="og:url" content="https://jidouka.pessham.com/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ブラウザ操作自動化の教科書" />
     <meta name="twitter:description" content="メール・フォーム入力・管理画面・SNS投稿。毎日30分をボタン1つへ。" />
-    <meta name="twitter:image" content="https://jidouka.pessham.com/images/thumbnail-beige-browser-automation.png" />
+    <meta name="twitter:image" content="https://jidouka.pessham.com/images/thumbs/top-hero.jpg" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
       /* ── index専用スタイル ── */
@@ -96,7 +96,7 @@
       }
       .chapter-card {
         display: grid;
-        grid-template-columns: 48px 1fr;
+        grid-template-columns: 150px 48px 1fr;
         gap: 0 16px;
         align-items: start;
         background: var(--surface, #fff);
@@ -110,6 +110,15 @@
       }
       .chapter-card:hover {
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      }
+      .chapter-card .ch-thumb {
+        width: 150px;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid var(--border, #e5e7eb);
+        background: #f8fafc;
+        align-self: stretch;
       }
       .chapter-card .ch-num {
         font-size: 1.45rem;
@@ -222,10 +231,17 @@
         margin: -8px 0 28px;
       }
       .spec-item {
+        display: block;
         background: var(--surface, #fff);
         border: 1px solid var(--border, #e5e7eb);
         border-radius: 10px;
         padding: 13px 14px;
+        color: inherit;
+        text-decoration: none;
+      }
+      .spec-item[href]:hover {
+        border-color: var(--blue, #2563eb);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       }
       .spec-item strong {
         display: block;
@@ -240,14 +256,29 @@
         line-height: 1.5;
         margin-top: 4px;
       }
+      @media (max-width: 700px) {
+        .chapter-card {
+          grid-template-columns: 42px 1fr;
+          gap: 10px 12px;
+          padding: 12px;
+        }
+        .chapter-card .ch-thumb {
+          grid-column: 1 / -1;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+        .chapter-card .ch-num {
+          padding-top: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- モバイル時に最上部に来るヒーロー画像 -->
     <div class="hero-top-wrap">
       <div class="lp-hero">
-        <img src="./images/thumbnail-beige-browser-automation.png"
-             alt="ブラウザ操作自動化の教科書" />
+        <img src="./images/thumbs/top-hero.jpg"
+             alt="ブラウザ操作自動化の教科書" fetchpriority="high" decoding="async" />
         <div class="lp-hero-overlay">
           <h2>ブラウザ操作自動化の教科書</h2>
           <p>メール・フォーム入力・管理画面・SNS投稿　── 毎日 30分を、ボタン1つへ</p>
@@ -271,6 +302,11 @@
           <strong>序章</strong>
           <small>182時間 → 自動化へ</small>
         </a>
+        <a class="step" href="#bonus">
+          <span>特</span>
+          <strong>購入特典</strong>
+          <small>5つの特典を受け取る</small>
+        </a>
         <a class="step" href="#ch0">
           <span>0</span>
           <strong>準備編</strong>
@@ -293,18 +329,18 @@
         </a>
         <a class="step" href="#ch4">
           <span>4</span>
-          <strong>解決編</strong>
-          <small>止まったら開く章</small>
+          <strong>実例集</strong>
+          <small>実際の仕事で動かす</small>
         </a>
         <a class="step" href="#ch5">
           <span>5</span>
           <strong>辞典編</strong>
           <small>コピペで使えるプロンプト</small>
         </a>
-        <a class="step" href="#ch6">
-          <span>6</span>
-          <strong>実例編</strong>
-          <small>詰まった場所ごと全公開</small>
+        <a class="step" href="#ending">
+          <span>終</span>
+          <strong>終章</strong>
+          <small>これからの話</small>
         </a>
         <a class="step" href="#faq">
           <span>?</span>
@@ -362,14 +398,14 @@
           <strong>コード・コマンド例約70本</strong>
           <span>セットアップ、実行、修正、再開までの例を掲載</span>
         </div>
-        <div class="spec-item">
+        <a class="spec-item" href="./textbook.html#特典">
           <strong>購入特典5つ</strong>
           <span>GPTs、スターターキット、LINE、メール講座、全文mdを用意</span>
-        </div>
-        <div class="spec-item">
+        </a>
+        <a class="spec-item" href="./textbook.html#第5章">
           <strong>プロンプト辞典つき</strong>
           <span>詰まったときに該当箇所を引いてAIに渡せる構成</span>
-        </div>
+        </a>
       </div>
 
       <!-- ── 章カード ── -->
@@ -377,57 +413,85 @@
         <p class="eyebrow" style="margin-bottom:12px;">各章のポイント</p>
         <div class="chapter-cards">
 
-          <a class="chapter-card" href="./textbook.html#第0章-準備編-道具を揃える" id="ch0">
+          <a class="chapter-card" href="./textbook.html#序章" id="ch-intro">
+            <img class="ch-thumb" src="./images/thumbs/ch-intro.jpg" alt="序章：自動化で変わること" loading="lazy" decoding="async" />
+            <div class="ch-num">序</div>
+            <div class="ch-body">
+              <p class="ch-label">序章</p>
+              <h3>自動化で変わること ── 昨日もやった「あの作業」を、自動化する話</h3>
+              <p>毎日30分の繰り返し作業が、年間でどれだけ大きいか。まず「自分にも関係ある」と思えるところから始めます。</p>
+              <span class="ch-hook">「自動化で変わること」→</span>
+            </div>
+          </a>
+
+          <a class="chapter-card" href="./textbook.html#特典" id="bonus">
+            <img class="ch-thumb" src="./images/thumbs/ch-bonus.jpg" alt="購入特典：5つの特典を受け取る" loading="lazy" decoding="async" />
+            <div class="ch-num">特</div>
+            <div class="ch-body">
+              <p class="ch-label">購入特典</p>
+              <h3>5つの特典を受け取る ── GPTs・スターターキット・全文md</h3>
+              <p>ネタ出しGPTs、スターターキット、購入者チャット、14日間メール講座、AIに読み込ませて使える全文mdを受け取れます。</p>
+              <span class="ch-hook">「購入特典を受け取る」→</span>
+            </div>
+          </a>
+
+          <a class="chapter-card" href="./textbook.html#第0章" id="ch0">
+            <img class="ch-thumb" src="./images/thumbs/ch0.jpg" alt="第0章：道具の準備" loading="lazy" decoding="async" />
             <div class="ch-num">0</div>
             <div class="ch-body">
               <p class="ch-label">準備編</p>
-              <h3>道具を揃える ── やることは「2つだけ」</h3>
-              <p>CodexかClaude Code を選んで、Playwright をインストールする。それだけです。セットアップは目安1〜2時間。ここを終えれば、あとは動かしながら進めます。</p>
+              <h3>道具を揃える ── 準備編：道具を揃える</h3>
+              <p>Codex・Claude Code・Antigravity のどれかを選び、Playwright を動かせる状態にします。最初のAIニュース便まで進みます。</p>
               <span class="ch-hook">「環境構築、構えなくていい」→</span>
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第1章-知識編" id="ch1">
+          <a class="chapter-card" href="./textbook.html#第1章" id="ch1">
+            <img class="ch-thumb" src="./images/thumbs/ch1.jpg" alt="第1章：どんな作業が自動化できるか" loading="lazy" decoding="async" />
             <div class="ch-num">1</div>
             <div class="ch-body">
               <p class="ch-label">知識編</p>
-              <h3>自動化できる作業を見つける ── 3つの道具の使い分け</h3>
-              <p>Playwright MCP・Playwright コード・Computer Use。「どれを使えばいいか」がわかると、自動化できる作業の幅が一気に広がります。最初から全部使う必要はありません。</p>
+              <h3>どんな作業が自動化できるか ── 5つの道具と5つの判定軸</h3>
+              <p>Playwright、MCP、AI親和拡張などを、業務の種類に合わせて選ぶための地図です。規約や安全ラインもここで整理します。</p>
               <span class="ch-hook">「迷わなくなる使い分けの地図」→</span>
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第2章-方法編" id="ch2">
+          <a class="chapter-card" href="./textbook.html#第2章" id="ch2">
+            <img class="ch-thumb" src="./images/thumbs/ch2.jpg" alt="第2章：AIに作らせる" loading="lazy" decoding="async" />
             <div class="ch-num">2</div>
             <div class="ch-body">
               <p class="ch-label">方法編</p>
-              <h3>録画から自動化までの4フェーズ ── 型を知れば迷わない</h3>
-              <p>「録画 → 最小版を作る → 動かして直す → 戻れる設計にする」。この4フェーズで進めると、どこで詰まっているかが一目でわかります。1周すれば次からは速くなります。</p>
+              <h3>AIに作らせる ── 録る・作る・直す・育てる</h3>
+              <p>業務を録画してAIに渡し、最小版を作り、動かしながら直し、壊れても再開できる形に育てます。</p>
               <span class="ch-hook">「完成までの道筋が見える型」→</span>
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第3章-マインド編" id="ch3">
+          <a class="chapter-card" href="./textbook.html#第3章" id="ch3">
+            <img class="ch-thumb" src="./images/thumbs/ch3.jpg" alt="第3章：詰まった時にはここ" loading="lazy" decoding="async" />
             <div class="ch-num">3</div>
             <div class="ch-body">
-              <p class="ch-label">マインド編</p>
-              <h3>詰まっても折れない作業ルール ── 2つのルールだけでいい</h3>
-              <p>30分ルール（詰まったら一旦離れる）と80%ルール（完璧を目指さない）。この2つを守るだけで、諦めずに完成までたどり着ける人と、途中でやめてしまう人に分かれます。</p>
+              <p class="ch-label">直し方</p>
+              <h3>詰まった時にはここ ── エラーと壊れたときの直し方</h3>
+              <p>自動化は止まるのが普通です。止まったときに慌てず、状況を残してAIに渡し、抜けるための考え方をまとめます。</p>
               <span class="ch-hook">「続けられる人の習慣」→</span>
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第4章-詰まったときの抜け方" id="ch4">
+          <a class="chapter-card" href="./textbook.html#第4章" id="ch4">
+            <img class="ch-thumb" src="./images/thumbs/ch4.jpg" alt="第4章：実例集" loading="lazy" decoding="async" />
             <div class="ch-num">4</div>
             <div class="ch-body">
-              <p class="ch-label">詰まったときの抜け方</p>
-              <h3>解決編：止まったときの抜け方 ── 「詰まった」が「材料が出た」に変わる</h3>
-              <p>エラーが出たとき、何をどの順番でAIに渡せばいいか。詰まりには2階層あって、それぞれ対処が違います。読んでおくと「また詰まった」ではなく「どう抜けるか」に切り替わります。</p>
-              <span class="ch-hook">「止まっても前に進める地図」→</span>
+              <p class="ch-label">実例集</p>
+              <h3>4フェーズの型を、実際の仕事で動かす</h3>
+              <p>管理画面入力、音声配信アップロード、Substack、Gmail請求書PDF収集など、実際の仕事で作った自動化を公開します。</p>
+              <span class="ch-hook">「実例を見る」→</span>
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第5章-辞典編" id="ch5">
+          <a class="chapter-card" href="./textbook.html#第5章" id="ch5">
+            <img class="ch-thumb" src="./images/thumbs/ch5.jpg" alt="第5章：辞典＆プロンプト集" loading="lazy" decoding="async" />
             <div class="ch-num">5</div>
             <div class="ch-body">
               <p class="ch-label">辞典編</p>
@@ -437,13 +501,14 @@
             </div>
           </a>
 
-          <a class="chapter-card" href="./textbook.html#第6章-実例編-─-ペスハムの自動化全公開" id="ch6">
-            <div class="ch-num">6</div>
+          <a class="chapter-card" href="./textbook.html#終章" id="ending">
+            <img class="ch-thumb" src="./images/thumbs/ending.jpg" alt="終章：これからの話" loading="lazy" decoding="async" />
+            <div class="ch-num">終</div>
             <div class="ch-body">
-              <p class="ch-label">実例編</p>
-              <h3>実例で見る自動化の完成プロセス ── 詰まった場所ごと全公開</h3>
-              <p>おてつたびの管理画面自動化・音声配信の毎日アップロード自動化。どこで詰まって、どう抜けたかを含めて全部書いています。「実際どう作るのか」がそのまま見えます。</p>
-              <span class="ch-hook">「制作過程を丸ごと見る」→</span>
+              <p class="ch-label">終章</p>
+              <h3>これからの話 ── 自分専用の自動化アシスタントへ</h3>
+              <p>教材を読み終えたあと、実務の中でAIと一緒に自動化を育て続けるための考え方をまとめます。</p>
+              <span class="ch-hook">「これからの話」→</span>
             </div>
           </a>
 
