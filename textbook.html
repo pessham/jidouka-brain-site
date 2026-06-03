@@ -64,6 +64,109 @@
   }
   .copy-btn:hover { background-color: rgba(255,255,255,0.22); color: #e2e8f0; }
   .copy-btn.copied { background-color: #22c55e !important; border-color: #22c55e !important; color: #fff !important; }
+  @media (max-width: 780px) {
+    html, body { width: 100%; overflow-x: hidden; }
+    body { font-size: 16px; line-height: 1.85; background: #fff; }
+    nav#sidebar { display: none; }
+    header {
+      margin-left: 0;
+      padding: 28px 20px 24px;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    header .subtitle {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    main {
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      padding: 28px 18px 72px;
+      overflow-x: hidden;
+    }
+    .chapter,
+    .chapter * {
+      max-width: 100%;
+    }
+    .chapter h1,
+    .chapter h2,
+    .chapter h3,
+    .chapter h4,
+    .chapter h5 {
+      overflow-wrap: break-word;
+      word-break: keep-all;
+      line-break: strict;
+    }
+    .chapter p,
+    .chapter li,
+    .chapter a,
+    .chapter strong {
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+    .chapter {
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+    }
+    .chapter h1.chapter-title {
+      font-size: 1.65rem;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+    }
+    .chapter h1:not(.chapter-title) {
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+    .chapter h2 {
+      font-size: 1.12rem;
+      margin: 44px 0 18px;
+      padding: 14px 16px;
+      border-left-width: 5px;
+    }
+    .chapter h3 {
+      font-size: 1.12rem;
+      margin: 34px 0 14px;
+    }
+    .chapter ul,
+    .chapter ol {
+      margin-left: 20px;
+    }
+    .chapter blockquote {
+      padding: 16px 18px;
+      margin: 24px 0;
+    }
+    .chapter pre {
+      padding: 44px 16px 18px;
+      margin: 24px 0;
+      font-size: 0.82rem;
+      border-radius: 8px;
+      max-width: 100%;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .chapter table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-size: 0.86rem;
+    }
+    .chapter img,
+    .chapter video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 18px 0;
+    }
+    .copy-btn {
+      top: 8px;
+      right: 8px;
+    }
+  }
 </style>
 </head>
 <body>
