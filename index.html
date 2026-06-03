@@ -97,7 +97,7 @@
       }
       .chapter-card {
         display: grid;
-        grid-template-columns: 150px 48px 1fr;
+        grid-template-columns: 150px 1fr;
         gap: 0 16px;
         align-items: start;
         background: var(--surface, #fff);
@@ -120,13 +120,6 @@
         border: 1px solid var(--border, #e5e7eb);
         background: #f8fafc;
         align-self: stretch;
-      }
-      .chapter-card .ch-num {
-        font-size: 1.45rem;
-        font-weight: 900;
-        color: var(--blue, #2563eb);
-        line-height: 1;
-        padding-top: 2px;
       }
       .chapter-card .ch-body {}
       .chapter-card .ch-label {
@@ -270,7 +263,7 @@
           line-height: 1.55;
         }
         .chapter-card {
-          grid-template-columns: 42px 1fr;
+          grid-template-columns: 1fr;
           gap: 10px 12px;
           padding: 12px;
         }
@@ -278,9 +271,6 @@
           grid-column: 1 / -1;
           width: 100%;
           aspect-ratio: 16 / 9;
-        }
-        .chapter-card .ch-num {
-          padding-top: 0;
         }
       }
     </style>
@@ -336,8 +326,8 @@
         </a>
         <a class="step" href="#ch3">
           <span>3</span>
-          <strong>マインド編</strong>
-          <small>詰まっても折れない作業ルール</small>
+          <strong>直し方</strong>
+          <small>エラーと壊れたときの直し方</small>
         </a>
         <a class="step" href="#ch4">
           <span>4</span>
@@ -427,7 +417,6 @@
 
           <a class="chapter-card" href="./textbook.html#序章" id="ch-intro">
             <img class="ch-thumb" src="./images/thumbs/ch-intro.jpg" alt="序章：自動化で変わること" loading="lazy" decoding="async" />
-            <div class="ch-num">序</div>
             <div class="ch-body">
               <p class="ch-label">序章</p>
               <h3>自動化で変わること ── 昨日もやった「あの作業」を、自動化する話</h3>
@@ -438,7 +427,6 @@
 
           <a class="chapter-card" href="./textbook.html#特典" id="bonus">
             <img class="ch-thumb" src="./images/thumbs/ch-bonus.jpg" alt="購入特典：5つの特典を受け取る" loading="lazy" decoding="async" />
-            <div class="ch-num">特</div>
             <div class="ch-body">
               <p class="ch-label">購入特典</p>
               <h3>5つの特典を受け取る ── GPTs・スターターキット・全文md</h3>
@@ -449,7 +437,6 @@
 
           <a class="chapter-card" href="./textbook.html#第0章" id="ch0">
             <img class="ch-thumb" src="./images/thumbs/ch0.jpg" alt="第0章：道具の準備" loading="lazy" decoding="async" />
-            <div class="ch-num">0</div>
             <div class="ch-body">
               <p class="ch-label">準備編</p>
               <h3>道具を揃える ── 準備編：道具を揃える</h3>
@@ -460,7 +447,6 @@
 
           <a class="chapter-card" href="./textbook.html#第1章" id="ch1">
             <img class="ch-thumb" src="./images/thumbs/ch1.jpg" alt="第1章：どんな作業が自動化できるか" loading="lazy" decoding="async" />
-            <div class="ch-num">1</div>
             <div class="ch-body">
               <p class="ch-label">知識編</p>
               <h3>どんな作業が自動化できるか ── 5つの道具と5つの判定軸</h3>
@@ -471,7 +457,6 @@
 
           <a class="chapter-card" href="./textbook.html#第2章" id="ch2">
             <img class="ch-thumb" src="./images/thumbs/ch2.jpg" alt="第2章：AIに作らせる" loading="lazy" decoding="async" />
-            <div class="ch-num">2</div>
             <div class="ch-body">
               <p class="ch-label">方法編</p>
               <h3>AIに作らせる ── 録る・作る・直す・育てる</h3>
@@ -482,7 +467,6 @@
 
           <a class="chapter-card" href="./textbook.html#第3章" id="ch3">
             <img class="ch-thumb" src="./images/thumbs/ch3.jpg" alt="第3章：詰まった時にはここ" loading="lazy" decoding="async" />
-            <div class="ch-num">3</div>
             <div class="ch-body">
               <p class="ch-label">直し方</p>
               <h3>詰まった時にはここ ── エラーと壊れたときの直し方</h3>
@@ -493,7 +477,6 @@
 
           <a class="chapter-card" href="./textbook.html#第4章" id="ch4">
             <img class="ch-thumb" src="./images/thumbs/ch4.jpg" alt="第4章：実例集" loading="lazy" decoding="async" />
-            <div class="ch-num">4</div>
             <div class="ch-body">
               <p class="ch-label">実例集</p>
               <h3>4フェーズの型を、実際の仕事で動かす</h3>
@@ -504,7 +487,6 @@
 
           <a class="chapter-card" href="./textbook.html#第5章" id="ch5">
             <img class="ch-thumb" src="./images/thumbs/ch5.jpg" alt="第5章：辞典＆プロンプト集" loading="lazy" decoding="async" />
-            <div class="ch-num">5</div>
             <div class="ch-body">
               <p class="ch-label">辞典編</p>
               <h3>そのまま貼れるプロンプト辞典 ── 詰まったときに引く場所</h3>
@@ -515,7 +497,6 @@
 
           <a class="chapter-card" href="./textbook.html#終章" id="ending">
             <img class="ch-thumb" src="./images/thumbs/ending.jpg" alt="終章：これからの話" loading="lazy" decoding="async" />
-            <div class="ch-num">終</div>
             <div class="ch-body">
               <p class="ch-label">終章</p>
               <h3>これからの話 ── 自分専用の自動化アシスタントへ</h3>
