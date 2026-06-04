@@ -5107,7 +5107,7 @@ Cloudflare がきつい、
 
 ### 80%でいい
 
-![](https://jidouka.pessham.com/images/ch03/80%.png)
+![](https://jidouka.pessham.com/images/ch03/80percent.png)
 
 完璧主義は捨ててください。
 
