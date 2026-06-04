@@ -51,6 +51,14 @@
   .chapter img { max-width: 100%; border-radius: 8px; margin: 24px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
   .chapter hr { border: none; border-top: 2px solid #e5e7eb; margin: 48px 0; }
   .chapter video { max-width: 100%; border-radius: 8px; margin: 24px 0; }
+  /* アコーディオン（章内の手順セクションをクリックで開閉） */
+  .chapter details.collapsible-section { margin: 32px 0 48px; }
+  .chapter details.collapsible-section > summary { cursor: pointer; list-style: none; outline: none; }
+  .chapter details.collapsible-section > summary::-webkit-details-marker { display: none; }
+  .chapter details.collapsible-section > summary h2 { display: block; position: relative; padding-right: 56px; transition: background-color 0.2s; }
+  .chapter details.collapsible-section > summary h2::after { content: "▼"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 0.95rem; color: #1e3a8a; transition: transform 0.25s; }
+  .chapter details.collapsible-section:not([open]) > summary h2::after { transform: translateY(-50%) rotate(-90deg); }
+  .chapter details.collapsible-section > summary:hover h2 { background: linear-gradient(to right, #dbeafe, #f8fafc); }
   .fine-print { font-size: 0.82rem; color: #64748b; background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 24px 0; border-radius: 0 6px 6px 0; }
   /* コピーボタン */
   .pre-wrap { position: relative; margin: 32px 0; }
@@ -856,15 +864,15 @@ AIにこう聞いてください。</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Antigravity</strong>（まだどこにも課金していない / 無料で始めたい）</td>
+<td><a href="#第0章-3-手順①-antigravityをインストール"><strong>Antigravity</strong></a>（まだどこにも課金していない / 無料で始めたい）</td>
 <td>→ 「手順① Antigravityをインストール」へ</td>
 </tr>
 <tr>
-<td><strong>Codex</strong>（ChatGPTにすでに課金している）</td>
+<td><a href="#第0章-4-手順②-codexで進める人はこちら"><strong>Codex</strong></a>（ChatGPTにすでに課金している）</td>
 <td>→ 「手順② Codexで進める人はこちら」へ</td>
 </tr>
 <tr>
-<td><strong>Claude Code</strong>（Claudeにすでに課金している）</td>
+<td><a href="#第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）"><strong>Claude Code</strong></a>（Claudeにすでに課金している）</td>
 <td>→ 「手順③ Claude アプリをインストール」へ</td>
 </tr>
 </tbody>
@@ -883,7 +891,8 @@ AIにこう聞いてください。</p>
 <p>無料プランだと、コードを作って、エラーを直して、<br />
 また作って、という途中で制限に引っかかりやすいんですよね。</p>
 <p>ChatGPT Plus も Claude Pro も、<br />
-月3,000円前後です。<strong>Antigravity</strong> は、<br />
+月3,000円前後です。<br />
+<strong>Antigravity</strong> は、<br />
 無料プランから始められます。</p>
 <p>最初は、<strong>ちょっと引っかかると思います</strong>。<br />
 サブスクが増えるのは、僕も普通に嫌です。</p>
@@ -896,8 +905,14 @@ AIにこう聞いてください。</p>
 <strong>悪い投資ではないと思っています</strong>。</p>
 <p>合わなければ1ヶ月でやめればOKです。</p>
 <p>なお、月額プランだけで必ずすべての利用が収まるとは限りません。<br />
+使い方によっては、<br />
 APIキーの利用や、エージェント機能、<br />
-外部サービス連携で、<strong>従量課金が発生することがあります</strong>。<br />
+外部サービス連携で、<br />
+<strong>従量課金が発生することがあります</strong>。</p>
+<p>ただ、<strong>何も設定しなければ<br />
+月額プラン以上に料金が取られることはない</strong>ので<br />
+ご安心ください。</p>
+<p>もし使う場合は<br />
 最初に料金画面、利用上限、<br />
 予算上限の設定を一度見ておいてください。</p>
 <hr />
@@ -911,13 +926,14 @@ APIキーの利用や、エージェント機能、<br />
 毎月のように順位が入れ替わるからです。<br />
 今月は Claude Code が強く見える。<br />
 来月は Codex が一気に良くなる。<br />
-その次は <strong>Antigravity</strong> が便利な機能を出してくる。</p>
+その次は Antigravity が便利な機能を出してくる。</p>
 <p>こういうことが、ふつうに起きます。</p>
-<p><strong>ただ、簡単な自動化をやる上で</strong>は、どれを選んでも「正解」<br />
-とも言えます。</p>
+<p><strong>ただ、簡単な自動化をやる上で</strong>は、<br />
+どれを選んでも「正解」とも言えます。</p>
 <p>ツールは日進月歩で進化しているので、<br />
 <strong>どんどん性能良くなっていっています</strong>。</p>
-<p>なので、ここでは3つ並べて、特徴だけ整理します。<br />
+<p>なので、<br />
+ここでは3つ並べて、特徴だけ整理します。<br />
 読みながら「<strong>自分はこれかな</strong>」<br />
 と思ったやつで進めてください。</p>
 <p><img alt="3つのツールの特徴" src="images/ch0/ai_tools.png" loading="lazy" decoding="async" /></p>
@@ -933,21 +949,21 @@ APIキーの利用や、エージェント機能、<br />
 </thead>
 <tbody>
 <tr>
-<td><strong>Antigravity</strong></td>
+<td><a href="#第0章-3-手順①-antigravityをインストール"><strong>Antigravity</strong></a></td>
 <td>Google</td>
 <td>無料から</td>
 <td>ブラウザ操作のサブエージェントが内蔵。コード・実行・ブラウザ確認が1画面で終わる</td>
 <td>これから AI エージェントを触る人。まだどこにも課金していない人</td>
 </tr>
 <tr>
-<td><strong>Codex</strong></td>
+<td><a href="#第0章-4-手順②-codexで進める人はこちら"><strong>Codex</strong></a></td>
 <td>OpenAI</td>
 <td>ChatGPT Plus（月3,000円前後）</td>
 <td>ChatGPT に慣れている人がそのまま使える。ブラウザ確認まで自然</td>
 <td>すでに ChatGPT に課金している人</td>
 </tr>
 <tr>
-<td><strong>Claude Code</strong></td>
+<td><a href="#第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）"><strong>Claude Code</strong></a></td>
 <td>Anthropic</td>
 <td>Claude Pro（月3,000円前後）</td>
 <td>日本語の文章感覚が丁寧。長い説明や設計の相談に強い</td>
@@ -959,52 +975,37 @@ APIキーの利用や、エージェント機能、<br />
 こんな感じです。</p>
 <ul>
 <li><strong>これから AI エージェントを触る人は、Antigravity でまずやってみるのがオススメです</strong>。無料で動かせますし、2026年5月のアップデートでさらに性能が上がりました。</li>
-<li>すでに ChatGPT に課金している人 → <strong>Codex</strong> がオススメ</li>
-<li>すでに Claude に課金している人 → <strong>Claude Code</strong> がオススメ</li>
+<li>すでに ChatGPT に課金している人 →<br />
+<strong>Codex</strong> がオススメ</li>
+<li>すでに Claude に課金している人 → <br />
+<strong>Claude Code</strong> がオススメ</li>
 </ul>
-<p>ちなみに、<strong>僕（ペスハム）<br />
-自身は Claude Code をメインで使っています</strong>。<br />
-なので、この教材では <strong>Claude Code</strong><br />
-の解説も厚めに用意してあります。<br />
-「<strong>Antigravity で始めたけど、<br />
-もう少し深く触ってみたい</strong>」と思ったタイミングで、<br />
-Claude Code のページも読み返してもらえれば大丈夫です。</p>
+<p>ちなみに、<strong>僕（ペスハム）自身は Claude Code をメインで使っています</strong>。</p>
 <p><img alt="道具選びフロー" src="images/ch0/antigravity-ca-00-tool-choice-flow.png" loading="lazy" decoding="async" /></p>
-<p>ここで大事にしてほしいのは、「<strong>どっちが絶対に上です</strong>」<br />
-と決めつけないことです。</p>
-<p>この教材の後半では、説明の都合上「<strong>Claude等に聞く</strong>」<br />
-「Codex に聞く」と書いている箇所があります。<br />
-これは、すべて「自分が使っている AI 開発ツールに聞く」<br />
-と読み替えてOKです。</p>
-<p>大事なのはツール名ではなく、<strong>AIに状況を渡して、<br />
-コードを書いてもらい、<br />
-エラーを一緒に直していくこと</strong>です。</p>
 <hr />
-<h2 id="第0章-3-手順①-antigravityをインストール">3. 手順①　Antigravityをインストール</h2>
-<p><strong>これから AI エージェントを触る人向けの第一歩です</strong>。<br />
+<details class="collapsible-section" open><summary><h2 id="第0章-3-手順①-antigravityをインストール">3. 手順①　Antigravityをインストール</h2></summary>
+<p>ゼロから AI エージェントを触る人にはこちらがおすすめです。<br />
 <strong>Antigravity</strong> は無料で始められて、<br />
-ブラウザ操作のサブエージェントが内蔵されています。<br />
-「<strong>エージェントに指示する・ブラウザを動かす・結果を確認する</strong>」<br />
-が1つのアプリで完結するので、<br />
-最初の1本を作るまでの距離がいちばん短いです。</p>
-<p>すでに ChatGPT に課金している人は「<strong>手順②<br />
-Codexで進める人はこちら</strong>」<br />
-すでに Claude に課金している人は「<strong>手順③<br />
-Claudeアプリをインストール</strong>」<br />
+ブラウザ操作のサブエージェントが内蔵されています。</p>
+<p>すでに ChatGPT に課金している人は<br />
+<a href="#第0章-4-手順②-codexで進める人はこちら">「<strong>手順②Codexで進める人はこちら</strong>」</a><br />
+すでに Claude に課金している人は<br />
+<a href="#第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）">「<strong>手順③Claudeアプリをインストール</strong>」</a><br />
 へ進んでください。</p>
-<p>ここでは、2026年5月時点の <strong>Antigravity<br />
-2.0</strong> を前提に説明します。</p>
+<p>ここでは、2026年5月時点の<br />
+<strong>Antigravity2.0</strong> を前提に説明します。</p>
 <p>Antigravity の特徴を一言で言うと、<br />
-「<strong>エージェントに指示する・ブラウザを動かす・結果を確認する、<br />
-が1つのアプリで完結する</strong>」ツールです。<br />
-今までは、AI にコードを書いてもらって、<br />
-ターミナルで動かして、ブラウ<strong>ザを開いて確認して、<br />
+「<strong>エージェントに指示する→ブラウザを動かす→結果を確認する、<br />
+が1つのアプリで完結する</strong>」ツールです。</p>
+<p>今までは、AI にコードを書いてもらって、<br />
+ターミナルで動かして、ブラウザを開いて確認して、<br />
 エラーが出たら AI に戻る、<br />
-という往復が必要</strong>でした。<br />
-Antigravity 2.0 では、<br />
-これがすべて1つのデスクトップアプリの中で完結します。<br />
-コードを自分で書く必要はなく、<br />
-エージェントに「<strong>こういう動きをするスクリプトを作って</strong>」<br />
+という往復が必要でした。</p>
+<p>Antigravity 2.0 では、これがすべて1つの<br />
+デスクトップアプリの中で完結します。</p>
+<p>コードを自分で書く必要はなく、<br />
+エージェントに<br />
+「<strong>こういう動きをするスクリプトを作って</strong>」<br />
 と伝えるだけです。</p>
 <h3 id="第0章-料金（無料から始められます）">料金（無料から始められます）</h3>
 <table>
@@ -1033,13 +1034,13 @@ Antigravity 2.0 では、<br />
 </tr>
 </tbody>
 </table>
-<p>まずは無料で大丈夫です。1日数回、<br />
-<strong>自動化スクリプトを試すくらいなら十分です</strong>。<br />
+<p>まずは無料で大丈夫です。<br />
+<strong>1日数回、自動化スクリプトを試すくらいなら十分です</strong>。<br />
 毎日大量に使う、チームで使う、<br />
-<strong>という段階になったら Pro を検討してください</strong>。</p>
+という段階になったら Pro を検討してください。</p>
 <p>一点だけ注意があります。<br />
-2026年3〜5月時点で、無料プラン<strong>の利用上限（クォータ）<br />
-のリセット周期が不安定という報告があります</strong>。<br />
+2026年3〜5月時点で、無料プランの利用上限（クォータ）<br />
+のリセット周期が不安定という報告があります。<br />
 「<strong>突然動かなくなった</strong>」ときは、<br />
 少し時間をおいてから試してみてください。</p>
 <h3 id="第0章-step-1-公式サイトにアクセス">Step 1　公式サイトにアクセス</h3>
@@ -1083,8 +1084,8 @@ Antigravity 2.0 では、<br />
 </tbody>
 </table>
 <p>自分のmacOSのチップがわからないとき。<br />
-Mac なら左上のリンゴマーク →「<strong>このMacについて</strong>」<br />
-で確認できます。<br />
+Mac なら左上のリンゴマーク <br />
+→「<strong>このMacについて</strong>」で確認できます。<br />
 <strong>ほとんどの新しい Mac は Apple Silicon です</strong>。</p>
 <h3 id="第0章-step-3-インストール">Step 3　インストール</h3>
 <p>Mac の場合は <code>.dmg</code> ファイルを開いて、<br />
@@ -1109,22 +1110,19 @@ Windows の場合は <code>.exe</code> を実行して、<br />
 のプロジェクトを別途用意している人向けです。<br />
 普通は触らなくて大丈夫です。</p>
 <h3 id="第0章-step-5-security-notice-に同意する">Step 5　Security Notice に同意する</h3>
-<p>ログイン後、「<strong>Security Notice &amp; Data Use</strong>」<br />
+<p>ログイン後、<br />
+「<strong>Security Notice &amp; Data Use</strong>」<br />
 という画面が出ます。</p>
 <p><img alt="Security Notice" src="images/ch0/antigravity-v2-04-security.png" loading="lazy" decoding="async" /></p>
 <p><strong>AIエージェント</strong>は、<br />
 データの取り扱いに注意が必要であることを説明している画面です。</p>
-<p>「Yes, I agree to help improve<br />
-Antigravity by allowing Google to<br />
-collect and use my Interactions<br />
-data」のチェックを入れて「<strong>Next</strong>」を押します。</p>
+<p>「Yes, I agree 〜」にはチェックを入れず「<strong>Next</strong>」を押します。</p>
 <p>これは、自分の使い方を Google に共有して、<br />
-<strong>Antigravity</strong> の改善に協力するかどうかの同意です。<br />
-あとから設定画面でいつでもオフにできるので、<br />
-<strong>最初はオンのままで大丈夫です</strong>。</p>
+<strong>Antigravity</strong> の改善に協力するかどうかの同意です。</p>
+<p>個人情報や企業情報のセキュリティが弱くなるということで、ユーザー側としてはオンにするメリットは薄いので、チェック入れなくてOKです。</p>
 <h3 id="第0章-step-6-テーマを選ぶ">Step 6　テーマを選ぶ</h3>
-<p>次にエディタ（つまり、<strong>作業画面）<br />
-のテーマを選びます</strong>。</p>
+<p>次にエディタ（つまり、作業画面）<br />
+の<strong>テーマを選びます</strong>。</p>
 <p><img alt="テーマ選択" src="images/ch0/antigravity-v2-05-theme.png" loading="lazy" decoding="async" /></p>
 <p>3つから選べます。</p>
 <table>
@@ -1156,10 +1154,10 @@ data」のチェックを入れて「<strong>Next</strong>」を押します。<
 <p>「<strong>Build with Google</strong>」<br />
 という画面で、最初に使うプラグインを選びます。</p>
 <p><img alt="プラグイン選択" src="images/ch0/antigravity-v2-06-plugins.png" loading="lazy" decoding="async" /></p>
-<p>プラグインとは、<strong>Antigravity</strong> の中で AI<br />
-が使える追加の機能セットです。<br />
+<p>プラグインとは、<strong>Antigravity</strong> の中で AIが使える追加の機能セットです。<br />
 たとえば「<strong>Chrome DevTools</strong>」<br />
-を選ぶと、ブラウザの開発者ツールを AI が触れるようになります。</p>
+を選ぶと、ブラウザの開発者ツールを <br />
+AI が触れるようになります。</p>
 <p>選択肢は以下の6つです。</p>
 <ul>
 <li><strong>Android</strong> — Android アプリ開発用</li>
@@ -1188,7 +1186,8 @@ Antigravity のメイン画面に入ります。</p>
 <h3 id="第0章-step-9-権限の設定（今はスキップokです）">Step 9　権限の設定（今はスキップOKです）</h3>
 <p>左下の「<strong>Settings</strong>」アイコンに、<br />
 権限の設定画面があります。</p>
-<p><strong>今すぐ設定しなくても動くので安心してください。</strong></p>
+<p><strong>今すぐ設定しなくても<br />
+動くので安心してください。</strong></p>
 <p>Security Preset が <strong>Default</strong><br />
 になっていることだけ確認してください。<br />
 これだけで、ターミナルコマンドを実行するたびに確認が入る「<strong>安全な状態</strong>」で動かせます。</p>
@@ -1196,13 +1195,13 @@ Antigravity のメイン画面に入ります。</p>
 <p>File Permissions や Network<br />
 Permissions の細かい設定は、<br />
 <strong>慣れてきたタイミングで設定してください</strong>。<br />
-全手順はこの章の末尾「<strong>付録：<br />
-Antigravity の権限設定</strong>」<br />
+全手順はこの章の末尾<br />
+「<strong>付録：Antigravity の権限設定</strong>」<br />
 にまとめています。</p>
 <h3 id="第0章-step-10-作業フォルダ（プロジェクト）を作る">Step 10　作業フォルダ（プロジェクト）を作る</h3>
-<p>AI開発ツールでは、ローカルファイルの中から「<strong>作業フォルダ</strong>」<br />
-を指定して、その作業フォルダを直接編集、<br />
-上書き、保存してくれます。</p>
+<p>AI開発ツールでは、ローカルファイルの中から<br />
+「<strong>作業フォルダ</strong>」を指定して、<br />
+その作業フォルダを直接編集、上書き、保存してくれます。</p>
 <p>最初は、<strong>新しいフォルダを作るのがオススメです</strong>。</p>
 <p><img alt="作業フォルダの作り方" src="images/ch0/antigravity-v2-08-folder.png" loading="lazy" decoding="async" /></p>
 <p>具体的には、<strong>ホーム直下に <code>code/automation/</code><br />
@@ -1214,14 +1213,23 @@ Antigravity の権限設定</strong>」<br />
 の右にあるフォルダアイコン（＋）から、<br />
 作業フォルダを追加します。</p>
 <p><img alt="Projectsに作業フォルダを追加" src="images/ch0/antigravity-v2-08-add-project.png" loading="lazy" decoding="async" /></p>
-<p><strong>具体的な作り方</strong>は、Finder から手で作ってもOKですし、<br />
+<p><strong>具体的な作り方</strong>は、<br />
+Finder から手で作ってもOKですし、<br />
 ターミナルで以下のコマンドを実行してもOKです。</p>
-<p><strong>ターミナルとは</strong>、「文字を入力してパソコンを操作する画面」<br />
+<p><strong>ターミナルとは</strong><br />
+「文字を入力してパソコンを操作する画面」<br />
 のことです。今後もときどき使いますが、<br />
 基本はコピペするだけです。</p>
 <ul>
-<li><strong>Mac の場合</strong>：Finder → アプリケーション → ユーティリティ → ターミナル、または Spotlight（⌘ + Space）で「ターミナル」と検索して開きます。</li>
-<li><strong>Windows の場合</strong>：スタートボタンを右クリック →「Windows PowerShell」または「ターミナル」を選びます。または検索バーで「powershell」と入力して開きます。</li>
+<li>
+<p><strong>Mac の場合</strong>：<br />
+Finder → アプリケーション → ユーティリティ → ターミナル、または Spotlight（⌘ + Space）で「ターミナル」と検索して開きます。</p>
+</li>
+<li>
+<p><strong>Windows の場合</strong>：<br />
+スタートボタンを右クリック →「Windows PowerShell」または「ターミナル」を選びます。<br />
+または検索バーで「powershell」と入力して開きます。</p>
+</li>
 </ul>
 <pre><code class="language-bash"># Mac
 mkdir -p ~/code/automation
@@ -1230,16 +1238,16 @@ mkdir -p ~/code/automation
 New-Item -ItemType Directory -Force -Path &quot;$HOME\code\automation&quot;
 </code></pre>
 <h4 id="第0章-なぜデスクトップやダウンロード直下にしないのか">なぜデスクトップやダウンロード直下にしないのか</h4>
-<p><strong>デスクトップやダウンロードフォルダに</strong>は、<br />
-普段使っている資料や、ダウンロードしたファイル、<br />
-スクショなど、いろんなものがゴロゴロしています。<br />
+<p><strong>デスクトップやダウンロードフォルダ</strong>には、<br />
+普段使っている資料や、ダウンロードしたファイル、スクショなど、いろんなものがゴロゴロしています。<br />
 AI 開発ツールに「デスクトップ」<br />
 をそのまま指定すると、<br />
 AI が周辺のファイルにアクセスしてしまい、<br />
 <strong>万が一の際に勝手に書き換えてしまうリスクがあります。</strong></p>
-<p><code>~/code/automation/</code> のように、<strong>自動化作業専用の階層を切る</strong> ことで、AI が触れる範囲が物理的に分かれます。<br />
-将来、別の自動化を作るときは <code>~/code/別のプロジェクト/</code><br />
-を作っていけば、<strong>全部 <code>~/code/</code> の下にまとまります</strong>。</p>
+<p><code>~/code/automation/</code> のように、<br />
+<strong>自動化作業専用の階層を切る</strong> ことで、<br />
+AI が触れる範囲が物理的に分かれます。<br />
+将来、別の自動化を作るときは <code>~/code/別のプロジェクト/</code>を作っていけば、<strong>全部 <code>~/code/</code> の下にまとまります</strong>。</p>
 <h3 id="第0章-step-11-動作確認">Step 11　動作確認</h3>
 <p>ここまで来たら、最後に動作確認をします。</p>
 <p>中央の入力欄に、こう入れてみてください。</p>
@@ -1251,8 +1259,8 @@ AI が周辺のファイルにアクセスしてしまい、<br />
 <p>すると、Antigravity が動き始めます。<br />
 途中で「<strong>Allow running this command?</strong>」<br />
 という確認画面が出ます。<br />
-これは「このコマンドを実行してもいいですか？<br />
-」という確認です。「<strong>1 Yes, allow this time</strong>」<br />
+これは「このコマンドを実行してもいいですか？」という確認です。<br />
+「<strong>1 Yes, allow this time</strong>」<br />
 を選んで進めてください。</p>
 <p><img alt="権限確認ダイアログ" src="images/ch0/antigravity-v2-11-test-02.png" loading="lazy" decoding="async" /></p>
 <p>しばらく待つと、<strong>スクリーンショットが右側に表示されます</strong>。</p>
@@ -1268,26 +1276,25 @@ AI が周辺のファイルにアクセスしてしまい、<br />
 <p>Antigravity を選んだ人は、<br />
 次の「<strong>7. 個人設定</strong>」に進んでください。</p>
 <hr />
-<h2 id="第0章-4-手順②-codexで進める人はこちら">4. 手順②　Codexで進める人はこちら</h2>
+</details><details class="collapsible-section" open><summary><h2 id="第0章-4-手順②-codexで進める人はこちら">4. 手順②　Codexで進める人はこちら</h2></summary>
 <p><strong>Codex</strong>（ChatGPT の Codex 機能）<br />
 で進める人向けの手順です。<br />
 すでに ChatGPT Plus に加入している人は、<br />
 <strong>これが追加コストなしで使えます</strong>。</p>
-<p>Antigravity を使う人は「<strong>手順①<br />
-Antigravityをインストール</strong>」へ、<br />
-Claude Code を使う人は「<strong>手順③<br />
-Claudeアプリをインストール</strong>」<br />
+<p>Antigravity を使う人は<br />
+<a href="#第0章-3-手順①-antigravityをインストール">「<strong>手順①Antigravityをインストール</strong>」</a>へ、<br />
+Claude Code を使う人は<br />
+<a href="#第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）">「<strong>手順③Claudeアプリをインストール</strong>」</a><br />
 へ進んでください。</p>
-<p>Codex は、ざっくり言うと「<strong>ChatGPT 側の<br />
-Claude Code みたいなもの</strong>」です。</p>
-<p>コードを書く。ファイルを直す。エラーを見て修正する。<br />
-ブラウザを確認する。<br />
+<p>Codex は、ざっくり言うと<br />
+「<strong>ChatGPT 側のClaude Code みたいなもの</strong>」です。</p>
+<p>コードを書く。ファイルを直す。エラーを見て修正する、ブラウザを確認する。<br />
 必要ならコマンドを実行する。</p>
 <p>こういう作業を任せられます。</p>
 <h3 id="第0章-codex-の入口は3つあります">Codex の入口は3つあります</h3>
 <p>1つ目は、<strong>Codexアプリ</strong>です。<br />
-この教材でオススメする入口です。<strong>日常業務の自動化なら、<br />
-まずこれで十分</strong>です。</p>
+この教材でオススメする入口です。<br />
+<strong>日常業務の自動化なら、まずこれで十分</strong>です。</p>
 <p><img alt="Codex Installer" src="images/ch0/16_codex_installer.png" loading="lazy" decoding="async" /></p>
 <p>2つ目は、<strong>Codex CLI</strong>です。<br />
 ターミナルから使う <strong>Codex</strong> です。<br />
@@ -1295,7 +1302,7 @@ Claude Code みたいなもの</strong>」です。</p>
 最初から無理に使わなくて大丈夫です。</p>
 <p>3つ目は、<strong>Codex Cloud</strong>です。<br />
 クラウド上で <strong>Codex</strong> に作業してもらう方法です。<br />
-GitHub とつないで使う用途に向いています。</p>
+スマホとつないで使う用途に向いています。</p>
 <p>日常業務のブラウザ操作を自動化したい場合は、<br />
 まずは手元の <strong>Codexアプリ</strong>で考えれば OK です。</p>
 <h3 id="第0章-codex-アプリで最初にやること">Codex アプリで最初にやること</h3>
@@ -1344,24 +1351,24 @@ Codex に<strong>何でも任せない</strong>ことです。</p>
 公開、顧客データの更新は、<br />
 <strong>人間が確認してから実行します</strong>。</p>
 <hr />
-<h2 id="第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）">5. 手順③　Claudeアプリをインストール（Claude Codeで進める人向け）</h2>
+</details><details class="collapsible-section" open><summary><h2 id="第0章-5-手順③-claudeアプリをインストール（claude-codeで進める人向け）">5. 手順③　Claudeアプリをインストール（Claude Codeで進める人向け）</h2></summary>
 <p><strong>Claude Code</strong> をメインに使う人向けの手順です。<br />
 <strong>僕（ペスハム）自身もこれを使っています</strong>。<br />
 文章の感覚や設計の相談に強くて、<br />
 長く付き合える相棒という感じです。</p>
-<p>Antigravity を使う人は「<strong>手順①<br />
-Antigravityをインストール</strong>」へ、<br />
-Codex を使う人は「<strong>手順②　Codexで進める人はこちら</strong>」<br />
+<p>Antigravity を使う人は<a href="#第0章-3-手順①-antigravityをインストール">「<strong>手順①<br />
+Antigravityをインストール</strong>」</a>へ、<br />
+Codex を使う人は<a href="#第0章-4-手順②-codexで進める人はこちら">「<strong>手順②　Codexで進める人はこちら</strong>」</a><br />
 へ進んでください。</p>
 <p>ここが第一関門です。</p>
-<p>とはいえ、<strong>やること自体は普通のアプリインストールとほぼ同じです</strong>。<br />
+<p>とはいえ、<br />
+<strong>やること自体は普通のアプリインストールとほぼ同じです</strong>。<br />
 画面が少し違っても焦らなくて大丈夫なので、<br />
 <strong>近いボタンを探しながら進めてください</strong>。</p>
 <h3 id="第0章-step-1-claude-ai-にアクセスする">Step 1　Claude.ai にアクセスする</h3>
 <p>Googleで「<strong>claude</strong>」と検索します。</p>
 <p><img alt="Google検索でclaude" src="images/ch0/01_claude_search.png" loading="lazy" decoding="async" /></p>
-<p>一番上に出てくる「<strong>Claude（claude.ai）<br />
-</strong>」をクリックします。<br />
+<p>一番上に出てくる「<strong>Claude（claude.ai）</strong>」をクリックします。<br />
 トップページが表示されます。</p>
 <p><img alt="Claude.aiのトップページ" src="images/ch0/02_claude_top.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-2-アカウントを作成する">Step 2　アカウントを作成する</h3>
@@ -1393,7 +1400,8 @@ Codex を使う人は「<strong>手順②　Codexで進める人はこちら</st
 <p><strong>クレジットカード情報を入力して購入します</strong>。</p>
 <p><img alt="支払い情報" src="images/ch0/08_payment_info.png" loading="lazy" decoding="async" /></p>
 <h3 id="第0章-step-4-デスクトップアプリをダウンロードする">Step 4　デスクトップアプリをダウンロードする</h3>
-<p>加入が終わったら、左下のアイコンから「<strong>アプリと拡張機能を入手</strong>」<br />
+<p>加入が終わったら、左下のアイコンから<br />
+「<strong>アプリと拡張機能を入手</strong>」<br />
 をクリックします。</p>
 <p><img alt="アプリと拡張機能を入手" src="images/ch0/09_apps_extensions.png" loading="lazy" decoding="async" /></p>
 <p>「<strong>macOS版をダウンロード</strong>」<br />
@@ -1426,9 +1434,12 @@ Claudeアプリを「<strong>アプリケーション</strong>」<br />
 このCodeモードで進めます。</p>
 <h3 id="第0章-ここで詰まりやすいポイント">ここで詰まりやすいポイント</h3>
 <ul>
-<li>アプリのダウンロードがうまくいかない → ブラウザ側でログインし直してから、もう一度「アプリと拡張機能を入手」を開く</li>
-<li>アプリを開いてもログインできない → ブラウザ版で同じアカウントにログインしている状態で、もう一度アプリを開く</li>
-<li>Code モードが出てこない → Pro プランに加入されているか、もう一度確認</li>
+<li>アプリのダウンロードがうまくいかない<br />
+ → ブラウザ側でログインし直してから、もう一度「アプリと拡張機能を入手」を開く</li>
+<li>アプリを開いてもログインできない<br />
+ → ブラウザ版で同じアカウントにログインしている状態で、もう一度アプリを開く</li>
+<li>Code モードが出てこない<br />
+ → Pro プランに加入されているか、もう一度確認</li>
 </ul>
 <p>分からなくなったら、画面をスクショして、<br />
 <strong>ブラウザ版の Claude にそのまま聞いてください</strong>。</p>
@@ -1444,18 +1455,19 @@ macOS [バージョン]
 </code></pre>
 <p>これでだいたい答えが返ってきます。</p>
 <hr />
-<h2 id="第0章-7-手順①-5-個人設定（カスタマイズ）を入れる">7. 手順①.5　個人設定（カスタマイズ）を入れる</h2>
+</details><h2 id="第0章-7-手順①-5-個人設定（カスタマイズ）を入れる">7. 手順①.5　個人設定（カスタマイズ）を入れる</h2>
 <p>続いて、あなた個人は「こんな人ですよ」という情報を<br />
 AIに覚え込ませます。</p>
 <p>「<strong>それってそんなに大事？</strong>」<br />
 と思うかもしれません。</p>
 <p>地味なんですけど、けっこう大事です。</p>
-<p>ここを飛ばすと、<strong>AI とのやり取りが毎回ゼロからになります</strong>。</p>
+<p>ここを飛ばすと、<br />
+<strong>AI とのやり取りが毎回ゼロからになります</strong>。</p>
 <p>Antigravity も Claude Code も Codex<br />
 も、初期状態だと「<strong>あなたが誰なのか</strong>」<br />
 を全く知りません。<br />
-「<strong>自分の仕事はこれで</strong>」「こういう書き方が好みで」<br />
-「専門用語は使わないでほしい」を毎回説明するの、<br />
+「<strong>自分の仕事はこれで</strong>」「こういう書き方が好みで」「専門用語は使わないでほしい」<br />
+といったことを毎回説明するの、<br />
 普通に面倒なんですよね。</p>
 <p>最初に1回だけ自己紹介を登録しておくと、<br />
 <strong>毎回の会話で AI が配慮してくれるようになります</strong>。</p>
@@ -1522,7 +1534,8 @@ Claude / Codex どれでも OK）。</p>
 日常業務の自動化を安全に手伝えるカスタム指示文を、500〜1000文字程度で作ってください。
 コピペしてそのまま使える形でお願いします。
 </code></pre>
-<p>出てきた文章を、<strong>それぞれのツールの設定欄に貼り付けます</strong>。</p>
+<p>出てきた文章を、<br />
+<strong>それぞれのツールの設定欄に貼り付けます</strong>。</p>
 <p>それ以降、AI は：</p>
 <ul>
 <li>専門用語を避けて説明してくれる</li>
@@ -1557,21 +1570,21 @@ AI に渡す。</strong></p>
 <strong>原因の分析は AI がやります</strong>。<br />
 あなたはスクショを渡すだけでいいです。</p>
 <hr />
-<p><strong>Mac でスクショを撮る：<code>Cmd（⌘）
-+ Shift + 4</code></strong></p>
+<p><strong>Mac でスクショを撮る：<br />
+<code>Cmd（⌘）+ Shift + 4</code></strong></p>
 <p>押すと、<strong>マウスカーソルが「＋」に変わります</strong>。<br />
 ドラッグして、エラーが出ている部分を囲むと、<br />
 <strong>デスクトップに画像が保存されます</strong>。</p>
-<p>画面全体を撮りたいときは <code>Cmd（⌘）
-+ Shift + 3</code> です。</p>
+<p>画面全体を撮りたいときは <br />
+<code>Cmd（⌘）+ Shift + 3</code> です。</p>
 <hr />
 <p><strong>Windows でスクショを撮る：<br />
 <code>Win + Shift + S</code></strong></p>
 <p>押すと、画面が暗くなります。<br />
 ドラッグして囲むと、<br />
 <strong>クリップボードにコピーされます</strong>。<br />
-そのまま <strong>AI のチャット画面に <code>Ctrl + V</code><br />
-で貼り付けられます</strong>。</p>
+そのまま <strong>AI のチャット画面に<br />
+<code>Ctrl + V</code>で貼り付けられます</strong>。</p>
 <hr />
 <p><strong>撮ったスクショを AI に渡す方法</strong></p>
 <p>ChatGPT や Claude等のチャット画面には、<br />
@@ -1582,8 +1595,7 @@ AI に渡す。</strong></p>
 </code></pre>
 <p>これだけで答えが返ってきます。</p>
 <hr />
-<p>「<strong>何が悪いかわからないから、聞くのが恥ずかしい</strong>」<br />
-と思う必要はありません。</p>
+<p>「<strong>何が悪いかわからないから、聞くのが恥ずかしい</strong>」と思う必要はありません。</p>
 <p>スクショを渡すだけで、AI が読み取って、<br />
 <strong>原因と対処を教えてくれます</strong>。<br />
 説明を作り込む必要はゼロです。</p>
@@ -1605,8 +1617,9 @@ AI に渡す。</strong></p>
 </code></pre>
 <p>「作って」と一言で言うと、<br />
 <strong>AI はいきなりコードを書き始めます</strong>。<br />
-でも、最初に「<strong>どんなものを作るか</strong>」<br />
-の認識がずれていると、あとから「なんか違うな」<br />
+でも、最初に「<strong>どんなものを作るか</strong>」の<br />
+認識がずれていると、<br />
+あとから「なんか違うな」<br />
 となって、やり直しになりがちです。</p>
 <p>計画を確認してから GO を出すだけで、<br />
 <strong>この無駄はかなり減ります</strong>。</p>
@@ -1633,12 +1646,13 @@ AI に渡す。</strong></p>
 スクリーンショットを添付します。
 </code></pre>
 <p><strong>症状と証拠（スクショ・エラー文）<br />
-だけ渡せば十分です</strong>。<br />
-画像やエラー文には情報が多く含まれているので、<br />
+だけ渡せば十分です</strong>。</p>
+<p>画像やエラー文には<br />
+情報が多く含まれているので、<br />
 AIが読んで理解しやすいんですよね。<br />
 原因の推測は AI がやります。</p>
 <p>自分で言葉で伝えようとすると、<br />
-時として<strong>見当違いの方向に進んでしまうこともあります</strong>。<br />
+時として見当違いの方向に進んでしまうこともあります。<br />
 まずは、<strong>起きていることをそのまま渡せば OK です</strong>。</p>
 <hr />
 <h2 id="第0章-9-第0章-チェックリスト">9. 第0章 チェックリスト</h2>
@@ -1654,7 +1668,8 @@ AIが読んで理解しやすいんですよね。<br />
 □ 詰まったときの聞き方（スクショ＋症状＋環境）　覚えた
 □ AIニュース便　届いた（次のセクションで設定します）
 </code></pre>
-<p>Python や Playwright や Chromium は、<br />
+<p>今後使っていく自動化のためのツール<br />
+Python や Playwright や Chromium は、<br />
 AI 開発ツールに「<strong>Playwright<br />
 を使うのに必要なものを入れて</strong>」と頼めば、<br />
 自動でインストールしてくれます。<br />
@@ -1705,7 +1720,7 @@ Mac を起動したタイミングで当日分がまだ届いていなければ�
 <p>ここまでできたら、<strong>準備はかなり進んでいます</strong>。</p>
 <p>次の章では、揃えた道具を「<strong>どう使い分けるか</strong>」<br />
 の話をします。<br />
-<strong>Playwright</strong>、Claude in Chrome、<br />
+Playwright、Claude in Chrome、<br />
 Make、Chrome 拡張、<br />
 この4つの自動化ツールを並べて、<br />
 自分の業務にはどれが向くのかを判定していきます。</p>
@@ -1713,7 +1728,7 @@ Make、Chrome 拡張、<br />
 次は、この道具を使って何をしていくか、<br />
 実践編の章へ進みます。</p>
 <hr />
-<h2 id="第0章-付録：antigravity-の権限設定">付録：Antigravity の権限設定</h2>
+<details class="collapsible-section" open><summary><h2 id="第0章-付録：antigravity-の権限設定">付録：Antigravity の権限設定</h2></summary>
 <p><strong>慣れてきたタイミングで設定してください</strong>。<br />
 最初は Default のまま進んで大丈夫です。</p>
 <h3 id="第0章-settings-の開き方">Settings の開き方</h3>
@@ -1828,15 +1843,15 @@ AI がそれを「次の指示」<br />
 </tr>
 </tbody>
 </table>
-<hr /></section>
+<hr /></details></section>
 <section class="chapter" id="第1章"><div class="chapter-label">第1章</div><h1 class="chapter-title">どんな作業が自動化できるか</h1><h1 id="第1章-第1章-自動化の5つの道具と5つの判定軸">第1章　自動化の5つの道具と5つの判定軸</h1>
 <p>ステータス：✅ 実証済み（実体験ベース）</p>
 <p><img alt="第1章：どんな作業が自動化できるか" src="images/ch01/ch01-automation-tools-hero.png?v=20260603b" loading="lazy" decoding="async" /></p>
 <hr />
 <h2 id="第1章-先に、どんな作業を自動化できるのか見ておきます">先に、どんな作業を自動化できるのか見ておきます</h2>
 <p><img alt="" src="images/ch01/naniwojidouka.png" loading="lazy" decoding="async" /></p>
-<p>道具の話の前に、まず上の図から「<strong>自分のあの作業、<br />
-これに近いかも</strong>」を探してみてください。</p>
+<p>道具の話の前に、まず上の図から<br />
+「<strong>自分のあの作業、これに近いかも</strong>」を探してみてください。</p>
 <p>多分、いきなり「自動化」と言われて、<br />
 具体的なやり方の説明をされても、<br />
 「<strong>で、それを何に使うの？</strong>」</p>
@@ -1867,8 +1882,8 @@ AI がそれを「次の指示」<br />
 対応済みのものに分ける。<br />
 ・商談メモや対応履歴を、<br />
 自社のCRMやスプレッドシートに記録する。</p>
-<p>ただし、他社の問い合わせフォームへの自動送信はやりません。<br />
-<strong>特定電子メール法と各サイトの利用規約に引っかかります</strong>。</p>
+<p>ただし、<strong>他社の問い合わせフォームへの自動送信はやりません。</strong><br />
+特定電子メール法と各サイトの利用規約に引っかかります。</p>
 <h3 id="第1章-コンテンツ制作">コンテンツ制作</h3>
 <p>・Googleドキュメントの原稿からnoteの下書きを作る。<br />
 ・X投稿案を予約投稿ツールに登録する。<br />
