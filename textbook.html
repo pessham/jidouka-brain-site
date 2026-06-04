@@ -16,7 +16,7 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 17px; line-height: 1.9; color: #1a1a1a; background: #f7f7f5; display: block; }
-  nav#sidebar { width: 300px; min-width: 300px; background: #1e293b; color: #e2e8f0; position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; padding: 24px 0; z-index: 100; }
+  nav#sidebar { width: 300px; min-width: 300px; background: #1e293b; color: #e2e8f0; position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 24px 0; z-index: 100; }
   nav#sidebar .sidebar-title { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: #94a3b8; padding: 0 20px 16px; text-transform: uppercase; border-bottom: 1px solid #334155; margin-bottom: 8px; }
   nav#sidebar .toc-list { list-style: none; padding: 0; }
   nav#sidebar .toc-chapter { margin-bottom: 4px; }
@@ -103,11 +103,18 @@
       z-index: 180;
       background: rgba(15,23,42,0.42);
     }
+    body.toc-open { overflow: hidden; }
     body.toc-open .toc-backdrop { display: block; }
     nav#sidebar {
       display: block;
       width: min(86vw, 320px);
       min-width: 0;
+      height: 100dvh;
+      max-height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      touch-action: pan-y;
+      z-index: 210;
       transform: translateX(-104%);
       transition: transform 0.18s ease;
       box-shadow: 16px 0 40px rgba(15,23,42,0.26);
@@ -1688,6 +1695,33 @@ AI 開発ツールに「<strong>Playwright<br />
 ブラウザを操作しません。<br />
 <strong>必要なのは Gmail のアプリパスワードを1個取得するだけです</strong>。</p>
 <hr />
+<h3 id="第0章-pythonのバージョンについて（先に確認してください）">⚠️ Pythonのバージョンについて（先に確認してください）</h3>
+<p>これ、僕の知人が実際に詰まった話なので書いておきます。</p>
+<p>Pythonを「公式サイトから最新版をインストールした」という人が、<br />
+セットアップを実行したら<strong>仮想環境（venv）の作成で失敗した</strong>んです。</p>
+<p>原因は、<strong>Python 3.14</strong>。</p>
+<p>2025年時点でリリースされたばかりで、<br />
+ツール側の対応がまだ追いついていないバージョンです。<br />
+ツール側は悪くない。<br />
+Python側が「新しすぎる」。</p>
+<p>「最新版を入れたのになぜ動かない？」</p>
+<p>...なんでやねん、という話なんですが、<br />
+これが現実です。</p>
+<p><strong>Pythonは「最新版」が正解ではありません。</strong><br />
+「安定版」を入れてください。</p>
+<hr />
+<p><strong>推奨バージョン：Python 3.12.x</strong></p>
+<p>→ <a href="https://www.python.org/downloads/release/python-3128/" target="_blank" rel="noopener noreferrer">python.org/downloads/release/python-3128/</a></p>
+<p>すでに 3.14 が入っていても、<br />
+3.12 を<strong>追加でインストールするだけ</strong>でOKです。<br />
+古いものを消す必要はありません。<br />
+セットアップスクリプトが自動で 3.12 を見つけて使います。</p>
+<blockquote>
+<p>「自分の Python バージョンって何？」<br />
+ターミナルで <code>python3 --version</code> と打てば確認できます。<br />
+<strong>3.14 と表示された人は、先に 3.12 を入れてください。</strong></p>
+</blockquote>
+<hr />
 <h3 id="第0章-セットアップの流れ（4ステップ）">セットアップの流れ（4ステップ）</h3>
 <p><strong>詳しい手順はセットアップガイドに全部書いてあります</strong>。</p>
 <p>サイトを開いて、4ステップで完了します。</p>
@@ -1885,8 +1919,9 @@ AI がそれを「次の指示」<br />
 <p>ただし、<strong>他社の問い合わせフォームへの自動送信はやりません。</strong><br />
 特定電子メール法と各サイトの利用規約に引っかかります。</p>
 <h3 id="第1章-コンテンツ制作">コンテンツ制作</h3>
-<p>・Googleドキュメントの原稿からnoteの下書きを作る。<br />
-・X投稿案を予約投稿ツールに登録する。<br />
+<p>・録音した音声配信を予約投稿する<br />
+・Googleドキュメントの原稿からnoteの下書きを作る。<br />
+・Xの下書きを生成して予約投稿ツールに登録する。<br />
 ・音声配信の文字起こしを記事化する。<br />
 ・YouTubeやインスタの概要欄を作って入れ込む。</p>
 <h3 id="第1章-ec・予約サイトの管理画面">EC・予約サイトの管理画面</h3>
@@ -1915,12 +1950,9 @@ AI がそれを「次の指示」<br />
 <p>まず<strong>特典2：ブラウザ自動化スターターキット</strong>を使って、<br />
 今の業務を棚卸しして整理しましょう。</p>
 <p><a href="https://browser-automation-starter-kit.vercel.app/" target="_blank" rel="noopener noreferrer">https://browser-automation-starter-kit.vercel.app/</a></p>
-<p>整理した上でも「何を自動化すればいいか分からない」<br />
+<p>整理しても「何をどうやって自動化すればいいか分からない」<br />
 という場合は、<br />
-<strong>特典1：業務自動化ネタ出しアシスタント（GPTs）<br />
-</strong>に相談してみてください。<br />
-<a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto" target="_blank" rel="noopener noreferrer">https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto<br />
-</a></p>
+<a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto/c/6a20b797-658c-83a6-9a2e-471a3713a9b8" target="_blank" rel="noopener noreferrer"><strong>特典1：業務自動化ネタ出しアシスタント（GPTs）</strong></a>に相談してみてください。</p>
 <p>仕事の話を少し聞かせるだけで、<br />
 自分ができそうな自動化作業を一緒に考えてくれます。</p>
 <p>この2つのツールを使って、<br />
@@ -1981,7 +2013,8 @@ AI がそれを「次の指示」<br />
 <strong>かなり安心して進められます</strong>。</p>
 <h3 id="第1章-気をつけよう-：具体例-他社フォームへの自動送信">🔔気をつけよう🔔：具体例 — 他社フォームへの自動送信</h3>
 <p><img alt="他社フォームへの自動送信のリスク" src="images/ch01/m-04-sales-form-risk.png" loading="lazy" decoding="async" /></p>
-<p>たとえば、他社のお問い合わせフォームへ営業文面を自動送信する使い方は、<br />
+<p>たとえば、他社のお問い合わせフォームへ<br />
+営業文面を自動送信する使い方は、<br />
 この教材では推奨しません。</p>
 <p>特定電子メール法、各サイトの利用規約、<br />
 迷惑行為としての受け止められ方など、<br />
@@ -1995,14 +2028,12 @@ AI がそれを「次の指示」<br />
 <p>・<strong>Playwright</strong>（ブラウザを裏で動かすロボットを作る道具）。<br />
 ・<strong>MCP</strong>（Gmail・カレンダー・Drive などに AI<br />
 ツールから直接つながる、業界標準の窓口）。<br />
-・<strong>Claude in<br />
-Chrome</strong>（AIが直接ブラウザを操作してくれる拡張）。<br />
+・<strong>Claude inChrome</strong>（AIが直接ブラウザを操作してくれる拡張）。<br />
 ・<strong>Chrome拡張</strong>（自作でChromeに自分専用ボタンを足す仕組み）。<br />
 ・<strong>Make</strong>（SaaS同士を線でつなぐノーコードの自動化サービス）。</p>
 <p>いきなり専門用語が並ぶと身構えますよね。<br />
 僕も最初はそうでした。</p>
-<p>でも、実際には <strong>Claude<br />
-Code等</strong>（AIにコードを書かせるツール）<br />
+<p>でも、実際には <strong>ClaudeCode等</strong>（AIにコードを書かせるツール）<br />
 がこれらのツールを動かすので、<br />
 あなたがツール名を完璧に覚えなくても大丈夫です。</p>
 <p>道具の地図さえあれば十分です。<br />
@@ -2061,24 +2092,28 @@ RPAなど他にもたくさんあります。<br />
 <h2 id="第1章-ここで一つ、安心してほしいこと">ここで一つ、安心してほしいこと</h2>
 <p>この章で道具選びの軸を紹介しますが、<br />
 <strong>みなさんが完璧に判断できるようになる必要はありません。</strong></p>
-<p><strong>特典1：業務自動化ネタ出しアシスタント（GPTs）<br />
-** に相談して「</strong>これが向いてそうかな**」<br />
-と当たりをつける（URLは購入特典の章を参照）。</p>
+<p><a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto/c/6a20b797-658c-83a6-9a2e-471a3713a9b8" target="_blank" rel="noopener noreferrer"><strong>特典1：業務自動化ネタ出しアシスタント（GPTs）</strong></a><br />
+に相談して「<strong>これが向いてそうかな</strong>」<br />
+と当たりをつける。</p>
 <p>あとは <strong>Claude Code等</strong>（AIにコードを書かせるツール）に<br />
 「<strong>この業務を自動化したい、どの道具がいい？<br />
 </strong>」と相談する。</p>
 <p><strong>最終的にはAIが判断して作業してくれます</strong>。</p>
-<p><strong>読者の仕事</strong>は、自分の業務を整理して、<br />
+<p><strong>あなたの仕事</strong>は、自分の業務を整理して、<br />
 AIに渡すこと。<br />
 道具の名前を完璧に覚えることではありません。</p>
 <p>「これかな」くらいで、<br />
 AIに聞いてみてください。</p>
 <hr />
 <h2 id="第1章-判定軸5本フローチャート">判定軸5本フローチャート</h2>
-<p><strong>あなたがやっている業務を1つ思い浮かべてください</strong>。<br />
+<p>ここに実際に業務自動化ネタ出しアシスタント（GPTs）に取り込んでいる「判定軸」を書いていきます。</p>
+<p>繰り返しますが、あなたが内容を全て理解する必要はないので、ざっくり抑えてもらえば大丈夫です。</p>
+<p>ではまず、<br />
+<strong>あなたがやっている業務を1つ思い浮かべてください</strong>。<br />
 毎週やっている転記、毎朝のアップロード、<br />
 月1回の集計。なんでもいいです。</p>
-<p>その業務に、<strong>これから5本の質問を順番に投げます</strong>。<br />
+<p>その業務に、<br />
+<strong>これから5本の質問を順番に投げます</strong>。<br />
 答えると、どの道具を使うかの見当がつきます。</p>
 <p>道具は1つに絞らなくて大丈夫です。<br />
 Gmail からデータを読む（MCP）<br />
@@ -2087,20 +2122,50 @@ Gmail からデータを読む（MCP）<br />
 <h3 id="第1章-軸1：対象サイトは-playwright-で行けるか">軸1：対象サイトは Playwright で行けるか</h3>
 <p><img alt="軸1：Playwrightで行けるサイトか考える" src="images/ch01/axis1-playwright-site-check.png" loading="lazy" decoding="async" /></p>
 <p>これがすべての出発点です。<br />
-具体的には、こういうサイトは <strong>Playwright</strong> で詰まります。</p>
+Playwrightというツールは<br />
+繰り返し作業の自動化にとても有効なのですが、</p>
+<p><strong>一つだけ弱点がある</strong>んですよ。</p>
+<p>具体的には、こういうサイトは <strong>Playwright で詰まります。</strong></p>
 <ul>
 <li>Cloudflare Turnstile が入っているサイト</li>
 <li>2段階認証（2FA）が毎回必要なサイト</li>
 <li>CAPTCHA（ロボットではありません、画像認証）が出るサイト</li>
 <li>ログインのたびにメールやSMSで認証コードが送られるサイト</li>
 </ul>
-<p>ただし、これらのサイトでも<strong>CDP方式</strong>という抜け道があることがあります。抜け道といっても違法ではなく、PlaywrightがゼロからChromeを開くのではなく、すでにあなたがログインしているChromeに接続して操作する方法です。詳しくは<a href="#第2章-ログインで詰まったら：cdp方式を試す">第2章「ログインで詰まったら：CDP方式を試す」</a>で説明します。まずは「<strong>詰まっても抜け道がある</strong>」くらいで読み進めてください。</p>
+<p>要は、不正防止のために<br />
+人間がチェックしないと動かない機能が<br />
+入っているサイトは動かしづらいんです。</p>
+<p>これらはbotを使って不正にログインして<br />
+サイトを悪用されることを防ぐために<br />
+入っているツールなので、<br />
+皆さんの作業が邪魔される言われは<br />
+ないのですが、、、</p>
+<p>この辺りも今後<br />
+AIによる作業の自動化が進んでくれば<br />
+改善されていくのではないかと思います。</p>
+<p>ただ、これらのサイトでも<br />
+<strong>CDP方式</strong>という方法を使えば<br />
+突破できる抜け道があります。</p>
+<p>抜け道といっても違法ではありません。</p>
+<p>Playwrightは本来<br />
+セキュリティの観点から<br />
+新たにChromeを開いて作業します。</p>
+<p>しかし<strong>CDP方式</strong>では<br />
+PlaywrightがゼロからChromeを開くのではなく、<br />
+すでにあなたがログインしている<br />
+Chromeに接続して操作する方法です。</p>
+<p>詳しくは<a href="#第2章-ログインで詰まったら：cdp方式を試す">第2章「ログインで詰まったら：CDP方式を試す」</a>で説明します。</p>
+<p>まずは「<strong>詰まっても抜け道がある</strong>」くらいで読み進めてください。</p>
 <p><img alt="Playwrightが苦手なサイトたち 全体図" src="images/ch01/playwright-hard-sites-01-overview.png" loading="lazy" decoding="async" /></p>
 <p>Playwright でいけそうなら、<br />
-まずそれを検討してください。<br />
-Gmail や Drive のデータが絡む場合は、<br />
+まずそれを検討してください。</p>
+<p>Gmail や Google Drive のデータが絡む場合は、<br />
 その部分だけ MCP を使って取得し、<br />
 Playwright と組み合わせると効率的です。</p>
+<p>MCPというのは、一言で言うと<br />
+ClaudeCode等とGmailなどを繋ぐ「<strong>橋</strong>」<br />
+のようなもので、</p>
+<p>Gmailなどログインを突破して操作しづらいサイトでも、データを引っ張ってくることが出来るようになるんです。</p>
 <p>MCP対応があるか確認するのは1つの手ですが、<br />
 <strong>「MCPがある」＝「全部できる」<br />
 ではない</strong>のがポイントです。</p>
@@ -2112,16 +2177,16 @@ Playwright と組み合わせると効率的です。</p>
 です。カバー範囲外の操作は、<br />
 結局 Playwright や別の手段と組み合わせることになります。</p>
 <p>公式 API があるサービスなら、<br />
-Python スクリプトから API<br />
-を呼ぶ方法もあります（Google Sheets のセル操作、<br />
-Notion のデータベース操作など）。<br />
+Python スクリプトから APIを呼ぶ方法もあります（Google Sheets のセル操作、Notion のデータベース操作など）。<br />
 これも同じで、「やりたい操作が公開されているか」<br />
 を先に確認します。</p>
+<p>APIというのは、「サービスが公式に用意している操作口」のことで、MCPとの違いがわかりづらいのですが、<br />
+MCPはAIが読みにいく「架け橋」<br />
+APIはプログラムで操作する「窓口」<br />
+みたいな感じでざっくり捉えておいてください。</p>
 <p>MCPでも公式APIでも目的の操作が見つからない場合は、<br />
 <strong>Claude in Chrome</strong> や<br />
-<strong>Chrome拡張</strong> が選択肢になります。また、<br />
-ログインが原因で詰まっている場合は、<br />
-前述の <strong>CDP方式</strong> を試してみてください。</p>
+<strong>Chrome拡張</strong> が選択肢になります。</p>
 <h3 id="第1章-軸2：繰り返し頻度はどれくらいか">軸2：繰り返し頻度はどれくらいか</h3>
 <p><img alt="軸2：繰り返し頻度を考える" src="images/ch01/axis2-repeat-frequency.png" loading="lazy" decoding="async" /></p>
 <ul>
@@ -2164,8 +2229,9 @@ Make は不要です。</p>
 ワンクリックで Notion に送りたい」<br />
 「この管理画面の中に、<br />
 自分専用の整形ボタンを足したい」</p>
-<p><strong>こういう用途は自作Chrome拡張の出番です</strong>。<br />
-逆に、これに当てはまらないなら Chrome拡張は要りません。</p>
+<p><strong>こういう用途は自作Chrome拡張の出番です</strong>。</p>
+<p>逆に定期実行やブラウザ外の操作（ダウンロードなど）<br />
+複雑な画面遷移等は自作Chrome拡張の苦手分野です。</p>
 <ul>
 <li>YES → Chrome拡張（自作）</li>
 <li>NO → Chrome拡張は要らない</li>
@@ -2187,8 +2253,7 @@ Make は不要です。</p>
 <li>予約確定、契約締結</li>
 <li>顧客への一斉連絡</li>
 </ul>
-<p>共通点は、<strong>「やり直しがきかない」「他人に影響する」<br />
-「お金が動く」</strong>です。</p>
+<p>共通点は、<strong>「やり直しがきかない」「他人に影響する」「お金が動く」</strong>です。</p>
 <p>こういう作業は、<strong>最後のボタンだけは人間が押す</strong>設計にしてください。<br />
 下書きの作成、文面の準備、<br />
 データの整形——ここまでは自動化していい。<br />
@@ -2211,15 +2276,21 @@ Make は不要です。</p>
 </ol>
 <h4 id="第1章-半自動の具体例">半自動の具体例</h4>
 <ul>
-<li>問い合わせメールへの返信案を自動生成 → <strong>下書きとして保存。送信ボタンは自分で押す</strong></li>
-<li>noteの記事を音声から自動生成 → <strong>下書き保存まで。公開は自分で</strong></li>
-<li>請求書の自動作成 → <strong>PDF生成まで。先方への送信は自分で</strong></li>
-<li>カレンダーへの予定登録 → 予定の自動登録はOK、ただし<strong>他人への招待送信は人が確認してから</strong></li>
+<li>問い合わせメールへの返信案を自動生成<br />
+ → <strong>下書きとして保存。送信ボタンは自分で押す</strong></li>
+<li>noteの記事を音声から自動生成<br />
+ → <strong>下書き保存まで。公開は自分で</strong></li>
+<li>請求書の自動作成<br />
+ → <strong>PDF生成まで。先方への送信は自分で</strong></li>
+<li>カレンダーへの予定登録<br />
+ → 予定の自動登録はOK、ただし<strong>他人への招待送信は人が確認してから</strong></li>
 </ul>
 <p>判定ルール：</p>
 <ul>
-<li>公開・送信・支払い・削除を含む → <strong>下書きまで自動、最後は人間</strong></li>
-<li>含まない（ファイル整理、データ取得、自分のメモへの転記など） → <strong>全自動可</strong></li>
+<li>公開・送信・支払い・削除を含む<br />
+ → <strong>下書きまで自動、最後は人間</strong></li>
+<li>含まない（ファイル整理、データ取得、自分のメモへの転記など）<br />
+ → <strong>全自動可</strong></li>
 </ul>
 <p>「<strong>少しでも迷ったら下書きまで</strong>」が原則です。<br />
 自動化に慣れてきて「これは大丈夫」<br />
@@ -2254,8 +2325,7 @@ Make は不要です。</p>
 [道具を選ぶ（1つでも、組み合わせでもOK）]
 </code></pre>
 <p>これを人が考える必要はありません。<br />
-<strong>特典1：業務自動化ネタ出しアシスタント（GPTs）<br />
-</strong>は、あなたの業務に応じて適切な方法を示してくれます（URLは購入特典の章を参照）。</p>
+<a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto/c/6a20b797-658c-83a6-9a2e-471a3713a9b8" target="_blank" rel="noopener noreferrer"><strong>特典1：業務自動化ネタ出しアシスタント（GPTs）</strong></a>は、あなたの業務に応じて適切な方法を示してくれます。</p>
 <hr />
 <h2 id="第1章-それぞれのツールの役割">それぞれのツールの役割</h2>
 <p>5つの道具はライバルではありません。<br />
@@ -2277,9 +2347,9 @@ Make は不要です。</p>
 夜中でも、無人でも動きます。<br />
 100件 1000件 と回しても、<br />
 安定して動きます。</p>
-<p>そして、コードを書くのは <strong>Claude Code等</strong> です。<br />
-あなたが日本語で頼めば、<br />
-<strong>コードはAIが書いてくれます</strong>。</p>
+<p>今回の自動化のメインは<br />
+「いつもやっている作業を自動化して時短する」なので、<br />
+このPlaywrightの定期実行が相性良いのです。</p>
 <h4 id="第1章-使い方は2つあります">使い方は2つあります</h4>
 <p><strong>1つ目：Playwright MCPで試運転する</strong></p>
 <p>Playwright<br />
@@ -2313,8 +2383,7 @@ MCPは「<strong>Claude等とPlaywrightをつなぐ橋</strong>」<br />
 を置いておいて、朝にダブルクリック。<br />
 これで自動でブラウザが立ち上がり、<br />
 <strong>ログイン済みの画面が開いて作業が始まります</strong>。</p>
-<p>Windowsなら、<code>.bat</code> ファイル（バッチファイル）<br />
-か <code>.ps1</code> ファイル（PowerShellスクリプト）<br />
+<p>Windowsなら、<code>.bat</code> ファイル（バッチファイル）か <code>.ps1</code> ファイル（PowerShellスクリプト）<br />
 を作っておけば、<strong>同じようにダブルクリックで実行できます</strong>。<br />
 こちらもデスクトップに置いておけば、<br />
 <strong>朝のクリック1つで動き出します</strong>。</p>
@@ -2336,7 +2405,8 @@ Playwroghtが最も得意とする領域です。</strong></p>
 <p>詳しくは<a href="#第4章-実例①-業務委託先の管理画面入力を自動化した話">第4章「実例①　業務委託先の管理画面入力を自動化した話」</a>で解説しています。</p>
 <h4 id="第1章-playwright-で詰まる-ng-サイト一覧（重要）">Playwright で詰まる NG サイト一覧（重要）</h4>
 <p>ここははっきり書いておきます。<br />
-以下のサイトは、<strong>Playwright</strong> では原則突破できません。</p>
+以下のサイトは、<br />
+<strong>Playwright</strong> では原則突破できません。</p>
 <p><strong>Cloudflare Turnstile が入っているサイト</strong><br />
 - Substack（海外のニュースレター配信サービス）<br />
 - X（旧Twitter）<br />
@@ -2378,27 +2448,33 @@ Claude in Chrome / Make / 公式API<br />
 <h4 id="第1章-詰まったときの対応">詰まったときの対応</h4>
 <p>「NGサイト一覧」と書きましたが、<br />
 正確には「<strong>ふつうの Playwright では詰まる</strong>」です。</p>
-<p>詰まったら、すぐに諦める必要はありません。<br />
+<p>詰まっても、<br />
+すぐに諦める必要はありません。<br />
 <strong>CDP方式</strong>という、<br />
 「すでに自分がログインしているChromeにPlaywrightをつなぐ」方法で抜けられることがあります。</p>
 <p>実際に作る段階で使う話なので、手順と考え方は <a href="#第2章-ログインで詰まったら：cdp方式を試す"><strong>第2章「ログインで詰まったら：CDP方式を試す」</strong></a> で説明します。</p>
-<p>第1章では、まず「<strong>Playwrightで詰まるサイトがある</strong>」<br />
-「<strong>詰まったらCDP方式や別の道具を検討する</strong>」<br />
+<p>第1章では、<br />
+まず「<strong>Playwrightで詰まるサイトがある</strong>」<br />
+「<strong>詰まったらCDP方式でやってと頼む</strong>」<br />
+「<strong>それでもダメなら他の方法を検討する</strong>」<br />
 くらいで大丈夫です。</p>
 <p>たとえば僕は、Substack の登録者データを Proton<br />
 にバックアップする自動化で詰まりました。<br />
 CDP方式で Substack の CSV<br />
 ダウンロードまでは進めましたが、<br />
-Proton への自動インポートは突破できず、<br />
-最後だけ手動にしました。</p>
-<p>詳しいスクショや試行錯誤は <a href="#第4章-実例④-substack-登録者のバックアップを半自動化した話"><strong>第4章「実例④　Substack 登録者のバックアップを半自動化した話」</strong></a> で扱います。</p>
+Proton への自動インポートは突破できず、</p>
+<p>結果的に最後だけ手動にすることにしました。</p>
+<p>詳しいスクショや試行錯誤は<br />
+<a href="#第4章-実例④-substack-登録者のバックアップを半自動化した話"><strong>第4章「実例④　Substack 登録者のバックアップを半自動化した話」</strong></a> で扱います。</p>
 <hr />
 <h3 id="第1章-6-2-mcp-対応サービスへの直通の窓口">6-2. MCP — 対応サービスへの直通の窓口</h3>
 <p>ステータス：✅ 実証済み</p>
 <p><strong>MCP</strong>（Model Context Protocol）<br />
-は、Anthropic が公開したオープン規格です。<br />
+は、Anthropic が公開したオープン規格で、<br />
+AIがサイトを読み込みやすくするための「架け橋」のようなものです。</p>
+<p>公式ではないですが、<br />
 Claude Code・Codex・Antigravity など、<br />
-多くの AI ツールが採用している業界標準になっています。</p>
+多くの AI ツールが採用している業界標準の規格になっています。</p>
 <h4 id="第1章-mcp-でできること">MCP でできること</h4>
 <p>・Gmail を読む、メールにラベルを付ける、<br />
 下書きを作る。<br />
@@ -2413,14 +2489,18 @@ Claude Code・Codex・Antigravity など、<br />
 </code></pre>
 <p>このような指示が、そのまま実行されます。</p>
 <h4 id="第1章-mcp・api・playwright-の違い">MCP・API・Playwright の違い</h4>
-<p>3つの道具は、それぞれ「<strong>どこに話しかけるか</strong>」が違います。</p>
-<p><strong>MCP</strong>：AI ツール（Claude Code など）<br />
+<p>3つの道具は、<br />
+それぞれ「<strong>どこに話しかけるか</strong>」が違います。</p>
+<p><strong>MCP</strong>：<br />
+AI ツール（Claude Code など）<br />
 が仲介役になって、<br />
 <strong>サービスに話しかける仕組み</strong>です。<br />
-設定さえ済ませれば、日本語で「Gmail を読んで」<br />
+設定さえ済ませれば、<br />
+<strong>日本語で「Gmail を読んで」</strong><br />
 と言うだけで動きます。<br />
 ただし MCP サーバーが公開されているサービスにしか使えません。</p>
-<p><strong>API</strong>：プログラムが<strong>サービスの「専用窓口」<br />
+<p><strong>API</strong>：<br />
+プログラムが<strong>サービスの「専用窓口」<br />
 に直接アクセスします。</strong><br />
 MCP より細かい操作ができます。<br />
 Google Sheets の特定セルに書く、<br />
@@ -2428,8 +2508,11 @@ Notion のデータベースに行を追加するといった操作は、<br />
 API の方が確実です。<br />
 <strong>ただし API キーの取得・設定が必要</strong>で、<br />
 サービスごとに手続きが違います。</p>
-<p><strong>Playwright</strong>：ブラウザの「画面」<br />
-を操作します。人間がやっているクリック・入力・スクロールをコードで再現します。MCP も API もないサービス、または画面の状態を見ながら操作しないといけない業務で使います。</p>
+<p><strong>Playwright</strong>：<br />
+ブラウザの「画面」を操作します。<br />
+人間がやっているクリック・入力・スクロール<br />
+といった動きをコードで再現します。<br />
+MCP も API もないサービス、または画面の状態を見ながら操作しないといけない業務で使います。</p>
 <table>
 <thead>
 <tr>
@@ -2483,8 +2566,7 @@ API の方が確実です。<br />
 <li>GitHub</li>
 <li>その他、MCP サーバーが公開されているサービス全般</li>
 </ul>
-<p>対応サービスは増え続けています。「<strong>(サービス名)<br />
-MCP</strong>」で検索すると最新情報が見つかります。</p>
+<p>対応サービスは増え続けています。「<strong>(サービス名)　MCP</strong>」で検索すると最新情報が見つかります。</p>
 <h3 id="第1章-6-3-claude-in-chrome-codex-in-chrome-antigravity-in-chrome-ai親和拡張">6-3. Claude in Chrome / Codex in Chrome / Antigravity in Chrome — AI親和拡張</h3>
 <p><img alt="Claude in Chrome でNotebookLMを操作している様子" src="images/ch01/claude-in-chrome-notebooklm.png" loading="lazy" decoding="async" /></p>
 <p>ステータス：✅ 実証済み</p>
@@ -2520,9 +2602,8 @@ Gmail、Salesforce、LinkedIn、<br />
 通常の自分のChromeとは分けるため、<br />
 <strong>別プロファイルで動きます</strong>。</p>
 <h4 id="第1章-3つに共通する強みと弱み">3つに共通する強みと弱み</h4>
-<p>Playwrightのように「<strong>新たにブラウザを立ち上げる</strong>」<br />
-わけではなく、既存のブラウザの拡張機能なので、<br />
-ログイン認証が必要なサイトでも使うことができます。</p>
+<p>Playwrightのように「<strong>新たにブラウザを立ち上げる</strong>」わけではなく、<br />
+既存のブラウザの拡張機能なので、ログイン認証が必要なサイトでも使うことができます。</p>
 <p><strong>強み</strong></p>
 <ul>
 <li>Playwrightが詰まるサイトでも、「今使っているブラウザで」使えるので bot 検知の心配が少ない</li>
@@ -2547,7 +2628,7 @@ Gmail、Salesforce、LinkedIn、<br />
 <hr />
 <h3 id="第1章-6-4-自作-chrome-拡張-作業中の「いま1ステップ省きたい」に使う">6-4. 自作 Chrome 拡張 — 作業中の「いま1ステップ省きたい」に使う</h3>
 <p><img alt="Chrome拡張機能の管理画面" src="images/ch01/chrome-extensions-page.png" loading="lazy" decoding="async" /></p>
-<p>ステータス：✅ 実証済み</p>
+<p>ステータス：🟡 実験中（追記版で深掘り予定）</p>
 <p><strong>ここで言う Chrome拡張</strong>は、<br />
 HTML と JavaScript で自分専用に作る拡張です。<br />
 Cla<strong>ude in Chrome のような AI<br />
@@ -2567,15 +2648,34 @@ Notion に送りたい」<br />
 「今まさに作業中の手間を1ステップ減らしたい」<br />
 なら Chrome 拡張、<br />
 という分け方が一番ラクです。</p>
+<h4 id="第1章-他の人に配るのに強い">他の人に配るのに強い</h4>
+<p>これがもう一つ大きなメリットです。</p>
+<p>Playwright で作ったスクリプトを家族や同僚に渡そうとすると、<br />
+相手の PC に Python と Playwright と Chromium を<br />
+セットアップしてもらう必要が出てきます。</p>
+<p><code>.command</code>（Mac用）や <code>.bat</code>（Windows用）ファイルを渡しても、<br />
+<strong>相手の OS のバージョン、Python のパス、権限設定</strong>などで<br />
+動かないことが普通にあります。<br />
+非エンジニアの人に渡すと、<br />
+だいたいここで止まります。</p>
+<p>その点、<strong>Chrome拡張は環境依存がほとんどありません</strong>。</p>
+<p>拡張機能のフォルダを zip にして渡して、<br />
+「<strong><code>chrome://extensions/</code> を開いて、<br />
+デベロッパーモードをオンにして、<br />
+このフォルダを読み込んでください</strong>」<br />
+と伝えるだけで、Mac でも Windows でも動きます。</p>
+<p>社内ツールとして配る、家族や同僚に使ってもらう、<br />
+というシーンでは、<br />
+<strong>Chrome拡張のほうが圧倒的にハマりにくいです</strong>。</p>
 <h4 id="第1章-ハードルは思っているより低い">ハードルは思っているより低い</h4>
 <p><strong>自分用なら審査・ストア登録は一切不要</strong>です。<br />
-<code>chrome://extensions/</code> を開いて「<strong>デベロッパーモード</strong>」をオンにし、「パッケージ化されていない拡張機能を読み込む」でフォルダを指定するだけで動きます。</p>
+<code>chrome://extensions/</code> を開いて<br />
+「<strong>デベロッパーモード</strong>」をオンにし、「パッケージ化されていない拡張機能を読み込む」でフォルダを指定するだけで動きます。</p>
 <p>審査に求められるManifest V3 というコードのルールも、<br />
 Claude Code 等が書いてくれます。<br />
 「<strong>最新仕様（Manifest V3）で書いて</strong>」<br />
 と一言添えるだけで対応した拡張を書いてくれます。<br />
-権限（<code>storage</code>・<code>activeTab</code>・<code>scripting</code> など）<br />
-も、必要なものを足していく形で問題ありません。</p>
+権限（<code>storage</code>・<code>activeTab</code>・<code>scripting</code> など）も、必要なものを足していく形で問題ありません。</p>
 <p><strong>作り方は日本語で頼むだけです。</strong></p>
 <pre><code>「いま見てるページのURLとタイトルを取得して、Notion に送る拡張を作って。
 Manifest V3、service worker の制約も踏まえて書いて」
@@ -2673,40 +2773,28 @@ Playwright と組み合わせる使い方が普通です。</p>
 <p>あくまで「だいたいこれ」の目安です。<br />
 <strong>最終的に</strong>は、判定軸5本に当てはめて自分で決めるのが正解です。</p>
 <h3 id="第1章-メール・請求書まわり_1">メール・請求書まわり</h3>
-<p>→ <strong>オススメ：Gmail MCP（メイン）</strong></p>
-<p>なぜなら、Gmail は MCP 対応ツール（<strong>Claude<br />
-Code</strong>・Codex・Cursor 等）<br />
-で直接操作できるからです。<br />
-メールを検索する、ラベルを付ける、<br />
-<strong>下書きを作るといった操作がコードなしで動きます</strong>。<br />
-添付ファイルの保存など MCP では届かない部分は、<br />
-<strong>Python</strong>（IMAP）で補います。</p>
-<p>Make は「<strong>Mac が閉じていても動かしたい</strong>」<br />
-「外部サービスのトリガーで起動したい」<br />
-ときだけ使います。<br />
-Gmail が絡んでいるだけなら Make の出番はありません。</p>
+<p>→ <strong>オススメ：Gmail MCP ＋ Playwright の組み合わせ</strong></p>
+<p>Gmail の操作は、検索・ラベル付け・本文の読み取り・下書き作成までは MCP で完結します。「<strong>今月届いた請求書メールをリストアップして</strong>」「<strong>特定の件名にラベルを付けて</strong>」みたいな指示なら、コードを書かずに動きます。</p>
+<p>ただし、<strong>MCP だけでは完結しない部分</strong>が出てきます。たとえば添付の請求書PDFをローカルに保存する、Drive の特定フォルダに振り分ける、PDFの中身を解析して台帳に転記する——このあたりは、現状の Gmail MCP だと届きません。</p>
+<p>なので、実用的には次の役割分担になります。</p>
+<p>・<strong>MCP</strong>：メールの検索、ラベル付け、下書き作成、本文の読み取り<br />
+・<strong>Playwright</strong>：添付ファイルのダウンロード、Drive や別サービスへの保存、その先の画面操作</p>
+<p>「<strong>探す・読むまでは MCP、ファイルや別画面を動かすところから Playwright</strong>」と覚えておくと困りません。</p>
+<p>Make は「<strong>Mac が閉じていても動かしたい</strong>」「外部サービスのトリガーで起動したい」ときだけ使います。Gmail が絡んでいるだけなら Make の出番はありません。</p>
 <h3 id="第1章-予定・タスクまわり_1">予定・タスクまわり</h3>
-<p>→ <strong>オススメ：Calendar MCP / Gmail<br />
-MCP（メイン）</strong></p>
-<p>なぜなら、Googleカレンダーも Gmail も <strong>MCP</strong><br />
-対応ツールで直接操作できるからです。<br />
-「<strong>来週の予定を取得して整理する</strong>」<br />
-「メールから予定を読み取ってカレンダーに追加する」<br />
-といった操作が、コードなしで頼めます。</p>
-<p>「<strong>Notion に追加されたらカレンダーに登録</strong>」<br />
-のようなリアルタイムのトリガー連携は、<br />
-Mac が閉じていても動く必要があるため、<br />
-<strong>その場合のみ Make を検討します</strong>。</p>
+<p>→ <strong>オススメ：Calendar MCP / Gmail MCP ＋ Playwright の組み合わせ</strong></p>
+<p>Googleカレンダーは MCP で予定の取得・追加・削除まで完結します。Gmail も同じです。「<strong>来週の予定を整理して</strong>」「<strong>メールから予定を読み取ってカレンダーに追加して</strong>」はそのまま動きます。</p>
+<p>ただし、カレンダーや Gmail から取った情報を<strong>他のサービスに転記する作業</strong>になると、転記先が MCP 非対応であることが多いです。たとえば「商談メモから次回タスクを拾って自社のCRMに入れる」だと、CRM側の画面操作は Playwright が必要になります。</p>
+<p>・<strong>MCP</strong>：カレンダーの読み書き、Gmail からの情報抽出<br />
+・<strong>Playwright</strong>：CRM、独自管理画面、その他SaaSへの入力・転記</p>
+<p>「<strong>Notion に追加されたらカレンダーに登録</strong>」のようなリアルタイムのトリガー連携は、Mac が閉じていても動く必要があるため、<strong>その場合のみ Make を検討します</strong>。</p>
 <h3 id="第1章-問い合わせ対応・営業管理_1">問い合わせ対応・営業管理</h3>
-<p>→ <strong>オススメ：Gmail MCP ＋ Playwright<br />
-の組み合わせ</strong></p>
-<p>なぜなら、メール側は Gmail <strong>MCP</strong><br />
-で直接取得・ラベル付け・下書き作成ができて、<br />
-自社CRMの画面操作は <strong>Playwright</strong><br />
-でコード化できるからです。</p>
-<p>ただし、他社のお問い合わせフォームへの営業文面送信は、<br />
-規約違反や迷惑行為になりやすいので、<br />
-この教材では推奨しません。</p>
+<p>→ <strong>オススメ：Gmail MCP ＋ Playwright の組み合わせ</strong></p>
+<p>問い合わせメールを整理する部分は Gmail MCP が得意です。「<strong>会社名、担当、メール、内容を仕分けて</strong>」「<strong>対応済み・未対応にラベル付けして</strong>」は MCP で動きます。返信の下書きまでも MCP で作れます。</p>
+<p>そこから先、<strong>自社CRMに記録する、スプレッドシートに転記する、対応履歴を別画面に入力する</strong>といった部分は、画面操作になるので Playwright の出番です。</p>
+<p>・<strong>MCP</strong>：メールの仕分け、ラベル付け、内容抽出、返信下書き<br />
+・<strong>Playwright</strong>：CRMへの記録、スプレッドシート転記、自社管理画面への入力</p>
+<p>ただし、他社のお問い合わせフォームへの営業文面送信は、規約違反や迷惑行為になりやすいので、この教材では推奨しません。</p>
 <h3 id="第1章-コンテンツ制作（saas横断）">コンテンツ制作（SaaS横断）</h3>
 <p>→ <strong>オススメ：Claude in Chrome</strong></p>
 <p>なぜなら、note や SNS など、<br />
@@ -2828,13 +2916,10 @@ Chrome で済みます。</p>
 <blockquote>
 <p>📌 この章は、実際に触りながら随時追記していきます。「使ってみたらこうだった」という実体験もどんどん足していきます。</p>
 </blockquote>
-<p>まず<strong>特典2：ブラウザ自動化スターターキット</strong>で、<br />
-今やっている業務を棚卸ししてください。</p>
+<p>まず<strong>特典2：ブラウザ自動化スターターキット</strong>で、今やっている業務を棚卸ししてください。</p>
 <p><a href="https://browser-automation-starter-kit.vercel.app/" target="_blank" rel="noopener noreferrer">https://browser-automation-starter-kit.vercel.app/</a></p>
-<p>書き出したら、<strong>特典1：業務自動化ネタ出しアシスタント（GPTs）<br />
-</strong>で「どの業務から始めるか」「どの道具が向いているか」<br />
+<p>書き出したら、<a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto/c/6a20b797-658c-83a6-9a2e-471a3713a9b8" target="_blank" rel="noopener noreferrer"><strong>特典1：業務自動化ネタ出しアシスタント（GPTs）</strong></a>で「どの業務から始めるか」「どの道具が向いているか」<br />
 を一緒に考えてもらってください。</p>
-<p><a href="https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto" target="_blank" rel="noopener noreferrer">https://chatgpt.com/g/g-6a0ece0ca25c819190141566263d44ff-ye-wu-zi-dong-hua-netachu-siasisutanto</a></p>
 <p>候補が決まったら、<br />
 1件だけ選んで第2章へ進んでください。</p>
 <hr />
