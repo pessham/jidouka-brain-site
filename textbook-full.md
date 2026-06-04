@@ -571,14 +571,14 @@ AIがミスしたとき、
 
 # 購入特典
 
+![購入特典：5つの特典を受け取る](https://jidouka.pessham.com/images/joshou/chapter-hero-tokuten.png)
+
+---
+
 ご購入ありがとうございます。
 
 以下の5つの特典を、
 上から順番に受け取ってください。
-
-![購入特典：5つの特典を受け取る](https://jidouka.pessham.com/images/joshou/chapter-hero-tokuten.png)
-
----
 
 ## 特典①　業務自動化ネタ出しアシスタント（GPTs）
 
@@ -3357,8 +3357,8 @@ Claude in Chrome、Make、
 を整理しました。
 
 あの判定軸は、頭の中だけで作ったものではありません。
-実際に手を動かして、詰まって、「**あ、
-ここが境界線か**」と気づいた体験から来ています。
+実際に手を動かして、詰まって、
+「**あ、ここが境界線か**」と気づいた体験から来ています。
 
 この章では、「**Playwright向き**」
 と判定した業務を、実際に作る手順を渡します。
@@ -3387,7 +3387,7 @@ Claude in Chrome、Make、
 ![](https://jidouka.pessham.com/images/ch02/gyoumujidoukaneta.png)
 
 毎日・毎週やっている作業を話すと、
-MCP / **Playwright** / Claude in
+MCP / Playwright / Claude in
 Chrome / Chrome拡張 / Make
 のどれ向きか判定が出ます。
 **「Playwright向き」と出た人だけ**、
@@ -4462,13 +4462,13 @@ Chrome拡張はChromeを開いている間しか動きません。
 
 # 第3章　エラーと壊れたときの直し方
 
+![第3章：詰まった時にはここ](https://jidouka.pessham.com/images/ch03/ch03-kowaretatoki.png)
+
 ---
 
 ## この章で渡すもの
 
 **自動化は、一発にしてならず。**
-
-![第3章：詰まった時にはここ](https://jidouka.pessham.com/images/ch03/ch03-kowaretatoki.png)
 
 これは脅しでも何でもなくて、ただの事実です。
 いくらAIが頭良くなっても、
