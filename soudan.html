@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow,noarchive,noimageindex" />
+<title>個別相談｜ブラウザ操作自動化 設計サポート — ペスハム</title>
+<link rel="icon" type="image/png" href="./images/chibi-anne.png" />
+<meta property="og:title" content="個別相談｜ブラウザ操作自動化 設計サポート" />
+<meta property="og:description" content="毎日30分を奪う作業を、一緒に設計図に落とします。個人90分3万円／法人5万円。" />
+<meta property="og:image" content="https://jidouka.pessham.com/images/thumbs/top-hero.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+  :root {
+    --bg: #f7f8fb;
+    --panel: #ffffff;
+    --ink: #0f172a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --green: #16a34a;
+    --green-dark: #15803d;
+    --gold: #d97706;
+    --soft-blue: #eff6ff;
+    --soft-green: #f0fdf4;
+    --soft-red: #fef2f2;
+    --soft-yellow: #fefce8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.85;
+    font-size: 17px;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+  a { color: var(--blue); }
+  strong { font-weight: 700; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+    color: #fff;
+    padding: 72px 0 64px;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.35;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(transparent 60%, rgba(250, 204, 21, 0.42) 60%);
+  }
+  .hero .lead {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.8;
+    margin: 0 0 32px;
+  }
+  .hero .price-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .hero .price-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+  }
+  .hero .price-pill strong { color: #fde68a; font-weight: 800; }
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 26px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 1.02rem;
+    text-decoration: none;
+    transition: transform 0.1s, box-shadow 0.2s, opacity 0.2s;
+    border: 0;
+    cursor: pointer;
+    min-width: 240px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, #fbbf24, #d97706);
+    color: #1a1a1a;
+  }
+  .btn-secondary {
+    background: linear-gradient(180deg, #ffffff, #e5e7eb);
+    color: #0f172a;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.22); }
+  .btn .arrow { font-size: 1.1rem; }
+
+  /* SECTION */
+  section { padding: 64px 0; }
+  section.white { background: #ffffff; }
+  section.soft { background: var(--bg); }
+  section h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+    font-weight: 900;
+    line-height: 1.4;
+    margin: 0 0 24px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  section h2 .sub {
+    display: block;
+    font-size: 0.78em;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  section p { margin: 0 0 18px; }
+
+  /* PAIN */
+  .pain-card {
+    background: var(--soft-red);
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+  .pain-card h3 {
+    margin: 0 0 16px;
+    color: #b91c1c;
+    font-size: 1.1rem;
+  }
+  .pain-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pain-card li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: #7f1d1d;
+    line-height: 1.7;
+  }
+  .pain-card li::before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: #dc2626;
+    font-weight: 900;
+  }
+
+  /* SOLUTION */
+  .solution-card {
+    background: var(--soft-green);
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+  .solution-card h3 {
+    margin: 0 0 16px;
+    color: var(--green-dark);
+    font-size: 1.15rem;
+  }
+  .solution-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .solution-card li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    line-height: 1.7;
+  }
+  .solution-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 900;
+    font-size: 1.1rem;
+  }
+
+  /* WHAT YOU GET */
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .what-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--blue);
+    border-radius: 10px;
+    padding: 22px 26px;
+  }
+  .what-card h4 {
+    margin: 0 0 10px;
+    color: var(--blue-dark);
+    font-size: 1.08rem;
+    font-weight: 800;
+  }
+  .what-card p { margin: 0; color: var(--ink); }
+
+  /* PROOF */
+  .proof-wrap {
+    background: var(--soft-blue);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin: 24px 0;
+  }
+  .proof-wrap h3 {
+    margin: 0 0 14px;
+    color: var(--blue-dark);
+    font-size: 1.1rem;
+  }
+  .proof-wrap ul { padding-left: 1.2em; margin: 0; }
+  .proof-wrap li { line-height: 1.85; margin-bottom: 8px; }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  @media (max-width: 700px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  .price-card {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .price-card.recommended {
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.16);
+  }
+  .price-card.recommended::before {
+    content: "オススメ";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #fbbf24, #d97706);
+    color: #1a1a1a;
+    padding: 5px 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+  .price-card .target {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+  .price-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+  }
+  .price-card .price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 14px 0 4px;
+    color: var(--ink);
+  }
+  .price-card .price-note {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  .price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    flex: 1;
+  }
+  .price-card li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .price-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 2px;
+    color: var(--green);
+    font-weight: 900;
+  }
+  .price-card .btn { width: 100%; min-width: 0; }
+
+  /* PROFILE */
+  .profile-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .profile-box h3 { margin: 0 0 14px; }
+
+  /* FAQ */
+  details.faq {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.faq summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 700;
+    list-style: none;
+    position: relative;
+    padding-right: 50px;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: var(--blue);
+    transition: transform 0.2s;
+  }
+  details.faq[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  details.faq div.faq-body {
+    padding: 0 22px 20px;
+    color: var(--ink);
+    line-height: 1.85;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #fff;
+    text-align: center;
+    padding: 72px 22px;
+  }
+  .final-cta h2 {
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    margin: 0 0 18px;
+  }
+  .final-cta p {
+    color: rgba(255,255,255,0.88);
+    margin: 0 auto 32px;
+    max-width: 580px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    padding: 28px 22px;
+    font-size: 0.86rem;
+  }
+  footer a { color: rgba(255,255,255,0.85); }
+
+  /* MISC */
+  .quote {
+    border-left: 4px solid var(--blue);
+    background: var(--soft-blue);
+    padding: 18px 22px;
+    border-radius: 0 10px 10px 0;
+    margin: 22px 0;
+    color: var(--ink);
+    font-style: normal;
+  }
+  .quote strong { color: var(--blue-dark); }
+
+  ul.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0;
+  }
+  ul.checklist li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+  }
+  ul.checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 900;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">ブラウザ操作自動化｜個別相談</span>
+    <h1>毎日30分の手作業を、<br><span class="highlight">あなたの業務に合った設計図</span>に落とします。</h1>
+    <p class="lead">
+      教材だけで止まる人がいます。<br>
+      自分の業務に当てはめる段になると、迷いが出ます。<br>
+      ここを、1対1で一緒に整理します。
+    </p>
+    <div class="price-row">
+      <span class="price-pill">個人 <strong>90分／30,000円</strong></span>
+      <span class="price-pill">法人・チーム <strong>初回課題整理／50,000円</strong></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://univa.cc/gFNgZV" target="_blank" rel="noopener noreferrer">
+        個人相談を申し込む <span class="arrow">→</span>
+      </a>
+      <a class="btn btn-secondary" href="https://univa.cc/kLn8AJ" target="_blank" rel="noopener noreferrer">
+        法人課題整理を申し込む <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<!-- PAIN -->
+<section class="white">
+  <div class="container">
+    <h2><span class="sub">こんな状態じゃないですか</span>教材は読んだ。でも、一歩目で止まる。</h2>
+    <p>
+      14日間のステップメールも読んだ。
+      第0章で道具も入れた。
+      動かしたい作業もある。<br>
+      でも、ここから先で動けない人が出ます。
+    </p>
+
+    <div class="pain-card">
+      <h3>こういう詰まり、ありませんか</h3>
+      <ul>
+        <li>自分の業務のどこから手をつければいいか、決められない</li>
+        <li>録画してAIに分解してもらったけど、どの道具を選ぶか迷う</li>
+        <li>社内で使う前提だと、誰が運用するか、情報をどう扱うかで止まる</li>
+        <li>小さく動いたけど、毎週使う形にどう育てればいいか分からない</li>
+        <li>ログイン周りやセキュリティで詰まって、それ以上進めない</li>
+        <li>「全部自動化したい」と言われて、どこまで手動を残すか判断できない</li>
+      </ul>
+    </div>
+
+    <p>
+      これは、頭が悪いから詰まっているわけではありません。<br>
+      <strong>「自分の業務に合わせた設計」は、人それぞれ答えが違うから</strong>です。
+    </p>
+
+    <p>
+      教材は「全員に共通する型」を渡すまでが仕事です。<br>
+      そこから先の「あなたの業務だとどうするか」は、
+      一緒に見ないと判断できないことが多い。
+    </p>
+  </div>
+</section>
+
+
+<!-- SOLUTION -->
+<section class="soft">
+  <div class="container">
+    <h2><span class="sub">この個別相談で起きること</span>1回90分で、毎日30分を奪う作業の設計図が完成します。</h2>
+
+    <div class="solution-card">
+      <h3>相談が終わったときに、手元に残るもの</h3>
+      <ul>
+        <li>あなたの業務のどこを自動化するか、最初の1つが決まっている</li>
+        <li>使う道具（Playwright／MCP／Chrome拡張など）が決まっている</li>
+        <li>4フェーズの進め方が、あなたの業務に当てはめて見えている</li>
+        <li>「ここまで自動、ここから手動」の境界線が引けている</li>
+        <li>明日から手を動かす順番が、3〜5ステップで書き出されている</li>
+        <li>詰まったときの逃げ道（CDP方式・別の道具・人間に戻す）の見立てができている</li>
+      </ul>
+    </div>
+
+    <div class="quote">
+      <strong>正直に書きます。</strong><br>
+      この相談は「すごい技術」を見せる場ではありません。<br>
+      <strong>あなたの業務を、私が一緒に見て、最短ルートを引く</strong>だけです。<br>
+      それだけで、教材だけで進める場合より3〜4週間は短縮できます。
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT YOU GET -->
+<section class="white">
+  <div class="container">
+    <h2><span class="sub">90分の中で扱うこと</span>具体的に何を話すか、先に全部書きます。</h2>
+
+    <div class="what-grid">
+      <div class="what-card">
+        <h4>① あなたの業務ヒアリング（15分）</h4>
+        <p>毎日・毎週やっている作業を聞きます。どこに時間が溶けているか、どこにストレスがあるか、その場で言語化していきます。</p>
+      </div>
+      <div class="what-card">
+        <h4>② 自動化対象の絞り込み（15分）</h4>
+        <p>聞いた作業の中から、最初に減らす1つを選びます。「いきなり全部」ではなく、「これなら今週中に動かせる」サイズに切ります。</p>
+      </div>
+      <div class="what-card">
+        <h4>③ 道具選びと判定軸の当てはめ（20分）</h4>
+        <p>Playwright／MCP／Claude in Chrome／Chrome拡張／Makeのどれを使うか、教材の判定軸5本に当てはめて決めます。組み合わせる場合の役割分担も整理します。</p>
+      </div>
+      <div class="what-card">
+        <h4>④ 4フェーズに分解（20分）</h4>
+        <p>「録る・作る・直す・育てる」の各フェーズで、あなたが具体的に何をやるかを書き出します。録画はどこを撮るか、AIに何を頼むか、詰まったら何を渡すか、全部具体化します。</p>
+      </div>
+      <div class="what-card">
+        <h4>⑤ 安全ラインと運用の設計（10分）</h4>
+        <p>どこまでAIに任せて、どこは人間が確認するかを決めます。公開・送信・支払い・削除を含む業務なら、最後のボタンは必ず人間が押す設計にします。</p>
+      </div>
+      <div class="what-card">
+        <h4>⑥ 次の1週間の動き方（10分）</h4>
+        <p>明日から何をやるか、どこで止まりそうか、止まったら何をするか。手元に残るアクションリストを作って終わります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROFILE / PROOF -->
+<section class="soft">
+  <div class="container">
+    <h2><span class="sub">この相談を担当する人</span>非エンジニアでも回せる自動化を、毎週本業で使っています。</h2>
+
+    <div class="profile-box">
+      <h3>ペスハム（黒澤 諒祐）</h3>
+      <p>
+        元・東京ガス。退職後、NFTバブルで4,000万円規模のプロジェクトを経験。
+        その後、長野で飛び込み営業と研修講師を続けながら、車中泊で全国を移動する生活へ。
+      </p>
+      <p>
+        移動中もブラウザ作業をAIに任せたいと思い、コードを書いた経験がない状態から、
+        AIに指示するだけで動くブラウザ自動化を量産。
+      </p>
+
+      <div class="proof-wrap">
+        <h3>実際に運用している自動化（一例）</h3>
+        <ul>
+          <li><strong>音声配信の毎日アップロード</strong>（Voicy・stand.fm）— iPhoneからファイル渡して、タイトルだけ入れれば残り全自動</li>
+          <li><strong>note・Substack の同時下書き生成</strong> — 音声ファイル1本から、両プラットフォーム向けに下書きが完成</li>
+          <li><strong>業務委託先（おてつたび）の管理画面入力</strong> — 1件30〜50項目の手作業を自動化、月単位で時間削減</li>
+          <li><strong>毎朝のGmail未読サマリー＋カレンダー予定送信</strong> — 朝6時にスマホに今日の予定が届く</li>
+          <li><strong>Brain人気記事ランキングのスプシ自動転記</strong> — 毎日定時にデータが揃う</li>
+          <li><strong>Gmail請求書PDFの自動収集</strong> — 取引先別に振り分けまで完了</li>
+        </ul>
+      </div>
+
+      <p>
+        全部、コードを自分で書いていません。<br>
+        AIに「こういう作業を自動化したい」と伝えて、詰まったところを一緒に解いただけです。
+      </p>
+
+      <p>
+        <strong>つまりこの相談で渡すのは、技術ではなく「AIに何を渡すと動くか」の設計図</strong>です。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHO IS THIS FOR -->
+<section class="white">
+  <div class="container">
+    <h2><span class="sub">こういう人に向いています</span></h2>
+
+    <ul class="checklist">
+      <li>教材を買ったけど、自分の業務にどう当てはめるか迷っている人</li>
+      <li>毎日・毎週やっているブラウザ作業を1つでも減らしたい人</li>
+      <li>「どの道具を使えばいいか」を1人で決められず、もう何日も止まっている人</li>
+      <li>社内で自動化を導入したいが、運用や情報管理で踏み出せないチームのキーマン</li>
+      <li>独学で粘るより、最短ルートを引いてもらって時間で買いたい人</li>
+    </ul>
+
+    <h2 style="margin-top: 48px;"><span class="sub">こういう人には向いていません</span></h2>
+
+    <ul class="checklist" style="list-style: none;">
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #dc2626; font-weight: 900;">✗</span> 「全部自動化」を期待している人（最後のボタンは必ず人間が押す設計を推奨します）</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #dc2626; font-weight: 900;">✗</span> 90分の中で動くものを完成させたい人（設計図までです。実装は相談後に自分で進めます）</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #dc2626; font-weight: 900;">✗</span> 教材を読んでいない人（前提知識として教材の内容を共有していることを期待します）</li>
+      <li style="padding-left: 28px; position: relative;"><span style="position: absolute; left: 0; color: #dc2626; font-weight: 900;">✗</span> 規約違反になり得る用途（他社フォームへの大量送信など）を考えている人</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="soft">
+  <div class="container">
+    <h2><span class="sub">価格と申し込み</span>個人と法人で、設計が変わります。</h2>
+
+    <p>
+      個人事業主の方と、法人・チーム・店舗・スクール・宿泊業の方では、
+      整理する内容が変わります。<br>
+      自分に合うほうを選んでください。
+    </p>
+
+    <div class="pricing-grid">
+      <!-- 個人 -->
+      <div class="price-card recommended">
+        <div class="target">個人事業主・フリーランス向け</div>
+        <h3>個別自動化相談</h3>
+        <div class="price">30,000円</div>
+        <div class="price-note">90分・Zoom・1回完結（税込）</div>
+        <ul>
+          <li>あなたの業務を1対1でヒアリング</li>
+          <li>自動化する作業を1つ確定</li>
+          <li>道具選びと4フェーズへの分解</li>
+          <li>「ここまで自動、ここから手動」の境界線</li>
+          <li>翌週から動けるアクションリスト</li>
+          <li>相談中の録画・メモあり（後から見返せます）</li>
+        </ul>
+        <a class="btn btn-primary" href="https://univa.cc/gFNgZV" target="_blank" rel="noopener noreferrer">
+          個人相談を申し込む <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- 法人 -->
+      <div class="price-card">
+        <div class="target">法人・チーム・店舗・スクール向け</div>
+        <h3>初回課題整理</h3>
+        <div class="price">50,000円</div>
+        <div class="price-note">90分・Zoom・1回完結（税込）</div>
+        <ul>
+          <li>毎日どこで時間が溶けているかをチームでヒアリング</li>
+          <li>最初に減らす業務を1つ決定</li>
+          <li>誰が運用するかの担当設計</li>
+          <li>個人情報・顧客情報の扱いライン</li>
+          <li>導入支援の見積もり提示（必要なら、別途15万円〜の設計支援へ接続）</li>
+          <li>研修込みで社内展開する場合の設計図も同時に出します</li>
+        </ul>
+        <a class="btn btn-primary" href="https://univa.cc/kLn8AJ" target="_blank" rel="noopener noreferrer">
+          法人課題整理を申し込む <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <p style="margin-top: 32px; color: var(--muted); font-size: 0.92rem;">
+      ※ 法人相談で必要が見えたら、その場で導入支援（15万円〜）や AI 研修（30万円/人を目安）の見積もりも提示します。<br>
+      ※ いきなり大きく契約する必要はありません。まずは初回課題整理で「やる価値があるか」を見極めてください。
+    </p>
+  </div>
+</section>
+
+
+<!-- WHY NOW -->
+<section class="white">
+  <div class="container">
+    <h2><span class="sub">なぜ、今動いた方がいいか</span>毎日30分は、月15時間。年182時間。</h2>
+
+    <p>
+      毎日30分の作業が1つ消えると、<br>
+      月で約15時間、年で約182時間が戻ります。
+    </p>
+
+    <p>
+      時給1,500円で換算すると、年27万円分。<br>
+      時給3,000円で換算すれば、年54万円分。
+    </p>
+
+    <p>
+      この相談の費用は、<strong>個人なら3万円。年で見れば1ヶ月で元が取れる計算</strong>です。
+    </p>
+
+    <p>
+      しかも一度設計図を引けば、その自動化はあなたの手元に残ります。<br>
+      <strong>来年も、再来年も、同じ時間が戻り続けます</strong>。
+    </p>
+
+    <div class="quote">
+      迷っている時間が一番もったいないです。<br>
+      <strong>「自分で何ヶ月も粘る」より、「90分で最短ルートを引いて、明日から手を動かす」</strong>ほうが、結果的にずっと早く時間が戻ります。
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="soft">
+  <div class="container">
+    <h2><span class="sub">よくある質問</span></h2>
+
+    <details class="faq">
+      <summary>Q. コードが書けません。それでも大丈夫ですか？</summary>
+      <div class="faq-body">
+        大丈夫です。むしろこの相談は「コードが書けない人」を想定しています。AIに何を渡すと動くか、を一緒に設計するのが目的です。担当しているペスハム自身もコードはAIに書かせています。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 90分で本当に終わりますか？</summary>
+      <div class="faq-body">
+        90分で「設計図」が手に入ります。実装まではご自身で進めます。逆に言うと、設計図がない状態で実装に入ると何週間も遠回りすることがあるので、ここを最初に固めることに価値があります。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 相談後に「やっぱり自分には無理」と思ったらどうなりますか？</summary>
+      <div class="faq-body">
+        相談中に「これは自分の業務には合わない」と判断するケースもあります。その場合は無理に進める必要はありません。「自動化しない方がいい業務」を切り分けるのも、この相談の役割の一つです。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 教材を買っていないと相談できませんか？</summary>
+      <div class="faq-body">
+        教材を読んでいる前提で進めます。判定軸5本や4フェーズの型を共有している方が、90分が圧倒的に密度高くなります。まだの方は先に教材を読んでから申し込んでください。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 法人で複数人で参加してもいいですか？</summary>
+      <div class="faq-body">
+        構いません。むしろ、現場でその作業をやっている人と、決裁できる人の両方が参加されると整理が早く進みます。3〜4名までは追加料金なしで対応します。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 開催日時はどう決まりますか？</summary>
+      <div class="faq-body">
+        申し込み後、メールで候補日時をお送りします。平日夜・週末を含めて調整します。基本的に申し込みから1〜2週間以内で実施しています。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 録画はもらえますか？</summary>
+      <div class="faq-body">
+        相談はZoomで実施し、録画データを後日お渡しします。メモが取りきれなくても、後から見返せます。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 守秘は守られますか？</summary>
+      <div class="faq-body">
+        相談内容は外部に出しません。社外秘の業務についても、ヒアリング前に確認しながら進めます。法人の方で守秘契約が必要な場合は、申し込み前にメールでご連絡ください。
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>Q. 返金保証はありますか？</summary>
+      <div class="faq-body">
+        相談の性質上、原則として返金は承っていません。ただし、相談前に「自分の用途と合わなそう」と感じた場合は、開催日前であればキャンセル対応が可能です。
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>明日から30分が戻る設計を、<br>一緒に引きませんか。</h2>
+    <p>
+      教材だけで進める道もあります。<br>
+      でも、自分の業務に合わせて整理するなら、1対1で見るのが一番早いです。<br>
+      ここで詰まっている数週間を、90分でまとめて抜けてください。
+    </p>
+    <div class="cta-row" style="justify-content: center;">
+      <a class="btn btn-primary" href="https://univa.cc/gFNgZV" target="_blank" rel="noopener noreferrer">
+        個人相談を申し込む（30,000円） <span class="arrow">→</span>
+      </a>
+      <a class="btn btn-secondary" href="https://univa.cc/kLn8AJ" target="_blank" rel="noopener noreferrer">
+        法人課題整理を申し込む（50,000円） <span class="arrow">→</span>
+      </a>
+    </div>
+    <p style="margin-top: 28px; font-size: 0.88rem; color: rgba(255,255,255,0.68);">
+      決済は外部サービス（Univa）で行います。クレジットカード対応。<br>
+      申し込み後、開催日時の調整メールをお送りします。
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  <p>© ペスハム（黒澤 諒祐）｜<a href="https://jidouka.pessham.com/">ブラウザ操作自動化の教科書</a></p>
+</footer>
+
+</body>
+</html>
