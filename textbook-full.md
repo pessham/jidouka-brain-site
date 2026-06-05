@@ -213,6 +213,8 @@ AI研修の講師と、
 でも、車を運転していると、
 当然ですがPC操作はなかなかできません。
 
+![](https://jidouka.pessham.com/images/shatyu6.jpg)
+
 メールを返す。
 管理画面を開く。
 投稿作業をする。

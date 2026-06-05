@@ -181,43 +181,6 @@
         line-height: 1.5;
       }
 
-      /* 序章バナー */
-      .shojo-banner {
-        background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-        border-radius: 10px;
-        padding: 20px 22px;
-        color: #fff;
-        margin-bottom: 28px;
-      }
-      .shojo-banner .eyebrow {
-        font-size: 0.72rem;
-        letter-spacing: .08em;
-        opacity: .8;
-        margin-bottom: 6px;
-      }
-      .shojo-banner h2 {
-        font-size: 1.1rem;
-        margin: 0 0 8px;
-        line-height: 1.4;
-      }
-      .shojo-banner p {
-        font-size: 0.85rem;
-        opacity: .9;
-        margin: 0 0 14px;
-        line-height: 1.6;
-      }
-      .shojo-banner a {
-        display: inline-block;
-        background: #fff;
-        color: #1e3a5f;
-        border-radius: 6px;
-        padding: 8px 18px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .shojo-banner a:hover { opacity: .9; }
-
       .spec-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -299,15 +262,15 @@
       </div>
 
       <nav class="steps" aria-label="学習ステップ">
-        <a class="step active" href="#intro">
+        <a class="step active" href="#ch-intro">
           <span>序</span>
           <strong>序章</strong>
-          <small>182時間 → 自動化へ</small>
+          <small>182時間 → 自動化へ<br>（Brain無料部分）</small>
         </a>
         <a class="step" href="#bonus">
           <span>特</span>
           <strong>購入特典</strong>
-          <small>5つの特典を受け取る</small>
+          <small>5つの特典を受け取る<br>（以降Brain有料部分）</small>
         </a>
         <a class="step" href="#ch0">
           <span>0</span>
@@ -378,15 +341,6 @@
         </div>
       </div>
 
-      <!-- ── 序章バナー ── -->
-      <div class="shojo-banner">
-        <p class="eyebrow">序章から読む</p>
-        <h2>毎日30分 × 365日 ＝ <strong>182時間</strong>。<br>この時間、AIに取り戻せます。</h2>
-        <p>繰り返し作業のチリツモを計算すると、年間で273,000円分になります。<br>
-           この教材は「コードが書けない自分でもできるのか」から始まります。</p>
-        <a href="./textbook.html#序章">序章を読む →</a>
-      </div>
-
       <div class="spec-list" aria-label="教材スペック">
         <div class="spec-item">
           <strong>全体で約12万字</strong>
@@ -416,7 +370,7 @@
         <div class="chapter-cards">
 
           <a class="chapter-card" href="./textbook.html#序章" id="ch-intro">
-            <img class="ch-thumb" src="./images/thumbs/ch-intro.jpg" alt="序章：自動化で変わること" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/joshou/chapter-hero-joshou.png?v=20260605b" alt="序章：自動化で変わること" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">序章</p>
               <h3>自動化で変わること ── 昨日もやった「あの作業」を、自動化する話</h3>
@@ -426,7 +380,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#特典" id="bonus">
-            <img class="ch-thumb" src="./images/thumbs/ch-bonus.jpg" alt="購入特典：5つの特典を受け取る" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/joshou/chapter-hero-tokuten.png?v=20260605b" alt="購入特典：5つの特典を受け取る" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">購入特典</p>
               <h3>5つの特典を受け取る ── GPTs・スターターキット・全文md</h3>
@@ -446,7 +400,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#第1章" id="ch1">
-            <img class="ch-thumb" src="./images/thumbs/ch1.jpg" alt="第1章：どんな作業が自動化できるか" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/ch01/ch01-automation-tools-hero.png?v=20260605b" alt="第1章：どんな作業が自動化できるか" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">知識編</p>
               <h3>どんな作業が自動化できるか ── 5つの道具と5つの判定軸</h3>
@@ -456,7 +410,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#第2章" id="ch2">
-            <img class="ch-thumb" src="./images/thumbs/ch2.jpg" alt="第2章：AIに作らせる" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/ch02/ch02-playwright-4phase-hero.png?v=20260605b" alt="第2章：AIに作らせる" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">方法編</p>
               <h3>AIに作らせる ── 録る・作る・直す・育てる</h3>
@@ -466,7 +420,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#第3章" id="ch3">
-            <img class="ch-thumb" src="./images/thumbs/ch3.jpg" alt="第3章：詰まった時にはここ" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/ch03/ch03-kowaretatoki.png?v=20260605b" alt="第3章：詰まった時にはここ" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">直し方</p>
               <h3>詰まった時にはここ ── エラーと壊れたときの直し方</h3>
@@ -476,7 +430,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#第4章" id="ch4">
-            <img class="ch-thumb" src="./images/thumbs/ch4.jpg" alt="第4章：実例集" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/ch04/ch04-examples-hero.png?v=20260605b" alt="第4章：実例集" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">実例集</p>
               <h3>4フェーズの型を、実際の仕事で動かす</h3>
@@ -486,7 +440,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#第5章" id="ch5">
-            <img class="ch-thumb" src="./images/thumbs/ch5.jpg" alt="第5章：辞典＆プロンプト集" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/ch05/ch05-prompt-dictionary-hero.png?v=20260605b" alt="第5章：辞典＆プロンプト集" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">辞典編</p>
               <h3>そのまま貼れるプロンプト辞典 ── 詰まったときに引く場所</h3>
@@ -496,7 +450,7 @@
           </a>
 
           <a class="chapter-card" href="./textbook.html#終章" id="ending">
-            <img class="ch-thumb" src="./images/thumbs/ending.jpg" alt="終章：これからの話" loading="lazy" decoding="async" />
+            <img class="ch-thumb" src="./images/shusho/chapter-hero-shusho.png?v=20260605b" alt="終章：これからの話" loading="lazy" decoding="async" />
             <div class="ch-body">
               <p class="ch-label">終章</p>
               <h3>これからの話 ── 自分専用の自動化アシスタントへ</h3>
