@@ -1759,9 +1759,9 @@ AI 開発ツールに「**Playwright
 「**自動化が動いた**」という感覚を持っておくと、
 気持ちが全然違います。
 
-[**毎朝6時のAIニュース便**](https://site-teal-iota.vercel.app/)は、設定1回で翌朝から毎日 Gmail に最新 AI ニュースのまとめが届く自動化です。
+[**毎朝6時のAIニュース便**](https://ai-news-digest-six.vercel.app/)は、設定1回で翌朝から毎日 Gmail に最新 AI ニュースのまとめが届く自動化です。
 
-[![AIニュース便のトップ画面](https://jidouka.pessham.com/images/ch0/ainews-site-01.png)](https://site-teal-iota.vercel.app/)
+[![AIニュース便のトップ画面](https://jidouka.pessham.com/images/ch0/ainews-site-01.png)](https://ai-news-digest-six.vercel.app/)
 
 ![届くメールのイメージ](https://jidouka.pessham.com/images/ch0/ainews-site-02.png)
 
